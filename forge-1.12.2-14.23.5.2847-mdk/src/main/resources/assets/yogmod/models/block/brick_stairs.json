@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "yogmod:blocks/brick",
+        "top": "yogmod:blocks/brick",
+        "side": "yogmod:blocks/brick"
+    }
+}

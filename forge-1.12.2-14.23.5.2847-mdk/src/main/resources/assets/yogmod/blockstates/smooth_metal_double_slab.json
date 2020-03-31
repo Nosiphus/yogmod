@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "yogmod:smooth_metal_double_slab" }
+    }
+}

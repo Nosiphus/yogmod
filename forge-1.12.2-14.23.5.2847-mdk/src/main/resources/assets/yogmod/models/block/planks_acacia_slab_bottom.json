@@ -1,0 +1,9 @@
+{
+    "parent": "block/half_slab",
+    "textures":
+    {
+        "bottom": "yogmod:blocks/planks_acacia",
+        "top": "yogmod:blocks/planks_acacia",
+        "side": "yogmod:blocks/planks_acacia"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:riveted_steel"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "parent": "block/half_slab",
+    "textures":
+    {
+        "bottom": "yogmod:blocks/planks_oak",
+        "top": "yogmod:blocks/planks_oak",
+        "side": "yogmod:blocks/planks_oak"
+    }
+}
