@@ -2,6 +2,8 @@ package com.nosiphus.yogmod.blocks.base;
 
 import java.util.Random;
 
+import com.nosiphus.yogmod.util.IHasModel;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
@@ -25,4 +27,5 @@ public class SlabDoubleBase extends SlabBase
 	{	
 		return true;
 	}
+	
 }
