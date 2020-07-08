@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:white_marble"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

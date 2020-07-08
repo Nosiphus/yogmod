@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:reinforced_paneling"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:decorative_concrete"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

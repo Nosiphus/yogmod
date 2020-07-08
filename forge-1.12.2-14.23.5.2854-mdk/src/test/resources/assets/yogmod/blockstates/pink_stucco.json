@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:pink_stucco"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

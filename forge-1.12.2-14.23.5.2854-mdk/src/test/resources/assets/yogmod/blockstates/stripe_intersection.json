@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:stripe_intersection"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

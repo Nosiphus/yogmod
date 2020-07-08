@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:corrugated_copper"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

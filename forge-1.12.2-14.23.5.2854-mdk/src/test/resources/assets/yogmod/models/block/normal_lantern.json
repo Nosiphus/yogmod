@@ -1,0 +1,6 @@
+{
+    "parent": "yogmod:block/lantern",
+    "textures": {
+        "lantern": "yogmod:blocks/lantern"
+    }
+}
