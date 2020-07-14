@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "yogmod:planks_jungle_double_slab" }
+    }
+}

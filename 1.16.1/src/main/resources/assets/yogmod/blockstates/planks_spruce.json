@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:planks_spruce"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

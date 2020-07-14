@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:green_plastic"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

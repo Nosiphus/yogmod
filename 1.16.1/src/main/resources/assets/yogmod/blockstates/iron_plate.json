@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:iron_plate"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

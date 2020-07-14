@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:caution_tape"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}
