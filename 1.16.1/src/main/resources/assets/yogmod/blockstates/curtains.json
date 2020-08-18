@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "yogmod:curtains" },
-        "facing=east":  { "model": "yogmod:curtains", "y": 90 },
-        "facing=south": { "model": "yogmod:curtains", "y": 180 },
-        "facing=west":  { "model": "yogmod:curtains", "y": 270 }
-    }
-}
