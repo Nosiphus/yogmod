@@ -1,9 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures":
-    {
-        "bottom": "yogmod:blocks/asphalt",
-        "top": "yogmod:blocks/asphalt",
-        "side": "yogmod:blocks/asphalt"
-    }
-}

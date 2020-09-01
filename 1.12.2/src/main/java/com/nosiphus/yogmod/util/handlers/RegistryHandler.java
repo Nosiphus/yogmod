@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.util.handlers;
 
-import com.nosiphus.yogmod.Main;
+import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
 import com.nosiphus.yogmod.util.IHasModel;
@@ -35,7 +35,7 @@ public class RegistryHandler
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent event)
 	{		
-		Main.proxy.registerModel(Item.getItemFromBlock(ModBlocks.CRATE), 0);
+		YogMod.proxy.registerModel(Item.getItemFromBlock(ModBlocks.CRATE), 0);
 		
 		for(Item item : ModItems.ITEMS)
 		{
@@ -61,7 +61,7 @@ public class RegistryHandler
 	
 	public static void initRegistries(FMLInitializationEvent event)
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());	
+		NetworkRegistry.INSTANCE.registerGuiHandler(YogMod.instance, new GuiHandler());	
 	}
 	
 	public static void postInitRegistries(FMLPostInitializationEvent event)

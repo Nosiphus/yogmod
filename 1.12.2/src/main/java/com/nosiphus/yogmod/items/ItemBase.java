@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.items;
 
-import com.nosiphus.yogmod.Main;
+import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.init.ModItems;
 import com.nosiphus.yogmod.tabs.CreativeTab;
 import com.nosiphus.yogmod.util.IHasModel;
@@ -23,7 +23,7 @@ public class ItemBase extends Item implements IHasModel {
 	@Override
 	public void registerModels() 
 	{
-		Main.proxy.registerModel(this, 0);
+		YogMod.proxy.registerModel(this, 0);
 	}
 	
 }

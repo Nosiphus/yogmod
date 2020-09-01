@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.blocks.special;
 
-import com.nosiphus.yogmod.Main;
+import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
 import com.nosiphus.yogmod.tabs.CreativeTab;
@@ -36,7 +36,7 @@ public class CautionTapeSpecial extends BlockSoulSand implements IHasModel {
 	@Override
 	public void registerModels() 
 	{
-		Main.proxy.registerModel(Item.getItemFromBlock(this), 0);
+		YogMod.proxy.registerModel(Item.getItemFromBlock(this), 0);
 	}
 	
 }

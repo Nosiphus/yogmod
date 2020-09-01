@@ -3,7 +3,7 @@ package com.nosiphus.yogmod.blocks.base;
 import java.util.List;
 import javax.annotation.Nullable;
 
-import com.nosiphus.yogmod.Main;
+import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
 import com.nosiphus.yogmod.tabs.CreativeTab;
@@ -327,7 +327,7 @@ public class SinkBase extends Block implements IHasModel {
     @Override
 	public void registerModels() 
 	{
-		Main.proxy.registerModel(Item.getItemFromBlock(this), 0);
+		YogMod.proxy.registerModel(Item.getItemFromBlock(this), 0);
 	}
 	
 }

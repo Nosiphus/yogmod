@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.blocks.storage;
 
-import com.nosiphus.yogmod.Main;
+import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
 import com.nosiphus.yogmod.tabs.CreativeTab;
@@ -68,7 +68,7 @@ public class CrateStorage extends BlockContainer
 	{
 		if(!worldIn.isRemote)
 		{
-			playerIn.openGui(Main.instance, Reference.GUI_CRATE, worldIn, pos.getX(), pos.getY(), pos.getZ());
+			playerIn.openGui(YogMod.instance, Reference.GUI_CRATE, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 		
 		return true;
