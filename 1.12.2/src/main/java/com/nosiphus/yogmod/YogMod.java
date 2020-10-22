@@ -14,34 +14,34 @@ import com.nosiphus.yogmod.util.handlers.RegistryHandler;
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class YogMod
 {
-	
-	@Instance
-	public static YogMod instance;
-	
-	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
-	public static CommonProxy proxy;
+
+    @Instance
+    public static YogMod instance;
+
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
+    public static CommonProxy proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-    	
-    	RegistryHandler.preInitRegistries(event);
-    	
+
+        RegistryHandler.preInitRegistries(event);
+
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-    	
-    	RegistryHandler.initRegistries(event);
-    	
+
+        RegistryHandler.initRegistries(event);
+
     }
-    
+
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-    	
-    	RegistryHandler.postInitRegistries(event);
-    	
+
+        RegistryHandler.postInitRegistries(event);
+
     }
 }
