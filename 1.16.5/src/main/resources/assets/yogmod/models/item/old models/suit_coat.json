@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "yogmod:item/suit_coat",
+        "layer1": "yogmod:item/suit_coat_overlay"
+    }
+}

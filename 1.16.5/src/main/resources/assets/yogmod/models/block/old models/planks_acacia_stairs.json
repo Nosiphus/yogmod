@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "yogmod:block/planks_acacia",
+        "top": "yogmod:block/planks_acacia",
+        "side": "yogmod:block/planks_acacia"
+    }
+}

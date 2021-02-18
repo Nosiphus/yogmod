@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "yogmod:block/air_vent" }
+    }
+}

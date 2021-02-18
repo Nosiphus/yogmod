@@ -1,0 +1,16 @@
+[
+{
+  "modid": "yogmod",
+  "name": "YogMod",
+  "description": "A mod to convert the VoxelBox Scientific texture pack into separate blocks.",
+  "version": "2.0.0-2.18.2020",
+  "mcversion": "1.16.5",
+  "url": "https://www.nosiphus.com/minecraft/mods/yogmod",
+  "updateUrl": "",
+  "authorList": ["Nosiphus"],
+  "credits": "See site for all details.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

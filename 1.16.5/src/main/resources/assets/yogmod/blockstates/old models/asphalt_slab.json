@@ -1,0 +1,7 @@
+{
+    "variants":
+    {
+        "half=bottom,variant=default": { "model": "yogmod:asphalt_slab_bottom" },
+        "half=top,variant=default": { "model": "yogmod:asphalt_slab_top" }
+    }
+}

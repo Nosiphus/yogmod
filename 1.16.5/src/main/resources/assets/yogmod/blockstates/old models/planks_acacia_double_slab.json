@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "yogmod:planks_acacia_double_slab" }
+    }
+}

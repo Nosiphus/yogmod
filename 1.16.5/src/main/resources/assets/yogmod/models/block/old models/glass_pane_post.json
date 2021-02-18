@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_post",
+    "textures": {
+        "edge": "yogmod:block/glasspane",
+        "pane": "yogmod:block/glass"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate",
+  "textures": {
+    "texture": "yogmod:block/acacia_brick"
+  }
+}

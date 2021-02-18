@@ -1,0 +1,6 @@
+{
+    "parent": "yogmod:block/hatchw_open",
+    "textures": {
+        "texture": "yogmod:block/hatch"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "yogmod:normal_lantern" },
+        "facing=east": { "model": "yogmod:normal_lantern_wall" },
+        "facing=south": { "model": "yogmod:normal_lantern_wall", "y": 90 },
+        "facing=west": { "model": "yogmod:normal_lantern_wall", "y": 180 },
+        "facing=north": { "model": "yogmod:normal_lantern_wall", "y": 270 }
+    }
+}

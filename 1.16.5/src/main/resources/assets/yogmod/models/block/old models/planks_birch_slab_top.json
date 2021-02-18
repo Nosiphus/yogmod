@@ -1,0 +1,9 @@
+{
+    "parent": "block/upper_slab",
+    "textures":
+    {
+        "bottom": "yogmod:block/planks_birch",
+        "top": "yogmod:block/planks_birch",
+        "side": "yogmod:block/planks_birch"
+    }
+}

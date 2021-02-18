@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "eye=false,facing=south": { "model": "yogmod:fancy_table_empty" },
+        "eye=false,facing=west": { "model": "yogmod:fancy_table_empty", "y": 90 },
+        "eye=false,facing=north": { "model": "yogmod:fancy_table_empty", "y": 180 },
+        "eye=false,facing=east": { "model": "yogmod:fancy_table_empty", "y": 270 },
+        "eye=true,facing=south": { "model": "yogmod:fancy_table_filled" },
+        "eye=true,facing=west": { "model": "yogmod:fancy_table_filled", "y": 90 },
+        "eye=true,facing=north": { "model": "yogmod:fancy_table_filled", "y": 180 },
+        "eye=true,facing=east": { "model": "yogmod:fancy_table_filled", "y": 270 }
+    }
+}

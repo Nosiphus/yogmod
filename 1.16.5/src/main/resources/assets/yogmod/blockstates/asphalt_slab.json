@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "yogmod:block/asphalt_slab"
+    },
+    "type=double": {
+      "model": "yogmod:block/asphalt_planks"
+    },
+    "type=top": {
+      "model": "yogmod:block/asphalt_slab_top"
+    }
+  }
+}

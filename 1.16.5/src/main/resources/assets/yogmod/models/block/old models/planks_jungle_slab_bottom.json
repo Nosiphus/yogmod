@@ -1,0 +1,9 @@
+{
+    "parent": "block/half_slab",
+    "textures":
+    {
+        "bottom": "yogmod:block/planks_jungle",
+        "top": "yogmod:block/planks_jungle",
+        "side": "yogmod:block/planks_jungle"
+    }
+}
