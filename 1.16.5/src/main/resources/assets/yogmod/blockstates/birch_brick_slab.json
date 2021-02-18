@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "yogmod:block/birch_brick_slab"
+    },
+    "type=double": {
+      "model": "yogmod:block/birch_brick"
+    },
+    "type=top": {
+      "model": "yogmod:block/birch_brick_slab_top"
+    }
+  }
+}

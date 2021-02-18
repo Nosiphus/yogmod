@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "yogmod:acacia_brick_fence_gate"
+    "yogmod:acacia_brick_fence_gate",
+	"yogmod:birch_brick_fence_gate"
   ]
 }
