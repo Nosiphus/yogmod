@@ -31,4 +31,5 @@ public class ModBlocks {
     public static final RegistryObject<Block> BIRCH_BRICK_STAIRS = BLOCKS.register("birch_brick_stairs", () -> new StairsBlock(Blocks.BIRCH_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.BIRCH_STAIRS)));
     public static final RegistryObject<Block> BLACK_MARBLE = BLOCKS.register("black_marble", () -> new Block(AbstractBlock.Properties.from(Blocks.OBSIDIAN)));
     public static final RegistryObject<Block> BLUE_PANELING = BLOCKS.register("blue_paneling", () -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_BLOCK)));
+    public static final RegistryObject<Block> BLUE_PLASTIC = BLOCKS.register("blue_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.BLUE_WOOL)));
 }

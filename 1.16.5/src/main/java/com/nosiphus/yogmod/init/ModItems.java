@@ -40,5 +40,6 @@ public class ModItems {
     public static final RegistryObject<BlockItem> BIRCH_BRICK_STAIRS = ITEMS.register("birch_brick_stairs", () -> new BlockItem(ModBlocks.BIRCH_BRICK_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> BLACK_MARBLE = ITEMS.register("black_marble", () -> new BlockItem(ModBlocks.BLACK_MARBLE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> BLUE_PANELING = ITEMS.register("blue_paneling", () -> new BlockItem(ModBlocks.BLUE_PANELING.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BLUE_PLASTIC = ITEMS.register("blue_plastic", () -> new BlockItem(ModBlocks.BLUE_PLASTIC.get(), new Item.Properties().group(YogMod.YOGTAB)));
 
 }
