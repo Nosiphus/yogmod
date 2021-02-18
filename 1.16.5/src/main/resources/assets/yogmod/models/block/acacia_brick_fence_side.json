@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/fence_side",
   "textures": {
-    "texture": "yogmod:block/acacia_brick"
+    "texture": "yogmod:block/acacia_bricks"
   }
 }

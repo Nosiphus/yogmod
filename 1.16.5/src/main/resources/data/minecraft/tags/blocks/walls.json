@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "yogmod:asphalt_wall"
+    "yogmod:asphalt_wall",
+	"yogmod:brick_wall"
   ]
 }

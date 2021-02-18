@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/fence_inventory",
   "textures": {
-    "texture": "yogmod:block/birch_brick"
+    "texture": "yogmod:block/birch_bricks"
   }
 }

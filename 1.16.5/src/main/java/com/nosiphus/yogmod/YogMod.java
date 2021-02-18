@@ -49,7 +49,7 @@ public class YogMod {
         @Override
         public ItemStack createIcon() {
 
-            return ModItems.PENCIL.get().getDefaultInstance();
+            return ModItems.BLUE_PANELING.get().getDefaultInstance();
 
         }
 
