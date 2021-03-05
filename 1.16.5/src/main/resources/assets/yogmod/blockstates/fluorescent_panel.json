@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "yogmod:block/fluorescent_panel"
+    }
+  }
+}

@@ -49,7 +49,7 @@ public class YogMod {
         @Override
         public ItemStack createIcon() {
 
-            return ModItems.BLUE_PANELING.get().getDefaultInstance();
+            return ModItems.FLUORESCENT_PANEL.get().getDefaultInstance();
 
         }
 

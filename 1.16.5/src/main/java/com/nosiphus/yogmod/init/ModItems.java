@@ -53,4 +53,22 @@ public class ModItems {
     public static final RegistryObject<BlockItem> CORRUGATED_COPPER = ITEMS.register("corrugated_copper", () -> new BlockItem(ModBlocks.CORRUGATED_COPPER.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CORRUGATED_STEEL = ITEMS.register("corrugated_steel", () -> new BlockItem(ModBlocks.CORRUGATED_STEEL.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> COUNTERTOP = ITEMS.register("countertop", () -> new BlockItem(ModBlocks.COUNTERTOP.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    //public static final RegistryObject<BlockItem> CRATE = ITEMS.register("crate", () -> new BlockItem(ModBlocks.CRATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICKS = ITEMS.register("crimson_bricks", () -> new BlockItem(ModBlocks.CRIMSON_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICK_FENCE = ITEMS.register("crimson_brick_fence", () -> new BlockItem(ModBlocks.CRIMSON_BRICK_FENCE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICK_FENCE_GATE = ITEMS.register("crimson_brick_fence_gate", () -> new BlockItem(ModBlocks.CRIMSON_BRICK_FENCE_GATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICK_SLAB = ITEMS.register("crimson_brick_slab", () -> new BlockItem(ModBlocks.CRIMSON_BRICK_SLAB.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICK_STAIRS = ITEMS.register("crimson_brick_stairs", () -> new BlockItem(ModBlocks.CRIMSON_BRICK_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CURTAINS = ITEMS.register("curtains", () -> new BlockItem(ModBlocks.CURTAINS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CYAN_PLASTIC = ITEMS.register("cyan_plastic", () -> new BlockItem(ModBlocks.CYAN_PLASTIC.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICKS = ITEMS.register("dark_oak_bricks", () -> new BlockItem(ModBlocks.DARK_OAK_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICK_FENCE = ITEMS.register("dark_oak_brick_fence", () -> new BlockItem(ModBlocks.DARK_OAK_BRICK_FENCE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICK_FENCE_GATE = ITEMS.register("dark_oak_brick_fence_gate", () -> new BlockItem(ModBlocks.DARK_OAK_BRICK_FENCE_GATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICK_SLAB = ITEMS.register("dark_oak_brick_slab", () -> new BlockItem(ModBlocks.DARK_OAK_BRICK_SLAB.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICK_STAIRS = ITEMS.register("dark_oak_brick_stairs", () -> new BlockItem(ModBlocks.DARK_OAK_BRICK_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_STONE_BRICKS = ITEMS.register("dark_stone_bricks", () -> new BlockItem(ModBlocks.DARK_STONE_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DECORATIVE_CONCRETE = ITEMS.register("decorative_concrete", () -> new BlockItem(ModBlocks.DECORATIVE_CONCRETE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> FANCY_TABLE = ITEMS.register("fancy_table", () -> new BlockItem(ModBlocks.FANCY_TABLE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> FLUORESCENT_PANEL = ITEMS.register("fluorescent_panel", () -> new BlockItem(ModBlocks.FLUORESCENT_PANEL.get(), new Item.Properties().group(YogMod.YOGTAB)));
+
 }
