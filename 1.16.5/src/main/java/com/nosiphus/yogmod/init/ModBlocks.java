@@ -2,6 +2,7 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
+import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -58,5 +59,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DECORATIVE_CONCRETE = BLOCKS.register("decorative_concrete", () -> new Block(AbstractBlock.Properties.from(Blocks.LIGHT_GRAY_CONCRETE)));
     public static final RegistryObject<Block> FANCY_TABLE = BLOCKS.register("fancy_table", () -> new EndPortalFrameBlock(AbstractBlock.Properties.from(Blocks.END_PORTAL_FRAME)));
     public static final RegistryObject<Block> FLUORESCENT_PANEL = BLOCKS.register("fluorescent_panel", () -> new Block(AbstractBlock.Properties.from(Blocks.GLOWSTONE).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> GLASS = BLOCKS.register("glass", () -> new Block(AbstractBlock.Properties.from(Blocks.GLASS)));
+    public static final RegistryObject<Block> GLASS_PANE = BLOCKS.register("glass_pane", () -> new PaneBlock(AbstractGlassBlock.Properties.from(Blocks.GLASS_PANE)));
 
 }

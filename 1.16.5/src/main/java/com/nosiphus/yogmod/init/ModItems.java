@@ -70,5 +70,7 @@ public class ModItems {
     public static final RegistryObject<BlockItem> DECORATIVE_CONCRETE = ITEMS.register("decorative_concrete", () -> new BlockItem(ModBlocks.DECORATIVE_CONCRETE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> FANCY_TABLE = ITEMS.register("fancy_table", () -> new BlockItem(ModBlocks.FANCY_TABLE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> FLUORESCENT_PANEL = ITEMS.register("fluorescent_panel", () -> new BlockItem(ModBlocks.FLUORESCENT_PANEL.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GLASS = ITEMS.register("glass", () -> new BlockItem(ModBlocks.GLASS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GLASS_PANE = ITEMS.register("glass_pane", () -> new BlockItem(ModBlocks.GLASS_PANE.get(), new Item.Properties().group(YogMod.YOGTAB)));
 
 }
