@@ -3,12 +3,15 @@ package com.nosiphus.yogmod;
 import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
 import com.nosiphus.yogmod.util.Reference;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -23,6 +26,7 @@ public class YogMod {
     public YogMod() {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addListener(this::clientSetup);
         bus.addListener(this::setup);
 
         ModItems.ITEMS.register(bus);
@@ -32,9 +36,14 @@ public class YogMod {
 
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void clientSetup(final FMLClientSetupEvent event) {
 
-    
+        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.getTranslucent());
+
+    }
+
+    private void setup(final FMLCommonSetupEvent event) {
 
     }
 

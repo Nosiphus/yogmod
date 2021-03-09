@@ -3,6 +3,11 @@ package com.nosiphus.yogmod.init;
 import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -59,7 +64,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DECORATIVE_CONCRETE = BLOCKS.register("decorative_concrete", () -> new Block(AbstractBlock.Properties.from(Blocks.LIGHT_GRAY_CONCRETE)));
     public static final RegistryObject<Block> FANCY_TABLE = BLOCKS.register("fancy_table", () -> new EndPortalFrameBlock(AbstractBlock.Properties.from(Blocks.END_PORTAL_FRAME)));
     public static final RegistryObject<Block> FLUORESCENT_PANEL = BLOCKS.register("fluorescent_panel", () -> new Block(AbstractBlock.Properties.from(Blocks.GLOWSTONE).sound(SoundType.GLASS)));
-    public static final RegistryObject<Block> GLASS = BLOCKS.register("glass", () -> new Block(AbstractBlock.Properties.from(Blocks.GLASS)));
-    public static final RegistryObject<Block> GLASS_PANE = BLOCKS.register("glass_pane", () -> new PaneBlock(AbstractGlassBlock.Properties.from(Blocks.GLASS_PANE)));
+    public static final RegistryObject<Block> GLASS = BLOCKS.register("glass", () -> new GlassBlock(AbstractGlassBlock.Properties.from(Blocks.GLASS).notSolid()));
+    public static final RegistryObject<Block> GLASS_PANE = BLOCKS.register("glass_pane", () -> new PaneBlock(AbstractGlassBlock.Properties.from(Blocks.GLASS_PANE).notSolid()));
+    public static final RegistryObject<Block> GOLD_FILGAREE = BLOCKS.register("gold_filgaree", () -> new Block(AbstractBlock.Properties.from(Blocks.GOLD_BLOCK)));
+    public static final RegistryObject<Block> GREEN_PLASTIC = BLOCKS.register("green_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.GREEN_WOOL)));
 
 }
