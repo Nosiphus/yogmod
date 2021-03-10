@@ -47,6 +47,7 @@ public class ModItems {
     public static final RegistryObject<BlockItem> BRICK_WALL = ITEMS.register("brick_wall", () -> new BlockItem(ModBlocks.BRICK_WALL.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CAUTION_TAPE = ITEMS.register("caution_tape", () -> new BlockItem(ModBlocks.CAUTION_TAPE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CIRCUITRY = ITEMS.register("circuitry", () -> new BlockItem(ModBlocks.CIRCUITRY.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CLASSIC_LEVER = ITEMS.register("classic_lever", () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CLAY_TILE = ITEMS.register("clay_tile", () -> new BlockItem(ModBlocks.CLAY_TILE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CONCRETE = ITEMS.register("concrete", () -> new BlockItem(ModBlocks.CONCRETE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CONSOLE = ITEMS.register("console", () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties().group(YogMod.YOGTAB)));
@@ -74,5 +75,26 @@ public class ModItems {
     public static final RegistryObject<BlockItem> GLASS_PANE = ITEMS.register("glass_pane", () -> new BlockItem(ModBlocks.GLASS_PANE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> GOLD_FILGAREE = ITEMS.register("gold_filgaree", () -> new BlockItem(ModBlocks.GOLD_FILGAREE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> GREEN_PLASTIC = ITEMS.register("green_plastic", () -> new BlockItem(ModBlocks.GREEN_PLASTIC.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GREEN_TILES = ITEMS.register("green_tiles", () -> new BlockItem(ModBlocks.GREEN_TILES.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> HATCH = ITEMS.register("hatch", () -> new BlockItem(ModBlocks.HATCH.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> IRON_DOOR = ITEMS.register("iron_door", () -> new BlockItem(ModBlocks.IRON_DOOR.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> IRON_PLATE = ITEMS.register("iron_plate", () -> new BlockItem(ModBlocks.IRON_PLATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> IRON_STACK = ITEMS.register("iron_stack", () -> new BlockItem(ModBlocks.IRON_STACK.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICKS = ITEMS.register("jungle_bricks", () -> new BlockItem(ModBlocks.JUNGLE_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICK_FENCE = ITEMS.register("jungle_brick_fence", () -> new BlockItem(ModBlocks.JUNGLE_BRICK_FENCE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICK_FENCE_GATE = ITEMS.register("jungle_brick_fence_gate", () -> new BlockItem(ModBlocks.JUNGLE_BRICK_FENCE_GATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICK_SLAB = ITEMS.register("jungle_brick_slab", () -> new BlockItem(ModBlocks.JUNGLE_BRICK_SLAB.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICK_STAIRS = ITEMS.register("jungle_brick_stairs", () -> new BlockItem(ModBlocks.JUNGLE_BRICK_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LADDER = ITEMS.register("ladder", () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LAMP = ITEMS.register("lamp", () -> new BlockItem(ModBlocks.LAMP.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    //public static final RegistryObject<BlockItem> LANTERN
+    //public static final RegistryObject<BlockItem> LED
+    public static final RegistryObject<BlockItem> LEVER = ITEMS.register("lever", () -> new BlockItem(ModBlocks.LEVER.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LIMESTONE_BRICK = ITEMS.register("limestone_brick", () -> new BlockItem(ModBlocks.LIMESTONE_BRICK.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LINOLEUM_TILE = ITEMS.register("linoleum_tile", () -> new BlockItem(ModBlocks.LINOLEUM_TILE.get(), new Item.Properties().group(YogMod.YOGTAB)));
+
+
+    public static final RegistryObject<BlockItem> STEP = ITEMS.register("step", () -> new BlockItem(ModBlocks.STEP.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> STEP_SLAB = ITEMS.register("step_slab", () -> new BlockItem(ModBlocks.STEP_SLAB.get(), new Item.Properties().group(YogMod.YOGTAB)));
 
 }

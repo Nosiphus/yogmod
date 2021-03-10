@@ -40,6 +40,9 @@ public class YogMod {
 
         RenderTypeLookup.setRenderLayer(ModBlocks.GLASS.get(), RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.HATCH.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LADDER.get(), RenderType.getTranslucent());
 
     }
 

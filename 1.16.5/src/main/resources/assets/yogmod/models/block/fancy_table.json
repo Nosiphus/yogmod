@@ -1,9 +1,9 @@
 {   "parent": "block/block",
     "textures": {
-        "particle": "yogmod:block/fancy_table_side",
-        "bottom": "yogmod:block/fancy_table_bottom",
-        "top": "yogmod:block/fancy_table_top",
-        "side": "yogmod:block/fancy_table_side"
+        "particle": "yogmod:block/fancy_table",
+        "bottom": "yogmod:block/fancy_table_end",
+        "top": "yogmod:block/fancy_table_end",
+        "side": "yogmod:block/fancy_table"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
