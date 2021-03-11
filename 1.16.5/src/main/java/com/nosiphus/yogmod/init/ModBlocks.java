@@ -1,9 +1,10 @@
 package com.nosiphus.yogmod.init;
 
+import com.nosiphus.yogmod.block.MonitorBlock;
 import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.state.StateContainer;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -87,10 +88,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever", () -> new LeverBlock(AbstractBlock.Properties.from(Blocks.LEVER)));
     public static final RegistryObject<Block> LIMESTONE_BRICK = BLOCKS.register("limestone_brick", () -> new Block(AbstractBlock.Properties.from(Blocks.BRICKS)));
     public static final RegistryObject<Block> LINOLEUM_TILE = BLOCKS.register("linoleum_tile", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
-    public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor", () -> new CarvedPumpkinBlock(DirectionalBlock.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.GLASS).setLightLevel((state) -> {
+    public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor", () -> new MonitorBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.GLASS).setLightLevel((state) -> {
+
         return 15;
+
     })));
-    public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", () -> new CarvedPumpkinBlock(DirectionalBlock.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", () -> new MonitorBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.GLASS)));
 
     public static final RegistryObject<Block> STEP = BLOCKS.register("step", () -> new Block(AbstractBlock.Properties.from(Blocks.SMOOTH_STONE)));
     public static final RegistryObject<Block> STEP_SLAB = BLOCKS.register("step_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.SMOOTH_STONE_SLAB)));
