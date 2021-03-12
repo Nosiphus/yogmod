@@ -2,9 +2,17 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import sun.reflect.generics.visitor.Reifier;
 
 public class ModBlocks {
 
@@ -82,9 +90,48 @@ public class ModBlocks {
     public static final RegistryObject<Block> LINOLEUM_TILE = BLOCKS.register("linoleum_tile", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
     public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor", () -> new CarvedPumpkinBlock(AbstractBlock.Properties.from(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", () -> new CarvedPumpkinBlock(AbstractBlock.Properties.from(Blocks.PUMPKIN).sound(SoundType.GLASS)));
-
-
+    public static final RegistryObject<Block> OAK_BRICKS = BLOCKS.register("oak_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> OAK_BRICK_FENCE = BLOCKS.register("oak_brick_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> OAK_BRICK_FENCE_GATE = BLOCKS.register("oak_brick_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.OAK_FENCE_GATE)));
+    public static final RegistryObject<Block> OAK_BRICK_SLAB = BLOCKS.register("oak_brick_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.OAK_SLAB)));
+    public static final RegistryObject<Block> OAK_BRICK_STAIRS = BLOCKS.register("oak_brick_stairs", () -> new StairsBlock(Blocks.OAK_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<Block> ORANGE_PLASTIC = BLOCKS.register("orange_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.ORANGE_WOOL)));
+    public static final RegistryObject<Block> PILLAR = BLOCKS.register("pillar", () -> new Block(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> PIPE = BLOCKS.register("pipe", () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> RAW_WOOD = BLOCKS.register("raw_wood", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RED_PLASTIC = BLOCKS.register("red_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.RED_WOOL)));
+    public static final RegistryObject<Block> REINFORCED_PANELING = BLOCKS.register("reinforced_paneling", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> RIVETED_STEEL = BLOCKS.register("riveted_steel", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> RUG = BLOCKS.register("rug", () -> new Block(AbstractBlock.Properties.from(Blocks.LIGHT_BLUE_WOOL)));
+    public static final RegistryObject<Block> RUSTY_IRON = BLOCKS.register("rusty_iron", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> SHALE = BLOCKS.register("shale", () -> new Block(AbstractBlock.Properties.from(Blocks.SNOW_BLOCK)));
+    public static final RegistryObject<Block> SINK = BLOCKS.register("sink", () -> new CauldronBlock(AbstractBlock.Properties.from(Blocks.CAULDRON)));
+    public static final RegistryObject<Block> SMOOTH_METAL = BLOCKS.register("smooth_metal", () -> new Block(AbstractBlock.Properties.from(Blocks.NETHER_BRICKS)));
+    public static final RegistryObject<Block> SMOOTH_METAL_FENCE = BLOCKS.register("smooth_metal_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.NETHER_BRICK_FENCE)));
+    public static final RegistryObject<Block> SMOOTH_METAL_SLAB = BLOCKS.register("smooth_metal_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.NETHER_BRICK_SLAB)));
+    public static final RegistryObject<Block> SMOOTH_METAL_STAIRS = BLOCKS.register("smooth_metal_stairs", () -> new StairsBlock(Blocks.NETHER_BRICK_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.NETHER_BRICK_STAIRS)));
+    public static final RegistryObject<Block> SMOOTH_METAL_WALL = BLOCKS.register("smooth_metal_wall", () -> new WallBlock(AbstractBlock.Properties.from(Blocks.NETHER_BRICK_WALL)));
+    public static final RegistryObject<Block> SPRUCE_BRICKS = BLOCKS.register("spruce_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.SPRUCE_PLANKS)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_FENCE = BLOCKS.register("spruce_brick_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.SPRUCE_FENCE)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_FENCE_GATE = BLOCKS.register("spruce_brick_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.SPRUCE_FENCE_GATE)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_SLAB = BLOCKS.register("spruce_brick_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.SPRUCE_SLAB)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_STAIRS = BLOCKS.register("spruce_brick_stairs", () -> new StairsBlock(Blocks.SPRUCE_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.SPRUCE_STAIRS)));
     public static final RegistryObject<Block> STEP = BLOCKS.register("step", () -> new Block(AbstractBlock.Properties.from(Blocks.SMOOTH_STONE)));
     public static final RegistryObject<Block> STEP_SLAB = BLOCKS.register("step_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.SMOOTH_STONE_SLAB)));
+    public static final RegistryObject<Block> STORAGE_CRATE = BLOCKS.register("storage_crate", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> STRIPE = BLOCKS.register("stripe", () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> TABLE = BLOCKS.register("table", () -> new EnchantingTableBlock(AbstractBlock.Properties.from(Blocks.ENCHANTING_TABLE)) { @Override public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) { return ActionResultType.FAIL; }});
+    public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> TILE_MOSAIC = BLOCKS.register("tile_mosaic", () -> new Block(AbstractBlock.Properties.from(Blocks.LAPIS_BLOCK)));
+    public static final RegistryObject<Block> VIOLET_VELVET = BLOCKS.register("violet_velvet", () -> new Block(AbstractBlock.Properties.from(Blocks.PURPLE_WOOL)));
+    public static final RegistryObject<Block> WARPED_BRICKS = BLOCKS.register("warped_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.WARPED_PLANKS)));
+    public static final RegistryObject<Block> WARPED_BRICK_FENCE = BLOCKS.register("warped_brick_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.WARPED_FENCE)));
+    public static final RegistryObject<Block> WARPED_BRICK_FENCE_GATE = BLOCKS.register("warped_brick_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.WARPED_FENCE_GATE)));
+    public static final RegistryObject<Block> WARPED_BRICK_SLAB = BLOCKS.register("warped_brick_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.WARPED_SLAB)));
+    public static final RegistryObject<Block> WARPED_BRICK_STAIRS = BLOCKS.register("warped_brick_stairs", () -> new StairsBlock(Blocks.WARPED_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.WARPED_STAIRS)));
+    public static final RegistryObject<Block> WHITE_LIGHTING = BLOCKS.register("white_lighting", () -> new Block(AbstractBlock.Properties.from(Blocks.GLOWSTONE)));
+    public static final RegistryObject<Block> WHITE_MARBLE = BLOCKS.register("white_marble", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
+    public static final RegistryObject<Block> WHITE_PLASTIC = BLOCKS.register("white_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<Block> WOODEN_DOOR = BLOCKS.register("wooden_door", () -> new DoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 
 }

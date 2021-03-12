@@ -38,11 +38,12 @@ public class YogMod {
 
     private void clientSetup(final FMLClientSetupEvent event) {
 
-        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.HATCH.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.LADDER.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.HATCH.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LADDER.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WOODEN_DOOR.get(), RenderType.getCutout());
 
     }
 

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "yogmod:asphalt_wall",
-	"yogmod:brick_wall"
+	"yogmod:brick_wall",
+	"yogmod:smooth_metal_wall"
   ]
 }

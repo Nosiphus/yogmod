@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "level=0": {
+      "model": "yogmod:block/sink"
+    },
+    "level=1": {
+      "model": "yogmod:block/sink_level1"
+    },
+    "level=2": {
+      "model": "yogmod:block/sink_level2"
+    },
+    "level=3": {
+      "model": "yogmod:block/sink_level3"
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "yogmod:block/planks_oak",
-        "top": "yogmod:block/planks_oak",
-        "side": "yogmod:block/planks_oak"
-    }
-}
