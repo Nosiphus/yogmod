@@ -1,6 +1,5 @@
 package com.nosiphus.yogmod.init;
 
-import com.nosiphus.yogmod.block.MonitorBlock;
 import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
 import net.minecraftforge.fml.RegistryObject;
@@ -81,8 +80,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever", () -> new LeverBlock(AbstractBlock.Properties.from(Blocks.LEVER)));
     public static final RegistryObject<Block> LIMESTONE_BRICK = BLOCKS.register("limestone_brick", () -> new Block(AbstractBlock.Properties.from(Blocks.BRICKS)));
     public static final RegistryObject<Block> LINOLEUM_TILE = BLOCKS.register("linoleum_tile", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
-    public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor", () -> new MonitorBlock(AbstractBlock.Properties.from(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
-    public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", () -> new MonitorBlock(AbstractBlock.Properties.from(Blocks.PUMPKIN).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor", () -> new CarvedPumpkinBlock(AbstractBlock.Properties.from(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", () -> new CarvedPumpkinBlock(AbstractBlock.Properties.from(Blocks.PUMPKIN).sound(SoundType.GLASS)));
+
 
     public static final RegistryObject<Block> STEP = BLOCKS.register("step", () -> new Block(AbstractBlock.Properties.from(Blocks.SMOOTH_STONE)));
     public static final RegistryObject<Block> STEP_SLAB = BLOCKS.register("step_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.SMOOTH_STONE_SLAB)));
