@@ -101,6 +101,7 @@ public class ModItems {
     public static final RegistryObject<BlockItem> OAK_BRICK_STAIRS = ITEMS.register("oak_brick_stairs", () -> new BlockItem(ModBlocks.OAK_BRICK_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> ORANGE_PLASTIC = ITEMS.register("orange_plastic", () -> new BlockItem(ModBlocks.ORANGE_PLASTIC.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> PILLAR = ITEMS.register("pillar", () -> new BlockItem(ModBlocks.PILLAR.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> PINK_STUCCO = ITEMS.register("pink_stucco", () -> new BlockItem(ModBlocks.PINK_STUCCO.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> PIPE = ITEMS.register("pipe", () -> new BlockItem(ModBlocks.PIPE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> RAW_WOOD = ITEMS.register("raw_wood", () -> new BlockItem(ModBlocks.RAW_WOOD.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> RED_PLASTIC = ITEMS.register("red_plastic", () -> new BlockItem(ModBlocks.RED_PLASTIC.get(), new Item.Properties().group(YogMod.YOGTAB)));

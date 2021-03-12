@@ -97,6 +97,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> OAK_BRICK_STAIRS = BLOCKS.register("oak_brick_stairs", () -> new StairsBlock(Blocks.OAK_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.OAK_STAIRS)));
     public static final RegistryObject<Block> ORANGE_PLASTIC = BLOCKS.register("orange_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.ORANGE_WOOL)));
     public static final RegistryObject<Block> PILLAR = BLOCKS.register("pillar", () -> new Block(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> PINK_STUCCO = BLOCKS.register("pink_stucco", () -> new Block(AbstractBlock.Properties.from(Blocks.PINK_WOOL)));
     public static final RegistryObject<Block> PIPE = BLOCKS.register("pipe", () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
     public static final RegistryObject<Block> RAW_WOOD = BLOCKS.register("raw_wood", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> RED_PLASTIC = BLOCKS.register("red_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.RED_WOOL)));
