@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "yogmod:block/wall_lantern"
+    },
+    "facing=north": {
+      "model": "yogmod:block/wall_lantern",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "yogmod:block/wall_lantern",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "yogmod:block/wall_lantern",
+      "y": 180
+    }
+  }
+}

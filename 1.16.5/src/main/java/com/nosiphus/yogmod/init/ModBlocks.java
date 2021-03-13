@@ -2,17 +2,20 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import sun.reflect.generics.visitor.Reifier;
+
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
@@ -50,7 +53,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CORRUGATED_COPPER = BLOCKS.register("corrugated_copper", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> CORRUGATED_STEEL = BLOCKS.register("corrugated_steel", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> COUNTERTOP = BLOCKS.register("countertop", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
-    //public static final RegistryObject<Block> CRATE
+    // Crate
     public static final RegistryObject<Block> CRIMSON_BRICKS = BLOCKS.register("crimson_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.CRIMSON_PLANKS)));
     public static final RegistryObject<Block> CRIMSON_BRICK_FENCE = BLOCKS.register("crimson_brick_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.CRIMSON_FENCE)));
     public static final RegistryObject<Block> CRIMSON_BRICK_FENCE_GATE = BLOCKS.register("crimson_brick_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.CRIMSON_FENCE_GATE)));
@@ -83,8 +86,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUNGLE_BRICK_STAIRS = BLOCKS.register("jungle_brick_stairs", () -> new StairsBlock(Blocks.JUNGLE_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.JUNGLE_STAIRS)));
     public static final RegistryObject<Block> LADDER = BLOCKS.register("ladder", () -> new LadderBlock(AbstractBlock.Properties.from(Blocks.LADDER)));
     public static final RegistryObject<Block> LAMP = BLOCKS.register("lamp", () -> new RedstoneLampBlock(AbstractBlock.Properties.from(Blocks.REDSTONE_LAMP)));
-    //public static final RegistryObject<Block> LANTERN
-    //public static final RegistryObject<Block> LED
+    public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern", () -> new TorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().zeroHardnessAndResistance().setLightLevel((state) -> {
+        return 14;
+    }).sound(SoundType.WOOD), ParticleTypes.FLAME));
+    public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern", () -> new WallTorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().zeroHardnessAndResistance().setLightLevel((state) -> {
+        return 14;
+    }).sound(SoundType.WOOD).lootFrom(LANTERN), ParticleTypes.FLAME));
+    public static final RegistryObject<Block> LED = BLOCKS.register("led", () -> new RedstoneTorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().zeroHardnessAndResistance().setLightLevel(getLightValueLit(7)).sound(SoundType.WOOD)));
+    private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
+        return (state) -> {
+            return state.get(BlockStateProperties.LIT) ? lightValue : 0;
+        };
+    }
+    public static final RegistryObject<Block> WALL_LED = BLOCKS.register("wall_led", () -> new RedstoneWallTorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().zeroHardnessAndResistance().setLightLevel(getLightValueLit(7)).sound(SoundType.WOOD).lootFrom(LED)));
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever", () -> new LeverBlock(AbstractBlock.Properties.from(Blocks.LEVER)));
     public static final RegistryObject<Block> LIMESTONE_BRICK = BLOCKS.register("limestone_brick", () -> new Block(AbstractBlock.Properties.from(Blocks.BRICKS)));
     public static final RegistryObject<Block> LINOLEUM_TILE = BLOCKS.register("linoleum_tile", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));

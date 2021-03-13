@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -31,6 +30,7 @@ public class YogMod {
 
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
+        ModTileEntities.TILE_ENTITY_TYPES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -42,6 +42,10 @@ public class YogMod {
         RenderTypeLookup.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.HATCH.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LANTERN.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WALL_LANTERN.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LED.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WALL_LED.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.LADDER.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.WOODEN_DOOR.get(), RenderType.getCutout());
 

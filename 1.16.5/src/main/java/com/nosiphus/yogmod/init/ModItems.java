@@ -2,9 +2,8 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.util.Reference;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -12,14 +11,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MODID);
-
-    //Food
-    public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.COFFEE)));
-    public static final RegistryObject<Item> HAMBURGER = ITEMS.register("hamburger", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.HAMBURGER)));
-    public static final RegistryObject<Item> JAFFA = ITEMS.register("jaffa", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.JAFFA)));
-
-    //Items
-    public static final RegistryObject<Item> PENCIL = ITEMS.register("pencil", () -> new Item(new Item.Properties().group(YogMod.YOGTAB)));
 
     //Block Items
     public static final RegistryObject<BlockItem> ACACIA_BRICKS = ITEMS.register("acacia_bricks", () -> new BlockItem(ModBlocks.ACACIA_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
@@ -54,7 +45,7 @@ public class ModItems {
     public static final RegistryObject<BlockItem> CORRUGATED_COPPER = ITEMS.register("corrugated_copper", () -> new BlockItem(ModBlocks.CORRUGATED_COPPER.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CORRUGATED_STEEL = ITEMS.register("corrugated_steel", () -> new BlockItem(ModBlocks.CORRUGATED_STEEL.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> COUNTERTOP = ITEMS.register("countertop", () -> new BlockItem(ModBlocks.COUNTERTOP.get(), new Item.Properties().group(YogMod.YOGTAB)));
-    //public static final RegistryObject<BlockItem> CRATE
+    // public static final RegistryObject<BlockItem> CRATE = ITEMS.register("crate", () -> new BlockItem(ModBlocks.CRATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CRIMSON_BRICKS = ITEMS.register("crimson_bricks", () -> new BlockItem(ModBlocks.CRIMSON_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CRIMSON_BRICK_FENCE = ITEMS.register("crimson_brick_fence", () -> new BlockItem(ModBlocks.CRIMSON_BRICK_FENCE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CRIMSON_BRICK_FENCE_GATE = ITEMS.register("crimson_brick_fence_gate", () -> new BlockItem(ModBlocks.CRIMSON_BRICK_FENCE_GATE.get(), new Item.Properties().group(YogMod.YOGTAB)));
@@ -87,8 +78,8 @@ public class ModItems {
     public static final RegistryObject<BlockItem> JUNGLE_BRICK_STAIRS = ITEMS.register("jungle_brick_stairs", () -> new BlockItem(ModBlocks.JUNGLE_BRICK_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LADDER = ITEMS.register("ladder", () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LAMP = ITEMS.register("lamp", () -> new BlockItem(ModBlocks.LAMP.get(), new Item.Properties().group(YogMod.YOGTAB)));
-    //public static final RegistryObject<BlockItem> LANTERN
-    //public static final RegistryObject<BlockItem> LED
+    public static final RegistryObject<BlockItem> LANTERN = ITEMS.register("lantern", () -> new WallOrFloorItem(ModBlocks.LANTERN.get(), ModBlocks.WALL_LANTERN.get(), new Item.Properties().group(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LED = ITEMS.register("led", () -> new WallOrFloorItem(ModBlocks.LED.get(), ModBlocks.WALL_LED.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LEVER = ITEMS.register("lever", () -> new BlockItem(ModBlocks.LEVER.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LIMESTONE_BRICK = ITEMS.register("limestone_brick", () -> new BlockItem(ModBlocks.LIMESTONE_BRICK.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LINOLEUM_TILE = ITEMS.register("linoleum_tile", () -> new BlockItem(ModBlocks.LINOLEUM_TILE.get(), new Item.Properties().group(YogMod.YOGTAB)));
@@ -138,5 +129,13 @@ public class ModItems {
     public static final RegistryObject<BlockItem> WHITE_MARBLE = ITEMS.register("white_marble", () -> new BlockItem(ModBlocks.WHITE_MARBLE.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> WHITE_PLASTIC = ITEMS.register("white_plastic", () -> new BlockItem(ModBlocks.WHITE_PLASTIC.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> WOODEN_DOOR = ITEMS.register("wooden_door", () -> new BlockItem(ModBlocks.WOODEN_DOOR.get(), new Item.Properties().group(YogMod.YOGTAB)));
+
+    //Food
+    public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.COFFEE)));
+    public static final RegistryObject<Item> HAMBURGER = ITEMS.register("hamburger", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.HAMBURGER)));
+    public static final RegistryObject<Item> JAFFA = ITEMS.register("jaffa", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.JAFFA)));
+
+    //Items
+    public static final RegistryObject<Item> PENCIL = ITEMS.register("pencil", () -> new Item(new Item.Properties().group(YogMod.YOGTAB)));
 
 }
