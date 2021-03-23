@@ -30,7 +30,6 @@ public class YogMod {
 
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
-        ModTileEntities.TILE_ENTITY_TYPES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

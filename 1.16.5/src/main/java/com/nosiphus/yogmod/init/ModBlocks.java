@@ -53,7 +53,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> CORRUGATED_COPPER = BLOCKS.register("corrugated_copper", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> CORRUGATED_STEEL = BLOCKS.register("corrugated_steel", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> COUNTERTOP = BLOCKS.register("countertop", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
-    // Crate
     public static final RegistryObject<Block> CRIMSON_BRICKS = BLOCKS.register("crimson_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.CRIMSON_PLANKS)));
     public static final RegistryObject<Block> CRIMSON_BRICK_FENCE = BLOCKS.register("crimson_brick_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.CRIMSON_FENCE)));
     public static final RegistryObject<Block> CRIMSON_BRICK_FENCE_GATE = BLOCKS.register("crimson_brick_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.CRIMSON_FENCE_GATE)));
