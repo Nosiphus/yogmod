@@ -102,6 +102,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LIMESTONE_BRICK = BLOCKS.register("limestone_brick", () -> new Block(AbstractBlock.Properties.from(Blocks.BRICKS)));
     public static final RegistryObject<Block> LINOLEUM_TILE = BLOCKS.register("linoleum_tile", () -> new Block(AbstractBlock.Properties.from(Blocks.STONE)));
     public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor", () -> new CarvedPumpkinBlock(AbstractBlock.Properties.from(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> METROVOX_RAIL = BLOCKS.register("metrovox_rail", () -> new RailBlock(AbstractRailBlock.Properties.from(Blocks.RAIL)));
     public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", () -> new CarvedPumpkinBlock(AbstractBlock.Properties.from(Blocks.PUMPKIN).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> OAK_BRICKS = BLOCKS.register("oak_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> OAK_BRICK_FENCE = BLOCKS.register("oak_brick_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.OAK_FENCE)));
@@ -112,6 +113,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PILLAR = BLOCKS.register("pillar", () -> new Block(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
     public static final RegistryObject<Block> PINK_STUCCO = BLOCKS.register("pink_stucco", () -> new Block(AbstractBlock.Properties.from(Blocks.PINK_WOOL)));
     public static final RegistryObject<Block> PIPE = BLOCKS.register("pipe", () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> POWERED_RAIL = BLOCKS.register("powered_rail", () -> new PoweredRailBlock(AbstractRailBlock.Properties.from(Blocks.POWERED_RAIL), true));
     public static final RegistryObject<Block> RAW_WOOD = BLOCKS.register("raw_wood", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> RED_PLASTIC = BLOCKS.register("red_plastic", () -> new Block(AbstractBlock.Properties.from(Blocks.RED_WOOL)));
     public static final RegistryObject<Block> REINFORCED_PANELING = BLOCKS.register("reinforced_paneling", () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_BLOCK)));
