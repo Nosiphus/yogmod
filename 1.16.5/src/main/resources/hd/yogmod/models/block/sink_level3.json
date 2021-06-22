@@ -1,0 +1,21 @@
+{
+	"__comment": "Designed by Sphax with BDcraft Cubik PRO 0.75 Beta - http://bdcraft.net",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "yogmod:block/sink_side",
+		"inside": "yogmod:block/sink_inner",
+		"top": "yogmod:block/sink_top",
+		"side": "yogmod:block/sink_side",
+		"water": "block/water_still"
+	},
+	"elements": [ 	 
+		{
+			"from": [ 2, 15, 2 ],
+			"to": [ 14, 15.001, 14 ],
+			"faces": {
+				"up": { "uv": [ 2, 2, 14, 14 ], "texture": "#water", "tintindex": 0 }
+			}
+		}
+	]
+}

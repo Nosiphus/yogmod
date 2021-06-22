@@ -1,8 +1,10 @@
 {
-"parent": "yogmod:item/glasspane-full",
+"__comment": "Designed by HanFox with BDcraft Cubik PRO 0.96 Beta - http://bdcraft.net",
+"__comment": "Converted for use with YogMod",
+"parent": "item/_bdc/glass_pane",
 "textures": {
-    "front": "yogmod:blocks/glass",
-    "side": "yogmod:blocks/glasspane"
+    "front": "yogmod:block/glass",
+    "side": "yogmod:block/glass_pane_top"
 },
 "elements": [ 
 {
