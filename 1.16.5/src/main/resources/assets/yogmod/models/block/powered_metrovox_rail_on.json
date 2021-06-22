@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/rail_flat",
   "textures": {
-    "rail": "yogmod:block/powered_rail_on"
+    "rail": "yogmod:block/powered_metrovox_rail_on"
   }
 }

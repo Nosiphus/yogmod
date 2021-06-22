@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "yogmod:metrovox_rail",
-	"yogmod:powered_rail"
+	"yogmod:metrovox_detector_rail",
+	"yogmod:powered_metrovox_rail"
   ]
 }
