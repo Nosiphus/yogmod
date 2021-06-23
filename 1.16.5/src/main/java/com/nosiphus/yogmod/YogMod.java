@@ -2,7 +2,6 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
-import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
@@ -16,7 +15,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(Reference.MODID)
+@Mod("yogmod")
 public class YogMod {
 
     public static final Logger LOGGER = LogManager.getLogger();
