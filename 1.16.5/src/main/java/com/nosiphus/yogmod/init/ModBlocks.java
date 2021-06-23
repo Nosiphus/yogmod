@@ -1,7 +1,6 @@
 package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.block.PoweredMetroVoxRailBlock;
-import com.nosiphus.yogmod.util.Reference;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,9 +20,9 @@ import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "yogmod");
 
-	//Blocks - VoxelBox Scientific Building Blocks
+	//Building Blocks
 	public static final RegistryObject<Block> ASPHALT = BLOCKS.register("asphalt", () -> new Block(AbstractBlock.Properties.from(Blocks.COBBLESTONE)));
 	public static final RegistryObject<Block> OAK_BRICKS = BLOCKS.register("oak_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> SPRUCE_BRICKS = BLOCKS.register("spruce_bricks", () -> new Block(AbstractBlock.Properties.from(Blocks.SPRUCE_PLANKS)));
@@ -112,7 +111,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> RAW_WOOD_STAIRS = BLOCKS.register("raw_wood_stairs", () -> new StairsBlock(Blocks.STONE_BRICK_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.STONE_BRICK_STAIRS)));
 	public static final RegistryObject<Block> SMOOTH_METAL_STAIRS = BLOCKS.register("smooth_metal_stairs", () -> new StairsBlock(Blocks.NETHER_BRICK_STAIRS.getDefaultState(), AbstractBlock.Properties.from(Blocks.NETHER_BRICK_STAIRS)));
 	
-	//Blocks - VoxelBox Scientific Decoration Blocks
+	//Decoration Blocks
 	public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern", () -> new TorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().zeroHardnessAndResistance().setLightLevel((state) -> {
         return 14;
     }).sound(SoundType.WOOD), ParticleTypes.FLAME));
@@ -161,7 +160,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> BLACK_MARBLE_CARPET = BLOCKS.register("black_marble_carpet", () -> new CarpetBlock(DyeColor.BLACK, AbstractBlock.Properties.from(Blocks.BLACK_CARPET)));
 	//Sign when implemented
 	
-	//Blocks - VoxelBox Scientific Redstone
+	//Redstone
 	public static final RegistryObject<Block> CONSOLE = BLOCKS.register("console", () -> new NoteBlock(AbstractBlock.Properties.from(Blocks.NOTE_BLOCK)));
 	//Piston when implemented
 	//Sticky Piston when implemented
@@ -190,13 +189,13 @@ public class ModBlocks {
 	//Repeater when implemented
 	//Wire when implemented
 
-    //Blocks - VoxelBox Scientific Transportation
+    //Transportation
 	public static final RegistryObject<Block> POWERED_METROVOX_RAIL = BLOCKS.register("powered_metrovox_rail", () -> new PoweredMetroVoxRailBlock(AbstractRailBlock.Properties.from(Blocks.POWERED_RAIL), true));
     public static final RegistryObject<Block> METROVOX_DETECTOR_RAIL = BLOCKS.register("metrovox_detector_rail", () -> new DetectorRailBlock(AbstractBlock.Properties.from(Blocks.DETECTOR_RAIL)));
     public static final RegistryObject<Block> METROVOX_RAIL = BLOCKS.register("metrovox_rail", () -> new RailBlock(AbstractRailBlock.Properties.from(Blocks.RAIL)));
 	public static final RegistryObject<Block> METROVOX_ACTIVATOR_RAIL = BLOCKS.register("metrovox_activator_rail", () -> new PoweredMetroVoxRailBlock(AbstractRailBlock.Properties.from(Blocks.ACTIVATOR_RAIL), false));
     
-    //Blocks - VoxelBox Scientific Brewing
+    //Brewing
     public static final RegistryObject<Block> SINK = BLOCKS.register("sink", () -> new CauldronBlock(AbstractBlock.Properties.from(Blocks.CAULDRON)));
     
     

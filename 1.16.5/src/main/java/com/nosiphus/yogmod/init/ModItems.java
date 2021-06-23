@@ -1,8 +1,6 @@
 package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.YogMod;
-import com.nosiphus.yogmod.util.Reference;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -10,9 +8,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModItems {
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "yogmod");
 
-    //Block Items - VoxelBox Scientific Building Blocks
+    //Building Blocks
     public static final RegistryObject<BlockItem> ASPHALT = ITEMS.register("asphalt", () -> new BlockItem(ModBlocks.ASPHALT.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	public static final RegistryObject<BlockItem> OAK_BRICKS = ITEMS.register("oak_bricks", () -> new BlockItem(ModBlocks.OAK_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	public static final RegistryObject<BlockItem> SPRUCE_BRICKS = ITEMS.register("spruce_bricks", () -> new BlockItem(ModBlocks.SPRUCE_BRICKS.get(), new Item.Properties().group(YogMod.YOGTAB)));
@@ -101,7 +99,7 @@ public class ModItems {
 	public static final RegistryObject<BlockItem> RAW_WOOD_STAIRS = ITEMS.register("raw_wood_stairs", () -> new BlockItem(ModBlocks.RAW_WOOD_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	public static final RegistryObject<BlockItem> SMOOTH_METAL_STAIRS = ITEMS.register("smooth_metal_stairs", () -> new BlockItem(ModBlocks.SMOOTH_METAL_STAIRS.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	
-	//Block Items - VoxelBox Scientific Decoration Blocks
+	//Decoration Blocks
 	public static final RegistryObject<BlockItem> LANTERN = ITEMS.register("lantern", () -> new WallOrFloorItem(ModBlocks.LANTERN.get(), ModBlocks.WALL_LANTERN.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	//Crate will go here when implemented
 	public static final RegistryObject<BlockItem> TECH_ACCENT = ITEMS.register("tech_accent", () -> new BlockItem(ModBlocks.TECH_ACCENT.get(), new Item.Properties().group(YogMod.YOGTAB)));
@@ -145,7 +143,7 @@ public class ModItems {
 	public static final RegistryObject<BlockItem> BLACK_MARBLE_CARPET = ITEMS.register("black_marble_carpet", () -> new BlockItem(ModBlocks.BLACK_MARBLE_CARPET.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	//Sign when implemented
 	
-	//Block Items - VoxelBox Scientific Redstone
+	//Redstone
 	public static final RegistryObject<BlockItem> CONSOLE = ITEMS.register("console", () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	//Sticky Piston when implemented
 	//Piston when implemented
@@ -169,21 +167,23 @@ public class ModItems {
 	//Repeater when implemented
 	//Wire when implemented
 	
-	//Block Items - VoxelBox Scientific Transporation
+	//Transporation
 	public static final RegistryObject<BlockItem> POWERED_METROVOX_RAIL = ITEMS.register("powered_metrovox_rail", () -> new BlockItem(ModBlocks.POWERED_METROVOX_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	public static final RegistryObject<BlockItem> METROVOX_DETECTOR_RAIL = ITEMS.register("metrovox_detector_rail", () -> new BlockItem(ModBlocks.METROVOX_DETECTOR_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> METROVOX_RAIL = ITEMS.register("metrovox_rail", () -> new BlockItem(ModBlocks.METROVOX_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	public static final RegistryObject<BlockItem> METROVOX_ACTIVATOR_RAIL = ITEMS.register("metrovox_activator_rail", () -> new BlockItem(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	
-	//Block Items - VoxelBox Brewing
-	public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink", () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().group(YogMod.YOGTAB)));
-	
-    //Food
+    //Miscellaneous
     public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.COFFEE)));
     public static final RegistryObject<Item> HAMBURGER = ITEMS.register("hamburger", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.HAMBURGER)));
+
+    //Foodstuffs
     public static final RegistryObject<Item> JAFFA = ITEMS.register("jaffa", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.JAFFA)));
 
-    //Items
+    //Tools
     public static final RegistryObject<Item> PENCIL = ITEMS.register("pencil", () -> new Item(new Item.Properties().group(YogMod.YOGTAB)));
+
+	//Brewing
+	public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink", () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().group(YogMod.YOGTAB)));
 
 }
