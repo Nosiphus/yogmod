@@ -3,6 +3,8 @@
   "values": [
     "yogmod:asphalt_wall",
 	"yogmod:brick_wall",
+	"yogmod:iron_plate_wall",
+	"yogmod:raw_wood_wall",
 	"yogmod:smooth_metal_wall"
   ]
 }

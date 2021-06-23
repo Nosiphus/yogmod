@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:block/rug"
+    "all": "yogmod:block/lime_plastic"
   }
 }

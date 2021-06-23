@@ -46,6 +46,7 @@ public class YogMod {
         RenderTypeLookup.setRenderLayer(ModBlocks.LED.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.WALL_LED.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.LADDER.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.METROVOX_DETECTOR_RAIL.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.METROVOX_RAIL.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.POWERED_METROVOX_RAIL.get(), RenderType.getCutout());

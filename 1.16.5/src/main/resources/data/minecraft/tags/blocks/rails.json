@@ -1,8 +1,9 @@
 {
   "replace": false,
   "values": [
+    "yogmod:metrovox_activator_rail",
+    "yogmod:metrovox_detector_rail",
     "yogmod:metrovox_rail",
-	"yogmod:metrovox_detector_rail",
 	"yogmod:powered_metrovox_rail"
   ]
 }
