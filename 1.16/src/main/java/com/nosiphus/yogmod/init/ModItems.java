@@ -2,9 +2,14 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.YogMod;
 import net.minecraft.item.*;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
+
+import java.util.Objects;
 
 public class ModItems {
 
@@ -172,7 +177,7 @@ public class ModItems {
 	public static final RegistryObject<BlockItem> METROVOX_DETECTOR_RAIL = ITEMS.register("metrovox_detector_rail", () -> new BlockItem(ModBlocks.METROVOX_DETECTOR_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> METROVOX_RAIL = ITEMS.register("metrovox_rail", () -> new BlockItem(ModBlocks.METROVOX_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
 	public static final RegistryObject<BlockItem> METROVOX_ACTIVATOR_RAIL = ITEMS.register("metrovox_activator_rail", () -> new BlockItem(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), new Item.Properties().group(YogMod.YOGTAB)));
-	
+
     //Miscellaneous
     public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.COFFEE)));
     public static final RegistryObject<Item> HAMBURGER = ITEMS.register("hamburger", () -> new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.HAMBURGER)));
