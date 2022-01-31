@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.init;
 
+import com.nosiphus.yogmod.Reference;
 import com.nosiphus.yogmod.YogMod;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
@@ -12,6 +13,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.Objects;
 
 public class ModItems {
+
+	/*
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "yogmod");
 
@@ -190,5 +193,18 @@ public class ModItems {
 
 	//Brewing
 	public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink", () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().group(YogMod.YOGTAB)));
+
+	 */
+
+	public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
+
+	public static final RegistryObject<Item> COFFEE = register("coffee", new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.COFFEE)));
+	public static final RegistryObject<Item> HAMBURGER = register("hamburger", new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.HAMBURGER)));
+	public static final RegistryObject<Item> JAFFA = register("jaffa", new Item(new Item.Properties().group(YogMod.YOGTAB).food(ModFoods.JAFFA)));
+	public static final RegistryObject<Item> PENCIL = register("pencil", new Item(new Item.Properties().group(YogMod.YOGTAB)));
+
+	private static RegistryObject<Item> register(String name, Item item) {
+		return REGISTER.register(name, () -> item);
+	}
 
 }
