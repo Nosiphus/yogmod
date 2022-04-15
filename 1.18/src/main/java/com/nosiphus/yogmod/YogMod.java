@@ -43,19 +43,19 @@ public class YogMod {
     private void clientSetup(final FMLClientSetupEvent event) {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.HATCH.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.HATCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.LANTERN.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WALL_LANTERN.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.LED.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.WALL_LED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WALL_LED.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.LADDER.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_DETECTOR_RAIL.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_RAIL.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.POWERED_METROVOX_RAIL.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODEN_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_DETECTOR_RAIL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_RAIL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POWERED_METROVOX_RAIL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODEN_DOOR.get(), RenderType.cutout());
 
     }
 

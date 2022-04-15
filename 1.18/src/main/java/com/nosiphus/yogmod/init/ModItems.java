@@ -5,6 +5,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -215,10 +216,115 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.WARPED_BRICK_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> SMOOTH_METAL_FENCE = ITEMS.register("smooth_metal_fence",
             () -> new BlockItem(ModBlocks.SMOOTH_METAL_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> AIR_VENT = ITEMS.register("air_vent",
+            () -> new BlockItem(ModBlocks.AIR_VENT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GLASS_PANE = ITEMS.register("glass_pane",
+            () -> new BlockItem(ModBlocks.GLASS_PANE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CURTAINS = ITEMS.register("curtains",
+            () -> new BlockItem(ModBlocks.CURTAINS.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> TABLE = ITEMS.register("table",
+            () -> new BlockItem(ModBlocks.TABLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> FANCY_TABLE = ITEMS.register("fancy_table",
+            () -> new BlockItem(ModBlocks.FANCY_TABLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    //Fridge will go here when implemented
+    public static final RegistryObject<BlockItem> ASPHALT_WALL = ITEMS.register("asphalt_wall",
+            () -> new BlockItem(ModBlocks.ASPHALT_WALL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> IRON_PLATE_WALL = ITEMS.register("iron_plate_wall",
+            () -> new BlockItem(ModBlocks.IRON_PLATE_WALL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BRICK_WALL = ITEMS.register("brick_wall",
+            () -> new BlockItem(ModBlocks.BRICK_WALL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> RAW_WOOD_WALL = ITEMS.register("raw_wood_wall",
+            () -> new BlockItem(ModBlocks.RAW_WOOD_WALL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> SMOOTH_METAL_WALL = ITEMS.register("smooth_metal_wall",
+            () -> new BlockItem(ModBlocks.SMOOTH_METAL_WALL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BEIGE_PLASTIC_CARPET = ITEMS.register("beige_plastic_carpet",
+            () -> new BlockItem(ModBlocks.BEIGE_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> WHITE_PLASTIC_CARPET = ITEMS.register("white_plastic_carpet",
+            () -> new BlockItem(ModBlocks.WHITE_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> ORANGE_PLASTIC_CARPET = ITEMS.register("orange_plastic_carpet",
+            () -> new BlockItem(ModBlocks.ORANGE_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> MAGENTA_PLASTIC_CARPET = ITEMS.register("magenta_plastic_carpet",
+            () -> new BlockItem(ModBlocks.MAGENTA_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_PLASTIC_CARPET = ITEMS.register("light_blue_plastic_carpet",
+            () -> new BlockItem(ModBlocks.LIGHT_BLUE_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GOLD_FILGAREE_CARPET = ITEMS.register("gold_filgaree_carpet",
+            () -> new BlockItem(ModBlocks.GOLD_FILGAREE_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LIME_PLASTIC_CARPET = ITEMS.register("lime_plastic_carpet",
+            () -> new BlockItem(ModBlocks.LIME_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> PINK_STUCCO_CARPET = ITEMS.register("pink_stucco_carpet",
+            () -> new BlockItem(ModBlocks.PINK_STUCCO_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GRAY_STUCCO_CARPET = ITEMS.register("gray_stucco_carpet",
+            () -> new BlockItem(ModBlocks.GRAY_STUCCO_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_STUCCO_CARPET = ITEMS.register("light_gray_stucco_carpet",
+            () -> new BlockItem(ModBlocks.LIGHT_GRAY_STUCCO_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CYAN_PLASTIC_CARPET = ITEMS.register("cyan_plastic_carpet",
+            () -> new BlockItem(ModBlocks.CYAN_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> VIOLET_VELVET_CARPET = ITEMS.register("violet_velvet_carpet",
+            () -> new BlockItem(ModBlocks.VIOLET_VELVET_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BLUE_PLASTIC_CARPET = ITEMS.register("blue_plastic_carpet",
+            () -> new BlockItem(ModBlocks.BLUE_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BROWN_STUCCO_CARPET = ITEMS.register("brown_stucco_carpet",
+            () -> new BlockItem(ModBlocks.BROWN_STUCCO_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> GREEN_PLASTIC_CARPET = ITEMS.register("green_plastic_carpet",
+            () -> new BlockItem(ModBlocks.GREEN_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> RED_PLASTIC_CARPET = ITEMS.register("red_plastic_carpet",
+            () -> new BlockItem(ModBlocks.RED_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BLACK_MARBLE_CARPET = ITEMS.register("black_marble_carpet",
+            () -> new BlockItem(ModBlocks.BLACK_MARBLE_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    //Sign will go here when implemented
 
     //Redstone
+    public static final RegistryObject<BlockItem> CONSOLE = ITEMS.register("console",
+            () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    //Piston will go here when implemented
+    //Sticky Piston will go here when implemented
+    public static final RegistryObject<BlockItem> CLASSIC_LEVER = ITEMS.register("classic_lever",
+            () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LEVER = ITEMS.register("lever",
+            () -> new BlockItem(ModBlocks.LEVER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    //Pressure Plates will go here when implemented
+    public static final RegistryObject<BlockItem> LED = ITEMS.register("led",
+            () -> new StandingAndWallBlockItem(ModBlocks.LED.get(), ModBlocks.WALL_LED.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> HATCH = ITEMS.register("hatch",
+            () -> new BlockItem(ModBlocks.HATCH.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> OAK_BRICK_FENCE_GATE = ITEMS.register("oak_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.OAK_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> SPRUCE_BRICK_FENCE_GATE = ITEMS.register("spruce_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.SPRUCE_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BIRCH_BRICK_FENCE_GATE = ITEMS.register("birch_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.BIRCH_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICK_FENCE_GATE = ITEMS.register("jungle_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.JUNGLE_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> ACACIA_BRICK_FENCE_GATE = ITEMS.register("acacia_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.ACACIA_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICK_FENCE_GATE = ITEMS.register("dark_oak_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.DARK_OAK_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICK_FENCE_GATE = ITEMS.register("crimson_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.CRIMSON_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> WARPED_BRICK_FENCE_GATE = ITEMS.register("warped_brick_fence_gate",
+            () -> new BlockItem(ModBlocks.WARPED_BRICK_FENCE_GATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> LAMP = ITEMS.register("lamp",
+            () -> new BlockItem(ModBlocks.LAMP.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> IRON_DOOR = ITEMS.register("iron_door",
+            () -> new BlockItem(ModBlocks.IRON_DOOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> WOODEN_DOOR = ITEMS.register("wooden_door",
+            () -> new BlockItem(ModBlocks.WOODEN_DOOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    //Repeater will go here when implemented
+    //Wire will go here when implemented
 
     //Transportation
+    public static final RegistryObject<BlockItem> POWERED_METROVOX_RAIL = ITEMS.register("powered_metrovox_rail",
+            () -> new BlockItem(ModBlocks.POWERED_METROVOX_RAIL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> METROVOX_DETECTOR_RAIL = ITEMS.register("metrovox_detector_rail",
+            () -> new BlockItem(ModBlocks.METROVOX_DETECTOR_RAIL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> METROVOX_RAIL = ITEMS.register("metrovox_rail",
+            () -> new BlockItem(ModBlocks.METROVOX_RAIL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> METROVOX_ACTIVATOR_RAIL = ITEMS.register("metrovox_activator_rail",
+            () -> new BlockItem(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+
+    //Brewing
+    public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink",
+            () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Miscellaneous
     public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee",
