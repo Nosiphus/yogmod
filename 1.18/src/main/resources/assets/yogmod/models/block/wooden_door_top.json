@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "yogmod:block/wooden_door_top",
+    "bottom": "yogmod:block/wooden_door_bottom"
+  }
+}

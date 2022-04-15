@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "yogmod:block/countertop_end",
+    "side": "yogmod:block/countertop"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "yogmod:block/warped_brick_slab"
+    },
+    "type=double": {
+      "model": "yogmod:block/warped_bricks"
+    },
+    "type=top": {
+      "model": "yogmod:block/warped_brick_slab_top"
+    }
+  }
+}
