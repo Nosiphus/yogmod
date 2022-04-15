@@ -1,7 +1,9 @@
 package com.nosiphus.yogmod.init;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -133,5 +135,99 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> CORRUGATED_COPPER = BLOCKS.register("corrugated_copper",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> BLUE_PANELING = BLOCKS.register("blue_paneling",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> CIRCUITRY = BLOCKS.register("circuitry",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
+    public static final RegistryObject<Block> CONCRETE = BLOCKS.register("concrete",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE)));
+    public static final RegistryObject<Block> SHALE = BLOCKS.register("shale",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)));
+    public static final RegistryObject<Block> WHITE_LIGHTING = BLOCKS.register("white_lighting",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)));
+    public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor",
+            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> CAUTION_TAPE = BLOCKS.register("caution_tape",
+            () -> new SoulSandBlock(BlockBehaviour.Properties.copy(Blocks.SOUL_SAND).sound(SoundType.SAND)));
+    public static final RegistryObject<Block> FLUORESCENT_PANEL = BLOCKS.register("fluorescent_panel",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor",
+            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> RAW_WOOD = BLOCKS.register("raw_wood",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> COUNTERTOP = BLOCKS.register("countertop",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> SMOOTH_METAL = BLOCKS.register("smooth_metal",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS)));
+    public static final RegistryObject<Block> GREEN_TILES = BLOCKS.register("green_tiles",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)));
+    public static final RegistryObject<Block> OAK_BRICK_STAIRS = BLOCKS.register("oak_brick_stairs",
+            () -> new StairBlock(OAK_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_STAIRS = BLOCKS.register("spruce_brick_stairs",
+            () -> new StairBlock(SPRUCE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SPRUCE_STAIRS)));
+    public static final RegistryObject<Block> BIRCH_BRICK_STAIRS = BLOCKS.register("birch_brick_stairs",
+            () -> new StairBlock(BIRCH_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BIRCH_STAIRS)));
+    public static final RegistryObject<Block> JUNGLE_BRICK_STAIRS = BLOCKS.register("jungle_brick_stairs",
+            () -> new StairBlock(JUNGLE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS)));
+    public static final RegistryObject<Block> ACACIA_BRICK_STAIRS = BLOCKS.register("acacia_brick_stairs",
+            () -> new StairBlock(ACACIA_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ACACIA_STAIRS)));
+    public static final RegistryObject<Block> DARK_OAK_BRICK_STAIRS = BLOCKS.register("dark_oak_brick_stairs",
+            () -> new StairBlock(DARK_OAK_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DARK_OAK_STAIRS)));
+    public static final RegistryObject<Block> CRIMSON_BRICK_STAIRS = BLOCKS.register("crimson_brick_stairs",
+            () -> new StairBlock(CRIMSON_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CRIMSON_STAIRS)));
+    public static final RegistryObject<Block> WARPED_BRICK_STAIRS = BLOCKS.register("warped_brick_stairs",
+            () -> new StairBlock(WARPED_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.WARPED_STAIRS)));
+    public static final RegistryObject<Block> ASPHALT_STAIRS = BLOCKS.register("asphalt_stairs",
+            () -> new StairBlock(ASPHALT.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_STAIRS)));
+    public static final RegistryObject<Block> IRON_PLATE_STAIRS = BLOCKS.register("iron_plate_stairs",
+            () -> new StairBlock(IRON_PLATE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE_STAIRS)));
+    public static final RegistryObject<Block> BRICK_STAIRS = BLOCKS.register("brick_stairs",
+            () -> new StairBlock(BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BRICK_STAIRS)));
+    public static final RegistryObject<Block> RAW_WOOD_STAIRS = BLOCKS.register("raw_wood_stairs",
+            () -> new StairBlock(RAW_WOOD.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
+    public static final RegistryObject<Block> SMOOTH_METAL_STAIRS = BLOCKS.register("smooth_metal_stairs",
+            () -> new StairBlock(SMOOTH_METAL.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_STAIRS)));
+
+    //Decoration Blocks
+    public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern",
+            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .noCollission()
+                    .instabreak()
+                    .lightLevel((p_50886_) -> { return 14; })
+                    .sound(SoundType.WOOD),
+                    ParticleTypes.FLAME));
+    public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern",
+            () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .noCollission()
+                    .instabreak()
+                    .lightLevel((p_152607_) -> { return 14; })
+                    .sound(SoundType.WOOD)
+                    .lootFrom(LANTERN),
+                    ParticleTypes.FLAME));
+    //Crate will go here when implemented
+    public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
+    public static final RegistryObject<Block> LADDER = BLOCKS.register("ladder",
+            () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER)));
+    public static final RegistryObject<Block> OAK_BRICK_FENCE = BLOCKS.register("oak_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_FENCE = BLOCKS.register("spruce_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE)));
+    public static final RegistryObject<Block> BIRCH_BRICK_FENCE = BLOCKS.register("birch_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_FENCE)));
+    public static final RegistryObject<Block> JUNGLE_BRICK_FENCE = BLOCKS.register("jungle_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE)));
+    public static final RegistryObject<Block> ACACIA_BRICK_FENCE = BLOCKS.register("acacia_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_FENCE)));
+    public static final RegistryObject<Block> DARK_OAK_BRICK_FENCE = BLOCKS.register("dark_oak_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE)));
+    public static final RegistryObject<Block> CRIMSON_BRICK_FENCE = BLOCKS.register("crimson_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE)));
+    public static final RegistryObject<Block> WARPED_BRICK_FENCE = BLOCKS.register("warped_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE)));
+    public static final RegistryObject<Block> SMOOTH_METAL_FENCE = BLOCKS.register("smooth_metal_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_FENCE)));
+
+
 
 }
