@@ -1,6 +1,0 @@
-{
-    "parent": "yogmod:block/hatchw_bottom",
-    "textures": {
-        "texture": "yogmod:blocks/hatch"
-    }
-}

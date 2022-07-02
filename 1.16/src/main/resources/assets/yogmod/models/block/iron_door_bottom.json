@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom",
-  "textures": {
-    "top": "yogmod:block/iron_door_top",
-    "bottom": "yogmod:block/iron_door_bottom"
-  }
-}

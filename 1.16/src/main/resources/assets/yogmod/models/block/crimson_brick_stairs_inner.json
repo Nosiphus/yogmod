@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "yogmod:block/crimson_bricks",
-    "top": "yogmod:block/crimson_bricks",
-    "side": "yogmod:block/crimson_bricks"
-  }
-}

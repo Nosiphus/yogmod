@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "yogmod:block/dark_oak_bricks",
-    "top": "yogmod:block/dark_oak_bricks",
-    "side": "yogmod:block/dark_oak_bricks"
-  }
-}

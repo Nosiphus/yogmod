@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "yogmod:block/metrovox_detector_rail"
-  }
-}

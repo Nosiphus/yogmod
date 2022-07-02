@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "yogmod:block/warped_bricks",
-    "top": "yogmod:block/warped_bricks",
-    "side": "yogmod:block/warped_bricks"
-  }
-}

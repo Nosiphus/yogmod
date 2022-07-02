@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "yogmod:block/oak_bricks",
-    "top": "yogmod:block/oak_bricks",
-    "side": "yogmod:block/oak_bricks"
-  }
-}

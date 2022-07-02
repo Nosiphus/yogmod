@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "yogmod:block/raw_wood",
-    "top": "yogmod:block/raw_wood",
-    "side": "yogmod:block/raw_wood"
-  }
-}

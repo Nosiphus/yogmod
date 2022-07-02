@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "yogmod:block/stripe_end",
-    "side": "yogmod:block/stripe"
-  }
-}

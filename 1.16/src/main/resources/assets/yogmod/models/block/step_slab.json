@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "yogmod:block/step",
-    "top": "yogmod:block/step",
-    "side": "yogmod:block/step"
-  }
-}

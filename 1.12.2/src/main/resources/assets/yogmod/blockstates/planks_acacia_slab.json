@@ -1,7 +1,0 @@
-{
-    "variants":
-    {
-        "half=bottom,variant=default": { "model": "yogmod:planks_acacia_slab_bottom" },
-        "half=top,variant=default": { "model": "yogmod:planks_acacia_slab_top" }
-    }
-}

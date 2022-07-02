@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "yogmod:block/smooth_metal",
-    "top": "yogmod:block/smooth_metal",
-    "side": "yogmod:block/smooth_metal"
-  }
-}

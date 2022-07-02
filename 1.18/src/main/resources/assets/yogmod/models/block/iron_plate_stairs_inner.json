@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "yogmod:block/iron_plate",
-    "top": "yogmod:block/iron_plate",
-    "side": "yogmod:block/iron_plate"
-  }
-}

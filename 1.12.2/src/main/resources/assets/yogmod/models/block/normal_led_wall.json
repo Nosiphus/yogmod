@@ -1,6 +1,0 @@
-{
-    "parent": "yogmod:block/lantern_wall",
-    "textures": {
-        "lantern": "yogmod:blocks/led_off"
-    }
-}
