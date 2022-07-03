@@ -1,3 +1,7 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="https://opensource.org/licenses/MIT"
+issueTrackerURL="https://github.com/Nosiphus/yogmod/issues"
 [[mods]]
 modId="yogmod"
 version="2022.07.02"
@@ -10,14 +14,14 @@ authors="Nosiphus"
 description="A mod that adds the VoxelBox Scientific as separate blocks."
 
 [[dependencies.yogmod]]
-    modId="forge"
-    mandatory=true
-    versionRange="[40,)"
-    ordering="NONE"
-    side="BOTH"
+modId="forge"
+mandatory=true
+versionRange="[40,)"
+ordering="NONE"
+side="BOTH"
 [[dependencies.yogmod]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.18.2,)"
-    ordering="NONE"
-    side="BOTH"
+modId="minecraft"
+mandatory=true
+versionRange="[1.18.2,)"
+ordering="NONE"
+side="BOTH"
