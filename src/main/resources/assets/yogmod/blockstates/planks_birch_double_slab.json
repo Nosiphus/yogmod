@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "yogmod:planks_birch_double_slab" }
+    }
+}

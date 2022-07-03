@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "yogmod:double_step" }
+    }
+}

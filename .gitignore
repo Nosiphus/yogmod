@@ -1,5 +1,25 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-1.16.5/src/main/resources/assets/yogmod/textures/block/Thumbs.db
-1.16.5/src/main/resources/assets/yogmod/textures/item/Thumbs.db
-1.16.5/src/main/resources/assets/yogmod/textures/entity/crate/Thumbs.db
-1.16.5/src/main/resources/assets/yogmod/textures/entity/Thumbs.db
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt

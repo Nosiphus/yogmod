@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "yogmod:items/spatterdash_shoes",
+        "layer1": "yogmod:items/spatterdash_shoes_overlay"
+    }
+}

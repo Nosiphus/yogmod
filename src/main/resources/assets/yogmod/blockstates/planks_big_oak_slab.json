@@ -1,0 +1,7 @@
+{
+    "variants":
+    {
+        "half=bottom,variant=default": { "model": "yogmod:planks_big_oak_slab_bottom" },
+        "half=top,variant=default": { "model": "yogmod:planks_big_oak_slab_top" }
+    }
+}

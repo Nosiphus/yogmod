@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "yogmod:pillar"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}
