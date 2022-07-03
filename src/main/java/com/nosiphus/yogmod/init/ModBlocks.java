@@ -349,8 +349,8 @@ public class ModBlocks {
             () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.copy(Blocks.ACTIVATOR_RAIL), false));
 
     //Brewing
-    public static final RegistryObject<Block> SINK = BLOCKS.register("sink",
-            () -> new CauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON)));
+    /* public static final RegistryObject<Block> SINK = BLOCKS.register("sink",
+            () -> new CauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON))); */
 
     //Methods
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
