@@ -1,6 +1,6 @@
 {
-    "parent": "yogmod:block/hatchw_top",
-    "textures": {
-        "texture": "yogmod:blocks/hatch"
-    }
+  "parent": "minecraft:block/template_trapdoor_top",
+  "textures": {
+    "texture": "yogmod:block/hatch"
+  }
 }

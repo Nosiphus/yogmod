@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/smooth_metal"
+    "all": "yogmod:block/smooth_metal"
   }
 }

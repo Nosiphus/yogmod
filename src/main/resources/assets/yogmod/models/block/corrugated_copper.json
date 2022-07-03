@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/corrugated_copper"
+    "all": "yogmod:block/corrugated_copper"
   }
 }

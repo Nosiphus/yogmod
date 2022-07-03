@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "particle": "yogmod:blocks/pipe_sides",
-    "down": "#topbottom",
-    "up": "#topbottom",
-    "east": "#sides",
-    "west": "#sides",
-    "north": "#frontback",
-    "south": "#frontback"
+    "end": "yogmod:block/pipe_end",
+    "side": "yogmod:block/pipe"
   }
 }

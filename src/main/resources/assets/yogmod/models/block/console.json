@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/console"
+    "all": "yogmod:block/console"
   }
 }

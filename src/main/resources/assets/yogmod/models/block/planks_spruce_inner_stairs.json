@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "yogmod:blocks/planks_spruce",
-        "top": "yogmod:blocks/planks_spruce",
-        "side": "yogmod:blocks/planks_spruce"
-    }
-}

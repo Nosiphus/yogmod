@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "yogmod:blocks/smooth_metal",
-        "top": "yogmod:blocks/smooth_metal",
-        "side": "yogmod:blocks/smooth_metal"
-    }
-}

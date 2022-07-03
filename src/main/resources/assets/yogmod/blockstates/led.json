@@ -1,9 +1,10 @@
 {
-    "variants": {
-        "facing=up": { "model": "yogmod:normal_led" },
-        "facing=east": { "model": "yogmod:normal_led_wall" },
-        "facing=south": { "model": "yogmod:normal_led_wall", "y": 90 },
-        "facing=west": { "model": "yogmod:normal_led_wall", "y": 180 },
-        "facing=north": { "model": "yogmod:normal_led_wall", "y": 270 }
+  "variants": {
+    "lit=false": {
+      "model": "yogmod:block/led"
+    },
+    "lit=true": {
+      "model": "yogmod:block/led_on"
     }
+  }
 }

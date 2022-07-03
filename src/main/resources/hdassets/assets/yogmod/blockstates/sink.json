@@ -1,0 +1,33 @@
+{
+	"multipart": [
+	{
+		"apply": {
+			"model": "yogmod:block/sink"
+		}
+	},
+	{
+		"when": {
+			"level": "1"
+		},
+		"apply": {
+			"model": "yogmod:block/sink_level1"
+		}
+	},
+	{
+		"when": {
+			"level": "2"
+		},
+		"apply": {
+			"model": "yogmod:block/sink_level2"
+		}
+	},
+	{
+		"when": {
+			"level": "3"
+		},
+		"apply": {
+			"model": "yogmod:block/sink_level3"
+		}
+	}
+	]
+}

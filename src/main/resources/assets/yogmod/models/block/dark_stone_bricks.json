@@ -1,6 +1,6 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/dark_stone_bricks"
+    "all": "yogmod:block/dark_stone_bricks"
   }
 }

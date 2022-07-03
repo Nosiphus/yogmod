@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "yogmod:blocks/lever"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "yogmod:block/lever"
+  }
 }

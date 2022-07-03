@@ -1,10 +1,5 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "yogmod:rusty_iron"
-  },
-  "variants": {
-    "normal": [{}],
-    "inventory": [{}]
-  }
+    "variants": {
+        "": { "model": "yogmod:block/rusty_iron" }
+    }
 }

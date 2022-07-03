@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "yogmod:block/jungle_bricks",
+    "top": "yogmod:block/jungle_bricks",
+    "side": "yogmod:block/jungle_bricks"
+  }
+}

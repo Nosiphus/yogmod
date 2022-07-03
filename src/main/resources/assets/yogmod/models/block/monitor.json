@@ -1,12 +1,8 @@
 {
-  "parent": "block/cube",
+  "parent": "minecraft:block/orientable",
   "textures": {
-    "particle": "yogmod:blocks/monitor_top",
-    "down": "yogmod:blocks/monitor_top",
-    "up": "yogmod:blocks/monitor_top",
-    "east": "yogmod:blocks/monitor_back",
-    "west": "yogmod:blocks/monitor_back",
-    "north": "#front",
-    "south": "yogmod:blocks/monitor_back"
+    "top": "yogmod:block/monitor_end",
+    "front": "yogmod:block/monitor",
+    "side": "yogmod:block/monitor_side"
   }
 }

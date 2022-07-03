@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/iron_stack"
+    "all": "yogmod:block/iron_stack"
   }
 }

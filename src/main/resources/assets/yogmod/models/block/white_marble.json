@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/white_marble"
+    "all": "yogmod:block/white_marble"
   }
 }

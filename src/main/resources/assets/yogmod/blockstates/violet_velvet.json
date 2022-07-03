@@ -1,10 +1,5 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "yogmod:violet_velvet"
-  },
-  "variants": {
-    "normal": [{}],
-    "inventory": [{}]
-  }
+    "variants": {
+        "": { "model": "yogmod:block/violet_velvet" }
+    }
 }

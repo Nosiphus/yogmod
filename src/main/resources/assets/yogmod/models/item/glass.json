@@ -1,6 +1,3 @@
 {
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "yogmod:blocks/glass"
-	}
+  "parent": "yogmod:block/glass"
 }

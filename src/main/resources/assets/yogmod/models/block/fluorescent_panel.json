@@ -1,6 +1,6 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/fluorescent_panel"
+    "all": "yogmod:block/fluorescent_panel"
   }
 }

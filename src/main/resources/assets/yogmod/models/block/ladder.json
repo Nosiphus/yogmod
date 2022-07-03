@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "yogmod:blocks/ladder",
-        "texture": "yogmod:blocks/ladder"
+        "particle": "yogmod:block/ladder",
+        "texture": "yogmod:block/ladder"
     },
     "elements": [
         {   "from": [ 0, 0, 15.2 ],

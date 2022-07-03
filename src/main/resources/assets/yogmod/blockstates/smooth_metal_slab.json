@@ -1,7 +1,13 @@
 {
-    "variants":
-    {
-        "half=bottom,variant=default": { "model": "yogmod:smooth_metal_slab_bottom" },
-        "half=top,variant=default": { "model": "yogmod:smooth_metal_slab_top" }
+  "variants": {
+    "type=bottom": {
+      "model": "yogmod:block/smooth_metal_slab"
+    },
+    "type=double": {
+      "model": "yogmod:block/smooth_metal"
+    },
+    "type=top": {
+      "model": "yogmod:block/smooth_metal_slab_top"
     }
+  }
 }

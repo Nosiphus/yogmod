@@ -1,10 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "yogmod:glass"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}]
+    "": {
+      "model": "yogmod:block/glass"
+    }
   }
 }

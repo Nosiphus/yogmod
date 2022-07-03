@@ -1,7 +1,13 @@
 {
-    "variants":
-    {
-        "half=bottom,variant=default": { "model": "yogmod:brick_slab_bottom" },
-        "half=top,variant=default": { "model": "yogmod:brick_slab_top" }
+  "variants": {
+    "type=bottom": {
+      "model": "yogmod:block/brick_slab"
+    },
+    "type=double": {
+      "model": "yogmod:block/bricks"
+    },
+    "type=top": {
+      "model": "yogmod:block/brick_slab_top"
     }
+  }
 }

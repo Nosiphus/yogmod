@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "yogmod:table_base" }
+  "variants": {
+    "": {
+      "model": "yogmod:block/table"
     }
+  }
 }

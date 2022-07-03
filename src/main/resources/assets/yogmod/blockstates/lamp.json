@@ -1,10 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "yogmod:lamp"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}]
+    "lit=false": {
+      "model": "yogmod:block/lamp"
+    },
+    "lit=true": {
+      "model": "yogmod:block/lamp_on"
+    }
   }
 }

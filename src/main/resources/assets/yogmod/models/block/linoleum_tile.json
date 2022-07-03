@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "yogmod:blocks/linoleum_tile"
+    "all": "yogmod:block/linoleum_tile"
   }
 }

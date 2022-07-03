@@ -1,8 +1,19 @@
 {
-    "variants": {
-        "facing=north": { "model": "yogmod:ladder" },
-        "facing=east":  { "model": "yogmod:ladder", "y": 90 },
-        "facing=south": { "model": "yogmod:ladder", "y": 180 },
-        "facing=west":  { "model": "yogmod:ladder", "y": 270 }
+  "variants": {
+    "facing=east": {
+      "model": "yogmod:block/ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "yogmod:block/ladder"
+    },
+    "facing=south": {
+      "model": "yogmod:block/ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "yogmod:block/ladder",
+      "y": 270
     }
+  }
 }

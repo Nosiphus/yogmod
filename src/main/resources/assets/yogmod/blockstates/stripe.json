@@ -1,23 +1,16 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "yogmod:stripe",
-    "textures": {
-      "frontback": "yogmod:blocks/stripe_intersection",
-	  "sides": "yogmod:blocks/stripe_sides",
-	  "topbottom": "yogmod:blocks/stripe_topbottom"
-    }
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "facing": {
-      "north": {},
-      "south": {"y": 180},
-      "west": {"y": 270},
-      "east": {"y": 90},
-      "up": {"x": -90},
-      "down": {"x": 90}
+    "axis=x": {
+      "model": "yogmod:block/stripe_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "yogmod:block/stripe"
+    },
+    "axis=z": {
+      "model": "yogmod:block/stripe_horizontal",
+      "x": 90
     }
   }
 }

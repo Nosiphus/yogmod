@@ -1,3 +1,6 @@
 {
-    "parent": "yogmod:block/sink_empty"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "yogmod:item/sink"
+  }
 }
