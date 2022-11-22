@@ -36,6 +36,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
     public static final RegistryObject<Block> WARPED_BRICKS = BLOCKS.register("warped_bricks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)));
+    public static final RegistryObject<Block> MANGROVE_BRICKS = BLOCKS.register("mangrove_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)));
     public static final RegistryObject<Block> WHITE_MARBLE = BLOCKS.register("white_marble",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> PILLAR = BLOCKS.register("pillar",
@@ -120,6 +122,8 @@ public class ModBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_SLAB)));
     public static final RegistryObject<Block> WARPED_BRICK_SLAB = BLOCKS.register("warped_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_SLAB)));
+    public static final RegistryObject<Block> MANGROVE_BRICK_SLAB = BLOCKS.register("mangrove_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_SLAB)));
     public static final RegistryObject<Block> STEP_SLAB = BLOCKS.register("step_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE_SLAB)));
     public static final RegistryObject<Block> ASPHALT_SLAB = BLOCKS.register("asphalt_slab",
@@ -182,6 +186,8 @@ public class ModBlocks {
             () -> new StairBlock(CRIMSON_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CRIMSON_STAIRS)));
     public static final RegistryObject<Block> WARPED_BRICK_STAIRS = BLOCKS.register("warped_brick_stairs",
             () -> new StairBlock(WARPED_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.WARPED_STAIRS)));
+    public static final RegistryObject<Block> MANGROVE_BRICK_STAIRS = BLOCKS.register("mangrove_brick_stairs",
+            () -> new StairBlock(MANGROVE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.MANGROVE_STAIRS)));
     public static final RegistryObject<Block> ASPHALT_STAIRS = BLOCKS.register("asphalt_stairs",
             () -> new StairBlock(ASPHALT.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_STAIRS)));
     public static final RegistryObject<Block> IRON_PLATE_STAIRS = BLOCKS.register("iron_plate_stairs",
@@ -230,6 +236,8 @@ public class ModBlocks {
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE)));
     public static final RegistryObject<Block> WARPED_BRICK_FENCE = BLOCKS.register("warped_brick_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE)));
+    public static final RegistryObject<Block> MANGROVE_BRICK_FENCE = BLOCKS.register("mangrove_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE)));
     public static final RegistryObject<Block> SMOOTH_METAL_FENCE = BLOCKS.register("smooth_metal_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_FENCE)));
     public static final RegistryObject<Block> AIR_VENT = BLOCKS.register("air_vent",
@@ -329,6 +337,8 @@ public class ModBlocks {
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE_GATE)));
     public static final RegistryObject<Block> WARPED_BRICK_FENCE_GATE = BLOCKS.register("warped_brick_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE)));
+    public static final RegistryObject<Block> MANGROVE_BRICK_FENCE_GATE = BLOCKS.register("mangrove_brick_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE_GATE)));
     public static final RegistryObject<Block> LAMP = BLOCKS.register("lamp",
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
