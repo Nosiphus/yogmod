@@ -87,6 +87,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.REINFORCED_PANELING.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> STRIPE = ITEMS.register("stripe",
             () -> new BlockItem(ModBlocks.STRIPE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> STRIPE_INTERSECTION = ITEMS.register("stripe_intersection",
+            () -> new BlockItem(ModBlocks.STRIPE_INTERSECTION.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LINOLEUM_TILE = ITEMS.register("linoleum_tile",
             () -> new BlockItem(ModBlocks.LINOLEUM_TILE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CORRUGATED_STEEL = ITEMS.register("corrugated_steel",

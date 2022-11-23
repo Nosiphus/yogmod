@@ -90,6 +90,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> STRIPE = BLOCKS.register("stripe",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> STRIPE_INTERSECTION = BLOCKS.register("stripe_intersection",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
     public static final RegistryObject<Block> LINOLEUM_TILE = BLOCKS.register("linoleum_tile",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> CORRUGATED_STEEL = BLOCKS.register("corrugated_steel",
@@ -359,8 +361,7 @@ public class ModBlocks {
             () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.copy(Blocks.ACTIVATOR_RAIL), false));
 
     //Brewing
-    /* public static final RegistryObject<Block> SINK = BLOCKS.register("sink",
-            () -> new CauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON))); */
+    //Sink will go here when implemented
 
     //Methods
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
