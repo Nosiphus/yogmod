@@ -102,6 +102,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> PIPE = BLOCKS.register("pipe",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)));
+    public static final RegistryObject<Block> PIPE_INTERSECTION = BLOCKS.register("pipe_intersection",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
     public static final RegistryObject<Block> RIVETED_STEEL = BLOCKS.register("riveted_steel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> IRON_STACK = BLOCKS.register("iron_stack",

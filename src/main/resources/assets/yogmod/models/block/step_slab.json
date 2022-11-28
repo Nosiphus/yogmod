@@ -1,8 +1,7 @@
 {
-  "parent": "minecraft:block/slab",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "bottom": "yogmod:block/step",
-    "top": "yogmod:block/step",
-    "side": "yogmod:block/step"
+    "end": "yogmod:block/step",
+    "side": "yogmod:block/step_slab"
   }
 }

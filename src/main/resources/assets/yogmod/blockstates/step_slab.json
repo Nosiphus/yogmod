@@ -1,10 +1,10 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "yogmod:block/step_slab"
+      "model": "yogmod:block/step_slab_bottom"
     },
     "type=double": {
-      "model": "yogmod:block/step"
+      "model": "yogmod:block/step_slab"
     },
     "type=top": {
       "model": "yogmod:block/step_slab_top"

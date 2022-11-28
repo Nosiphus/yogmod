@@ -99,6 +99,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.STORAGE_CRATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> PIPE = ITEMS.register("pipe",
             () -> new BlockItem(ModBlocks.PIPE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> PIPE_INTERSECTION = ITEMS.register("pipe_intersection",
+            () -> new BlockItem(ModBlocks.PIPE_INTERSECTION.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> RIVETED_STEEL = ITEMS.register("riveted_steel",
             () -> new BlockItem(ModBlocks.RIVETED_STEEL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> IRON_STACK = ITEMS.register("iron_stack",
