@@ -10,6 +10,7 @@
 	"yogmod:birch_brick_fence_gate",
 	"yogmod:birch_brick_slab",
 	"yogmod:birch_brick_stairs",
+	"yogmod:console",
 	"yogmod:crimson_bricks",
 	"yogmod:crimson_brick_fence",
 	"yogmod:crimson_brick_fence_gate",
@@ -41,10 +42,12 @@
 	"yogmod:spruce_brick_slab",
 	"yogmod:spruce_brick_stairs",
 	"yogmod:tech_accent",
+	"yogmod:trapdoor",
 	"yogmod:warped_bricks",
 	"yogmod:warped_brick_fence",
 	"yogmod:warped_brick_fence_gate"
 	"yogmod:warped_brick_slab",
-	"yogmod:warped_brick_stairs"
+	"yogmod:warped_brick_stairs",
+	"yogmod:wooden_door"
   ]
 }

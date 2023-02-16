@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " C ",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bread"
+    },
+	"C": {
+      "item": "minecraft:cooked_beef"
+    }
+  },
+  "result": {
+    "item": "yogmod:hamburger"
+  }
+}

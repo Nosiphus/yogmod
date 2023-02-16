@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " O ",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cookie"
+    },
+	"O": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "result": {
+    "item": "yogmod:jaffa"
+  }
+}

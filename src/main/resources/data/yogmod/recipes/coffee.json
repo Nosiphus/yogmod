@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " C ",
+    " G "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+	"G": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "yogmod:coffee"
+  }
+}
