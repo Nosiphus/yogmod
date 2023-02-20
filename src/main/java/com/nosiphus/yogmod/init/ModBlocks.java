@@ -1,12 +1,18 @@
 package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.block.PoweredMetroVoxRailBlock;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -324,31 +330,72 @@ public class ModBlocks {
                     .lightLevel((getLightValueLit(7)))
                     .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> HATCH = BLOCKS.register("hatch",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)));
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+                    .strength(3.0F)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+                    .isValidSpawn(ModBlocks::never),
+                    SoundEvents.WOODEN_TRAPDOOR_CLOSE, SoundEvents.WOODEN_TRAPDOOR_OPEN));
     public static final RegistryObject<Block> OAK_BRICK_FENCE_GATE = BLOCKS.register("oak_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, OAK_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> SPRUCE_BRICK_FENCE_GATE = BLOCKS.register("spruce_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, SPRUCE_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> BIRCH_BRICK_FENCE_GATE = BLOCKS.register("birch_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, BIRCH_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> JUNGLE_BRICK_FENCE_GATE = BLOCKS.register("jungle_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, JUNGLE_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> ACACIA_BRICK_FENCE_GATE = BLOCKS.register("acacia_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, ACACIA_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> DARK_OAK_BRICK_FENCE_GATE = BLOCKS.register("dark_oak_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, DARK_OAK_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> CRIMSON_BRICK_FENCE_GATE = BLOCKS.register("crimson_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, CRIMSON_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> WARPED_BRICK_FENCE_GATE = BLOCKS.register("warped_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, WARPED_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> MANGROVE_BRICK_FENCE_GATE = BLOCKS.register("mangrove_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, MANGROVE_BRICKS.get().defaultMaterialColor())
+                    .strength(2.0F, 3.0F)
+                    .sound(SoundType.WOOD),
+                    SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
     public static final RegistryObject<Block> LAMP = BLOCKS.register("lamp",
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F)
+                    .sound(SoundType.METAL)
+                    .noOcclusion(),
+                    SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN));
     public static final RegistryObject<Block> WOODEN_DOOR = BLOCKS.register("wooden_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)));
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, OAK_BRICKS.get().defaultMaterialColor())
+                    .strength(3.0F)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion(),
+                    SoundEvents.WOODEN_DOOR_CLOSE, SoundEvents.WOODEN_DOOR_OPEN));
     //Repeater will go here when implemented
     //Wire will go here when implemented
 
@@ -370,6 +417,10 @@ public class ModBlocks {
         return (state) -> {
             return state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
         };
+    }
+
+    private static boolean never(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, EntityType<?> entityType) {
+        return false;
     }
 
 }

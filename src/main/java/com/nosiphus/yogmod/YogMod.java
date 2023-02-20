@@ -4,9 +4,11 @@ import com.nosiphus.yogmod.init.ModBlocks;
 import com.nosiphus.yogmod.init.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -19,22 +21,17 @@ import org.apache.logging.log4j.Logger;
 public class YogMod {
 
     public static final Logger LOGGER = LogManager.getLogger();
-
-    public static final CreativeModeTab YOGTAB = new CreativeModeTab("yogmod") {
-        @Override
-        public ItemStack makeIcon() {
-            return ModItems.FLUORESCENT_PANEL.get().getDefaultInstance();
-        }
-    };
+    public static final String MOD_ID = "yogmod";
 
     public YogMod() {
 
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.addListener(this::clientSetup);
-        bus.addListener(this::setup);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        eventBus.addListener(this::clientSetup);
+        eventBus.addListener(this::setup);
+        eventBus.addListener(this::onRegisterCreativeTab);
 
-        ModItems.ITEMS.register(bus);
-        ModBlocks.BLOCKS.register(bus);
+        ModItems.ITEMS.register(eventBus);
+        ModBlocks.BLOCKS.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -60,6 +57,16 @@ public class YogMod {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+
+    }
+
+    public void onRegisterCreativeTab(CreativeModeTabEvent.Register event) {
+
+        event.registerCreativeModeTab(new ResourceLocation(YogMod.MOD_ID, "yogmod"), builder -> {
+            builder.title(Component.translatable("itemGroup." + YogMod.MOD_ID));
+            builder.icon(() -> new ItemStack(ModBlocks.FLUORESCENT_PANEL.get()));
+            builder.displayItems((flags, output, permission) -> ModItems.ITEMS.getEntries().forEach(registryObject -> output.accept(registryObject.get())));
+        });
 
     }
 
