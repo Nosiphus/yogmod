@@ -313,6 +313,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     //Pressure Plates will go here when implemented
+    public static final RegistryObject<Block> WIRE = BLOCKS.register("wire",
+            () -> new WireBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_WIRE)));
     public static final RegistryObject<Block> LED = BLOCKS.register("led",
             () -> new RedstoneTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
