@@ -206,6 +206,8 @@ public class ModItems {
     //Crate will go here when implemented
     public static final RegistryObject<BlockItem> TECH_ACCENT = ITEMS.register("tech_accent",
             () -> new BlockItem(ModBlocks.TECH_ACCENT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> OVEN = ITEMS.register("oven",
+            () -> new BlockItem(ModBlocks.OVEN.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LADDER = ITEMS.register("ladder",
             () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> OAK_BRICK_FENCE = ITEMS.register("oak_brick_fence",

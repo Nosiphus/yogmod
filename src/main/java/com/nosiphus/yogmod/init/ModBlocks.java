@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.init;
 
-import com.nosiphus.yogmod.block.PoweredMetroVoxRailBlock;
+import com.nosiphus.yogmod.block.*;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -222,6 +222,8 @@ public class ModBlocks {
     //Crate will go here when implemented
     public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
+    public static final RegistryObject<Block> OVEN = BLOCKS.register("oven",
+            () -> new OvenBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> LADDER = BLOCKS.register("ladder",
             () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER)));
     public static final RegistryObject<Block> OAK_BRICK_FENCE = BLOCKS.register("oak_brick_fence",
@@ -251,9 +253,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CURTAINS = BLOCKS.register("curtains",
             () -> new VineBlock(BlockBehaviour.Properties.copy(Blocks.VINE).sound(SoundType.WOOL)));
     public static final RegistryObject<Block> TABLE = BLOCKS.register("table",
-            () -> new EnchantmentTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new TableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> FANCY_TABLE = BLOCKS.register("fancy_table",
-            () -> new EndPortalFrameBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new FancyTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     //Fridge will go here when implemented
     public static final RegistryObject<Block> ASPHALT_WALL = BLOCKS.register("asphalt_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));

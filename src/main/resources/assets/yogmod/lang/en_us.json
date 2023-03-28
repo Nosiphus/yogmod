@@ -111,6 +111,7 @@
 	"block.yogmod.oak_brick_stairs": "Oak Brick Stairs",
 	"block.yogmod.orange_plastic": "Orange Plastic",
 	"block.yogmod.orange_plastic_carpet": "Orange Plastic Carpet",
+	"block.yogmod.oven": "Oven",
 	"block.yogmod.pillar": "Pillar",
 	"block.yogmod.pink_stucco": "Pink Stucco",
 	"block.yogmod.pink_stucco_carpet": "Pink Stucco Carpet",
@@ -159,6 +160,8 @@
 	"block.yogmod.white_plastic": "White Plastic",
 	"block.yogmod.white_plastic_carpet": "White Plastic Carpet",
 	"block.yogmod.wooden_door": "Wooden Door (YogMod)",
+	
+	"container.yogmod.oven": "Oven",
 
 	"itemGroup.yogmod": "YogMod",
 	

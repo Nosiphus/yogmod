@@ -1,9 +1,8 @@
 package com.nosiphus.yogmod;
 
-import com.nosiphus.yogmod.init.ModBlocks;
-import com.nosiphus.yogmod.init.ModItems;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import com.nosiphus.yogmod.client.menu.screen.*;
+import com.nosiphus.yogmod.init.*;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,8 +32,10 @@ public class YogMod {
         bus.addListener(this::clientSetup);
         bus.addListener(this::setup);
 
-        ModItems.ITEMS.register(bus);
+        ModBlockEntities.BLOCK_ENTITIES.register(bus);
         ModBlocks.BLOCKS.register(bus);
+        ModItems.ITEMS.register(bus);
+        ModMenuTypes.MENU_TYPES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -42,20 +43,7 @@ public class YogMod {
 
     private void clientSetup(final FMLClientSetupEvent event) {
 
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_PANE.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.HATCH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.IRON_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LANTERN.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WALL_LANTERN.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LED.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WALL_LED.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LADDER.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_DETECTOR_RAIL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.METROVOX_RAIL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POWERED_METROVOX_RAIL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODEN_DOOR.get(), RenderType.cutout());
+        MenuScreens.register(ModMenuTypes.OVEN_MENU.get(), OvenMenuScreen::new);
 
     }
 

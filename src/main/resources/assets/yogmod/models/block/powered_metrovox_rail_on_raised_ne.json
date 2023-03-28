@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/template_rail_raised_ne",
+  "render_type": "cutout",
   "textures": {
     "rail": "yogmod:block/powered_metrovox_rail_on"
   }
