@@ -1,0 +1,7 @@
+{
+    "parent": "yogmod:block/wire_side_alt",
+	"render_type": "cutout",
+    "textures": {
+        "line": "yogmod:block/wire_line1"
+    }
+}
