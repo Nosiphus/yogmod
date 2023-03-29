@@ -208,14 +208,14 @@ public class ModBlocks {
             () -> new LanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
                     .instabreak()
-                    .lightLevel((p_50886_) -> { return 14; })
-                    .sound(SoundType.WOOD)));
+                    .lightLevel((lightLevel) -> { return 14; })
+                    .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern",
             () -> new WallLanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
                     .instabreak()
-                    .lightLevel((p_152607_) -> { return 14; })
-                    .sound(SoundType.WOOD)
+                    .lightLevel((lightLevel) -> { return 14; })
+                    .sound(SoundType.GLASS)
                     .lootFrom(LANTERN)));
     //Crate will go here when implemented
     public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
