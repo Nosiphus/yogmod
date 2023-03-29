@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.mojang.math.Vector3f;
+import com.nosiphus.yogmod.init.ModBlocks;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -50,15 +51,14 @@ public class WireBlock extends Block {
     private static final Map<Direction, VoxelShape> SHAPES_FLOOR = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.box(3.0D, 0.0D, 0.0D, 13.0D, 1.0D, 13.0D), Direction.SOUTH, Block.box(3.0D, 0.0D, 3.0D, 13.0D, 1.0D, 16.0D), Direction.EAST, Block.box(3.0D, 0.0D, 3.0D, 16.0D, 1.0D, 13.0D), Direction.WEST, Block.box(0.0D, 0.0D, 3.0D, 13.0D, 1.0D, 13.0D)));
     private static final Map<Direction, VoxelShape> SHAPES_UP = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Shapes.or(SHAPES_FLOOR.get(Direction.NORTH), Block.box(3.0D, 0.0D, 0.0D, 13.0D, 16.0D, 1.0D)), Direction.SOUTH, Shapes.or(SHAPES_FLOOR.get(Direction.SOUTH), Block.box(3.0D, 0.0D, 15.0D, 13.0D, 16.0D, 16.0D)), Direction.EAST, Shapes.or(SHAPES_FLOOR.get(Direction.EAST), Block.box(15.0D, 0.0D, 3.0D, 16.0D, 16.0D, 13.0D)), Direction.WEST, Shapes.or(SHAPES_FLOOR.get(Direction.WEST), Block.box(0.0D, 0.0D, 3.0D, 1.0D, 16.0D, 13.0D))));
     private static final Map<BlockState, VoxelShape> SHAPES_CACHE = Maps.newHashMap();
-    private static final Vec3[] COLORS = Util.make(new Vec3[16], (p_154319_) -> {
+    private static final Vector3f[] COLORS = Util.make(new Vector3f[16], (colors) -> {
         for(int i = 0; i <= 15; ++i) {
             float f = (float)i / 15.0F;
             float f1 = f * 0.6F + (f > 0.0F ? 0.4F : 0.3F);
             float f2 = Mth.clamp(f * f * 0.7F - 0.5F, 0.0F, 1.0F);
             float f3 = Mth.clamp(f * f * 0.6F - 0.7F, 0.0F, 1.0F);
-            p_154319_[i] = new Vec3((double)f1, (double)f2, (double)f3);
+            colors[i] = new Vector3f(f1, f2, f3);
         }
-
     });
     private static final float PARTICLE_DENSITY = 0.2F;
     private final BlockState crossState;
@@ -80,15 +80,16 @@ public class WireBlock extends Block {
         VoxelShape voxelshape = SHAPE_DOT;
 
         for(Direction direction : Direction.Plane.HORIZONTAL) {
-            RedstoneSide redstoneside = state.getValue(PROPERTY_BY_DIRECTION.get(direction));
-            if (redstoneside == RedstoneSide.SIDE) {
+            RedstoneSide RedstoneSide = state.getValue(PROPERTY_BY_DIRECTION.get(direction));
+            if (RedstoneSide == RedstoneSide.SIDE) {
                 voxelshape = Shapes.or(voxelshape, SHAPES_FLOOR.get(direction));
-            } else if (redstoneside == RedstoneSide.UP) {
+            } else if (RedstoneSide == RedstoneSide.UP) {
                 voxelshape = Shapes.or(voxelshape, SHAPES_UP.get(direction));
             }
         }
 
         return voxelshape;
+
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
@@ -114,12 +115,15 @@ public class WireBlock extends Block {
             if (!flag4 && flag5) {
                 state = state.setValue(WEST, RedstoneSide.SIDE);
             }
+
             if (!flag3 && flag5) {
                 state = state.setValue(EAST, RedstoneSide.SIDE);
             }
+
             if (!flag1 && flag6) {
                 state = state.setValue(NORTH, RedstoneSide.SIDE);
             }
+
             if (!flag2 && flag6) {
                 state = state.setValue(SOUTH, RedstoneSide.SIDE);
             }
@@ -132,8 +136,8 @@ public class WireBlock extends Block {
 
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             if (!state.getValue(PROPERTY_BY_DIRECTION.get(direction)).isConnected()) {
-                RedstoneSide redstoneside = this.getConnectingSide(getter, pos, direction, flag);
-                state = state.setValue(PROPERTY_BY_DIRECTION.get(direction), redstoneside);
+                RedstoneSide RedstoneSide = this.getConnectingSide(getter, pos, direction, flag);
+                state = state.setValue(PROPERTY_BY_DIRECTION.get(direction), RedstoneSide);
             }
         }
 
@@ -146,8 +150,8 @@ public class WireBlock extends Block {
         } else if (direction == Direction.UP) {
             return this.getConnectionState(levelAccessor, state, pos);
         } else {
-            RedstoneSide redstoneside = this.getConnectingSide(levelAccessor, pos, direction);
-            return redstoneside.isConnected() == state.getValue(PROPERTY_BY_DIRECTION.get(direction)).isConnected() && !isCross(state) ? state.setValue(PROPERTY_BY_DIRECTION.get(direction), redstoneside) : this.getConnectionState(levelAccessor, this.crossState.setValue(POWER, state.getValue(POWER)).setValue(PROPERTY_BY_DIRECTION.get(direction), redstoneside), pos);
+            RedstoneSide RedstoneSide = this.getConnectingSide(levelAccessor, pos, direction);
+            return RedstoneSide.isConnected() == state.getValue(PROPERTY_BY_DIRECTION.get(direction)).isConnected() && !isCross(state) ? state.setValue(PROPERTY_BY_DIRECTION.get(direction), RedstoneSide) : this.getConnectionState(levelAccessor, this.crossState.setValue(POWER, state.getValue(POWER)).setValue(PROPERTY_BY_DIRECTION.get(direction), RedstoneSide), pos);
         }
     }
 
@@ -163,8 +167,8 @@ public class WireBlock extends Block {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
         for(Direction direction : Direction.Plane.HORIZONTAL) {
-            RedstoneSide redstoneside = state.getValue(PROPERTY_BY_DIRECTION.get(direction));
-            if (redstoneside != RedstoneSide.NONE && !levelAccessor.getBlockState(blockpos$mutableblockpos.setWithOffset(pos, direction)).is(this)) {
+            RedstoneSide RedstoneSide = state.getValue(PROPERTY_BY_DIRECTION.get(direction));
+            if (RedstoneSide != RedstoneSide.NONE && !levelAccessor.getBlockState(blockpos$mutableblockpos.setWithOffset(pos, direction)).is(this)) {
                 blockpos$mutableblockpos.move(Direction.DOWN);
                 BlockState blockstate = levelAccessor.getBlockState(blockpos$mutableblockpos);
                 if (blockstate.is(this)) {
@@ -181,6 +185,31 @@ public class WireBlock extends Block {
             }
         }
 
+    }
+
+    @Override
+    public boolean canConnectRedstone(BlockState state, BlockGetter getter, BlockPos pos, Direction direction) {
+        if (state.is(Blocks.REDSTONE_WIRE))
+        {
+            return true;
+        }
+        else if (state.is(ModBlocks.WIRE.get()))
+        {
+            return true;
+        }
+        else if (state.is(Blocks.REPEATER))
+        {
+            Direction facing = state.getValue(RepeaterBlock.FACING);
+            return facing == direction || facing.getOpposite() == direction;
+        }
+        else if (state.is(Blocks.OBSERVER))
+        {
+            return direction == state.getValue(ObserverBlock.FACING);
+        }
+        else
+        {
+            return state.isSignalSource() && direction != null;
+        }
     }
 
     private RedstoneSide getConnectingSide(BlockGetter getter, BlockPos pos, Direction direction) {
@@ -357,6 +386,8 @@ public class WireBlock extends Block {
     protected static boolean shouldConnectTo(BlockState state, @Nullable Direction direction1) {
         if (state.is(Blocks.REDSTONE_WIRE)) {
             return true;
+        } else if (state.is(ModBlocks.WIRE.get())) {
+            return true;
         } else if (state.is(Blocks.REPEATER)) {
             Direction direction = state.getValue(RepeaterBlock.FACING);
             return direction == direction1 || direction.getOpposite() == direction1;
@@ -371,12 +402,12 @@ public class WireBlock extends Block {
         return this.shouldSignal;
     }
 
-    public static int getColorForPower(int color) {
-        Vec3 vec3 = COLORS[color];
-        return Mth.color((float)vec3.x(), (float)vec3.y(), (float)vec3.z());
+    public static int colorMultiplier(int power) {
+        Vector3f vector3f = COLORS[power];
+        return Mth.color(vector3f.x(), vector3f.y(), vector3f.z());
     }
 
-    private void spawnParticlesAlongLine(Level level, RandomSource randomSource, BlockPos pos, Vec3 vec3, Direction direction, Direction direction1, float float1, float float2) {
+    private void spawnParticlesAlongLine(Level level, RandomSource randomSource, BlockPos pos, Vector3f vec3, Direction direction, Direction direction1, float float1, float float2) {
         float f = float2 - float1;
         if (!(randomSource.nextFloat() >= 0.2F * f)) {
             float f1 = 0.4375F;
@@ -384,7 +415,7 @@ public class WireBlock extends Block {
             double d0 = 0.5D + (double)(0.4375F * (float)direction.getStepX()) + (double)(f2 * (float)direction1.getStepX());
             double d1 = 0.5D + (double)(0.4375F * (float)direction.getStepY()) + (double)(f2 * (float)direction1.getStepY());
             double d2 = 0.5D + (double)(0.4375F * (float)direction.getStepZ()) + (double)(f2 * (float)direction1.getStepZ());
-            level.addParticle(new DustParticleOptions(new Vector3f(vec3), 1.0F), (double)pos.getX() + d0, (double)pos.getY() + d1, (double)pos.getZ() + d2, 0.0D, 0.0D, 0.0D);
+            level.addParticle(new DustParticleOptions(vec3, 1.0F), (double)pos.getX() + d0, (double)pos.getY() + d1, (double)pos.getZ() + d2, 0.0D, 0.0D, 0.0D);
         }
     }
 
@@ -392,8 +423,8 @@ public class WireBlock extends Block {
         int i = state.getValue(POWER);
         if (i != 0) {
             for(Direction direction : Direction.Plane.HORIZONTAL) {
-                RedstoneSide redstoneside = state.getValue(PROPERTY_BY_DIRECTION.get(direction));
-                switch (redstoneside) {
+                RedstoneSide RedstoneSide = state.getValue(PROPERTY_BY_DIRECTION.get(direction));
+                switch (RedstoneSide) {
                     case UP:
                         this.spawnParticlesAlongLine(level, randomSource, pos, COLORS[i], direction, Direction.UP, -0.5F, 0.5F);
                     case SIDE:

@@ -1,12 +1,17 @@
 package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.block.*;
+import com.nosiphus.yogmod.block.LanternBlock;
+import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -205,20 +210,18 @@ public class ModBlocks {
 
     //Decoration Blocks
     public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern",
-            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
                     .instabreak()
                     .lightLevel((p_50886_) -> { return 14; })
-                    .sound(SoundType.WOOD),
-                    ParticleTypes.FLAME));
+                    .sound(SoundType.WOOD)));
     public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern",
-            () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new WallLanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
                     .instabreak()
                     .lightLevel((p_152607_) -> { return 14; })
                     .sound(SoundType.WOOD)
-                    .lootFrom(LANTERN),
-                    ParticleTypes.FLAME));
+                    .lootFrom(LANTERN)));
     //Crate will go here when implemented
     public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
@@ -314,7 +317,9 @@ public class ModBlocks {
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     //Pressure Plates will go here when implemented
     public static final RegistryObject<Block> WIRE = BLOCKS.register("wire",
-            () -> new WireBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_WIRE)));
+            () -> new WireBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .noCollission()
+                    .instabreak()));
     public static final RegistryObject<Block> LED = BLOCKS.register("led",
             () -> new RedstoneTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()

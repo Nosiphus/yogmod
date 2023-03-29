@@ -1,12 +1,15 @@
 package com.nosiphus.yogmod;
 
-import com.nosiphus.yogmod.client.menu.screen.*;
+import com.nosiphus.yogmod.block.WireBlock;
+import com.nosiphus.yogmod.client.menu.screen.OvenMenuScreen;
 import com.nosiphus.yogmod.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -28,27 +31,37 @@ public class YogMod {
 
     public YogMod() {
 
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.addListener(this::clientSetup);
-        bus.addListener(this::setup);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        eventBus.addListener(this::setup);
 
-        ModBlockEntities.BLOCK_ENTITIES.register(bus);
-        ModBlocks.BLOCKS.register(bus);
-        ModItems.ITEMS.register(bus);
-        ModMenuTypes.MENU_TYPES.register(bus);
+        ModBlockEntities.BLOCK_ENTITIES.register(eventBus);
+        ModBlocks.BLOCKS.register(eventBus);
+        ModItems.ITEMS.register(eventBus);
+        ModMenuTypes.MENU_TYPES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-
-        MenuScreens.register(ModMenuTypes.OVEN_MENU.get(), OvenMenuScreen::new);
+    private void setup(final FMLCommonSetupEvent event) {
 
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
 
+            MenuScreens.register(ModMenuTypes.OVEN_MENU.get(), OvenMenuScreen::new);
+
+        }
+
+        @SubscribeEvent
+        public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+            event.register((blockstate, lightreader, pos, index) -> {
+                return WireBlock.colorMultiplier(blockstate.getValue(WireBlock.POWER));
+            }, ModBlocks.WIRE.get());
+        }
     }
 
 }
