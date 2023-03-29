@@ -300,8 +300,6 @@ public class ModItems {
     //Pressure Plates will go here when implemented
     public static final RegistryObject<BlockItem> LED = ITEMS.register("led",
             () -> new StandingAndWallBlockItem(ModBlocks.LED.get(), ModBlocks.WALL_LED.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    public static final RegistryObject<BlockItem> WIRE = ITEMS.register("wire",
-            () -> new BlockItem(ModBlocks.WIRE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> HATCH = ITEMS.register("hatch",
             () -> new BlockItem(ModBlocks.HATCH.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> OAK_BRICK_FENCE_GATE = ITEMS.register("oak_brick_fence_gate",
@@ -329,7 +327,8 @@ public class ModItems {
     public static final RegistryObject<BlockItem> WOODEN_DOOR = ITEMS.register("wooden_door",
             () -> new BlockItem(ModBlocks.WOODEN_DOOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     //Repeater will go here when implemented
-    //Wire will go here when implemented
+    public static final RegistryObject<BlockItem> WIRE = ITEMS.register("wire",
+            () -> new BlockItem(ModBlocks.WIRE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Transportation
     public static final RegistryObject<BlockItem> POWERED_METROVOX_RAIL = ITEMS.register("powered_metrovox_rail",
