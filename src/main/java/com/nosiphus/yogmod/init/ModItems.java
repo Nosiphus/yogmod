@@ -326,7 +326,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.IRON_DOOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> WOODEN_DOOR = ITEMS.register("wooden_door",
             () -> new BlockItem(ModBlocks.WOODEN_DOOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Repeater will go here when implemented
+    public static final RegistryObject<BlockItem> DIODE = ITEMS.register("diode",
+            () -> new BlockItem(ModBlocks.DIODE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> WIRE = ITEMS.register("wire",
             () -> new BlockItem(ModBlocks.WIRE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 

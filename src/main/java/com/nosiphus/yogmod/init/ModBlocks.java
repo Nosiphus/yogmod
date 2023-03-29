@@ -2,16 +2,11 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.block.*;
 import com.nosiphus.yogmod.block.LanternBlock;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -316,10 +311,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     //Pressure Plates will go here when implemented
-    public static final RegistryObject<Block> WIRE = BLOCKS.register("wire",
-            () -> new WireBlock(BlockBehaviour.Properties.of(Material.DECORATION)
-                    .noCollission()
-                    .instabreak()));
     public static final RegistryObject<Block> LED = BLOCKS.register("led",
             () -> new RedstoneTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
@@ -358,8 +349,14 @@ public class ModBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
     public static final RegistryObject<Block> WOODEN_DOOR = BLOCKS.register("wooden_door",
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)));
-    //Repeater will go here when implemented
-    //Wire will go here when implemented
+    public static final RegistryObject<Block> DIODE = BLOCKS.register("diode",
+            () -> new WireDiodeBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .instabreak()
+                    .sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> WIRE = BLOCKS.register("wire",
+            () -> new WireBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .noCollission()
+                    .instabreak()));
 
     //Transportation
     public static final RegistryObject<Block> POWERED_METROVOX_RAIL = BLOCKS.register("powered_metrovox_rail",
