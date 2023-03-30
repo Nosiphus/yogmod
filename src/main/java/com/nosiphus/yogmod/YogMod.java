@@ -6,6 +6,8 @@ import com.nosiphus.yogmod.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -46,9 +48,9 @@ public class YogMod {
     private void setup(final FMLCommonSetupEvent event) {
 
     }
-
     @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
+        @OnlyIn(Dist.CLIENT)
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
@@ -56,6 +58,7 @@ public class YogMod {
 
         }
 
+        @OnlyIn(Dist.CLIENT)
         @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
             event.register((blockstate, lightreader, pos, index) -> {
