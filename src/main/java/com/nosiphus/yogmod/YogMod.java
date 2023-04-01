@@ -34,7 +34,6 @@ public class YogMod {
     public YogMod() {
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        eventBus.addListener(this::setup);
 
         ModBlockEntities.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
@@ -45,12 +44,9 @@ public class YogMod {
 
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-
-    }
-    @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
-        @OnlyIn(Dist.CLIENT)
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
@@ -58,13 +54,17 @@ public class YogMod {
 
         }
 
-        @OnlyIn(Dist.CLIENT)
         @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
             event.register((blockstate, lightreader, pos, index) -> {
                 return WireBlock.colorMultiplier(blockstate.getValue(WireBlock.POWER));
             }, ModBlocks.WIRE.get());
         }
+    }
+
+    @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ModEvents {
+        //future events may be added here
     }
 
 }
