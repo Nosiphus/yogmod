@@ -276,7 +276,7 @@ public class WireBlock extends Block {
         int i = level.getBestNeighborSignal(pos);
         this.shouldSignal = true;
         int j = 0;
-        if (i < 100) {
+        if (i < 15) {
             for(Direction direction : Direction.Plane.HORIZONTAL) {
                 BlockPos blockpos = pos.relative(direction);
                 BlockState blockstate = level.getBlockState(blockpos);
@@ -463,8 +463,8 @@ public class WireBlock extends Block {
         }
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> blockBlockStateBuilder) {
-        blockBlockStateBuilder.add(NORTH, EAST, SOUTH, WEST, POWER);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(NORTH, EAST, SOUTH, WEST, POWER);
     }
 
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
@@ -490,6 +490,7 @@ public class WireBlock extends Block {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             BlockPos blockpos = pos.relative(direction);
             if (state.getValue(PROPERTY_BY_DIRECTION.get(direction)).isConnected() != state1.getValue(PROPERTY_BY_DIRECTION.get(direction)).isConnected() && level.getBlockState(blockpos).isRedstoneConductor(level, blockpos)) {
+                level.getBlockState(blockpos).isRedstoneConductor(level, blockpos);
                 level.updateNeighborsAtExceptFromFacing(blockpos, state1.getBlock(), direction.getOpposite());
             }
         }

@@ -249,7 +249,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLASS_PANE = BLOCKS.register("glass_pane",
             () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE)));
     public static final RegistryObject<Block> CURTAINS = BLOCKS.register("curtains",
-            () -> new VineBlock(BlockBehaviour.Properties.copy(Blocks.VINE).sound(SoundType.WOOL)));
+            () -> new CurtainsBlock(BlockBehaviour.Properties.copy(Blocks.VINE).sound(SoundType.WOOL)));
     public static final RegistryObject<Block> TABLE = BLOCKS.register("table",
             () -> new TableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> FANCY_TABLE = BLOCKS.register("fancy_table",
