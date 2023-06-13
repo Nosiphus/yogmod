@@ -1,9 +1,9 @@
 package com.nosiphus.yogmod.init;
 
-import com.nosiphus.yogmod.block.PoweredMetroVoxRailBlock;
+import com.nosiphus.yogmod.block.*;
+import com.nosiphus.yogmod.block.LanternBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
@@ -211,23 +211,23 @@ public class ModBlocks {
 
     //Decoration Blocks
     public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern",
-            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
                     .instabreak()
-                    .lightLevel((p_50886_) -> { return 14; })
-                    .sound(SoundType.WOOD),
-                    ParticleTypes.FLAME));
+                    .lightLevel((lightLevel) -> { return 14; })
+                    .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern",
-            () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new WallLanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
                     .noCollission()
                     .instabreak()
-                    .lightLevel((p_152607_) -> { return 14; })
-                    .sound(SoundType.WOOD)
-                    .lootFrom(LANTERN),
-                    ParticleTypes.FLAME));
+                    .lightLevel((lightLevel) -> { return 14; })
+                    .sound(SoundType.GLASS)
+                    .lootFrom(LANTERN)));
     //Crate will go here when implemented
     public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
+    public static final RegistryObject<Block> OVEN = BLOCKS.register("oven",
+            () -> new OvenBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> LADDER = BLOCKS.register("ladder",
             () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER)));
     public static final RegistryObject<Block> OAK_BRICK_FENCE = BLOCKS.register("oak_brick_fence",
@@ -255,11 +255,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLASS_PANE = BLOCKS.register("glass_pane",
             () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE)));
     public static final RegistryObject<Block> CURTAINS = BLOCKS.register("curtains",
-            () -> new VineBlock(BlockBehaviour.Properties.copy(Blocks.VINE).sound(SoundType.WOOL)));
+            () -> new CurtainsBlock(BlockBehaviour.Properties.copy(Blocks.VINE).sound(SoundType.WOOL)));
     public static final RegistryObject<Block> TABLE = BLOCKS.register("table",
-            () -> new EnchantmentTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new TableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> FANCY_TABLE = BLOCKS.register("fancy_table",
-            () -> new EndPortalFrameBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new FancyTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     //Fridge will go here when implemented
     public static final RegistryObject<Block> ASPHALT_WALL = BLOCKS.register("asphalt_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
@@ -396,7 +396,14 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
                     .noOcclusion(),
                     SoundEvents.WOODEN_DOOR_CLOSE, SoundEvents.WOODEN_DOOR_OPEN));
-    //Repeater will go here when implemented
+    public static final RegistryObject<Block> DIODE = BLOCKS.register("diode",
+            () -> new WireDiodeBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .instabreak()
+                    .sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> WIRE  = BLOCKS.register("wire",
+            () -> new WireBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+                    .noCollission()
+                    .instabreak()));
     //Wire will go here when implemented
 
     //Transportation

@@ -205,6 +205,8 @@ public class ModItems {
     //Crate will go here when implemented
     public static final RegistryObject<BlockItem> TECH_ACCENT = ITEMS.register("tech_accent",
             () -> new BlockItem(ModBlocks.TECH_ACCENT.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> OVEN = ITEMS.register("oven",
+            () -> new BlockItem(ModBlocks.OVEN.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> LADDER = ITEMS.register("ladder",
             () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> OAK_BRICK_FENCE = ITEMS.register("oak_brick_fence",
@@ -322,8 +324,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.IRON_DOOR.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> WOODEN_DOOR = ITEMS.register("wooden_door",
             () -> new BlockItem(ModBlocks.WOODEN_DOOR.get(), new Item.Properties()));
-    //Repeater will go here when implemented
-    //Wire will go here when implemented
+    public static final RegistryObject<BlockItem> DIODE = ITEMS.register("diode",
+            () -> new BlockItem(ModBlocks.DIODE.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> WIRE = ITEMS.register("wire",
+            () -> new BlockItem(ModBlocks.WIRE.get(), new Item.Properties()));
 
     //Transportation
     public static final RegistryObject<BlockItem> POWERED_METROVOX_RAIL = ITEMS.register("powered_metrovox_rail",

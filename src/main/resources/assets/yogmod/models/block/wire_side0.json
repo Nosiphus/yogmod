@@ -1,0 +1,8 @@
+{
+    "parent": "yogmod:block/wire_side",
+	"render_type": "cutout",
+    "textures": {
+        "line": "yogmod:block/wire_line0",
+		"overlay": "yogmod:block/wire_overlay"
+    }
+}

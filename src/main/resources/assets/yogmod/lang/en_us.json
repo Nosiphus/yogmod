@@ -53,6 +53,7 @@
 	"block.yogmod.dark_oak_brick_stairs": "Dark Oak Brick Stairs",
 	"block.yogmod.dark_stone_bricks": "Dark Stone Bricks",
 	"block.yogmod.decorative_concrete": "Decorative Concrete",
+	"block.yogmod.diode": "Diode",
 	"block.yogmod.double_step": "Double Step",
 	"block.yogmod.fancy_table": "Fancy Table",
 	"block.yogmod.filled_fancy_table": "Filled Fancy Table",
@@ -111,6 +112,7 @@
 	"block.yogmod.oak_brick_stairs": "Oak Brick Stairs",
 	"block.yogmod.orange_plastic": "Orange Plastic",
 	"block.yogmod.orange_plastic_carpet": "Orange Plastic Carpet",
+	"block.yogmod.oven": "Oven",
 	"block.yogmod.pillar": "Pillar",
 	"block.yogmod.pink_stucco": "Pink Stucco",
 	"block.yogmod.pink_stucco_carpet": "Pink Stucco Carpet",
@@ -158,7 +160,10 @@
 	"block.yogmod.white_marble": "White Marble",
 	"block.yogmod.white_plastic": "White Plastic",
 	"block.yogmod.white_plastic_carpet": "White Plastic Carpet",
+	"block.yogmod.wire": "Wire",
 	"block.yogmod.wooden_door": "Wooden Door (YogMod)",
+	
+	"container.yogmod.oven": "Oven",
 
 	"itemGroup.yogmod": "YogMod",
 	

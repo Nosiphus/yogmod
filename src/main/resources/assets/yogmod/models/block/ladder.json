@@ -1,5 +1,6 @@
 {
     "ambientocclusion": false,
+	"render_type": "cutout",
     "textures": {
         "particle": "yogmod:block/ladder",
         "texture": "yogmod:block/ladder"
