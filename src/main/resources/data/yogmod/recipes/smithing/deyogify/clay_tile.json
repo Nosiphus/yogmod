@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "result": {
+    "item": "minecraft:cyan_concrete"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "base": {
+    "item": "yogmod:clay_tile"
+  }
+}

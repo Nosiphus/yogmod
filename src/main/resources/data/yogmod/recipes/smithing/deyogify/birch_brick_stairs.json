@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "result": {
+    "item": "minecraft:birch_stairs"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "base": {
+    "item": "yogmod:birch_brick_stairs"
+  }
+}

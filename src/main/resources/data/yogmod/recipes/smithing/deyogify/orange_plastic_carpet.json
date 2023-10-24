@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "result": {
+    "item": "minecraft:orange_carpet"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "base": {
+    "item": "yogmod:orange_plastic_carpet"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "result": {
+    "item": "minecraft:cyan_carpet"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "base": {
+    "item": "yogmod:cyan_plastic_carpet"
+  }
+}

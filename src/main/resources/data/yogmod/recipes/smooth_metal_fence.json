@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "key": {
+    "#": {
+      "tag": "minecraft:iron_ingot"
+    },
+    "W": {
+      "item": "yogmod:smooth_metal"
+    }
+  },
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "result": {
+    "count": 3,
+    "item": "yogmod:smooth_metal_fence"
+  }
+}
