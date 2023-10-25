@@ -6,7 +6,7 @@
       "tag": "forge:rods/wooden"
     },
     "W": {
-      "item": "yogmod:dark_oak_bricks"
+      "item": "yogmod:jungle_bricks"
     }
   },
   "pattern": [
@@ -14,6 +14,6 @@
     "#W#"
   ],
   "result": {
-    "item": "yogmod:dark_oak_brick_fence"
+    "item": "yogmod:jungle_brick_fence_gate"
   }
 }

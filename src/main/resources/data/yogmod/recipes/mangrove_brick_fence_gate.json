@@ -6,7 +6,7 @@
       "tag": "forge:rods/wooden"
     },
     "W": {
-      "item": "yogmod:birch_bricks"
+      "item": "yogmod:mangrove_bricks"
     }
   },
   "pattern": [
@@ -14,6 +14,6 @@
     "#W#"
   ],
   "result": {
-    "item": "yogmod:birch_brick_fence"
+    "item": "yogmod:mangrove_brick_fence_gate"
   }
 }

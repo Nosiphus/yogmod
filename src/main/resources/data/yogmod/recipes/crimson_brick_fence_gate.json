@@ -6,7 +6,7 @@
       "tag": "forge:rods/wooden"
     },
     "W": {
-      "item": "yogmod:spruce_bricks"
+      "item": "yogmod:crimson_bricks"
     }
   },
   "pattern": [
@@ -14,6 +14,6 @@
     "#W#"
   ],
   "result": {
-    "item": "yogmod:spruce_brick_fence"
+    "item": "yogmod:crimson_brick_fence_gate"
   }
 }
