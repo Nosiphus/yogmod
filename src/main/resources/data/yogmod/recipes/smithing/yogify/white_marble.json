@@ -4,9 +4,10 @@
     "item": "minecraft:deepslate"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:deepslate"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:white_marble"
   }
 }

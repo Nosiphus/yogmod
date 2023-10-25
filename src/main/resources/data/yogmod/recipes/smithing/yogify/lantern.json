@@ -4,9 +4,10 @@
     "item": "minecraft:torch"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:torch"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:lantern"
   }
 }

@@ -4,9 +4,10 @@
     "item": "minecraft:soul_sand"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:soul_sand"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:caution_tape"
   }
 }

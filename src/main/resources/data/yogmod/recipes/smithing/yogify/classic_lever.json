@@ -1,12 +1,13 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:lever"
+    "item": "yogmod:lever"
   },
   "addition": {
-    "item": "minecraft:deepslate"
+    "item": "yogmod:lever"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:classic_lever"
   }
 }

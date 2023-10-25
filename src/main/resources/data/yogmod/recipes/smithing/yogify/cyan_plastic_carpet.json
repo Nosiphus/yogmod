@@ -4,9 +4,10 @@
     "item": "minecraft:cyan_carpet"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:cyan_carpet"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:cyan_plastic_carpet"
   }
 }

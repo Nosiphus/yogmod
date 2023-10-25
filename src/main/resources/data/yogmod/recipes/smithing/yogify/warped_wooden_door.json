@@ -4,9 +4,10 @@
     "item": "minecraft:warped_door"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:warped_door"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:wooden_door"
   }
 }

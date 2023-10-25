@@ -4,9 +4,10 @@
     "item": "minecraft:pink_carpet"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:pink_carpet"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:pink_stucco_carpet"
   }
 }

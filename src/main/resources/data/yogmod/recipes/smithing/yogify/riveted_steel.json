@@ -4,9 +4,10 @@
     "item": "minecraft:cracked_stone_bricks"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:cracked_stone_bricks"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:riveted_steel"
   }
 }

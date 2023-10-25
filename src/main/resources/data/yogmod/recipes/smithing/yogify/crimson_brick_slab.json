@@ -4,9 +4,10 @@
     "item": "minecraft:crimson_slab"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:crimson_slab"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:crimson_brick_slab"
   }
 }

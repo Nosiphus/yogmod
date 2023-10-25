@@ -4,9 +4,10 @@
     "item": "minecraft:magenta_wool"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:magenta_wool"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:magenta_plastic"
   }
 }

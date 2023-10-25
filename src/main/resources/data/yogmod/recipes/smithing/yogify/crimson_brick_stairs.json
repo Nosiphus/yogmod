@@ -4,9 +4,10 @@
     "item": "minecraft:crimson_stairs"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:crimson_stairs"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:crimson_brick_stairs"
   }
 }

@@ -4,9 +4,10 @@
     "item": "minecraft:smooth_stone_slab"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:smooth_stone_slab"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:step_slab"
   }
 }

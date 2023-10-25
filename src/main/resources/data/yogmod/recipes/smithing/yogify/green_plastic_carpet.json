@@ -4,9 +4,10 @@
     "item": "minecraft:green_carpet"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:green_carpet"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:green_plastic_carpet"
   }
 }

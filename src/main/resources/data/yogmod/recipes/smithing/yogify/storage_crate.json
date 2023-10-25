@@ -4,9 +4,10 @@
     "item": "minecraft:brown_concrete"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:brown_concrete"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:storage_crate"
   }
 }

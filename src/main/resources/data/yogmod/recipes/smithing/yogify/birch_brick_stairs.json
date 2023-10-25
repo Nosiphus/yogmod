@@ -4,9 +4,10 @@
     "item": "minecraft:birch_stairs"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:birch_stairs"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:birch_brick_stairs"
   }
 }

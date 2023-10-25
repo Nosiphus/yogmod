@@ -4,9 +4,10 @@
     "item": "minecraft:jungle_trapdoor"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:jungle_trapdoor"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:hatch"
   }
 }

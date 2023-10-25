@@ -4,9 +4,10 @@
     "item": "minecraft:stone_brick_wall"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:stone_brick_wall"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:raw_wood_wall"
   }
 }

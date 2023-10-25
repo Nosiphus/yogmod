@@ -4,9 +4,10 @@
     "item": "minecraft:ladder"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:ladder"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:ladder"
   }
 }

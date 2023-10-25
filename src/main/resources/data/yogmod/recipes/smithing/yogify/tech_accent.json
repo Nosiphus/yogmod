@@ -4,9 +4,10 @@
     "item": "minecraft:crafting_table"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:crafting_table"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:tech_accent"
   }
 }

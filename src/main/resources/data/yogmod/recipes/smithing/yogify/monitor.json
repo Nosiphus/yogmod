@@ -4,9 +4,10 @@
     "item": "minecraft:carved_pumpkin"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:carved_pumpkin"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:monitor"
   }
 }

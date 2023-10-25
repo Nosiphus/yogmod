@@ -4,9 +4,10 @@
     "item": "minecraft:iron_block"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:iron_block"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:iron_stack"
   }
 }

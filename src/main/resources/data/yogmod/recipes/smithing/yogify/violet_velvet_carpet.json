@@ -4,9 +4,10 @@
     "item": "minecraft:purple_carpet"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:purple_carpet"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:violet_velvet_carpet"
   }
 }

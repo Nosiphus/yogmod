@@ -4,9 +4,10 @@
     "item": "minecraft:crimson_trapdoor"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:crimson_trapdoor"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:hatch"
   }
 }

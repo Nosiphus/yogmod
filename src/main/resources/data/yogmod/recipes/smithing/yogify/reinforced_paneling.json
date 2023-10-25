@@ -4,9 +4,10 @@
     "item": "minecraft:clay"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:clay"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:reinforced_paneling"
   }
 }

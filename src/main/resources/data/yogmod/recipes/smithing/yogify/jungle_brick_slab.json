@@ -4,9 +4,10 @@
     "item": "minecraft:jungle_slab"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:jungle_slab"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:jungle_brick_slab"
   }
 }

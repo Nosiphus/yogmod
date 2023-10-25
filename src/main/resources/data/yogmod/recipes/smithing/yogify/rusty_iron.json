@@ -4,9 +4,10 @@
     "item": "minecraft:weathered_copper"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:weathered_copper"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:rusty_iron"
   }
 }

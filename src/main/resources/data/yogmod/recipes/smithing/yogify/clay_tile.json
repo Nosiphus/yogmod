@@ -1,12 +1,13 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:cyan_concrete"
+    "item": "minecraft:red_concrete"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:red_concrete"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:clay_tile"
   }
 }

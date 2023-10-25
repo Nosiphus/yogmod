@@ -4,9 +4,10 @@
     "item": "minecraft:cut_copper"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:cut_copper"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:pipe_intersection"
   }
 }

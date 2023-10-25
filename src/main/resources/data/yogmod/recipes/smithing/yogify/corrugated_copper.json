@@ -4,9 +4,10 @@
     "item": "minecraft:diamond_ore"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:diamond_ore"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:corrugated_copper"
   }
 }

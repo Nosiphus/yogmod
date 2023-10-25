@@ -4,9 +4,10 @@
     "item": "minecraft:andesite"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:andesite"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:air_vent"
   }
 }

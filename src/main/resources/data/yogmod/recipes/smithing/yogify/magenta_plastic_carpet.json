@@ -4,9 +4,10 @@
     "item": "minecraft:magenta_carpet"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:magenta_carpet"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:magenta_plastic_carpet"
   }
 }

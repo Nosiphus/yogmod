@@ -4,9 +4,10 @@
     "item": "minecraft:glass"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:glass"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:glass"
   }
 }

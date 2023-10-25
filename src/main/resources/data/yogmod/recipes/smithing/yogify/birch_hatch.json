@@ -4,9 +4,10 @@
     "item": "minecraft:birch_trapdoor"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:birch_trapdoor"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:hatch"
   }
 }

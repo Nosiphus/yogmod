@@ -4,9 +4,10 @@
     "item": "minecraft:light_blue_wool"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:light_blue_wool"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:light_blue_plastic"
   }
 }

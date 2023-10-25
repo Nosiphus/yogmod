@@ -4,9 +4,10 @@
     "item": "minecraft:acacia_trapdoor"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:acacia_trapdoor"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:hatch"
   }
 }

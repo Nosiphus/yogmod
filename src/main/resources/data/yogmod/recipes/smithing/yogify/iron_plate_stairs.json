@@ -4,9 +4,10 @@
     "item": "minecraft:mossy_cobblestone_stairs"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:mossy_cobblestone_stairs"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:iron_plate_stairs"
   }
 }

@@ -4,9 +4,10 @@
     "item": "minecraft:furnace"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:furnace"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:oven"
   }
 }

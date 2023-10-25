@@ -4,9 +4,10 @@
     "item": "minecraft:mangrove_trapdoor"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:mangrove_trapdoor"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:hatch"
   }
 }

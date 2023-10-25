@@ -4,9 +4,10 @@
     "item": "minecraft:repeater"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:repeater"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:diode"
   }
 }

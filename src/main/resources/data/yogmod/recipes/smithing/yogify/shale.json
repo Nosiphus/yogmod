@@ -4,9 +4,10 @@
     "item": "minecraft:white_concrete_powder"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:white_concrete_powder"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:shale"
   }
 }

@@ -4,9 +4,10 @@
     "item": "minecraft:melon"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:melon"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:countertop"
   }
 }

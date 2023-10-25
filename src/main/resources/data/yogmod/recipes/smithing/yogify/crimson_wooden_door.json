@@ -4,9 +4,10 @@
     "item": "minecraft:crimson_door"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:crimson_door"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:wooden_door"
   }
 }

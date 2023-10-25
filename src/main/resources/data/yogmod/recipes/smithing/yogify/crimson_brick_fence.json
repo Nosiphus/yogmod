@@ -4,9 +4,10 @@
     "item": "minecraft:crimson_fence"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:crimson_fence"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:crimson_brick_fence"
   }
 }

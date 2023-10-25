@@ -4,9 +4,10 @@
     "item": "minecraft:gray_wool"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:gray_wool"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:gray_stucco"
   }
 }

@@ -4,9 +4,10 @@
     "item": "minecraft:orange_wool"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:orange_wool"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:orange_plastic"
   }
 }

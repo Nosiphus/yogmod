@@ -4,9 +4,10 @@
     "item": "minecraft:acacia_door"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:acacia_door"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:wooden_door"
   }
 }

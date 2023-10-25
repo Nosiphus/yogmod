@@ -4,9 +4,10 @@
     "item": "minecraft:acacia_stairs"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:acacia_stairs"
   },
   "result": {
+	"count": 2,
     "item": "yogmod:acacia_brick_stairs"
   }
 }
