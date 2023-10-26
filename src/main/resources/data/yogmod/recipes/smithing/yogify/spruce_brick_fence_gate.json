@@ -4,7 +4,7 @@
     "item": "minecraft:spruce_fence_gate"
   },
   "addition": {
-    "item": "minecraft:spruce_fence_gates"
+    "item": "minecraft:spruce_fence_gate"
   },
   "result": {
 	"count": 2,
