@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "yogmod:brick"
+  },
+  "result": "yogmod:brick_slab"
+}

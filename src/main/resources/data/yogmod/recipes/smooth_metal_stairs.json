@@ -2,18 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "tag": "minecraft:iron_ingot"
-    },
-    "W": {
       "item": "yogmod:smooth_metal"
     }
   },
   "pattern": [
-    "W#W",
-    "W#W"
+    "#  ",
+    "## ",
+    "###"
   ],
   "result": {
-    "count": 3,
-    "item": "yogmod:smooth_metal_fence"
+    "count": 4,
+    "item": "yogmod:smooth_metal_stairs"
   }
 }

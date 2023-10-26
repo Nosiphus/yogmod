@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "yogmod:iron_plate"
+  },
+  "result": "yogmod:iron_plate_stairs"
+}

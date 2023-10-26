@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "yogmod:raw_wood"
+  },
+  "result": "yogmod:raw_wood_slab"
+}
