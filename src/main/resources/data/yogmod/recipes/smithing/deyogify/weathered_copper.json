@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:rusty_iron"
+  },
+  "addition": {
+    "item": "yogmod:rusty_iron"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:weathered_copper"
+  }
+}

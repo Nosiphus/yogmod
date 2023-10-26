@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:brick_stairs"
+  },
+  "addition": {
+    "item": "yogmod:brick_stairs"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:brick_stairs"
+  }
+}

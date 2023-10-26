@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:raw_wood_slab"
+  },
+  "addition": {
+    "item": "yogmod:raw_wood_slab"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:stone_brick_slab"
+  }
+}

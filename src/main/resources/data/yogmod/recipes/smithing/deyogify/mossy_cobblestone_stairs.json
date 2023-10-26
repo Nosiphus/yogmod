@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:iron_plate_stairs"
+  },
+  "addition": {
+    "item": "yogmod:iron_plate_stairs"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:mossy_cobblestone_stairs"
+  }
+}

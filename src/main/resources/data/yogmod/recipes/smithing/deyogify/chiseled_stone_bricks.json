@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:stripe_intersection"
+  },
+  "addition": {
+    "item": "yogmod:stripe_intersection"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:chiseled_stone_bricks"
+  }
+}

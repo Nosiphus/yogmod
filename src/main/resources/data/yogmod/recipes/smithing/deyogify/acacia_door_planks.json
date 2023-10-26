@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "minecraft:acacia_planks"
+  },
+  "result": {
+    "item": "minecraft:acacia_door"
+  }
+}

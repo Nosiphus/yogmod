@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "minecraft:mangrove_planks"
+  },
+  "result": {
+    "item": "minecraft:mangrove_trapdoor"
+  }
+}

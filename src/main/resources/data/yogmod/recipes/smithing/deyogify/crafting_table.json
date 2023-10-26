@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:tech_accent"
+  },
+  "addition": {
+    "item": "yogmod:tech_accent"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:crafting_table"
+  }
+}

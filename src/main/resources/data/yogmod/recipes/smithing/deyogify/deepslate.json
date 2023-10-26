@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:white_marble"
+  },
+  "addition": {
+    "item": "yogmod:white_marble"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:deepslate"
+  }
+}

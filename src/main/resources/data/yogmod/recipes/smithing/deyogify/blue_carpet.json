@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:blue_plastic_carpet"
+  },
+  "addition": {
+    "item": "yogmod:blue_plastic_carpet"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:blue_carpet"
+  }
+}

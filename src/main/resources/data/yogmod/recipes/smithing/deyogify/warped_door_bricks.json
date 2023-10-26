@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "yogmod:warped_bricks"
+  },
+  "result": {
+    "item": "minecraft:warped_door"
+  }
+}

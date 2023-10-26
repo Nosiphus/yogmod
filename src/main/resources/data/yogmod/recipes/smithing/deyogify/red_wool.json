@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:red_plastic"
+  },
+  "addition": {
+    "item": "yogmod:red_plastic"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:red_wool"
+  }
+}

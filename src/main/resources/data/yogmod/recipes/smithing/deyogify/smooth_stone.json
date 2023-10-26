@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:step"
+  },
+  "addition": {
+    "item": "yogmod:step"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:smooth_stone"
+  }
+}

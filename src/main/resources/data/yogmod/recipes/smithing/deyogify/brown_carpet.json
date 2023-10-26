@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:brown_stucco_carpet"
+  },
+  "addition": {
+    "item": "yogmod:brown_stucco_carpet"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:brown_carpet"
+  }
+}

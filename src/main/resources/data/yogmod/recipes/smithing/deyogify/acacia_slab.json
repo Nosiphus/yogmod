@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:acacia_brick_slab"
+  },
+  "addition": {
+    "item": "yogmod:acacia_brick_slab"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:acacia_slab"
+  }
+}

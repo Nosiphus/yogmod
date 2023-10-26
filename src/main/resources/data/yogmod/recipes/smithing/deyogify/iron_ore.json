@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:decorative_concrete"
+  },
+  "addition": {
+    "item": "yogmod:decorative_concrete"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:iron_ore"
+  }
+}

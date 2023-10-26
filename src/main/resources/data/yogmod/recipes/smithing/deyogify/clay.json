@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:reinforced_paneling"
+  },
+  "addition": {
+    "item": "yogmod:reinforced_paneling"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:clay"
+  }
+}

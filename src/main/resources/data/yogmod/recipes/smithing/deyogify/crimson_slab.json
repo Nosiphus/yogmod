@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:crimson_brick_slab"
+  },
+  "addition": {
+    "item": "yogmod:crimson_brick_slab"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:crimson_slab"
+  }
+}

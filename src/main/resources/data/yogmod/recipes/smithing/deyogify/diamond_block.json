@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:blue_paneling"
+  },
+  "addition": {
+    "item": "yogmod:blue_paneling"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:diamond_block"
+  }
+}

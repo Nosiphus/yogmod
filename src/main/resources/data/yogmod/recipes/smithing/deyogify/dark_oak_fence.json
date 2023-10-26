@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:dark_oak_brick_fence"
+  },
+  "addition": {
+    "item": "yogmod:dark_oak_brick_fence"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:dark_oak_fence"
+  }
+}

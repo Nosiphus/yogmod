@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "yogmod:spruce_bricks"
+  },
+  "result": {
+    "item": "minecraft:spruce_trapdoor"
+  }
+}

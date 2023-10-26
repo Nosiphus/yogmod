@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "minecraft:dark_oak_planks"
+  },
+  "result": {
+    "item": "minecraft:dark_oak_trapdoor"
+  }
+}

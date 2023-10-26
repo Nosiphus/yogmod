@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:white_lighting"
+  },
+  "addition": {
+    "item": "yogmod:white_lighting"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:pumpkin"
+  }
+}

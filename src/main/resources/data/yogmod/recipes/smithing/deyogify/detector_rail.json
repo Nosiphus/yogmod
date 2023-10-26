@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:metrovox_detector_rail"
+  },
+  "addition": {
+    "item": "yogmod:metrovox_detector_rail"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:detector_rail"
+  }
+}

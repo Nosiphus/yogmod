@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:smooth_metal_wall"
+  },
+  "addition": {
+    "item": "yogmod:smooth_metal_wall"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:nether_brick_wall"
+  }
+}

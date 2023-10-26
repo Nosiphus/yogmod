@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:violet_velvet"
+  },
+  "addition": {
+    "item": "yogmod:violet_velvet"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:purple_wool"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:concrete"
+  },
+  "addition": {
+    "item": "yogmod:concrete"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:white_concrete"
+  }
+}

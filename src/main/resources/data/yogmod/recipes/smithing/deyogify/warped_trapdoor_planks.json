@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "minecraft:warped_planks"
+  },
+  "result": {
+    "item": "minecraft:warped_trapdoor"
+  }
+}
