@@ -229,6 +229,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.WARPED_BRICK_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> MANGROVE_BRICK_FENCE = ITEMS.register("mangrove_brick_fence",
             () -> new BlockItem(ModBlocks.MANGROVE_BRICK_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> PISTON = ITEMS.register("piston",
+            () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> STICKY_PISTON = ITEMS.register("sticky_piston",
+            () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> SMOOTH_METAL_FENCE = ITEMS.register("smooth_metal_fence",
             () -> new BlockItem(ModBlocks.SMOOTH_METAL_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> AIR_VENT = ITEMS.register("air_vent",

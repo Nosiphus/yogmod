@@ -2,10 +2,16 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.block.WireBlock;
 import com.nosiphus.yogmod.client.menu.screen.OvenMenuScreen;
+import com.nosiphus.yogmod.client.render.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,6 +54,8 @@ public class YogMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+            registerBlockEntityRenderers();
+
             MenuScreens.register(ModMenuTypes.OVEN_MENU.get(), OvenMenuScreen::new);
 
         }
@@ -62,7 +70,13 @@ public class YogMod {
 
     @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEvents {
-        //future events may be added here
+
+        //Future events will go here
+
+    }
+
+    private static void registerBlockEntityRenderers() {
+        BlockEntityRenderers.register(ModBlockEntities.PISTON.get(), PistonHeadRenderer::new);
     }
 
 }

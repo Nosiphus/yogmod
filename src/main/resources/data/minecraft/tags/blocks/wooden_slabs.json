@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "yogmod:oak_brick_slab",
+    "yogmod:spruce_brick_slab",
+    "yogmod:birch_brick_slab",
+    "yogmod:jungle_brick_slab",
+    "yogmod:acacia_brick_slab",
+    "yogmod:dark_oak_brick_slab",
+    "yogmod:crimson_brick_slab",
+    "yogmod:warped_brick_slab",
+    "yogmod:mangrove_brick_slab"
+  ]
+}

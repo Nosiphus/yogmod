@@ -2,6 +2,12 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.block.*;
 import com.nosiphus.yogmod.block.LanternBlock;
+import com.nosiphus.yogmod.block.piston.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -343,6 +349,23 @@ public class ModBlocks {
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE)));
     public static final RegistryObject<Block> MANGROVE_BRICK_FENCE_GATE = BLOCKS.register("mangrove_brick_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE_GATE)));
+    public static final RegistryObject<Block> MOVING_PISTON = BLOCKS.register("moving_piston",
+            () -> new MovingPistonBlock(BlockBehaviour.Properties.of(Material.PISTON)
+                    .strength(-1.0F)
+                    .dynamicShape()
+                    .noLootTable()
+                    .noOcclusion()
+                    .isRedstoneConductor(ModBlocks::never)
+                    .isSuffocating(ModBlocks::never)
+                    .isViewBlocking(ModBlocks::never)
+            ));
+    public static final RegistryObject<Block> PISTON = BLOCKS.register("piston", () -> pistonBase(false));
+    public static final RegistryObject<Block> PISTON_HEAD = BLOCKS.register("piston_head",
+            () -> new PistonHeadBlock(BlockBehaviour.Properties.of(Material.PISTON)
+                    .strength(1.5F)
+                    .noLootTable()
+            ));
+    public static final RegistryObject<Block> STICKY_PISTON = BLOCKS.register("sticky_piston", () -> pistonBase(true));
     public static final RegistryObject<Block> LAMP = BLOCKS.register("lamp",
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
@@ -373,9 +396,24 @@ public class ModBlocks {
 
     //Methods
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
-        return (state) -> {
-            return state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
+        return (blockState) -> {
+            return blockState.getValue(BlockStateProperties.LIT) ? lightValue : 0;
         };
+    }
+
+    private static boolean always(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return true;
+    }
+
+    private static boolean never(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return false;
+    }
+
+    private static PistonBaseBlock pistonBase(boolean isSticky) {
+        BlockBehaviour.StatePredicate blockbehaviour$statepredicate = (blockState, blockGetter, blockPos) -> {
+            return !blockState.getValue(PistonBaseBlock.EXTENDED);
+        };
+        return new PistonBaseBlock(isSticky, BlockBehaviour.Properties.of(Material.PISTON).strength(1.5F).isRedstoneConductor(ModBlocks::never).isSuffocating(blockbehaviour$statepredicate).isViewBlocking(blockbehaviour$statepredicate));
     }
 
 }

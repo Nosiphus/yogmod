@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "yogmod:crimson_bricks",
+	"yogmod:crimson_brick_fence",
+	"yogmod:crimson_brick_fence_gate",
+	"yogmod:crimson_brick_slab",
+	"yogmod:crimson_brick_stairs",
+	"yogmod:warped_bricks",
+	"yogmod:warped_brick_fence",
+	"yogmod:warped_brick_fence_gate",
+	"yogmod:warped_brick_slab",
+	"yogmod:warped_brick_stairs"
+  ]
+}

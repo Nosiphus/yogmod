@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "yogmod:oak_brick_stairs",
+    "yogmod:spruce_brick_stairs",
+    "yogmod:birch_brick_stairs",
+    "yogmod:jungle_brick_stairs",
+    "yogmod:acacia_brick_stairs",
+    "yogmod:dark_oak_brick_stairs",
+    "yogmod:crimson_brick_stairs",
+    "yogmod:warped_brick_stairs",
+    "yogmod:mangrove_brick_stairs"
+  ]
+}
