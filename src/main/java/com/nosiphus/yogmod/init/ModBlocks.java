@@ -137,7 +137,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BRICK_SLAB = BLOCKS.register("brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)));
     public static final RegistryObject<Block> RAW_WOOD_SLAB = BLOCKS.register("raw_wood_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> SMOOTH_METAL_SLAB = BLOCKS.register("smooth_metal_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_SLAB)));
     public static final RegistryObject<Block> STEP = BLOCKS.register("step",
@@ -167,7 +167,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor",
             () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> RAW_WOOD = BLOCKS.register("raw_wood",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> COUNTERTOP = BLOCKS.register("countertop",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> SMOOTH_METAL = BLOCKS.register("smooth_metal",
@@ -199,7 +199,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BRICK_STAIRS = BLOCKS.register("brick_stairs",
             () -> new StairBlock(BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BRICK_STAIRS)));
     public static final RegistryObject<Block> RAW_WOOD_STAIRS = BLOCKS.register("raw_wood_stairs",
-            () -> new StairBlock(RAW_WOOD.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
+            () -> new StairBlock(RAW_WOOD.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> SMOOTH_METAL_STAIRS = BLOCKS.register("smooth_metal_stairs",
             () -> new StairBlock(SMOOTH_METAL.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_STAIRS)));
 
@@ -262,7 +262,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BRICK_WALL = BLOCKS.register("brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_WALL)));
     public static final RegistryObject<Block> RAW_WOOD_WALL = BLOCKS.register("raw_wood_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> SMOOTH_METAL_WALL = BLOCKS.register("smooth_metal_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_WALL)));
     public static final RegistryObject<Block> BEIGE_PLASTIC_CARPET = BLOCKS.register("beige_plastic_carpet",
