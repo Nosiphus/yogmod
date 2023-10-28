@@ -1,5 +1,5 @@
 {
-    "parent": "yogmod:block/wire_dot",
+    "parent": "yogmod:block/wire/wire_none",
 	"display" : {
         "gui": {
             "rotation": [ 30, 135, 0 ],
