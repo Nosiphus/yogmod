@@ -4,9 +4,6 @@ import com.nosiphus.yogmod.block.*;
 import com.nosiphus.yogmod.block.LanternBlock;
 import com.nosiphus.yogmod.block.piston.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 public class ModBlocks {
@@ -306,12 +304,31 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_MARBLE_CARPET = BLOCKS.register("black_marble_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_CARPET)));
     //Sign will go here when implemented
+    public static final RegistryObject<Block> YOG_SIGN = registerBlockWithoutBlockItem("yog_sign",
+            () -> new YogStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.YOG));
+    public static final RegistryObject<Block> YOG_WALL_SIGN = registerBlockWithoutBlockItem("yog_wall_sign",
+            () -> new YogWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.YOG));
 
     //Redstone
     public static final RegistryObject<Block> CONSOLE = BLOCKS.register("console",
             () -> new NoteBlock(BlockBehaviour.Properties.copy(Blocks.NOTE_BLOCK)));
-    //Piston will go here when implemented
-    //Sticky Piston will go here when implemented
+    public static final RegistryObject<Block> MOVING_PISTON = BLOCKS.register("moving_piston",
+            () -> new MovingPistonBlock(BlockBehaviour.Properties.of(Material.PISTON)
+                    .strength(-1.0F)
+                    .dynamicShape()
+                    .noLootTable()
+                    .noOcclusion()
+                    .isRedstoneConductor(ModBlocks::never)
+                    .isSuffocating(ModBlocks::never)
+                    .isViewBlocking(ModBlocks::never)
+            ));
+    public static final RegistryObject<Block> PISTON = BLOCKS.register("piston", () -> pistonBase(false));
+    public static final RegistryObject<Block> PISTON_HEAD = BLOCKS.register("piston_head",
+            () -> new PistonHeadBlock(BlockBehaviour.Properties.of(Material.PISTON)
+                    .strength(1.5F)
+                    .noLootTable()
+            ));
+    public static final RegistryObject<Block> STICKY_PISTON = BLOCKS.register("sticky_piston", () -> pistonBase(true));
     public static final RegistryObject<Block> CLASSIC_LEVER = BLOCKS.register("classic_lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever",
@@ -349,23 +366,6 @@ public class ModBlocks {
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE)));
     public static final RegistryObject<Block> MANGROVE_BRICK_FENCE_GATE = BLOCKS.register("mangrove_brick_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE_GATE)));
-    public static final RegistryObject<Block> MOVING_PISTON = BLOCKS.register("moving_piston",
-            () -> new MovingPistonBlock(BlockBehaviour.Properties.of(Material.PISTON)
-                    .strength(-1.0F)
-                    .dynamicShape()
-                    .noLootTable()
-                    .noOcclusion()
-                    .isRedstoneConductor(ModBlocks::never)
-                    .isSuffocating(ModBlocks::never)
-                    .isViewBlocking(ModBlocks::never)
-            ));
-    public static final RegistryObject<Block> PISTON = BLOCKS.register("piston", () -> pistonBase(false));
-    public static final RegistryObject<Block> PISTON_HEAD = BLOCKS.register("piston_head",
-            () -> new PistonHeadBlock(BlockBehaviour.Properties.of(Material.PISTON)
-                    .strength(1.5F)
-                    .noLootTable()
-            ));
-    public static final RegistryObject<Block> STICKY_PISTON = BLOCKS.register("sticky_piston", () -> pistonBase(true));
     public static final RegistryObject<Block> LAMP = BLOCKS.register("lamp",
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
@@ -399,6 +399,10 @@ public class ModBlocks {
         return (blockState) -> {
             return blockState.getValue(BlockStateProperties.LIT) ? lightValue : 0;
         };
+    }
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     private static boolean always(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {

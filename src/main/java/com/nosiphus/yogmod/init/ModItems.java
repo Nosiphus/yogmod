@@ -4,9 +4,8 @@ import com.nosiphus.yogmod.YogMod;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.StandingAndWallBlockItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -229,10 +228,6 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.WARPED_BRICK_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> MANGROVE_BRICK_FENCE = ITEMS.register("mangrove_brick_fence",
             () -> new BlockItem(ModBlocks.MANGROVE_BRICK_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    public static final RegistryObject<BlockItem> PISTON = ITEMS.register("piston",
-            () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    public static final RegistryObject<BlockItem> STICKY_PISTON = ITEMS.register("sticky_piston",
-            () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> SMOOTH_METAL_FENCE = ITEMS.register("smooth_metal_fence",
             () -> new BlockItem(ModBlocks.SMOOTH_METAL_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> AIR_VENT = ITEMS.register("air_vent",
@@ -291,12 +286,17 @@ public class ModItems {
     public static final RegistryObject<BlockItem> BLACK_MARBLE_CARPET = ITEMS.register("black_marble_carpet",
             () -> new BlockItem(ModBlocks.BLACK_MARBLE_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     //Sign will go here when implemented
+    public static final RegistryObject<Item> YOG_SIGN = ITEMS.register("yog_sign",
+            () -> new SignItem(new Item.Properties().tab(YogMod.YOGTAB).stacksTo(16),
+                    ModBlocks.YOG_SIGN.get(), ModBlocks.YOG_WALL_SIGN.get()));
 
     //Redstone
     public static final RegistryObject<BlockItem> CONSOLE = ITEMS.register("console",
             () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Piston will go here when implemented
-    //Sticky Piston will go here when implemented
+    public static final RegistryObject<BlockItem> PISTON = ITEMS.register("piston",
+            () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> STICKY_PISTON = ITEMS.register("sticky_piston",
+            () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CLASSIC_LEVER = ITEMS.register("classic_lever",
             () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LEVER = ITEMS.register("lever",

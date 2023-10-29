@@ -130,7 +130,6 @@
 	"block.yogmod.riveted_steel": "Riveted Steel",
 	"block.yogmod.rusty_iron": "Rusty Iron",
 	"block.yogmod.shale": "Shale",
-	"block.yogmod.sign": "Sign (YogMod)",
 	"block.yogmod.sink": "Sink",
 	"block.yogmod.smooth_metal": "Smooth Metal",
 	"block.yogmod.smooth_metal_fence": "Smooth Metal Fence",
@@ -164,6 +163,8 @@
 	"block.yogmod.white_plastic_carpet": "White Plastic Carpet",
 	"block.yogmod.wire": "Wire",
 	"block.yogmod.wooden_door": "Wooden Door (YogMod)",
+	"block.yogmod.yog_sign": "Sign (YogMod)",
+	"block.yogmod.yog_wall_sign": "Sign (YogMod)",
 	
 	"container.yogmod.oven": "Oven",
 
@@ -180,6 +181,7 @@
 	"item.yogmod.riot_vest": "Riot Vest",
 	"item.yogmod.safety_vest": "Safety Vest",
 	"item.yogmod.sewer_waders": "Sewer Waders",
+	"item.yogmod.yog_sign": "Sign (YogMod)",
 	"item.yogmod.spatterdash_shoes": "Spatterdash Shoes",
 	"item.yogmod.steeltoe_boots": "Steel-toe Boots",
 	"item.yogmod.suit_coat": "Suit Coat",

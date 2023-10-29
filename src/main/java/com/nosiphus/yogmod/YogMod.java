@@ -5,13 +5,12 @@ import com.nosiphus.yogmod.client.menu.screen.OvenMenuScreen;
 import com.nosiphus.yogmod.client.render.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,6 +43,8 @@ public class YogMod {
         ModItems.ITEMS.register(eventBus);
         ModMenuTypes.MENU_TYPES.register(eventBus);
 
+
+
         MinecraftForge.EVENT_BUS.register(this);
 
     }
@@ -54,6 +55,8 @@ public class YogMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+            WoodType.register(ModWoodTypes.YOG);
+            Sheets.addWoodType(ModWoodTypes.YOG);
             registerBlockEntityRenderers();
 
             MenuScreens.register(ModMenuTypes.OVEN_MENU.get(), OvenMenuScreen::new);
@@ -71,12 +74,11 @@ public class YogMod {
     @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEvents {
 
-        //Future events will go here
-
     }
 
     private static void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(ModBlockEntities.PISTON.get(), PistonHeadRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntities.YOG_SIGN.get(), SignRenderer::new);
     }
 
 }
