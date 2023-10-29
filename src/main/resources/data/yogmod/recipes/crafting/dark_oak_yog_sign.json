@@ -3,7 +3,7 @@
   "group": "wooden_sign",
   "key": {
     "#": {
-      "tag": "yogmod:wooden_bricks"
+      "item": "yogmod:dark_oak_bricks"
     },
     "X": {
       "item": "minecraft:stick"
