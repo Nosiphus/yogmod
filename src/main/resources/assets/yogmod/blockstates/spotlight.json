@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "yogmod:block/spotlight_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "yogmod:block/spotlight"
+    },
+    "axis=z": {
+      "model": "yogmod:block/spotlight_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "yogmod:mangrove_bricks"
+  },
+  "result": {
+    "item": "minecraft:mangrove_trapdoor"
+  }
+}

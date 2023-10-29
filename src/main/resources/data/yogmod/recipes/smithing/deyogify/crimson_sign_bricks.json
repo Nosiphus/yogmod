@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "yogmod:crimson_bricks"
+  },
+  "result": {
+    "item": "minecraft:crimson_trapdoor"
+  }
+}

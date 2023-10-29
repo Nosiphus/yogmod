@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:dark_oak_sign"
+  },
+  "addition": {
+    "item": "minecraft:dark_oak_sign"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:yog_sign"
+  }
+}

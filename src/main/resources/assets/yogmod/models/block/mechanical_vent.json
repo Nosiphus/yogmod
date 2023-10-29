@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "yogmod:block/mechanical_vent"
+  }
+}

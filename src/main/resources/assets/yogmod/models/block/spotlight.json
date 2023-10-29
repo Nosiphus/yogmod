@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "yogmod:block/spotlight_end",
+    "side": "yogmod:block/spotlight_side"
+  }
+}

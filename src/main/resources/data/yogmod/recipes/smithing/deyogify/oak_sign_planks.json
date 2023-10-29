@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "minecraft:oak_planks"
+  },
+  "result": {
+    "item": "minecraft:oak_trapdoor"
+  }
+}

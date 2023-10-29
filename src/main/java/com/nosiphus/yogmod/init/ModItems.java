@@ -380,7 +380,13 @@ public class ModItems {
     public static final RegistryObject<Item> PENCIL = ITEMS.register("pencil",
             () -> new Item(new Item.Properties().tab(YogMod.YOGTAB)));
 
-    //Brewing
+    //Not Originally Obtainable
+    public static final RegistryObject<BlockItem> MECHANICAL_CHAIN = ITEMS.register("mechanical_chain",
+            () -> new BlockItem(ModBlocks.MECHANICAL_CHAIN.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> MECHANICAL_VENT = ITEMS.register("mechanical_vent",
+            () -> new BlockItem(ModBlocks.MECHANICAL_VENT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> SPOTLIGHT = ITEMS.register("spotlight",
+            () -> new BlockItem(ModBlocks.SPOTLIGHT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Methods
 

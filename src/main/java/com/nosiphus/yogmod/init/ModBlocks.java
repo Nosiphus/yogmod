@@ -394,6 +394,14 @@ public class ModBlocks {
     //Brewing
     //Sink will go here when implemented
 
+    //Not Originally Obtainable
+    public static final RegistryObject<Block> MECHANICAL_CHAIN = BLOCKS.register("mechanical_chain",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> MECHANICAL_VENT = BLOCKS.register("mechanical_vent",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> SPOTLIGHT = BLOCKS.register("spotlight",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)));
+
     //Methods
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
         return (blockState) -> {
