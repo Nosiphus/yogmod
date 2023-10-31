@@ -346,8 +346,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Brewing
-    /* public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink",
-            () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().tab(YogMod.YOGTAB))); */
+    public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink",
+            () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Miscellaneous
     public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee",

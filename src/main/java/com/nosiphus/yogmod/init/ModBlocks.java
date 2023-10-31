@@ -392,7 +392,8 @@ public class ModBlocks {
             () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.copy(Blocks.ACTIVATOR_RAIL), false));
 
     //Brewing
-    //Sink will go here when implemented
+    public static final RegistryObject<Block> SINK = BLOCKS.register("sink",
+            () -> new CauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON)));
 
     //Not Originally Obtainable
     public static final RegistryObject<Block> MECHANICAL_CHAIN = BLOCKS.register("mechanical_chain",
