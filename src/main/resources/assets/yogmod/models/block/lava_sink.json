@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/template_cauldron_full",
+  "textures": {
+    "bottom": "yogmod:block/sink_bottom",
+    "content": "minecraft:block/lava_still",
+    "inside": "yogmod:block/sink_inner",
+    "particle": "yogmod:block/sink_side",
+    "side": "yogmod:block/sink_side",
+    "top": "yogmod:block/sink_top"
+  }
+}
