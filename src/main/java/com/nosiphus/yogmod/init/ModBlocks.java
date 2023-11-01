@@ -4,6 +4,7 @@ import com.nosiphus.yogmod.block.*;
 import com.nosiphus.yogmod.block.LanternBlock;
 import com.nosiphus.yogmod.block.piston.*;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -393,7 +394,15 @@ public class ModBlocks {
 
     //Brewing
     public static final RegistryObject<Block> SINK = BLOCKS.register("sink",
-            () -> new CauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON)));
+            () -> new SinkBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> WATER_SINK = BLOCKS.register("water_sink",
+            () -> new LayeredSinkBlock(BlockBehaviour.Properties.copy(Blocks.STONE), LayeredSinkBlock.RAIN, CauldronInteraction.WATER));
+    public static final RegistryObject<Block> LAVA_SINK = BLOCKS.register("lava_sink",
+            () -> new LavaSinkBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel((blockState) -> {
+        return 15;
+    })));
+    public static final RegistryObject<Block> POWDER_SNOW_SINK = BLOCKS.register("powder_snow_sink",
+            () -> new PowderSnowSinkBlock(BlockBehaviour.Properties.copy(Blocks.STONE), LayeredSinkBlock.SNOW, CauldronInteraction.POWDER_SNOW));
 
     //Not Originally Obtainable
     public static final RegistryObject<Block> MECHANICAL_CHAIN = BLOCKS.register("mechanical_chain",
