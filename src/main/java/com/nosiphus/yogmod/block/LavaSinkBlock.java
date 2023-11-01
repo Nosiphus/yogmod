@@ -1,17 +1,16 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.core.SinkInteraction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class LavaSinkBlock extends AbstractCauldronBlock {
+public class LavaSinkBlock extends AbstractSinkBlock {
 
     public LavaSinkBlock(BlockBehaviour.Properties properties) {
-        super(properties, CauldronInteraction.LAVA);
+        super(properties, SinkInteraction.LAVA);
     }
 
     protected double getContentHeight(BlockState blockState) {

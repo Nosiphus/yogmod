@@ -1,13 +1,12 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.core.SinkInteraction;
 import com.nosiphus.yogmod.init.ModBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,7 +20,7 @@ import net.minecraft.world.level.material.Fluids;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class LayeredSinkBlock extends AbstractCauldronBlock {
+public class LayeredSinkBlock extends AbstractSinkBlock {
     public static final int MIN_FILL_LEVEL = 1;
     public static final int MAX_FILL_LEVEL = 3;
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL_CAULDRON;
@@ -35,8 +34,8 @@ public class LayeredSinkBlock extends AbstractCauldronBlock {
     };
     private final Predicate<Biome.Precipitation> fillPredicate;
 
-    public LayeredSinkBlock(BlockBehaviour.Properties properties, Predicate<Biome.Precipitation> biomePrecipitation, Map<Item, CauldronInteraction> itemCauldronInteractionMap) {
-        super(properties, itemCauldronInteractionMap);
+    public LayeredSinkBlock(BlockBehaviour.Properties properties, Predicate<Biome.Precipitation> biomePrecipitation, Map<Item, SinkInteraction> sinkInteractionMap) {
+        super(properties, sinkInteractionMap);
         this.fillPredicate = biomePrecipitation;
         this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, Integer.valueOf(1)));
     }

@@ -5,6 +5,7 @@ import com.nosiphus.yogmod.init.ModBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
 public interface SinkInteraction {
     Map<Item, SinkInteraction> EMPTY = newInteractionMap();
@@ -104,8 +106,8 @@ public interface SinkInteraction {
     };
 
     static Object2ObjectOpenHashMap<Item, SinkInteraction> newInteractionMap() {
-        return Util.make(new Object2ObjectOpenHashMap<>(), (itemCauldronInteractionMap) -> {
-            itemCauldronInteractionMap.defaultReturnValue((blockState, level, blockPos, player, interactionHand, itemStack) -> {
+        return Util.make(new Object2ObjectOpenHashMap<>(), (sinkInteractionMap) -> {
+            sinkInteractionMap.defaultReturnValue((blockState, level, blockPos, player, interactionHand, itemStack) -> {
                 return InteractionResult.PASS;
             });
         });
@@ -204,18 +206,56 @@ public interface SinkInteraction {
         WATER.put(Items.PURPLE_SHULKER_BOX, SHULKER_BOX);
         WATER.put(Items.RED_SHULKER_BOX, SHULKER_BOX);
         WATER.put(Items.YELLOW_SHULKER_BOX, SHULKER_BOX);
-        LAVA.put(Items.BUCKET, (blockState, level, blockPos, p_175700_, p_175701_, p_175702_) -> {
-            return fillBucket(blockState, level, blockPos, p_175700_, p_175701_, p_175702_, new ItemStack(Items.LAVA_BUCKET), (p_175651_) -> {
+        LAVA.put(Items.BUCKET, (blockState, level, blockPos, player, interactionHand, itemStack) -> {
+            return fillBucket(blockState, level, blockPos, player, interactionHand, itemStack, new ItemStack(Items.LAVA_BUCKET), (blockState1) -> {
                 return true;
             }, SoundEvents.BUCKET_FILL_LAVA);
         });
         addDefaultInteractions(LAVA);
-        POWDER_SNOW.put(Items.BUCKET, (p_175690_, p_175691_, p_175692_, p_175693_, p_175694_, p_175695_) -> {
-            return fillBucket(p_175690_, p_175691_, p_175692_, p_175693_, p_175694_, p_175695_, new ItemStack(Items.POWDER_SNOW_BUCKET), (p_175627_) -> {
-                return p_175627_.getValue(LayeredSinkBlock.LEVEL) == 3;
+        POWDER_SNOW.put(Items.BUCKET, (blockState, level, blockPos, player, interactionHand, itemStack) -> {
+            return fillBucket(blockState, level, blockPos, player, interactionHand, itemStack, new ItemStack(Items.POWDER_SNOW_BUCKET), (blockState1) -> {
+                return blockState1.getValue(LayeredSinkBlock.LEVEL) == 3;
             }, SoundEvents.BUCKET_FILL_POWDER_SNOW);
         });
         addDefaultInteractions(POWDER_SNOW);
+    }
+
+    static void addDefaultInteractions(Map<Item, SinkInteraction> sinkInteractionMap) {
+        sinkInteractionMap.put(Items.LAVA_BUCKET, FILL_LAVA);
+        sinkInteractionMap.put(Items.WATER_BUCKET, FILL_WATER);
+        sinkInteractionMap.put(Items.POWDER_SNOW_BUCKET, FILL_POWDER_SNOW);
+    }
+
+    static InteractionResult fillBucket(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, ItemStack itemStack, ItemStack itemStack1, Predicate<BlockState> blockStatePredicate, SoundEvent soundEvent) {
+        if (!blockStatePredicate.test(blockState)) {
+            return InteractionResult.PASS;
+        } else {
+            if (!level.isClientSide) {
+                Item item = itemStack.getItem();
+                player.setItemInHand(interactionHand, ItemUtils.createFilledResult(itemStack, player, itemStack1));
+                player.awardStat(Stats.USE_CAULDRON);
+                player.awardStat(Stats.ITEM_USED.get(item));
+                level.setBlockAndUpdate(blockPos, Blocks.CAULDRON.defaultBlockState());
+                level.playSound((Player)null, blockPos, soundEvent, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.gameEvent((Entity)null, GameEvent.FLUID_PICKUP, blockPos);
+            }
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+    }
+
+    static InteractionResult emptyBucket(Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, ItemStack itemStack, BlockState blockState, SoundEvent soundEvent) {
+        if (!level.isClientSide) {
+            Item item = itemStack.getItem();
+            player.setItemInHand(interactionHand, ItemUtils.createFilledResult(itemStack, player, new ItemStack(Items.BUCKET)));
+            player.awardStat(Stats.FILL_CAULDRON);
+            player.awardStat(Stats.ITEM_USED.get(item));
+            level.setBlockAndUpdate(blockPos, blockState);
+            level.playSound((Player)null, blockPos, soundEvent, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.gameEvent((Entity)null, GameEvent.FLUID_PLACE, blockPos);
+        }
+
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
 }

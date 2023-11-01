@@ -1,25 +1,24 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.core.SinkInteraction;
 import com.nosiphus.yogmod.init.ModBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 
-public class SinkBlock extends AbstractCauldronBlock {
+public class SinkBlock extends AbstractSinkBlock {
 
     private static final float RAIN_FILL_CHANCE = 0.05F;
     private static final float POWDER_SNOW_FILL_CHANCE = 0.1F;
 
     public SinkBlock(BlockBehaviour.Properties properties) {
-        super(properties, CauldronInteraction.EMPTY);
+        super(properties, SinkInteraction.EMPTY);
     }
 
     public boolean isFull(BlockState blockState) {
