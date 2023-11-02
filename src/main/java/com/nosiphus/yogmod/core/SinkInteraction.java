@@ -126,7 +126,7 @@ public interface SinkInteraction {
                     player.setItemInHand(interactionHand, ItemUtils.createFilledResult(itemStack, player, new ItemStack(Items.GLASS_BOTTLE)));
                     player.awardStat(Stats.USE_CAULDRON);
                     player.awardStat(Stats.ITEM_USED.get(item));
-                    level.setBlockAndUpdate(blockPos, Blocks.WATER_CAULDRON.defaultBlockState());
+                    level.setBlockAndUpdate(blockPos, ModBlocks.WATER_SINK.get().defaultBlockState());
                     level.playSound((Player)null, blockPos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
                     level.gameEvent((Entity)null, GameEvent.FLUID_PLACE, blockPos);
                 }
@@ -235,7 +235,7 @@ public interface SinkInteraction {
                 player.setItemInHand(interactionHand, ItemUtils.createFilledResult(itemStack, player, itemStack1));
                 player.awardStat(Stats.USE_CAULDRON);
                 player.awardStat(Stats.ITEM_USED.get(item));
-                level.setBlockAndUpdate(blockPos, Blocks.CAULDRON.defaultBlockState());
+                level.setBlockAndUpdate(blockPos, ModBlocks.SINK.get().defaultBlockState());
                 level.playSound((Player)null, blockPos, soundEvent, SoundSource.BLOCKS, 1.0F, 1.0F);
                 level.gameEvent((Entity)null, GameEvent.FLUID_PICKUP, blockPos);
             }
