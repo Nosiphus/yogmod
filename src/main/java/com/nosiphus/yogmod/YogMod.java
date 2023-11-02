@@ -5,6 +5,7 @@ import com.nosiphus.yogmod.client.menu.screen.OvenMenuScreen;
 import com.nosiphus.yogmod.client.render.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
@@ -65,9 +66,12 @@ public class YogMod {
 
         @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-            event.register((blockstate, lightreader, pos, index) -> {
-                return WireBlock.colorMultiplier(blockstate.getValue(WireBlock.POWER));
+            event.register((blockState, blockAndTintGetter, blockPos, index) -> {
+                return WireBlock.colorMultiplier(blockState.getValue(WireBlock.POWER));
             }, ModBlocks.WIRE.get());
+            event.register((blockState, blockAndTintGetter, blockPos, index) -> {
+                return blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageWaterColor(blockAndTintGetter, blockPos) : -1;
+            }, ModBlocks.WATER_SINK.get());
         }
     }
 

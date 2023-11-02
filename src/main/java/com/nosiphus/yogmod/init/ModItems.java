@@ -2,10 +2,8 @@ package com.nosiphus.yogmod.init;
 
 import com.nosiphus.yogmod.YogMod;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
-import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -285,7 +283,6 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.RED_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> BLACK_MARBLE_CARPET = ITEMS.register("black_marble_carpet",
             () -> new BlockItem(ModBlocks.BLACK_MARBLE_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Sign will go here when implemented
     public static final RegistryObject<Item> YOG_SIGN = ITEMS.register("yog_sign",
             () -> new SignItem(new Item.Properties().tab(YogMod.YOGTAB).stacksTo(16),
                     ModBlocks.YOG_SIGN.get(), ModBlocks.YOG_WALL_SIGN.get()));
@@ -349,6 +346,14 @@ public class ModItems {
     public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink",
             () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
+    //Not Originally Obtainable
+    public static final RegistryObject<BlockItem> MECHANICAL_CHAIN = ITEMS.register("mechanical_chain",
+            () -> new BlockItem(ModBlocks.MECHANICAL_CHAIN.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> MECHANICAL_VENT = ITEMS.register("mechanical_vent",
+            () -> new BlockItem(ModBlocks.MECHANICAL_VENT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> SPOTLIGHT = ITEMS.register("spotlight",
+            () -> new BlockItem(ModBlocks.SPOTLIGHT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+
     //Miscellaneous
     public static final RegistryObject<Item> COFFEE = ITEMS.register("coffee",
             () -> new Item(new Item.Properties().tab(YogMod.YOGTAB)
@@ -379,14 +384,6 @@ public class ModItems {
     //Tools
     public static final RegistryObject<Item> PENCIL = ITEMS.register("pencil",
             () -> new Item(new Item.Properties().tab(YogMod.YOGTAB)));
-
-    //Not Originally Obtainable
-    public static final RegistryObject<BlockItem> MECHANICAL_CHAIN = ITEMS.register("mechanical_chain",
-            () -> new BlockItem(ModBlocks.MECHANICAL_CHAIN.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    public static final RegistryObject<BlockItem> MECHANICAL_VENT = ITEMS.register("mechanical_vent",
-            () -> new BlockItem(ModBlocks.MECHANICAL_VENT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    public static final RegistryObject<BlockItem> SPOTLIGHT = ITEMS.register("spotlight",
-            () -> new BlockItem(ModBlocks.SPOTLIGHT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Methods
 
