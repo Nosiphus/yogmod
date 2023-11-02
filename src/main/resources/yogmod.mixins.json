@@ -6,7 +6,6 @@
   "mixins": [
     "SinkMixin"
   ],
-  "client": [],
   "injectors": {
     "defaultRequire": 1
   }
