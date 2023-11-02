@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_cauldron_full",
+  "parent": "yogmod:block/template_sink_full",
   "textures": {
     "bottom": "yogmod:block/sink_bottom",
     "content": "minecraft:block/powder_snow",

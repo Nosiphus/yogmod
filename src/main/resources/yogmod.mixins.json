@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nosiphus.yogmod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SinkMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
