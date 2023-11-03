@@ -5,7 +5,6 @@ import com.nosiphus.yogmod.block.LanternBlock;
 import com.nosiphus.yogmod.block.piston.*;
 import com.nosiphus.yogmod.core.SinkInteraction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;

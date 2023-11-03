@@ -1,6 +1,7 @@
 package com.nosiphus.yogmod.block;
 
 import com.nosiphus.yogmod.core.SinkInteraction;
+import com.nosiphus.yogmod.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -24,6 +25,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 
 import java.util.Map;
 
@@ -88,11 +90,11 @@ public abstract class AbstractSinkBlock extends Block {
         return false;
     }
 
-    protected void receiveStalactiteDrip(BlockState blockState, Level level, BlockPos blockPos, Fluid fluid) {
+    protected void receiveStalactiteDrip(BlockState blockState, Level level, BlockPos blockPos, Fluid fluid) {  }
 
+    public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
+        return new ItemStack(ModBlocks.SINK.get());
     }
-
-
 
 
 }
