@@ -222,7 +222,10 @@ public class ModBlocks {
                     .lightLevel((lightLevel) -> { return 14; })
                     .sound(SoundType.GLASS)
                     .lootFrom(LANTERN)));
-    //Crate will go here when implemented
+    /*public static final RegistryObject<Block> CRATE = BLOCKS.register("crate",
+            () -> new CrateBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2.5F)
+                    .sound(SoundType.WOOD)));*/
     public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
     public static final RegistryObject<Block> OVEN = BLOCKS.register("oven",
