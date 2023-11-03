@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:cracked_stone_bricks"
+  },
+  "addition": {
+    "item": "minecraft:cracked_stone_bricks"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:concrete_bricks"
+  }
+}

@@ -173,6 +173,8 @@ public class ModBlocks {
             () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> RAW_WOOD = BLOCKS.register("raw_wood",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CONCRETE_BRICKS = BLOCKS.register("concrete_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE)));
     public static final RegistryObject<Block> COUNTERTOP = BLOCKS.register("countertop",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> SMOOTH_METAL = BLOCKS.register("smooth_metal",

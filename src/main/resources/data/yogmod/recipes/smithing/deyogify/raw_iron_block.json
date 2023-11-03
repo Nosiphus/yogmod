@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:riveted_steel"
+  },
+  "addition": {
+    "item": "yogmod:riveted_steel"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:raw_iron_block"
+  }
+}

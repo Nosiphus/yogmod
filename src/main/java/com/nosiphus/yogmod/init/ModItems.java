@@ -162,6 +162,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.LIT_MONITOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> RAW_WOOD = ITEMS.register("raw_wood",
             () -> new BlockItem(ModBlocks.RAW_WOOD.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CONCRETE_BRICKS = ITEMS.register("concrete_bricks",
+            () -> new BlockItem(ModBlocks.CONCRETE_BRICKS.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> COUNTERTOP = ITEMS.register("countertop",
             () -> new BlockItem(ModBlocks.COUNTERTOP.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> SMOOTH_METAL = ITEMS.register("smooth_metal",

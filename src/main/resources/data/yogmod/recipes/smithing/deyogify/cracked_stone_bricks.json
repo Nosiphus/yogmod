@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "yogmod:riveted_steel"
+    "item": "yogmod:concrete_bricks"
   },
   "addition": {
-    "item": "yogmod:riveted_steel"
+    "item": "yogmod:concrete_bricks"
   },
   "result": {
 	"count": 2,
