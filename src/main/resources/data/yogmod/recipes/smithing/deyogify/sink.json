@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "yogmod:sink"
+  },
+  "addition": {
+    "item": "yogmod:sink"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:cauldron"
+  }
+}

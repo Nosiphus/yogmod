@@ -44,8 +44,6 @@ public class YogMod {
         ModItems.ITEMS.register(eventBus);
         ModMenuTypes.MENU_TYPES.register(eventBus);
 
-
-
         MinecraftForge.EVENT_BUS.register(this);
 
     }
