@@ -169,8 +169,9 @@
 	"block.yogmod.wooden_door": "Wooden Door (YogMod)",
 	"block.yogmod.yog_sign": "Sign (YogMod)",
 	"block.yogmod.yog_wall_sign": "Sign (YogMod)",
-	
+
 	"container.yogmod.oven": "Oven",
+	"container.yogmod.yogifier": "Yogifier",
 
 	"itemGroup.yogmod": "YogMod",
 	

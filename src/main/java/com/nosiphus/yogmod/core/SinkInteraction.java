@@ -1,7 +1,7 @@
 package com.nosiphus.yogmod.core;
 
-import com.nosiphus.yogmod.block.LayeredSinkBlock;
-import com.nosiphus.yogmod.init.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.LayeredSinkBlock;
+import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;

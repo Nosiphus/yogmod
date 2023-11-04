@@ -1,9 +1,14 @@
 package com.nosiphus.yogmod;
 
-import com.nosiphus.yogmod.block.WireBlock;
-import com.nosiphus.yogmod.client.menu.screen.OvenMenuScreen;
-import com.nosiphus.yogmod.client.render.blockentity.PistonHeadRenderer;
-import com.nosiphus.yogmod.init.*;
+import com.nosiphus.yogmod.world.inventory.ModMenuType;
+import com.nosiphus.yogmod.world.item.ModItems;
+import com.nosiphus.yogmod.world.item.yogifier.ModRecipeTypes;
+import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.WireBlock;
+import com.nosiphus.yogmod.client.gui.screens.inventory.OvenMenuScreen;
+import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
@@ -39,10 +44,11 @@ public class YogMod {
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModBlockEntities.BLOCK_ENTITIES.register(eventBus);
+        ModBlockEntityType.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
         ModItems.ITEMS.register(eventBus);
-        ModMenuTypes.MENU_TYPES.register(eventBus);
+        ModMenuType.MENU_TYPES.register(eventBus);
+        ModRecipeTypes.RECIPE_TYPES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -54,11 +60,11 @@ public class YogMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
-            WoodType.register(ModWoodTypes.YOG);
-            Sheets.addWoodType(ModWoodTypes.YOG);
+            WoodType.register(ModWoodType.YOG);
+            Sheets.addWoodType(ModWoodType.YOG);
             registerBlockEntityRenderers();
 
-            MenuScreens.register(ModMenuTypes.OVEN_MENU.get(), OvenMenuScreen::new);
+            MenuScreens.register(ModMenuType.OVEN_MENU.get(), OvenMenuScreen::new);
 
         }
 
@@ -79,8 +85,8 @@ public class YogMod {
     }
 
     private static void registerBlockEntityRenderers() {
-        BlockEntityRenderers.register(ModBlockEntities.PISTON.get(), PistonHeadRenderer::new);
-        BlockEntityRenderers.register(ModBlockEntities.YOG_SIGN.get(), SignRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
     }
 
 }
