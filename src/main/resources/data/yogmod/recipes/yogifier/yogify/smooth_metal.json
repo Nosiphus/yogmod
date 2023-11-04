@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:nether_bricks"
+  },
+  "addition": {
+    "item": "minecraft:nether_bricks"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:smooth_metal"
+  }
+}

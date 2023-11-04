@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:curtains"
+  },
+  "addition": {
+    "item": "yogmod:curtains"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:vine"
+  }
+}

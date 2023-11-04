@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:pumpkin"
+  },
+  "addition": {
+    "item": "minecraft:pumpkin"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:white_lighting"
+  }
+}

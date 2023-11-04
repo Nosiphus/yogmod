@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:white_plastic_carpet"
+  },
+  "addition": {
+    "item": "yogmod:white_plastic_carpet"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:white_carpet"
+  }
+}

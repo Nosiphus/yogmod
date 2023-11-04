@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:orange_plastic"
+  },
+  "addition": {
+    "item": "yogmod:orange_plastic"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:orange_wool"
+  }
+}

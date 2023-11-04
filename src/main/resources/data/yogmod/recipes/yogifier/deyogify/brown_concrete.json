@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:storage_crate"
+  },
+  "addition": {
+    "item": "yogmod:storage_crate"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:brown_concrete"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "minecraft:jungle_planks"
+  },
+  "result": {
+    "item": "minecraft:jungle_trapdoor"
+  }
+}

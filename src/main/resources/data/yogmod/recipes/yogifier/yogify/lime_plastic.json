@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:lime_wool"
+  },
+  "addition": {
+    "item": "minecraft:lime_wool"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:lime_plastic"
+  }
+}

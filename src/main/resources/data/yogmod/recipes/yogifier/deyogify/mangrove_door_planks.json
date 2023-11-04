@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "minecraft:mangrove_planks"
+  },
+  "result": {
+    "item": "minecraft:mangrove_door"
+  }
+}

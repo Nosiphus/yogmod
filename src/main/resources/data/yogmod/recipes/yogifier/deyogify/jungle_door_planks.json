@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "minecraft:jungle_planks"
+  },
+  "result": {
+    "item": "minecraft:jungle_door"
+  }
+}

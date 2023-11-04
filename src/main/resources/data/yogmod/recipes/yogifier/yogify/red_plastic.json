@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:red_wool"
+  },
+  "addition": {
+    "item": "minecraft:red_wool"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:red_plastic"
+  }
+}

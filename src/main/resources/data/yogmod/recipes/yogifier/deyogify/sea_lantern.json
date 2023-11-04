@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:spotlight"
+  },
+  "addition": {
+    "item": "yogmod:spotlight"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:sea_lantern"
+  }
+}

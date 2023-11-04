@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "yogmod:mangrove_bricks"
+  },
+  "result": {
+    "item": "minecraft:mangrove_trapdoor"
+  }
+}

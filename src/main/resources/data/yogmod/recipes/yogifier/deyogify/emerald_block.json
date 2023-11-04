@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:green_tiles"
+  },
+  "addition": {
+    "item": "yogmod:green_tiles"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:emerald_block"
+  }
+}

@@ -1,12 +1,13 @@
 package com.nosiphus.yogmod;
 
+import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
-import com.nosiphus.yogmod.client.gui.screens.inventory.OvenMenuScreen;
+import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
@@ -66,7 +67,8 @@ public class YogMod {
             Sheets.addWoodType(ModWoodType.YOG);
             registerBlockEntityRenderers();
 
-            MenuScreens.register(ModMenuType.OVEN_MENU.get(), OvenMenuScreen::new);
+            MenuScreens.register(ModMenuType.OVEN.get(), OvenScreen::new);
+            MenuScreens.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
 
         }
 

@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "yogmod:crimson_bricks"
+  },
+  "result": {
+    "item": "minecraft:crimson_trapdoor"
+  }
+}

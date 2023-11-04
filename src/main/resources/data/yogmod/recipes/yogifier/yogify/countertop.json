@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:melon"
+  },
+  "addition": {
+    "item": "minecraft:melon"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:countertop"
+  }
+}

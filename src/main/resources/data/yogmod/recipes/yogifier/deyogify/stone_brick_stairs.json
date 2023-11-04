@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:raw_wood_stairs"
+  },
+  "addition": {
+    "item": "yogmod:raw_wood_stairs"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:stone_brick_stairs"
+  }
+}

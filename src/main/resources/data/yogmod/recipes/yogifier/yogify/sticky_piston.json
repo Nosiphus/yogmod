@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:sticky_piston"
+  },
+  "addition": {
+    "item": "minecraft:sticky_piston"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:sticky_piston"
+  }
+}

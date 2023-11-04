@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:torch"
+  },
+  "addition": {
+    "item": "minecraft:torch"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:lantern"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:brick_slab"
+  },
+  "addition": {
+    "item": "yogmod:brick_slab"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:brick_slab"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:pipe_intersection"
+  },
+  "addition": {
+    "item": "yogmod:pipe_intersection"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:cut_copper"
+  }
+}

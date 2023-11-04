@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:bricks"
+  },
+  "addition": {
+    "item": "yogmod:bricks"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:bricks"
+  }
+}

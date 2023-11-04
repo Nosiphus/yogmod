@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "minecraft:dark_oak_planks"
+  },
+  "result": {
+    "item": "minecraft:dark_oak_door"
+  }
+}

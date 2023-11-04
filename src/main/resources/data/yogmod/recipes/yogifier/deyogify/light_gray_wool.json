@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:light_gray_stucco"
+  },
+  "addition": {
+    "item": "yogmod:light_gray_stucco"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:light_gray_wool"
+  }
+}

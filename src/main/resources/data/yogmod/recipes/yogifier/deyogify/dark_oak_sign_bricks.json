@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "yogmod:dark_oak_bricks"
+  },
+  "result": {
+    "item": "minecraft:dark_oak_trapdoor"
+  }
+}

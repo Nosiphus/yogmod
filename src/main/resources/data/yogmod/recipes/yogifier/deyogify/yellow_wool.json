@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:gold_filgaree"
+  },
+  "addition": {
+    "item": "yogmod:gold_filgaree"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:yellow_wool"
+  }
+}

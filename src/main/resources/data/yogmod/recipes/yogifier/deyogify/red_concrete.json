@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:clay_tile"
+  },
+  "addition": {
+    "item": "yogmod:clay_tile"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:red_concrete"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "yogmod:acacia_bricks"
+  },
+  "result": {
+    "item": "minecraft:acacia_trapdoor"
+  }
+}

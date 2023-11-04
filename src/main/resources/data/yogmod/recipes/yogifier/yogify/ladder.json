@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:ladder"
+  },
+  "addition": {
+    "item": "minecraft:ladder"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:ladder"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:red_carpet"
+  },
+  "addition": {
+    "item": "minecraft:red_carpet"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:red_plastic_carpet"
+  }
+}

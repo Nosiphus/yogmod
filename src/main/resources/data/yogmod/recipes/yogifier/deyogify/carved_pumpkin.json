@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:monitor"
+  },
+  "addition": {
+    "item": "yogmod:monitor"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:carved_pumpkin"
+  }
+}

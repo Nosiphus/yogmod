@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:crimson_stairs"
+  },
+  "addition": {
+    "item": "minecraft:crimson_stairs"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:crimson_brick_stairs"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:clay"
+  },
+  "addition": {
+    "item": "minecraft:clay"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:reinforced_paneling"
+  }
+}

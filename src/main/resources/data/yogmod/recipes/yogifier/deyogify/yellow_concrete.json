@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:beige_plastic"
+  },
+  "addition": {
+    "item": "yogmod:beige_plastic"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:yellow_concrete"
+  }
+}

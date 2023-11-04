@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:white_concrete_powder"
+  },
+  "addition": {
+    "item": "minecraft:white_concrete_powder"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:shale"
+  }
+}

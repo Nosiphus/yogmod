@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:circuitry"
+  },
+  "addition": {
+    "item": "yogmod:circuitry"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:redstone_ore"
+  }
+}

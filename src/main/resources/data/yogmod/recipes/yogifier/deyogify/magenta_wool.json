@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:magenta_plastic"
+  },
+  "addition": {
+    "item": "yogmod:magenta_plastic"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:magenta_wool"
+  }
+}

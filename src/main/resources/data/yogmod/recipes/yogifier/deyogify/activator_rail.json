@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:metrovox_activator_rail"
+  },
+  "addition": {
+    "item": "yogmod:metrovox_activator_rail"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:activator_rail"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:pink_wool"
+  },
+  "addition": {
+    "item": "minecraft:pink_wool"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:pink_stucco"
+  }
+}

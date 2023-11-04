@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:violet_velvet_carpet"
+  },
+  "addition": {
+    "item": "yogmod:violet_velvet_carpet"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:purple_carpet"
+  }
+}

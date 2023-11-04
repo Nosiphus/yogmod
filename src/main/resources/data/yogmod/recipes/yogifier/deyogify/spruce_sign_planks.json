@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "minecraft:spruce_planks"
+  },
+  "result": {
+    "item": "minecraft:spruce_trapdoor"
+  }
+}

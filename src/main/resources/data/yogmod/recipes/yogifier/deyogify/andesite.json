@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:air_vent"
+  },
+  "addition": {
+    "item": "yogmod:air_vent"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:andesite"
+  }
+}

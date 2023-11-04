@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "yogmod:block/oak_bricks",
+    "east": "yogmod:block/tech_accent",
+    "north": "yogmod:block/tech_accent",
+    "particle": "yogmod:block/tech_accent",
+    "south": "yogmod:block/tech_accent",
+    "up": "yogmod:block/yogifier_top",
+    "west": "yogmod:block/tech_accent"
+  }
+}
