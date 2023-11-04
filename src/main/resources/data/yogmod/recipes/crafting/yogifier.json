@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "yogmod:wooden_bricks"
+    },
+	"Q": {
+	  "item": "minecraft:quartz_block"
+	}
+  },
+  "pattern": [
+    "QQ",
+    "##"
+  ],
+  "result": {
+    "item": "yogmod:yogifier"
+  }
+}
