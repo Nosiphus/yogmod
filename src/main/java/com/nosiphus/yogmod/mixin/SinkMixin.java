@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.mixin;
 
-import com.nosiphus.yogmod.core.SinkInteraction;
+import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.server.Bootstrap;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

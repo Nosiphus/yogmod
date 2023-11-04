@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.world.level.block;
 
-import com.nosiphus.yogmod.core.SinkInteraction;
+import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;

@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.world.level.block;
 
-import com.nosiphus.yogmod.core.SinkInteraction;
+import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;

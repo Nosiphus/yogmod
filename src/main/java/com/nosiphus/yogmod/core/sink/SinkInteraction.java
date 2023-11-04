@@ -1,4 +1,4 @@
-package com.nosiphus.yogmod.core;
+package com.nosiphus.yogmod.core.sink;
 
 import com.nosiphus.yogmod.world.level.block.LayeredSinkBlock;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
