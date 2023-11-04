@@ -4,7 +4,7 @@ license="https://opensource.org/licenses/MIT"
 issueTrackerURL="https://github.com/Nosiphus/yogmod/issues"
 [[mods]]
 modId="yogmod"
-version="2023.11.03"
+version="2023.11.03b"
 displayName="YogMod"
 updateJSONURL=""
 displayURL="https://www.nosiphus.com/"

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "tag": "yogmod:wooden_bricks"
+      "tag": "minecraft:planks"
     },
 	"Q": {
 	  "item": "minecraft:quartz_block"
