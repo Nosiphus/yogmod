@@ -1,6 +1,8 @@
 package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
+import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
+import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
@@ -16,6 +18,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -48,6 +51,7 @@ public class YogMod {
 
         ModBlockEntityType.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
+        ModEntityType.ENTITY_TYPES.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
         ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
@@ -66,6 +70,7 @@ public class YogMod {
             WoodType.register(ModWoodType.YOG);
             Sheets.addWoodType(ModWoodType.YOG);
             registerBlockEntityRenderers();
+            registerEntityRenderers();
 
             MenuScreens.register(ModMenuType.OVEN.get(), OvenScreen::new);
             MenuScreens.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
@@ -91,6 +96,10 @@ public class YogMod {
     private static void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
+    }
+
+    private static void registerEntityRenderers() {
+        EntityRenderers.register(ModEntityType.DYNAMITE.get(), DynamiteRenderer::new);
     }
 
 }

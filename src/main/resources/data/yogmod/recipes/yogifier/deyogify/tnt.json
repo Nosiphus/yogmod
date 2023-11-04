@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:dynamite"
+  },
+  "addition": {
+    "item": "yogmod:dynamite"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:tnt"
+  }
+}

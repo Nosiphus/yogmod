@@ -47,10 +47,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.LIMESTONE_BRICK.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CORRUGATED_COPPER = ITEMS.register("corrugated_copper",
             () -> new BlockItem(ModBlocks.CORRUGATED_COPPER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    public static final RegistryObject<BlockItem> RIVETED_STEEL = ITEMS.register("riveted_steel",
-            () -> new BlockItem(ModBlocks.RIVETED_STEEL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> IRON_STACK = ITEMS.register("iron_stack",
             () -> new BlockItem(ModBlocks.IRON_STACK.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> RIVETED_STEEL = ITEMS.register("riveted_steel",
+            () -> new BlockItem(ModBlocks.RIVETED_STEEL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> RUSTY_IRON = ITEMS.register("rusty_iron",
             () -> new BlockItem(ModBlocks.RUSTY_IRON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> BLUE_PANELING = ITEMS.register("blue_paneling",
@@ -316,7 +316,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LEVER = ITEMS.register("lever",
             () -> new BlockItem(ModBlocks.LEVER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Dynamite will go here
+    public static final RegistryObject<BlockItem> DYNAMITE = ITEMS.register("dynamite",
+            () -> new BlockItem(ModBlocks.DYNAMITE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LAMP = ITEMS.register("lamp",
             () -> new BlockItem(ModBlocks.LAMP.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CONSOLE = ITEMS.register("console",

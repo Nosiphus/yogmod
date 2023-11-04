@@ -58,9 +58,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistryObject<Block> CORRUGATED_COPPER = BLOCKS.register("corrugated_copper",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> RIVETED_STEEL = BLOCKS.register("riveted_steel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> IRON_STACK = BLOCKS.register("iron_stack",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> RIVETED_STEEL = BLOCKS.register("riveted_steel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> RUSTY_IRON = BLOCKS.register("rusty_iron",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
@@ -367,7 +367,8 @@ public class ModBlocks {
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
-    //Dynamite will go here
+    public static final RegistryObject<Block> DYNAMITE = BLOCKS.register("dynamite",
+            () -> new DynamiteBlock(BlockBehaviour.Properties.copy(Blocks.TNT)));
     public static final RegistryObject<Block> LAMP = BLOCKS.register("lamp",
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> CONSOLE = BLOCKS.register("console",
