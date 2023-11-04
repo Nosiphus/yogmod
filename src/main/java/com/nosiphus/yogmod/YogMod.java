@@ -2,7 +2,8 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModItems;
-import com.nosiphus.yogmod.world.item.yogifier.ModRecipeTypes;
+import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
+import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
 import com.nosiphus.yogmod.client.gui.screens.inventory.OvenMenuScreen;
@@ -48,7 +49,8 @@ public class YogMod {
         ModBlocks.BLOCKS.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
-        ModRecipeTypes.RECIPE_TYPES.register(eventBus);
+        ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
+        ModRecipeType.RECIPE_TYPES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

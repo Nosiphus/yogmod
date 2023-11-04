@@ -16,7 +16,7 @@ public class OvenMenu extends AbstractFurnaceMenu {
     }
 
     public OvenMenu(int ID, Inventory inventory, Container container, ContainerData data) {
-        super(ModMenuType.OVEN_MENU.get(), RecipeType.SMELTING, RecipeBookType.FURNACE, ID, inventory, container, data);
+        super(ModMenuType.OVEN.get(), RecipeType.SMELTING, RecipeBookType.FURNACE, ID, inventory, container, data);
     }
 
 }

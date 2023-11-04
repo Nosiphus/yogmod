@@ -12,8 +12,8 @@ public class ModMenuType {
 
     public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, "yogmod");
 
-    public static final RegistryObject<MenuType<OvenMenu>> OVEN_MENU = registerMenuType((ID, inventory, extraData) -> new OvenMenu(ID, inventory), "oven_menu");
-    public static final RegistryObject<MenuType<YogifierMenu>> YOGIFIER_MENU = registerMenuType((ID, inventory, extraData) -> new YogifierMenu(ID, inventory), "yogifier_menu");
+    public static final RegistryObject<MenuType<OvenMenu>> OVEN = registerMenuType((ID, inventory, extraData) -> new OvenMenu(ID, inventory), "oven_menu");
+    public static final RegistryObject<MenuType<YogifierMenu>> YOGIFIER = registerMenuType((ID, inventory, extraData) -> new YogifierMenu(ID, inventory), "yogifier_menu");
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENU_TYPES.register(name, () -> IForgeMenuType.create(factory));

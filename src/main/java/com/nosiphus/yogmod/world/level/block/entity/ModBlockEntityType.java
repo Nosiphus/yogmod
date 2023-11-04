@@ -1,6 +1,5 @@
 package com.nosiphus.yogmod.world.level.block.entity;
 
-import com.nosiphus.yogmod.blockentity.*;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.piston.PistonMovingBlockEntity;
 import net.minecraft.world.level.block.Block;

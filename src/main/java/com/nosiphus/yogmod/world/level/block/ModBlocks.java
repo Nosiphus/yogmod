@@ -1,6 +1,5 @@
 package com.nosiphus.yogmod.world.level.block;
 
-import com.nosiphus.yogmod.block.*;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import com.nosiphus.yogmod.core.SinkInteraction;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
