@@ -375,7 +375,24 @@ public class ModBlocks {
     public static final RegistryObject<Block> CONSOLE = BLOCKS.register("console",
             () -> new NoteBlock(BlockBehaviour.Properties.copy(Blocks.NOTE_BLOCK)));
     //Buttons will go here when implemented
-    //Pressure Plates will go here when implemented
+    public static final RegistryObject<Block> OAK_BRICK_PRESSURE_PLATE = BLOCKS.register("oak_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_PRESSURE_PLATE = BLOCKS.register("spruce_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> BIRCH_BRICK_PRESSURE_PLATE = BLOCKS.register("birch_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.BIRCH_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> JUNGLE_BRICK_PRESSURE_PLATE = BLOCKS.register("jungle_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.JUNGLE_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> ACACIA_BRICK_PRESSURE_PLATE = BLOCKS.register("acacia_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.ACACIA_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> DARK_OAK_BRICK_PRESSURE_PLATE = BLOCKS.register("dark_oak_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> CRIMSON_BRICK_PRESSURE_PLATE = BLOCKS.register("crimson_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> WARPED_BRICK_PRESSURE_PLATE = BLOCKS.register("warped_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.WARPED_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> MANGROVE_BRICK_PRESSURE_PLATE = BLOCKS.register("mangrove_brick_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.MANGROVE_PRESSURE_PLATE)));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
     public static final RegistryObject<Block> WOODEN_DOOR = BLOCKS.register("wooden_door",

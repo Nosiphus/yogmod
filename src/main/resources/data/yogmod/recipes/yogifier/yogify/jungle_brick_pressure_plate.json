@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:jungle_pressure_plate"
+  },
+  "addition": {
+    "item": "minecraft:jungle_pressure_plate"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:jungle_brick_pressure_plate"
+  }
+}

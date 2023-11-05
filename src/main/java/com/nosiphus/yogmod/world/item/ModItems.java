@@ -324,7 +324,24 @@ public class ModItems {
     public static final RegistryObject<BlockItem> CONSOLE = ITEMS.register("console",
             () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     //Buttons will go here when implemented
-    //Pressure Plates will go here when implemented
+    public static final RegistryObject<BlockItem> OAK_BRICK_PRESSURE_PLATE = ITEMS.register("oak_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.OAK_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> SPRUCE_BRICK_PRESSURE_PLATE = ITEMS.register("spruce_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.SPRUCE_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> BIRCH_BRICK_PRESSURE_PLATE = ITEMS.register("birch_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.BIRCH_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> JUNGLE_BRICK_PRESSURE_PLATE = ITEMS.register("jungle_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.JUNGLE_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> ACACIA_BRICK_PRESSURE_PLATE = ITEMS.register("acacia_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.ACACIA_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> DARK_OAK_BRICK_PRESSURE_PLATE = ITEMS.register("dark_oak_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.DARK_OAK_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> CRIMSON_BRICK_PRESSURE_PLATE = ITEMS.register("crimson_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.CRIMSON_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> WARPED_BRICK_PRESSURE_PLATE = ITEMS.register("warped_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.WARPED_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> MANGROVE_BRICK_PRESSURE_PLATE = ITEMS.register("mangrove_brick_pressure_plate",
+            () -> new BlockItem(ModBlocks.MANGROVE_BRICK_PRESSURE_PLATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> IRON_DOOR = ITEMS.register("iron_door",
             () -> new BlockItem(ModBlocks.IRON_DOOR.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> WOODEN_DOOR = ITEMS.register("wooden_door",

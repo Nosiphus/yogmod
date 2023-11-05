@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "yogmod:block/mangrove_brick_pressure_plate"
+    },
+    "powered=true": {
+      "model": "yogmod:block/mangrove_brick_pressure_plate_down"
+    }
+  }
+}

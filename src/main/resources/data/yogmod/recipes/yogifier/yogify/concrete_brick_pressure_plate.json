@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:cracked_stone_brick_pressure_plate"
+  },
+  "addition": {
+    "item": "minecraft:cracked_stone_brick_pressure_plate"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:concrete_brick_pressure_plate"
+  }
+}
