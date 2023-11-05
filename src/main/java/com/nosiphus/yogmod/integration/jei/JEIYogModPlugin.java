@@ -1,4 +1,4 @@
-package com.nosiphus.yogmod.integration;
+package com.nosiphus.yogmod.integration.jei;
 
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.item.crafting.YogifierRecipe;

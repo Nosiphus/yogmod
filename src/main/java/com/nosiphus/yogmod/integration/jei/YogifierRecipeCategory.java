@@ -1,6 +1,8 @@
-package com.nosiphus.yogmod.integration;
+package com.nosiphus.yogmod.integration.jei;
 
-import com.nosiphus.yogmod.world.inventory.YogifierMenu;
+import com.nosiphus.yogmod.integration.jei.IYogPlatformRecipeHelper;
+import com.nosiphus.yogmod.integration.jei.JEIYogModPlugin;
+import com.nosiphus.yogmod.integration.jei.YogServices;
 import com.nosiphus.yogmod.world.item.crafting.YogifierRecipe;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import mezz.jei.api.constants.VanillaTypes;
@@ -11,7 +13,6 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.common.platform.Services;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +26,7 @@ public class YogifierRecipeCategory implements IRecipeCategory<YogifierRecipe> {
     private final IDrawable icon;
 
     public YogifierRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
+        this.background = helper.createDrawable(TEXTURE, 26, 46, 125, 18);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.YOGIFIER.get()));
     }
 
@@ -52,8 +53,11 @@ public class YogifierRecipeCategory implements IRecipeCategory<YogifierRecipe> {
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, YogifierRecipe recipe, IFocusGroup focusGroup) {
 
-        builder.addSlot(RecipeIngredientRole.INPUT, 1, 1).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 1).addIngredients(recipe.getIngredients().get(1));
+
+        IYogPlatformRecipeHelper recipeHelper = YogServices.PLATFORM.getYogRecipeHelper();
+
+        builder.addSlot(RecipeIngredientRole.INPUT, 1, 1).addIngredients(recipeHelper.getYogBase(recipe));
+        builder.addSlot(RecipeIngredientRole.INPUT, 50, 1).addIngredients(recipeHelper.getYogAddition(recipe));
         builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 1).addItemStack(recipe.getResultItem());
 
     }
