@@ -374,7 +374,24 @@ public class ModBlocks {
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)));
     public static final RegistryObject<Block> CONSOLE = BLOCKS.register("console",
             () -> new NoteBlock(BlockBehaviour.Properties.copy(Blocks.NOTE_BLOCK)));
-    //Buttons will go here when implemented
+    public static final RegistryObject<Block> OAK_BRICK_BUTTON = BLOCKS.register("oak_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)));
+    public static final RegistryObject<Block> SPRUCE_BRICK_BUTTON = BLOCKS.register("spruce_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON)));
+    public static final RegistryObject<Block> BIRCH_BRICK_BUTTON = BLOCKS.register("birch_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_BUTTON)));
+    public static final RegistryObject<Block> JUNGLE_BRICK_BUTTON = BLOCKS.register("jungle_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_BUTTON)));
+    public static final RegistryObject<Block> ACACIA_BRICK_BUTTON = BLOCKS.register("acacia_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_BUTTON)));
+    public static final RegistryObject<Block> DARK_OAK_BRICK_BUTTON = BLOCKS.register("dark_oak_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_BUTTON)));
+    public static final RegistryObject<Block> CRIMSON_BRICK_BUTTON = BLOCKS.register("crimson_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON)));
+    public static final RegistryObject<Block> WARPED_BRICK_BUTTON = BLOCKS.register("warped_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_BUTTON)));
+    public static final RegistryObject<Block> MANGROVE_BRICK_BUTTON = BLOCKS.register("mangrove_brick_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_BUTTON)));
     public static final RegistryObject<Block> OAK_BRICK_PRESSURE_PLATE = BLOCKS.register("oak_brick_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)));
     public static final RegistryObject<Block> SPRUCE_BRICK_PRESSURE_PLATE = BLOCKS.register("spruce_brick_pressure_plate",

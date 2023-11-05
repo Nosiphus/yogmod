@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:mangrove_brick_button"
+  },
+  "addition": {
+    "item": "yogmod:mangrove_brick_button"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:mangrove_button"
+  }
+}

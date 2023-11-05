@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "yogmod:warped_bricks"
+    }
+  ],
+  "result": {
+    "item": "yogmod:warped_brick_button"
+  }
+}

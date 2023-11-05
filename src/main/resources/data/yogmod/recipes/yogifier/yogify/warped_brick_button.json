@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:warped_button"
+  },
+  "addition": {
+    "item": "minecraft:warped_button"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:warped_brick_button"
+  }
+}

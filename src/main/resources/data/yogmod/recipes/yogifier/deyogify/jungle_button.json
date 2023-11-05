@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:jungle_brick_button"
+  },
+  "addition": {
+    "item": "yogmod:jungle_brick_button"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:jungle_button"
+  }
+}

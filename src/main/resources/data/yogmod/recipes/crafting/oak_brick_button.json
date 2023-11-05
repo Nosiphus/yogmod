@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "yogmod:oak_bricks"
+    }
+  ],
+  "result": {
+    "item": "yogmod:oak_brick_button"
+  }
+}
