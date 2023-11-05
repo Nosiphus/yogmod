@@ -1,0 +1,6 @@
+{
+  "yourmodid:plugin": {
+    "initializer": "com.nosiphus.yogmod.integration.wthit.WTHITYogModPlugin",
+    "side": "*"
+  }
+}
