@@ -235,7 +235,8 @@ public class ModBlocks {
             () -> new OvenBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> LADDER = BLOCKS.register("ladder",
             () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER)));
-    //Jukebox will go here
+    public static final RegistryObject<Block> RECORD_PLAYER = BLOCKS.register("record_player",
+            () -> new RecordPlayerBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX)));
     public static final RegistryObject<Block> OAK_BRICK_FENCE = BLOCKS.register("oak_brick_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
     public static final RegistryObject<Block> SPRUCE_BRICK_FENCE = BLOCKS.register("spruce_brick_fence",

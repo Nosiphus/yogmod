@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:record_player"
+  },
+  "addition": {
+    "item": "yogmod:record_player"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:jukebox"
+  }
+}

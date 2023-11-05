@@ -213,7 +213,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.OVEN.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LADDER = ITEMS.register("ladder",
             () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Jukebox will go here when implemented
+    public static final RegistryObject<BlockItem> RECORD_PLAYER = ITEMS.register("record_player",
+            () -> new BlockItem(ModBlocks.RECORD_PLAYER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> OAK_BRICK_FENCE = ITEMS.register("oak_brick_fence",
             () -> new BlockItem(ModBlocks.OAK_BRICK_FENCE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> SPRUCE_BRICK_FENCE = ITEMS.register("spruce_brick_fence",
