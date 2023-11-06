@@ -2,6 +2,7 @@ package com.nosiphus.yogmod.world.item;
 
 import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
