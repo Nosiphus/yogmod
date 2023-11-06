@@ -12,8 +12,10 @@
 	"block.yogmod.asphalt_slab": "Asphalt Slab",
 	"block.yogmod.asphalt_stairs": "Asphalt Stairs",
 	"block.yogmod.asphalt_wall": "Asphalt Wall",
+	"block.yogmod.beige_carpet": "Beige Carpet",
 	"block.yogmod.beige_plastic": "Beige Plastic",
 	"block.yogmod.beige_plastic_carpet": "Beige Plastic Carpet",
+	"block.yogmod.beige_wool": "Beige Wool",
 	"block.yogmod.birch_bricks": "Birch Bricks",
 	"block.yogmod.birch_brick_button": "Birch Brick Button",
 	"block.yogmod.birch_brick_fence": "Birch Brick Fence",
@@ -198,7 +200,8 @@
 	"container.yogmod.yogifier": "Yogifier",
 
 	"itemGroup.yogmod": "YogMod",
-	
+
+	"item.yogmod.beige_dye": "Beige Dye",
 	"item.yogmod.coffee": "Coffee",
 	"item.yogmod.hamburger": "Hamburger",
 	"item.yogmod.hard_hat": "Hard Hat",

@@ -431,6 +431,14 @@ public class ModItems {
     public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink",
             () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties().tab(YogMod.YOGTAB)));
 
+    //Not in YogTab
+    public static final RegistryObject<BlockItem> BEIGE_WOOL = ITEMS.register("beige_wool",
+            () -> new BlockItem(ModBlocks.BEIGE_WOOL.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final RegistryObject<BlockItem> BEIGE_CARPET = ITEMS.register("beige_carpet",
+            () -> new BlockItem(ModBlocks.BEIGE_CARPET.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final RegistryObject<Item> BEIGE_DYE = ITEMS.register("beige_dye",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+
     //Methods
 
 }

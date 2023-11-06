@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:beige_plastic_carpet"
+  },
+  "addition": {
+    "item": "yogmod:beige_plastic_carpet"
+  },
+  "result": {
+	"count": 2,
+    "item": "yogmod:beige_carpet"
+  }
+}

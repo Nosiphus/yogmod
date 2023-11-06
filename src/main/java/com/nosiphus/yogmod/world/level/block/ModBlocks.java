@@ -463,6 +463,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> POWDER_SNOW_SINK = BLOCKS.register("powder_snow_sink",
             () -> new PowderSnowSinkBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lootFrom(ModBlocks.SINK), LayeredSinkBlock.SNOW, SinkInteraction.POWDER_SNOW));
 
+    //Not in YogTab
+    public static final RegistryObject<Block> BEIGE_WOOL = BLOCKS.register("beige_wool",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));
+    public static final RegistryObject<Block> BEIGE_CARPET = BLOCKS.register("beige_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_CARPET)));
+
     //Methods
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
         return (blockState) -> {

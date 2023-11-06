@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+	"yogmod:beige_wool",
     "yogmod:beige_plastic",
 	"yogmod:white_plastic",
 	"yogmod:orange_plastic",
