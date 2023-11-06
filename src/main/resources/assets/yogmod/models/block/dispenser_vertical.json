@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "yogmod:block/dispenser_front_vertical",
+    "side": "yogmod:block/dispenser_top"
+  }
+}

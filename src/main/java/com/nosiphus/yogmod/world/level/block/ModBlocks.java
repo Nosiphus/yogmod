@@ -362,8 +362,10 @@ public class ModBlocks {
                     .strength(1.5F)
                     .noLootTable()
             ));
-    public static final RegistryObject<Block> STICKY_PISTON = BLOCKS.register("sticky_piston", () -> pistonBase(true));
-    //Dispenser will go here
+    public static final RegistryObject<Block> STICKY_PISTON = BLOCKS.register("sticky_piston",
+            () -> pistonBase(true));
+    public static final RegistryObject<Block> DISPENSER = BLOCKS.register("dispenser",
+            () -> new DispenserBlock(BlockBehaviour.Properties.copy(Blocks.DISPENSER)));
     public static final RegistryObject<Block> CLASSIC_LEVER = BLOCKS.register("classic_lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever",

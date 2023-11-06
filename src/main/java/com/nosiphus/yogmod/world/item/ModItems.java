@@ -312,7 +312,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> STICKY_PISTON = ITEMS.register("sticky_piston",
             () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Dispenser will go here
+    public static final RegistryObject<BlockItem> DISPENSER = ITEMS.register("dispenser",
+            () -> new BlockItem(ModBlocks.DISPENSER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> CLASSIC_LEVER = ITEMS.register("classic_lever",
             () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> LEVER = ITEMS.register("lever",

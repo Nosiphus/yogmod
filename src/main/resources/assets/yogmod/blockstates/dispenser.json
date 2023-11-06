@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "yogmod:block/dispenser_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "yogmod:block/dispenser",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "yogmod:block/dispenser"
+    },
+    "facing=south": {
+      "model": "yogmod:block/dispenser",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "yogmod:block/dispenser_vertical"
+    },
+    "facing=west": {
+      "model": "yogmod:block/dispenser",
+      "y": 270
+    }
+  }
+}

@@ -65,6 +65,7 @@
 	"block.yogmod.dark_stone_bricks": "Dark Stone Bricks",
 	"block.yogmod.decorative_concrete": "Decorative Concrete",
 	"block.yogmod.diode": "Diode",
+	"block.yogmod.dispenser": "Dispenser (YogMod)",
 	"block.yogmod.double_step": "Double Step",
 	"block.yogmod.dynamite": "Dynamite",
 	"block.yogmod.fancy_table": "Fancy Table",
@@ -196,6 +197,7 @@
 	"block.yogmod.yog_wall_sign": "Sign (YogMod)",
 	"block.yogmod.yogifier": "Yogifier",
 
+	"container.yogmod.dispenser": "Dispenser",
 	"container.yogmod.oven": "Oven",
 	"container.yogmod.yogifier": "Yogifier",
 

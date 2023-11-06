@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:dispenser"
+  },
+  "addition": {
+    "item": "yogmod:dispenser"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:dispenser"
+  }
+}
