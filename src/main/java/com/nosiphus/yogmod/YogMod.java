@@ -5,6 +5,7 @@ import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.entity.*;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
+import com.nosiphus.yogmod.world.entity.decoration.ModPaintingVariants;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
@@ -60,6 +61,7 @@ public class YogMod {
         ModEntityType.ENTITY_TYPES.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
+        ModPaintingVariants.PAINTINGS.register(eventBus);
         ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
         ModRecipeType.RECIPE_TYPES.register(eventBus);
 

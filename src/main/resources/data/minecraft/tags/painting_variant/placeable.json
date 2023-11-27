@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+	"yogmod:big_screen",
+    "yogmod:clock",
+	"yogmod:control_meter",
+	"yogmod:crate",
+	"yogmod:door",
+	"yogmod:gears",
+	"yogmod:green_graph",
+	"yogmod:molecule",
+	"yogmod:orange_graph",
+	"yogmod:periodic_table",
+	"yogmod:postboard",
+	"yogmod:tool_shelf"
+  ]
+}
