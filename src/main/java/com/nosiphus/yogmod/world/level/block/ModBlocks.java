@@ -159,9 +159,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> WHITE_LIGHTING = BLOCKS.register("white_lighting",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)));
     public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor",
-            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).sound(SoundType.GLASS)));
+            () -> new MonitorBlock(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> LIT_MONITOR = BLOCKS.register("lit_monitor",
-            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
+            () -> new MonitorBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
     //Netherrack Design will go here
     public static final RegistryObject<Block> CAUTION_TAPE = BLOCKS.register("caution_tape",
             () -> new SoulSandBlock(BlockBehaviour.Properties.copy(Blocks.SOUL_SAND).sound(SoundType.SAND)));

@@ -1,8 +1,10 @@
 package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
-import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
+import com.nosiphus.yogmod.client.model.ScrubberBotModel;
+import com.nosiphus.yogmod.client.renderer.entity.*;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
+import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
@@ -19,12 +21,16 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -86,10 +92,21 @@ public class YogMod {
                 return blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageWaterColor(blockAndTintGetter, blockPos) : -1;
             }, ModBlocks.WATER_SINK.get());
         }
+
+        @SubscribeEvent
+        public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(ScrubberBotModel.SCRUBBER_BOT, ScrubberBotModel::createBodyLayer);
+        }
+
     }
 
     @Mod.EventBusSubscriber(modid = "yogmod", bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEvents {
+
+        @SubscribeEvent
+        public static void entityAttributes(EntityAttributeCreationEvent event) {
+            event.put(ModEntityType.SCRUBBER_BOT.get(), ScrubberBot.createAttributes().build());
+        }
 
     }
 
@@ -100,6 +117,7 @@ public class YogMod {
 
     private static void registerEntityRenderers() {
         EntityRenderers.register(ModEntityType.DYNAMITE.get(), DynamiteRenderer::new);
+        EntityRenderers.register(ModEntityType.SCRUBBER_BOT.get(), ScrubberBotRenderer::new);
     }
 
 }

@@ -201,6 +201,8 @@
 	"container.yogmod.oven": "Oven",
 	"container.yogmod.yogifier": "Yogifier",
 
+	"entity.yogmod.scrubber_bot": "Scrubber-Bot",
+
 	"itemGroup.yogmod": "YogMod",
 
 	"item.yogmod.beige_dye": "Beige Dye",
