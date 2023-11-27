@@ -82,6 +82,7 @@ dependencies {
     implementation fg.deobf("curse.maven:worldedit-225608:3922622")
     implementation fg.deobf("curse.maven:badpackets-615134:4784364")
     implementation fg.deobf("curse.maven:wthit-forge-455982:4819215")
+    implementation fg.deobf("curse.maven:transparent-377582:4031058")
 }
 
 jar {
