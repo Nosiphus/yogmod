@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.world.level.block;
 
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
@@ -8,6 +9,7 @@ import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -226,7 +228,12 @@ public class ModBlocks {
                     .lightLevel((lightLevel) -> { return 14; })
                     .sound(SoundType.GLASS)
                     .lootFrom(LANTERN)));
-    //Crate will go here when implemented
+    public static final RegistryObject<Block> CRATE = BLOCKS.register("crate",
+            () -> new CrateBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2.5F)
+                    .sound(SoundType.WOOD), () -> {
+        return ModBlockEntityType.CRATE.get();
+    }));
     public static final RegistryObject<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
     public static final RegistryObject<Block> YOGIFIER = BLOCKS.register("yogifier",

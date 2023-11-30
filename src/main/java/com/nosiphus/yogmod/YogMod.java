@@ -2,6 +2,7 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
+import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.*;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
@@ -108,7 +109,7 @@ public class YogMod {
 
         @SubscribeEvent
         public static void onCommonSetup(FMLCommonSetupEvent event) {
-            //BlockStateProperties.register(ModBlockStateProperties.CRATE_TYPE);
+
         }
 
         @SubscribeEvent
@@ -119,6 +120,7 @@ public class YogMod {
     }
 
     private static void registerBlockEntityRenderers() {
+        BlockEntityRenderers.register(ModBlockEntityType.CRATE.get(), CrateRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
     }

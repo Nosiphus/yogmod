@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.world.level.block.entity;
 
+import com.nosiphus.yogmod.world.inventory.CrateMenu;
 import com.nosiphus.yogmod.world.level.block.CrateBlock;
 import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
 import net.minecraft.core.BlockPos;
@@ -68,7 +69,7 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity implement
     }
 
     protected Component getDefaultName() {
-        return Component.translatable("container.nfm.crate");
+        return Component.translatable("container.yogmod.crate");
     }
 
     public void load(CompoundTag compoundTag) {

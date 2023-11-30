@@ -205,7 +205,8 @@ public class ModItems {
     //Decoration Blocks
     public static final RegistryObject<BlockItem> LANTERN = ITEMS.register("lantern",
             () -> new StandingAndWallBlockItem(ModBlocks.LANTERN.get(), ModBlocks.WALL_LANTERN.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Crate will go here when implemented
+    public static final RegistryObject<BlockItem> CRATE = ITEMS.register("crate",
+            () -> new BlockItem(ModBlocks.CRATE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> TECH_ACCENT = ITEMS.register("tech_accent",
             () -> new BlockItem(ModBlocks.TECH_ACCENT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> YOGIFIER = ITEMS.register("yogifier",

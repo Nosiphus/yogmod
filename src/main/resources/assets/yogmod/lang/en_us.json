@@ -197,7 +197,10 @@
 	"block.yogmod.yog_wall_sign": "Sign (YogMod)",
 	"block.yogmod.yogifier": "Yogifier",
 
+	"container.yogmod.crate": "Crate",
 	"container.yogmod.dispenser": "Dispenser",
+	"container.yogmod.double_crate": "Double Crate",
+	"container.yogmod.fridge": "Fridge",
 	"container.yogmod.oven": "Oven",
 	"container.yogmod.yogifier": "Yogifier",
 
