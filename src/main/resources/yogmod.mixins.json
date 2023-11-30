@@ -9,7 +9,6 @@
     "SinkMixin"
   ],
   "client": [
-    "SheetsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

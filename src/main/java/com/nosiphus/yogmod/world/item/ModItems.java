@@ -2,12 +2,17 @@ package com.nosiphus.yogmod.world.item;
 
 import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
-import net.minecraft.world.entity.EntityType;
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.concurrent.Callable;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class ModItems {
 

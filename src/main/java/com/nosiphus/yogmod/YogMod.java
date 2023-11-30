@@ -29,6 +29,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,6 +40,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.checkerframework.checker.units.qual.C;
 
 @Mod("yogmod")
 public class YogMod {
@@ -86,6 +88,16 @@ public class YogMod {
         }
 
         @SubscribeEvent
+        public static void onStitch(TextureStitchEvent.Pre event) {
+            if (!event.getAtlas().location().equals(Sheets.CHEST_SHEET)) {
+                return;
+            }
+            event.addSprite(CrateRenderer.CRATE_LOCATION);
+            event.addSprite(CrateRenderer.CRATE_LOCATION_LEFT);
+            event.addSprite(CrateRenderer.CRATE_LOCATION_RIGHT);
+        }
+
+        @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
             event.register((blockState, blockAndTintGetter, blockPos, index) -> {
                 return WireBlock.colorMultiplier(blockState.getValue(WireBlock.POWER));
@@ -97,9 +109,9 @@ public class YogMod {
 
         @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            //event.registerLayerDefinition(ModelLayers.CHEST, CrateRenderer::createSingleBodyLayer);
-            //event.registerLayerDefinition(ModelLayers.DOUBLE_CHEST_LEFT, CrateRenderer::createDoubleBodyLeftLayer);
-            //event.registerLayerDefinition(ModelLayers.DOUBLE_CHEST_RIGHT, CrateRenderer::createDoubleBodyRightLayer);
+            event.registerLayerDefinition(CrateRenderer.CRATE, CrateRenderer::createSingleBodyLayer);
+            event.registerLayerDefinition(CrateRenderer.DOUBLE_CRATE_LEFT, CrateRenderer::createDoubleBodyLeftLayer);
+            event.registerLayerDefinition(CrateRenderer.DOUBLE_CRATE_RIGHT, CrateRenderer::createDoubleBodyRightLayer);
             event.registerLayerDefinition(ScrubberBotModel.SCRUBBER_BOT, ScrubberBotModel::createBodyLayer);
         }
 
