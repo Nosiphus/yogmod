@@ -1,6 +1,5 @@
 package com.nosiphus.yogmod.mixin;
 
-import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.resources.model.Material;
 import org.spongepowered.asm.mixin.Mixin;
