@@ -88,12 +88,11 @@ public class YogMod {
 
         @SubscribeEvent
         public static void onStitch(TextureStitchEvent.Pre event) {
-            if (!event.getAtlas().location().equals(Sheets.CHEST_SHEET)) {
-                return;
+            if (event.getAtlas().location().equals(Sheets.CHEST_SHEET)) {
+                event.addSprite(CrateRenderer.CRATE_LOCATION);
+                event.addSprite(CrateRenderer.CRATE_LOCATION_LEFT);
+                event.addSprite(CrateRenderer.CRATE_LOCATION_RIGHT);
             }
-            event.addSprite(CrateRenderer.CRATE_LOCATION);
-            event.addSprite(CrateRenderer.CRATE_LOCATION_LEFT);
-            event.addSprite(CrateRenderer.CRATE_LOCATION_RIGHT);
         }
 
         @SubscribeEvent
@@ -133,6 +132,7 @@ public class YogMod {
 
     private static void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(ModBlockEntityType.CRATE.get(), CrateRenderer::new);
+        //BlockEntityRenderers.register(ModBlockEntityType.FRIDGE.get(), FridgeRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
     }

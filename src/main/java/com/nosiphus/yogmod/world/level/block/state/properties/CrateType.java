@@ -5,7 +5,8 @@ import net.minecraft.util.StringRepresentable;
 public enum CrateType implements StringRepresentable {
     SINGLE("single", 0),
     LEFT("left", 2),
-    RIGHT("right", 1);
+    RIGHT("right", 1),
+    FRIDGE("fridge", 3);
 
     public static final CrateType[] BY_ID = values();
     private final String name;

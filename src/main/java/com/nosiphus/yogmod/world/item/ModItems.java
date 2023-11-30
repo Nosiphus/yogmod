@@ -256,7 +256,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.TABLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> FANCY_TABLE = ITEMS.register("fancy_table",
             () -> new BlockItem(ModBlocks.FANCY_TABLE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Fridge will go here when implemented
+    public static final RegistryObject<BlockItem> FRIDGE = ITEMS.register("fridge",
+            () -> new CrateBlockItem(ModBlocks.FRIDGE.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> ASPHALT_WALL = ITEMS.register("asphalt_wall",
             () -> new BlockItem(ModBlocks.ASPHALT_WALL.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> IRON_PLATE_WALL = ITEMS.register("iron_plate_wall",

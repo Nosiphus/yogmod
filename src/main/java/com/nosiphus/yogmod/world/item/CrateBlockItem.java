@@ -2,7 +2,8 @@ package com.nosiphus.yogmod.world.item;
 
 import com.nosiphus.yogmod.client.model.inventory.CrateItemStackRenderer;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
-import com.nosiphus.yogmod.world.level.block.entity.CrateBlockEntity;
+import com.nosiphus.yogmod.world.level.block.entity.*;
+import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
@@ -16,6 +17,8 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class CrateBlockItem extends BlockItem {
+
+    protected Supplier<CrateType> type;
 
     public CrateBlockItem(Block block, Item.Properties properties) {
         super(block, properties);
@@ -31,7 +34,13 @@ public class CrateBlockItem extends BlockItem {
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 
                 Supplier<BlockEntity> modelToUse;
-                modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
+
+                switch (type.get()) {
+                    case FRIDGE -> modelToUse = () -> new FridgeBlockEntity(BlockPos.ZERO, ModBlocks.FRIDGE.get().defaultBlockState());
+                    case SINGLE -> modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
+                    default -> modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
+                }
+
                 return new CrateItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), modelToUse);
 
             }

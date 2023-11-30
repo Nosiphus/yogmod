@@ -278,7 +278,12 @@ public class ModBlocks {
             () -> new TableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> FANCY_TABLE = BLOCKS.register("fancy_table",
             () -> new FancyTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    //Fridge will go here when implemented
+    public static final RegistryObject<Block> FRIDGE = BLOCKS.register("fridge",
+            () -> new FridgeBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2.5F)
+                    .sound(SoundType.WOOD), () -> {
+                return ModBlockEntityType.FRIDGE.get();
+            }));
     public static final RegistryObject<Block> ASPHALT_WALL = BLOCKS.register("asphalt_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
     public static final RegistryObject<Block> IRON_PLATE_WALL = BLOCKS.register("iron_plate_wall",
