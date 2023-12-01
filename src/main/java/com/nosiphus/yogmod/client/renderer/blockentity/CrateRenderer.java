@@ -7,7 +7,6 @@ import com.nosiphus.yogmod.world.level.block.AbstractCrateBlock;
 import com.nosiphus.yogmod.world.level.block.CrateBlock;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.entity.CrateBlockEntity;
-import com.nosiphus.yogmod.world.level.block.entity.FridgeBlockEntity;
 import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
@@ -21,8 +20,6 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BrightnessCombiner;
@@ -30,9 +27,6 @@ import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoubleBlockCombiner;
@@ -41,21 +35,19 @@ import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.checkerframework.checker.units.qual.C;
 
 @OnlyIn(Dist.CLIENT)
 public class CrateRenderer<T extends BlockEntity & LidBlockEntity> implements BlockEntityRenderer<T> {
     public static final ModelLayerLocation CRATE = new ModelLayerLocation(new ResourceLocation("yogmod", "entity/crate/normal"), "main");
     public static final ModelLayerLocation DOUBLE_CRATE_LEFT = new ModelLayerLocation(new ResourceLocation("yogmod", "entity/crate/normal_left"), "main");
     public static final ModelLayerLocation DOUBLE_CRATE_RIGHT = new ModelLayerLocation(new ResourceLocation("yogmod", "entity/crate/normal_right"), "main");
-    public static final ModelLayerLocation FRIDGE = new ModelLayerLocation(new ResourceLocation("yogmod", "entity/crate/fridge"), "main");
     public static final ResourceLocation CRATE_LOCATION = new ResourceLocation("yogmod", "entity/crate/normal");
     public static final ResourceLocation CRATE_LOCATION_LEFT = new ResourceLocation("yogmod", "entity/crate/normal_left");
     public static final ResourceLocation CRATE_LOCATION_RIGHT = new ResourceLocation("yogmod", "entity/crate/normal_right");
-    public static final ResourceLocation FRIDGE_LOCATION = new ResourceLocation("yogmod", "entity/crate/fridge");
     private static final String BOTTOM = "bottom";
     private static final String LID = "lid";
     private final CrateBlockEntity crate = new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
-    private final FridgeBlockEntity fridge = new FridgeBlockEntity(BlockPos.ZERO, ModBlocks.FRIDGE.get().defaultBlockState());
     private final ModelPart lid;
     private final ModelPart bottom;
     private final ModelPart doubleLeftLid;
@@ -146,7 +138,6 @@ public class CrateRenderer<T extends BlockEntity & LidBlockEntity> implements Bl
 
     public static ResourceLocation chooseCrateTexture(CrateType crateType) {
         return switch (crateType) {
-            case FRIDGE -> FRIDGE_LOCATION;
             case LEFT -> CRATE_LOCATION_LEFT;
             case RIGHT -> CRATE_LOCATION_RIGHT;
             case SINGLE -> CRATE_LOCATION;

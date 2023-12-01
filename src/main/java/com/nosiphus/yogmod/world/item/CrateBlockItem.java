@@ -32,17 +32,9 @@ public class CrateBlockItem extends BlockItem {
 
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-
                 Supplier<BlockEntity> modelToUse;
-
-                switch (type.get()) {
-                    case FRIDGE -> modelToUse = () -> new FridgeBlockEntity(BlockPos.ZERO, ModBlocks.FRIDGE.get().defaultBlockState());
-                    case SINGLE -> modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
-                    default -> modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
-                }
-
+                modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
                 return new CrateItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), modelToUse);
-
             }
 
         });

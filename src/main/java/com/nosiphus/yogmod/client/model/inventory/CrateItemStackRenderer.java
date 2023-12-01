@@ -8,9 +8,12 @@ import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
+@OnlyIn(Dist.CLIENT)
 public class CrateItemStackRenderer<T extends BlockEntity> extends BlockEntityWithoutLevelRenderer {
 
     private final Supplier<T> blockEntity;
