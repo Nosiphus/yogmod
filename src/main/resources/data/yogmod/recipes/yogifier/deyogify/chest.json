@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:crate"
+  },
+  "addition": {
+    "item": "yogmod:crate"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:chest"
+  }
+}
