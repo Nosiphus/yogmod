@@ -425,9 +425,11 @@ public class ModItems {
 
     //Tools
     public static final RegistryObject<Item> PENCIL = ITEMS.register("pencil",
-            () -> new Item(new Item.Properties().tab(YogMod.YOGTAB)));
+            () -> new AxeItem(ModTiers.PENCIL, 6.0F, -3.2F, new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Combat
+    public static final RegistryObject<Item> LASER = ITEMS.register("laser",
+            () -> new SwordItem(ModTiers.LASER, 3, -2.4F, new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<ArmorItem> HARD_HAT = ITEMS.register("hard_hat",
             () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, EquipmentSlot.HEAD, new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<ArmorItem> SAFETY_VEST = ITEMS.register("safety_vest",

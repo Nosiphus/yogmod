@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:laser"
+  },
+  "addition": {
+    "item": "yogmod:laser"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:diamond_sword"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:pencil"
+  },
+  "addition": {
+    "item": "yogmod:pencil"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:wooden_axe"
+  }
+}
