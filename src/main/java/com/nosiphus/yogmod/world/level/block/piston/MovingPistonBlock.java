@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.PistonType;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -87,9 +88,9 @@ public class MovingPistonBlock extends BaseEntityBlock {
         }
     }
 
-    public List<ItemStack> getDrops(BlockState blockState, LootContext.Builder lootContextBuilder) {
-        PistonMovingBlockEntity pistonmovingblockentity = this.getBlockEntity(lootContextBuilder.getLevel(), new BlockPos(lootContextBuilder.getParameter(LootContextParams.ORIGIN)));
-        return pistonmovingblockentity == null ? Collections.emptyList() : pistonmovingblockentity.getMovedState().getDrops(lootContextBuilder);
+    public List<ItemStack> getDrops(BlockState blockState, LootParams.Builder builder) {
+        PistonMovingBlockEntity pistonMovingBlockEntity = this.getBlockEntity(builder.getLevel(), BlockPos.containing(builder.getParameter(LootContextParams.ORIGIN)));
+        return pistonMovingBlockEntity == null ? Collections.emptyList() : pistonMovingBlockEntity.getMovedState().getDrops(builder);
     }
 
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {

@@ -174,7 +174,7 @@ public class PistonBaseBlock extends DirectionalBlock {
 
             level.setBlock(blockPos, blockState.setValue(EXTENDED, Boolean.valueOf(true)), 67);
             level.playSound((Player)null, blockPos, SoundEvents.PISTON_EXTEND, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.25F + 0.6F);
-            level.gameEvent((Entity)null, GameEvent.PISTON_EXTEND, blockPos);
+            level.gameEvent((Entity)null, GameEvent.BLOCK_ACTIVATE, blockPos);
         } else if (int1 == 1 || int1 == 2) {
             if (net.minecraftforge.event.ForgeEventFactory.onPistonMovePre(level, blockPos, direction, false)) return false;
             BlockEntity blockentity1 = level.getBlockEntity(blockPos.relative(direction));
@@ -214,7 +214,7 @@ public class PistonBaseBlock extends DirectionalBlock {
             }
 
             level.playSound((Player)null, blockPos, SoundEvents.PISTON_CONTRACT, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.6F);
-            level.gameEvent((Entity)null, GameEvent.PISTON_CONTRACT, blockPos);
+            level.gameEvent((Entity)null, GameEvent.BLOCK_DEACTIVATE, blockPos);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onPistonMovePost(level, blockPos, direction, (int1 == 0));
