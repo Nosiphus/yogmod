@@ -14,12 +14,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 @OnlyIn(Dist.CLIENT)
-public class CrateItemStackRenderer<T extends BlockEntity> extends BlockEntityWithoutLevelRenderer {
+public class ModItemStackRenderer<T extends BlockEntity> extends BlockEntityWithoutLevelRenderer {
 
     private final Supplier<T> blockEntity;
     private final BlockEntityRenderDispatcher blockEntityRenderDispatcher;
 
-    public CrateItemStackRenderer(BlockEntityRenderDispatcher blockEntityRenderDispatcher, EntityModelSet entityModelSet, Supplier<T> blockEntity) {
+    public ModItemStackRenderer(BlockEntityRenderDispatcher blockEntityRenderDispatcher, EntityModelSet entityModelSet, Supplier<T> blockEntity) {
         super(blockEntityRenderDispatcher, entityModelSet);
         this.blockEntity = blockEntity;
         this.blockEntityRenderDispatcher = blockEntityRenderDispatcher;

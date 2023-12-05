@@ -1,6 +1,6 @@
 package com.nosiphus.yogmod.world.item;
 
-import com.nosiphus.yogmod.client.model.inventory.CrateItemStackRenderer;
+import com.nosiphus.yogmod.client.model.inventory.ModItemStackRenderer;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.entity.*;
 import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
@@ -34,7 +34,7 @@ public class CrateBlockItem extends BlockItem {
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 Supplier<BlockEntity> modelToUse;
                 modelToUse = () -> new CrateBlockEntity(BlockPos.ZERO, ModBlocks.CRATE.get().defaultBlockState());
-                return new CrateItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), modelToUse);
+                return new ModItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), modelToUse);
             }
 
         });
