@@ -9,13 +9,15 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import static com.nosiphus.yogmod.world.item.ModCreativeModeTabs.addToTab;
+
 public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "yogmod");
 
     //Building Blocks
-    public static final RegistryObject<BlockItem> ASPHALT = ITEMS.register("asphalt",
-            () -> new BlockItem(ModBlocks.ASPHALT.get(), new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<BlockItem> ASPHALT = addToTab(ITEMS.register("asphalt",
+            () -> new BlockItem(ModBlocks.ASPHALT.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> OAK_BRICKS = ITEMS.register("oak_bricks",
             () -> new BlockItem(ModBlocks.OAK_BRICKS.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> SPRUCE_BRICKS = ITEMS.register("spruce_bricks",

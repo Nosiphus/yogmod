@@ -58,7 +58,7 @@ public class DynamiteBlock extends Block {
 
     public void wasExploded(Level level, BlockPos blockPos, Explosion explosion) {
         if (!level.isClientSide) {
-            PrimedDynamite primedDynamite = new PrimedDynamite(level, (double)blockPos.getX() + 0.5D, (double)blockPos.getY(), (double)blockPos.getZ() + 0.5D, explosion.getSourceMob());
+            PrimedDynamite primedDynamite = new PrimedDynamite(level, (double)blockPos.getX() + 0.5D, (double)blockPos.getY(), (double)blockPos.getZ() + 0.5D, explosion.getIndirectSourceEntity());
             int i = primedDynamite.getFuse();
             primedDynamite.setFuse((short)(level.random.nextInt(i / 4) + i / 8));
             level.addFreshEntity(primedDynamite);

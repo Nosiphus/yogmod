@@ -6,7 +6,6 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.item.Wearable;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -25,7 +24,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
-public class MonitorBlock extends HorizontalDirectionalBlock implements Wearable {
+public class MonitorBlock extends HorizontalDirectionalBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     @Nullable
     private BlockPattern scrubberBotBase;

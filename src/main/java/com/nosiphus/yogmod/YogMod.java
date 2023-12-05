@@ -8,6 +8,7 @@ import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.entity.decoration.ModPaintingVariants;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
+import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
@@ -45,20 +46,13 @@ import org.apache.logging.log4j.Logger;
 public class YogMod {
 
     public static final Logger LOGGER = LogManager.getLogger();
-
-    public static final CreativeModeTab YOGTAB = new CreativeModeTab("yogmod") {
-        @Override
-        public ItemStack makeIcon() {
-            return ModItems.FLUORESCENT_PANEL.get().getDefaultInstance();
-        }
-    };
-
     public YogMod() {
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModBlockEntityType.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
+        ModCreativeModeTabs.CREATIVE_TABS.register(eventBus);
         ModEntityType.ENTITY_TYPES.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
