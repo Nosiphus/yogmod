@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:riot_pants"
+  },
+  "addition": {
+    "item": "yogmod:riot_pants"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:diamond_leggings"
+  }
+}

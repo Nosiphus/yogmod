@@ -132,7 +132,6 @@ public class YogMod {
 
     private static void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(ModBlockEntityType.CRATE.get(), CrateRenderer::new);
-        //BlockEntityRenderers.register(ModBlockEntityType.FRIDGE.get(), FridgeRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
     }

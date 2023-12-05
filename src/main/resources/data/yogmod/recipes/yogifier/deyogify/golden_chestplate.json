@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:safety_vest"
+  },
+  "addition": {
+    "item": "yogmod:safety_vest"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:golden_chestplate"
+  }
+}

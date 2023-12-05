@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:sewer_waders"
+  },
+  "addition": {
+    "item": "yogmod:sewer_waders"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:golden_leggings"
+  }
+}

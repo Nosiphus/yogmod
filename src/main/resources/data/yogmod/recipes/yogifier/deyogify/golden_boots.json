@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:steeltoe_boots"
+  },
+  "addition": {
+    "item": "yogmod:steeltoe_boots"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:golden_boots"
+  }
+}

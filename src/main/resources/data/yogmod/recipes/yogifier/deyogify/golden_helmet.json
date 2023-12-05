@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:hard_hat"
+  },
+  "addition": {
+    "item": "yogmod:hard_hat"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:golden_helmet"
+  }
+}

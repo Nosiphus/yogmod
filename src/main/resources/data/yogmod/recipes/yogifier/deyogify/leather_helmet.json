@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:sunglasses"
+  },
+  "addition": {
+    "item": "yogmod:sunglasses"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:leather_helmet"
+  }
+}

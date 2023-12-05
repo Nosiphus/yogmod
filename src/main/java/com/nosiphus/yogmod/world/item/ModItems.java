@@ -4,6 +4,7 @@ import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -301,7 +302,6 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.RED_PLASTIC_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
     public static final RegistryObject<BlockItem> BLACK_MARBLE_CARPET = ITEMS.register("black_marble_carpet",
             () -> new BlockItem(ModBlocks.BLACK_MARBLE_CARPET.get(), new Item.Properties().tab(YogMod.YOGTAB)));
-    //Painting will go here when implemented
     public static final RegistryObject<Item> YOG_SIGN = ITEMS.register("yog_sign",
             () -> new SignItem(new Item.Properties().tab(YogMod.YOGTAB).stacksTo(16),
                     ModBlocks.YOG_SIGN.get(), ModBlocks.YOG_WALL_SIGN.get()));
@@ -434,7 +434,30 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Combat
-
+    public static final RegistryObject<ArmorItem> HARD_HAT = ITEMS.register("hard_hat",
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, EquipmentSlot.HEAD, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> SAFETY_VEST = ITEMS.register("safety_vest",
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, EquipmentSlot.CHEST, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> SEWER_WADERS = ITEMS.register("sewer_waders",
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, EquipmentSlot.LEGS, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> STEELTOE_BOOTS = ITEMS.register("steeltoe_boots",
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, EquipmentSlot.FEET, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> RIOT_HELMET = ITEMS.register("riot_helmet",
+            () -> new ArmorItem(ModArmorMaterials.RIOT, EquipmentSlot.HEAD, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> RIOT_VEST = ITEMS.register("riot_vest",
+            () -> new ArmorItem(ModArmorMaterials.RIOT, EquipmentSlot.CHEST, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> RIOT_PANTS = ITEMS.register("riot_pants",
+            () -> new ArmorItem(ModArmorMaterials.RIOT, EquipmentSlot.LEGS, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> RIOT_BOOTS = ITEMS.register("riot_boots",
+            () -> new ArmorItem(ModArmorMaterials.RIOT, EquipmentSlot.FEET, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> SUNGLASSES = ITEMS.register("sunglasses",
+            () -> new ArmorItem(ModArmorMaterials.SUIT, EquipmentSlot.HEAD, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> SUIT_JACKET = ITEMS.register("suit_jacket",
+            () -> new ArmorItem(ModArmorMaterials.SUIT, EquipmentSlot.CHEST, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> SUIT_PANTS = ITEMS.register("suit_pants",
+            () -> new ArmorItem(ModArmorMaterials.SUIT, EquipmentSlot.LEGS, new Item.Properties().tab(YogMod.YOGTAB)));
+    public static final RegistryObject<ArmorItem> SPATTERDASH_SHOES = ITEMS.register("spatterdash_shoes",
+            () -> new ArmorItem(ModArmorMaterials.SUIT, EquipmentSlot.FEET, new Item.Properties().tab(YogMod.YOGTAB)));
 
     //Brewing
     public static final RegistryObject<BlockItem> SINK = ITEMS.register("sink",
