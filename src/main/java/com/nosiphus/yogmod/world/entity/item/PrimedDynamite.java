@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 
-public class PrimedDynamite extends Entity {
+public class PrimedDynamite extends Entity implements TraceableEntity {
 
     private static final EntityDataAccessor<Integer> DATA_FUSE_ID = SynchedEntityData.defineId(PrimedDynamite.class, EntityDataSerializers.INT);
     private static final int DEFAULT_FUSE_TIME = 80;
@@ -57,7 +57,7 @@ public class PrimedDynamite extends Entity {
 
         this.move(MoverType.SELF, this.getDeltaMovement());
         this.setDeltaMovement(this.getDeltaMovement().scale(0.98D));
-        if (this.onGround) {
+        if (this.onGround()) {
             this.setDeltaMovement(this.getDeltaMovement().multiply(0.7D, -0.5D, 0.7D));
         }
 
@@ -65,13 +65,13 @@ public class PrimedDynamite extends Entity {
         this.setFuse(i);
         if (i <= 0) {
             this.discard();
-            if (!this.level.isClientSide) {
+            if (!this.level().isClientSide) {
                 this.explode();
             }
         } else {
             this.updateInWaterStateAndDoFluidPushing();
-            if (this.level.isClientSide) {
-                this.level.addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
+            if (this.level().isClientSide) {
+                this.level().addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
             }
         }
 
@@ -79,7 +79,7 @@ public class PrimedDynamite extends Entity {
 
     protected void explode() {
         float f = 4.0F;
-        this.level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 4.0F, Explosion.BlockInteraction.BREAK);
+        this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
     }
 
     protected void addAdditionalSaveData(CompoundTag compoundTag) {
@@ -105,10 +105,6 @@ public class PrimedDynamite extends Entity {
 
     public int getFuse() {
         return this.entityData.get(DATA_FUSE_ID);
-    }
-
-    public Packet<?> getAddEntityPacket() {
-        return new ClientboundAddEntityPacket(this);
     }
 
 }

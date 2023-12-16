@@ -22,7 +22,7 @@ public enum RecordPlayerProvider implements IBlockComponentProvider, IDataProvid
 
     public void appendData(IDataWriter dataWriter, IServerAccessor<RecordPlayerBlockEntity> serverAccessor, IPluginConfig pluginConfig) {
         if (pluginConfig.getBoolean(Options.JUKEBOX_RECORD)) {
-            ItemStack itemStack = ((RecordPlayerBlockEntity) serverAccessor.getTarget()).getRecord();
+            ItemStack itemStack = ((RecordPlayerBlockEntity) serverAccessor.getTarget()).getFirstItem();
             if (!itemStack.isEmpty()) {
                 Component text = itemStack.getItem() instanceof RecordItem ? Component.translatable(itemStack.getDescriptionId() + ".desc") : itemStack.getDisplayName();
                 dataWriter.raw().putString("record", Serializer.toJson((Component) text));

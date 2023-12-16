@@ -76,9 +76,9 @@ public class ScrubberBot extends AbstractGolem implements RangedAttackMob {
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
 
-            if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level, this)) {
+            if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level(), this)) {
                 return;
             }
 
@@ -89,16 +89,16 @@ public class ScrubberBot extends AbstractGolem implements RangedAttackMob {
                 int j = Mth.floor(this.getY());
                 int k = Mth.floor(this.getZ() + (double) ((float) (l / 2 % 2 * 2 - 1) * 0.25F));
                 BlockPos blockPos = new BlockPos(i, j, k);
-                if (this.level.isEmptyBlock(blockPos) && blockState.canSurvive(this.level, blockPos)) {
-                    this.level.setBlockAndUpdate(blockPos, blockState);
-                    this.level.gameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Context.of(this, blockState));
+                if (this.level().isEmptyBlock(blockPos) && blockState.canSurvive(this.level(), blockPos)) {
+                    this.level().setBlockAndUpdate(blockPos, blockState);
+                    this.level().gameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Context.of(this, blockState));
                 }
             }
         }
     }
 
     public void performRangedAttack(LivingEntity livingEntity, float float1) {
-        Snowball snowball = new Snowball(this.level, this);
+        Snowball snowball = new Snowball(this.level(), this);
         double d0 = livingEntity.getEyeY() - (double) 1.1F;
         double d1 = livingEntity.getX() - this.getX();
         double d2 = d0 - snowball.getY();
@@ -106,7 +106,7 @@ public class ScrubberBot extends AbstractGolem implements RangedAttackMob {
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double) 0.2F;
         snowball.shoot(d1, d2 + d4, d3, 1.6F, 12.0F);
         this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
-        this.level.addFreshEntity(snowball);
+        this.level().addFreshEntity(snowball);
     }
 
     protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {

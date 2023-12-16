@@ -1,7 +1,7 @@
 package com.nosiphus.yogmod.client.renderer.entity.layers;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,7 +41,7 @@ public class ScrubberBotHeadLayer extends RenderLayer<ScrubberBot, ScrubberBotMo
                 this.getParentModel().getHead().translateAndRotate(poseStack);
                 float f = 0.625F;
                 poseStack.translate(0.0D, -0.34375D, 0.0D);
-                poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
+                poseStack.mulPose(Axis.YP.rotationDegrees(180.0F));
                 poseStack.scale(0.625F, -0.625F, -0.625F);
                 ItemStack itemStack = new ItemStack(ModBlocks.LIT_MONITOR.get());
                 if (flag) {
@@ -50,7 +51,7 @@ public class ScrubberBotHeadLayer extends RenderLayer<ScrubberBot, ScrubberBotMo
                     poseStack.translate(-0.5D, -0.5D, -0.5D);
                     this.blockRenderDispatcher.getModelRenderer().renderModel(poseStack.last(), multiBufferSource.getBuffer(RenderType.outline(TextureAtlas.LOCATION_BLOCKS)), blockState, bakedModel, 0.0F, 0.0F, 0.0F, index, i);
                 } else {
-                    this.itemRenderer.renderStatic(scrubberBot, itemStack, ItemTransforms.TransformType.HEAD, false, poseStack, multiBufferSource, scrubberBot.level, index, LivingEntityRenderer.getOverlayCoords(scrubberBot, 0.0F), scrubberBot.getId());
+                    this.itemRenderer.renderStatic(scrubberBot, itemStack, ItemDisplayContext.HEAD, false, poseStack, multiBufferSource, scrubberBot.level(), index, LivingEntityRenderer.getOverlayCoords(scrubberBot, 0.0F), scrubberBot.getId());
                 }
                 poseStack.popPose();
             }

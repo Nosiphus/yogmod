@@ -7,13 +7,17 @@ import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -216,20 +220,22 @@ public class ModBlocks {
 
     //Decoration Blocks
     public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new LanternBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()
                     .lightLevel((lightLevel) -> { return 14; })
                     .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern",
-            () -> new WallLanternBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new WallLanternBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()
                     .lightLevel((lightLevel) -> { return 14; })
                     .sound(SoundType.GLASS)
                     .lootFrom(LANTERN)));
     public static final RegistryObject<Block> CRATE = BLOCKS.register("crate",
-            () -> new CrateBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new CrateBlock(BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.WOOD)
                     .strength(2.5F)
                     .sound(SoundType.WOOD), () -> {
         return ModBlockEntityType.CRATE.get();
@@ -331,29 +337,29 @@ public class ModBlocks {
 
     //Redstone
     public static final RegistryObject<Block> WIRE = BLOCKS.register("wire",
-            () -> new WireBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new WireBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()));
     public static final RegistryObject<Block> LED = BLOCKS.register("led",
-            () -> new RedstoneTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new RedstoneTorchBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()
                     .lightLevel((getLightValueLit(7)))
                     .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> WALL_LED = BLOCKS.register("wall_led",
-            () -> new RedstoneWallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new RedstoneWallTorchBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()
                     .lightLevel((getLightValueLit(7)))
                     .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> DIODE = BLOCKS.register("diode",
-            () -> new WireDiodeBlock(BlockBehaviour.Properties.of(Material.DECORATION)
+            () -> new WireDiodeBlock(BlockBehaviour.Properties.of()
                     .instabreak()
                     .sound(SoundType.WOOD)));
     public static final RegistryObject<Block> AIR_VENT = BLOCKS.register("air_vent",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> MOVING_PISTON = BLOCKS.register("moving_piston",
-            () -> new MovingPistonBlock(BlockBehaviour.Properties.of(Material.PISTON)
+            () -> new MovingPistonBlock(BlockBehaviour.Properties.of()
                     .strength(-1.0F)
                     .dynamicShape()
                     .noLootTable()
@@ -365,7 +371,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PISTON = BLOCKS.register("piston", () -> pistonBase(false));
     public static final RegistryObject<Block> PISTON_HEAD = BLOCKS.register("piston_head",
-            () -> new PistonHeadBlock(BlockBehaviour.Properties.of(Material.PISTON)
+            () -> new PistonHeadBlock(BlockBehaviour.Properties.of()
                     .strength(1.5F)
                     .noLootTable()
             ));
@@ -384,65 +390,65 @@ public class ModBlocks {
     public static final RegistryObject<Block> CONSOLE = BLOCKS.register("console",
             () -> new NoteBlock(BlockBehaviour.Properties.copy(Blocks.NOTE_BLOCK)));
     public static final RegistryObject<Block> OAK_BRICK_BUTTON = BLOCKS.register("oak_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)));
+            () -> woodenButton(BlockSetType.OAK));
     public static final RegistryObject<Block> SPRUCE_BRICK_BUTTON = BLOCKS.register("spruce_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON)));
+            () -> woodenButton(BlockSetType.SPRUCE));
     public static final RegistryObject<Block> BIRCH_BRICK_BUTTON = BLOCKS.register("birch_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_BUTTON)));
+            () -> woodenButton(BlockSetType.BIRCH));
     public static final RegistryObject<Block> JUNGLE_BRICK_BUTTON = BLOCKS.register("jungle_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_BUTTON)));
+            () -> woodenButton(BlockSetType.JUNGLE));
     public static final RegistryObject<Block> ACACIA_BRICK_BUTTON = BLOCKS.register("acacia_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_BUTTON)));
+            () -> woodenButton(BlockSetType.ACACIA));
     public static final RegistryObject<Block> DARK_OAK_BRICK_BUTTON = BLOCKS.register("dark_oak_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_BUTTON)));
+            () -> woodenButton(BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CRIMSON_BRICK_BUTTON = BLOCKS.register("crimson_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON)));
+            () -> woodenButton(BlockSetType.CRIMSON));
     public static final RegistryObject<Block> WARPED_BRICK_BUTTON = BLOCKS.register("warped_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_BUTTON)));
+            () -> woodenButton(BlockSetType.WARPED));
     public static final RegistryObject<Block> MANGROVE_BRICK_BUTTON = BLOCKS.register("mangrove_brick_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_BUTTON)));
+            () -> woodenButton(BlockSetType.MANGROVE));
     public static final RegistryObject<Block> OAK_BRICK_PRESSURE_PLATE = BLOCKS.register("oak_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
     public static final RegistryObject<Block> SPRUCE_BRICK_PRESSURE_PLATE = BLOCKS.register("spruce_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE), BlockSetType.SPRUCE));
     public static final RegistryObject<Block> BIRCH_BRICK_PRESSURE_PLATE = BLOCKS.register("birch_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.BIRCH_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.BIRCH_PRESSURE_PLATE), BlockSetType.BIRCH));
     public static final RegistryObject<Block> JUNGLE_BRICK_PRESSURE_PLATE = BLOCKS.register("jungle_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.JUNGLE_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.JUNGLE_PRESSURE_PLATE), BlockSetType.JUNGLE));
     public static final RegistryObject<Block> ACACIA_BRICK_PRESSURE_PLATE = BLOCKS.register("acacia_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.ACACIA_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.ACACIA_PRESSURE_PLATE), BlockSetType.ACACIA));
     public static final RegistryObject<Block> DARK_OAK_BRICK_PRESSURE_PLATE = BLOCKS.register("dark_oak_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PRESSURE_PLATE), BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CRIMSON_BRICK_PRESSURE_PLATE = BLOCKS.register("crimson_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE), BlockSetType.CRIMSON));
     public static final RegistryObject<Block> WARPED_BRICK_PRESSURE_PLATE = BLOCKS.register("warped_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.WARPED_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.WARPED_PRESSURE_PLATE), BlockSetType.WARPED));
     public static final RegistryObject<Block> MANGROVE_BRICK_PRESSURE_PLATE = BLOCKS.register("mangrove_brick_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.MANGROVE_PRESSURE_PLATE)));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.MANGROVE_PRESSURE_PLATE), BlockSetType.CRIMSON));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_DOOR), BlockSetType.IRON));
     public static final RegistryObject<Block> WOODEN_DOOR = BLOCKS.register("wooden_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)));
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
     public static final RegistryObject<Block> HATCH = BLOCKS.register("hatch",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)));
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final RegistryObject<Block> OAK_BRICK_FENCE_GATE = BLOCKS.register("oak_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), WoodType.OAK));
     public static final RegistryObject<Block> SPRUCE_BRICK_FENCE_GATE = BLOCKS.register("spruce_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE), WoodType.SPRUCE));
     public static final RegistryObject<Block> BIRCH_BRICK_FENCE_GATE = BLOCKS.register("birch_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_FENCE_GATE), WoodType.BIRCH));
     public static final RegistryObject<Block> JUNGLE_BRICK_FENCE_GATE = BLOCKS.register("jungle_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE), WoodType.JUNGLE));
     public static final RegistryObject<Block> ACACIA_BRICK_FENCE_GATE = BLOCKS.register("acacia_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_FENCE_GATE), WoodType.ACACIA));
     public static final RegistryObject<Block> DARK_OAK_BRICK_FENCE_GATE = BLOCKS.register("dark_oak_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE), WoodType.DARK_OAK));
     public static final RegistryObject<Block> CRIMSON_BRICK_FENCE_GATE = BLOCKS.register("crimson_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE_GATE), WoodType.CRIMSON));
     public static final RegistryObject<Block> WARPED_BRICK_FENCE_GATE = BLOCKS.register("warped_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE), WoodType.WARPED));
     public static final RegistryObject<Block> MANGROVE_BRICK_FENCE_GATE = BLOCKS.register("mangrove_brick_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE_GATE)));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE_GATE), WoodType.MANGROVE));
 
     //Transportation
     public static final RegistryObject<Block> POWERED_METROVOX_RAIL = BLOCKS.register("powered_metrovox_rail",
@@ -501,7 +507,15 @@ public class ModBlocks {
         BlockBehaviour.StatePredicate blockbehaviour$statepredicate = (blockState, blockGetter, blockPos) -> {
             return !blockState.getValue(PistonBaseBlock.EXTENDED);
         };
-        return new PistonBaseBlock(isSticky, BlockBehaviour.Properties.of(Material.PISTON).strength(1.5F).isRedstoneConductor(ModBlocks::never).isSuffocating(blockbehaviour$statepredicate).isViewBlocking(blockbehaviour$statepredicate));
+        return new PistonBaseBlock(isSticky, BlockBehaviour.Properties.of().strength(1.5F).isRedstoneConductor(ModBlocks::never).isSuffocating(blockbehaviour$statepredicate).isViewBlocking(blockbehaviour$statepredicate));
+    }
+
+    private static ButtonBlock woodenButton(BlockSetType blockSetType, FeatureFlag... featureFlags) {
+        BlockBehaviour.Properties blockbehaviour$properties = BlockBehaviour.Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY);
+        if (featureFlags.length > 0) {
+            blockbehaviour$properties = blockbehaviour$properties.requiredFeatures(featureFlags);
+        }
+        return new ButtonBlock(blockbehaviour$properties, blockSetType, 30, true);
     }
 
 }

@@ -50,6 +50,7 @@ public class YogifierRecipe implements Recipe<Container> {
         return this.result;
     }
 
+    public boolean isBaseIngredient(ItemStack itemStack) { return this.base.test(itemStack); }
     public boolean isAdditionIngredient(ItemStack itemStack) {
         return this.addition.test(itemStack);
     }

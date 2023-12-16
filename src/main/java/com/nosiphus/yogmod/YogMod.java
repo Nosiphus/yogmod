@@ -81,15 +81,6 @@ public class YogMod {
         }
 
         @SubscribeEvent
-        public static void onStitch(TextureStitchEvent.Pre event) {
-            if (event.getAtlas().location().equals(Sheets.CHEST_SHEET)) {
-                event.addSprite(CrateRenderer.CRATE_LOCATION);
-                event.addSprite(CrateRenderer.CRATE_LOCATION_LEFT);
-                event.addSprite(CrateRenderer.CRATE_LOCATION_RIGHT);
-            }
-        }
-
-        @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
             event.register((blockState, blockAndTintGetter, blockPos, index) -> {
                 return WireBlock.colorMultiplier(blockState.getValue(WireBlock.POWER));

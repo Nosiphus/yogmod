@@ -1,10 +1,12 @@
 package com.nosiphus.yogmod.integration.jei;
 
-import mezz.jei.core.util.function.CachedSupplier;
+import mezz.jei.core.util.function.LazySupplier;
+
+import java.util.function.Supplier;
 
 public class YogPlatformHelper implements IYogPlatformHelper {
 
-    private final CachedSupplier<YogRecipeHelper> yogRecipeHelper = new CachedSupplier(YogRecipeHelper::new);
+    private final Supplier<YogRecipeHelper> yogRecipeHelper = new LazySupplier(YogRecipeHelper::new);
 
     public YogPlatformHelper() {
 

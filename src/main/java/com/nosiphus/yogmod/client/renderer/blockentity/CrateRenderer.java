@@ -2,7 +2,7 @@ package com.nosiphus.yogmod.client.renderer.blockentity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import com.nosiphus.yogmod.world.level.block.AbstractCrateBlock;
 import com.nosiphus.yogmod.world.level.block.CrateBlock;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
@@ -33,9 +33,9 @@ import net.minecraft.world.level.block.DoubleBlockCombiner;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.checkerframework.checker.units.qual.C;
 
 @OnlyIn(Dist.CLIENT)
 public class CrateRenderer<T extends BlockEntity & LidBlockEntity> implements BlockEntityRenderer<T> {
@@ -102,7 +102,7 @@ public class CrateRenderer<T extends BlockEntity & LidBlockEntity> implements Bl
             poseStack.pushPose();
             float f = blockState.getValue(CrateBlock.FACING).toYRot();
             poseStack.translate(0.5D, 0.5D, 0.5D);
-            poseStack.mulPose(Vector3f.YP.rotationDegrees(-f));
+            poseStack.mulPose(Axis.YP.rotationDegrees(-f));
             poseStack.translate(-0.5D, -0.5D, -0.5D);
             DoubleBlockCombiner.NeighborCombineResult<? extends CrateBlockEntity> neighborCombineResult;
             if (flag) {

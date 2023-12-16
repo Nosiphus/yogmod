@@ -1,7 +1,7 @@
 package com.nosiphus.yogmod.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import com.nosiphus.yogmod.world.entity.item.PrimedDynamite;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -12,7 +12,6 @@ import net.minecraft.client.renderer.entity.TntMinecartRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -40,9 +39,9 @@ public class DynamiteRenderer extends EntityRenderer<PrimedDynamite> {
             poseStack.scale(f1, f1, f1);
         }
 
-        poseStack.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
+        poseStack.mulPose(Axis.YP.rotationDegrees(-90.0F));
         poseStack.translate(-0.5D, -0.5D, 0.5D);
-        poseStack.mulPose(Vector3f.YP.rotationDegrees(90.0F));
+        poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
         TntMinecartRenderer.renderWhiteSolidBlock(this.blockRenderer, ModBlocks.DYNAMITE.get().defaultBlockState(), poseStack, multiBufferSource, index, i / 5 % 2 == 0);
         poseStack.popPose();
         super.render(primedDynamite, float1, float2, poseStack, multiBufferSource, index);

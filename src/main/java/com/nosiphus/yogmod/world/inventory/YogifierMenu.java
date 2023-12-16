@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.ItemCombinerMenu;
+import net.minecraft.world.inventory.ItemCombinerMenuSlotDefinition;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Optional;
 
 public class YogifierMenu extends ItemCombinerMenu {
     private final Level level;
@@ -27,8 +29,20 @@ public class YogifierMenu extends ItemCombinerMenu {
 
     public YogifierMenu(int index, Inventory inventory, ContainerLevelAccess containerLevelAccess) {
         super(ModMenuType.YOGIFIER.get(), index, inventory, containerLevelAccess);
-        this.level = inventory.player.level;
+        this.level = inventory.player.level();
         this.recipes = this.level.getRecipeManager().getAllRecipesFor(ModRecipeType.YOGIFIER.get());
+    }
+
+    protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
+        return ItemCombinerMenuSlotDefinition.create().withSlot(0, 8, 48, (itemStack) -> {
+            return this.recipes.stream().anyMatch((yogifierRecipe) -> {
+                return yogifierRecipe.isBaseIngredient(itemStack);
+            });
+        }).withSlot(1, 26, 48, (itemStack1) -> {
+            return this.recipes.stream().anyMatch((yogifierRecipe2) -> {
+                return yogifierRecipe2.isAdditionIngredient(itemStack1);
+            });
+        }).withResultSlot(3, 98, 48).build();
     }
 
     protected boolean isValidBlock(BlockState blockState) {
@@ -40,13 +54,17 @@ public class YogifierMenu extends ItemCombinerMenu {
     }
 
     protected void onTake(Player player, ItemStack itemStack) {
-        itemStack.onCraftedBy(player.level, player, itemStack.getCount());
-        this.resultSlots.awardUsedRecipes(player);
+        itemStack.onCraftedBy(player.level(), player, itemStack.getCount());
+        this.resultSlots.awardUsedRecipes(player, this.getRelevantItems());
         this.shrinkStackInSlot(0);
         this.shrinkStackInSlot(1);
         this.access.execute((level, blockPos) -> {
             level.levelEvent(1044, blockPos, 0);
         });
+    }
+
+    private List<ItemStack> getRelevantItems() {
+        return List.of(this.inputSlots.getItem(0), this.inputSlots.getItem(1), this.inputSlots.getItem(2));
     }
 
     private void shrinkStackInSlot(int index) {
@@ -61,17 +79,25 @@ public class YogifierMenu extends ItemCombinerMenu {
             this.resultSlots.setItem(0, ItemStack.EMPTY);
         } else {
             this.selectedRecipe = list.get(0);
-            ItemStack itemstack = this.selectedRecipe.assemble(this.inputSlots);
+            ItemStack itemstack = this.selectedRecipe.assemble(this.inputSlots, this.level.registryAccess());
             this.resultSlots.setRecipeUsed(this.selectedRecipe);
             this.resultSlots.setItem(0, itemstack);
         }
 
     }
 
-    protected boolean shouldQuickMoveToAdditionalSlot(ItemStack itemStack) {
-        return this.recipes.stream().anyMatch((yogifierRecipe) -> {
-            return yogifierRecipe.isAdditionIngredient(itemStack);
-        });
+    public int getSlotToQuickMoveTo(ItemStack itemStack) {
+        return this.recipes.stream().map((mapper) -> {
+            return findSlotMatchingIngredient(mapper, itemStack);
+        }).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
+    }
+
+    private static Optional<Integer> findSlotMatchingIngredient(YogifierRecipe yogifierRecipe, ItemStack itemStack) {
+        if (yogifierRecipe.isBaseIngredient(itemStack)) {
+            return Optional.of(0);
+        } else {
+            return yogifierRecipe.isAdditionIngredient(itemStack) ? Optional.of(1) : Optional.empty();
+        }
     }
 
     public boolean canTakeItemForPickAll(ItemStack itemStack, Slot slot) {
