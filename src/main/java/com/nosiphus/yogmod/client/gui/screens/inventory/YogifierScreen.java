@@ -23,7 +23,7 @@ public class YogifierScreen extends ItemCombinerScreen<YogifierMenu> {
 
     protected void renderErrorIcon(GuiGraphics guiGraphics, int posX, int posY) {
         if (this.hasRecipeError()) {
-            guiGraphics.blit(YOGIFIER_LOCATION, posX + 65, posY + 46, this.imageWidth, 0, 28, 21);
+            guiGraphics.blit(YOGIFIER_LOCATION, posX + 99, posY + 45, this.imageWidth, 0, 28, 21);
         }
     }
 

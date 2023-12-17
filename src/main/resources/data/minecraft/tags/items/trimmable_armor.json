@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "yogmod:hard_hat",
+    "yogmod:safety_vest",
+    "yogmod:sewer_waders",
+    "yogmod:steeltoe_boots",
+	"yogmod:riot_helmet",
+	"yogmod:riot_vest",
+	"yogmod:riot_pants",
+	"yogmod:riot_boots",
+	"yogmod:sunglasses",
+	"yogmod:suit_jacket",
+	"yogmod:suit_pants",
+	"yogmod:spatterdash_shoes"
+  ]
+}

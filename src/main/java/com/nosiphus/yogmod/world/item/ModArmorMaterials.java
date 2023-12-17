@@ -92,7 +92,7 @@ public enum ModArmorMaterials implements StringRepresentable, ArmorMaterial {
     }
 
     public String getName() {
-        return this.name;
+        return "yogmod:" + this.name;
     }
 
     public float getToughness() {
