@@ -14,11 +14,9 @@ import java.util.function.Supplier;
 
 public abstract class AbstractCrateBlock<E extends BlockEntity> extends BaseEntityBlock {
     protected final Supplier<BlockEntityType<? extends E>> blockEntityType;
-
     protected AbstractCrateBlock(BlockBehaviour.Properties properties, Supplier<BlockEntityType<? extends E>> blockEntityType) {
         super(properties);
         this.blockEntityType = blockEntityType;
     }
-
     public abstract DoubleBlockCombiner.NeighborCombineResult<? extends CrateBlockEntity> combine(BlockState blockState, Level level, BlockPos blockPos, boolean isDouble);
 }
