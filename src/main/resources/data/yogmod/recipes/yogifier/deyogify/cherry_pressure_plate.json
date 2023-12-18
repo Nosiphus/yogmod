@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:cherry_brick_pressure_plate"
+  },
+  "addition": {
+    "item": "yogmod:cherry_brick_pressure_plate"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:cherry_pressure_plate"
+  }
+}

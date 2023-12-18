@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:bamboo_brick_button"
+  },
+  "addition": {
+    "item": "yogmod:bamboo_brick_button"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:bamboo_button"
+  }
+}

@@ -18,6 +18,13 @@ import java.util.List;
 import java.util.Optional;
 
 public class YogifierMenu extends ItemCombinerMenu {
+    public static final int BASE_SLOT = 0;
+    public static final int ADDITIONAL_SLOT = 1;
+    public static final int RESULT_SLOT = 2;
+    public static final int BASE_SLOT_X_PLACEMENT = 27;
+    public static final int ADDITIONAL_SLOT_X_PLACEMENT = 76;
+    public static final int RESULT_SLOT_X_PLACEMENT = 134;
+    public static final int SLOT_Y_PLACEMENT = 47;
     private final Level level;
     @Nullable
     private YogifierRecipe selectedRecipe;
@@ -64,7 +71,7 @@ public class YogifierMenu extends ItemCombinerMenu {
     }
 
     private List<ItemStack> getRelevantItems() {
-        return List.of(this.inputSlots.getItem(0), this.inputSlots.getItem(1), this.inputSlots.getItem(2));
+        return List.of(this.inputSlots.getItem(0), this.inputSlots.getItem(1));
     }
 
     private void shrinkStackInSlot(int index) {
@@ -78,12 +85,14 @@ public class YogifierMenu extends ItemCombinerMenu {
         if (list.isEmpty()) {
             this.resultSlots.setItem(0, ItemStack.EMPTY);
         } else {
-            this.selectedRecipe = list.get(0);
-            ItemStack itemstack = this.selectedRecipe.assemble(this.inputSlots, this.level.registryAccess());
-            this.resultSlots.setRecipeUsed(this.selectedRecipe);
-            this.resultSlots.setItem(0, itemstack);
+            YogifierRecipe yogifierRecipe = list.get(0);
+            ItemStack itemStack = yogifierRecipe.assemble(this.inputSlots, this.level.registryAccess());
+            if (itemStack.isItemEnabled(this.level.enabledFeatures())) {
+                this.selectedRecipe = yogifierRecipe;
+                this.resultSlots.setRecipeUsed(yogifierRecipe);
+                this.resultSlots.setItem(0, itemStack);
+            }
         }
-
     }
 
     public int getSlotToQuickMoveTo(ItemStack itemStack) {
@@ -102,6 +111,12 @@ public class YogifierMenu extends ItemCombinerMenu {
 
     public boolean canTakeItemForPickAll(ItemStack itemStack, Slot slot) {
         return slot.container != this.resultSlots && super.canTakeItemForPickAll(itemStack, slot);
+    }
+
+    public boolean canMoveIntoInputSlots(ItemStack itemStack) {
+        return this.recipes.stream().map((mapper) -> {
+            return findSlotMatchingIngredient(mapper, itemStack);
+        }).anyMatch(Optional::isPresent);
     }
 
 }

@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "minecraft:bamboo_planks"
+  },
+  "result": {
+    "item": "minecraft:bamboo_trapdoor"
+  }
+}

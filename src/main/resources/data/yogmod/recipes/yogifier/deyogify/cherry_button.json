@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:cherry_brick_button"
+  },
+  "addition": {
+    "item": "yogmod:cherry_brick_button"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:cherry_button"
+  }
+}

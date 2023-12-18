@@ -9,6 +9,8 @@
     "yogmod:dark_oak_brick_button",
     "yogmod:crimson_brick_button",
     "yogmod:warped_brick_button",
-    "yogmod:mangrove_brick_button"
+    "yogmod:mangrove_brick_button",
+	"yogmod:cherry_brick_button",
+	"yogmod:bamboo_brick_button"
   ]
 }

@@ -9,6 +9,8 @@
 	"yogmod:mangrove_brick_fence",
 	"yogmod:oak_brick_fence",
 	"yogmod:spruce_brick_fence",
-	"yogmod:warped_brick_fence"
+	"yogmod:warped_brick_fence",
+	"yogmod:cherry_brick_fence",
+	"yogmod:bamboo_brick_fence"
   ]
 }

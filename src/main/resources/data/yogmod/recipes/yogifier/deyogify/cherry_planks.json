@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:cherry_bricks"
+  },
+  "addition": {
+    "item": "yogmod:cherry_bricks"
+  },
+  "result": {
+	"count": 2,
+    "item": "minecraft:cherry_planks"
+  }
+}

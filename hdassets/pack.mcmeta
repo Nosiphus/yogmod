@@ -1,6 +1,10 @@
 {
     "pack": {
-        "description": "YogMod High Definition Textures",
-        "pack_format": 9
+        "description": "by Nosiphus - version 1.20.1\n\u00A7c\u00A7nDecember 17, 2023",
+        "pack_format": 15,
+		"supported_formats": {
+			"min_inclusive": 15,
+			"max_inclusive": 18
+		}
     }
 }
