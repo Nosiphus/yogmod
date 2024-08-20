@@ -6,7 +6,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -493,6 +495,21 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.BEIGE_WOOL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> BEIGE_CARPET = addToTab(ITEMS.register("beige_carpet",
             () -> new BlockItem(ModBlocks.BEIGE_CARPET.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> BEIGE_TERRACOTTA = addToTab(ITEMS.register("beige_terracotta",
+            () -> new BlockItem(ModBlocks.BEIGE_TERRACOTTA.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> BEIGE_CONCRETE = addToTab(ITEMS.register("beige_concrete",
+            () -> new BlockItem(ModBlocks.BEIGE_CONCRETE.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> BEIGE_CONCRETE_POWDER = addToTab(ITEMS.register("beige_concrete_powder",
+            () -> new BlockItem(ModBlocks.BEIGE_CONCRETE_POWDER.get(), new Item.Properties())));
+    //Beige Glazed Terracotta
+    public static final RegistryObject<BlockItem> BEIGE_STAINED_GLASS = addToTab(ITEMS.register("beige_stained_glass",
+            () -> new BlockItem(ModBlocks.BEIGE_STAINED_GLASS.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> BEIGE_STAINED_GLASS_PANE = addToTab(ITEMS.register("beige_stained_glass_pane",
+            () -> new BlockItem(ModBlocks.BEIGE_STAINED_GLASS_PANE.get(), new Item.Properties())));
+    //Beige Shulker Box
+    //Beige Bed
+    //Beige Candle
+    //Beige Banner
     public static final RegistryObject<Item> BEIGE_DYE = addToTab(ITEMS.register("beige_dye",
             () -> new Item(new Item.Properties())));
 

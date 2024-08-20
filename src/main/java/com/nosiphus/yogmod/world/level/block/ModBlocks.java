@@ -501,6 +501,21 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));
     public static final RegistryObject<Block> BEIGE_CARPET = BLOCKS.register("beige_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_CARPET)));
+    public static final RegistryObject<Block> BEIGE_TERRACOTTA = BLOCKS.register("beige_terracotta",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_TERRACOTTA)));
+    public static final RegistryObject<Block> BEIGE_CONCRETE = BLOCKS.register("beige_concrete",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_CONCRETE)));
+    public static final RegistryObject<Block> BEIGE_CONCRETE_POWDER = BLOCKS.register("beige_concrete_powder",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_CONCRETE_POWDER)));
+    //Beige Glazed Terracotta
+    public static final RegistryObject<Block> BEIGE_STAINED_GLASS = BLOCKS.register("beige_stained_glass",
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)));
+    public static final RegistryObject<Block> BEIGE_STAINED_GLASS_PANE = BLOCKS.register("beige_stained_glass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS_PANE)));
+    //Beige Shulker Box
+    //Beige Bed
+    //Beige Candle
+    //Beige Banner
 
     //Methods
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {

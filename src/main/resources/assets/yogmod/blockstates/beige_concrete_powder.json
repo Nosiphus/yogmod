@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "yogmod:block/beige_concrete_powder"
+      },
+      {
+        "model": "yogmod:block/beige_concrete_powder",
+        "y": 90
+      },
+      {
+        "model": "yogmod:block/beige_concrete_powder",
+        "y": 180
+      },
+      {
+        "model": "yogmod:block/beige_concrete_powder",
+        "y": 270
+      }
+    ]
+  }
+}
