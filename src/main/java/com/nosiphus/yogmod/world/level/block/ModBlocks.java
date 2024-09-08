@@ -7,6 +7,7 @@ import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -247,6 +248,8 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_WALL)));
     public static final RegistryObject<Block> SMOOTH_METAL_FENCE = BLOCKS.register("smooth_metal_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICK_FENCE)));
+    public static final RegistryObject<Block> SMOOTH_METAL_FINIAL = BLOCKS.register("smooth_metal_finial",
+            () -> new FinialBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS)));
     public static final RegistryObject<Block> IRON_STACK = BLOCKS.register("iron_stack",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> IRON_DOOR = BLOCKS.register("iron_door",
@@ -348,7 +351,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CLAY_TILE = BLOCKS.register("clay_tile",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
     public static final RegistryObject<Block> SHALE = BLOCKS.register("shale",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<Block> GLASS = BLOCKS.register("glass",
             () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
     public static final RegistryObject<Block> GLASS_PANE = BLOCKS.register("glass_pane",
@@ -357,6 +360,8 @@ public class ModBlocks {
     //Natural Blocks
     public static final RegistryObject<Block> REINFORCED_PANELING = BLOCKS.register("reinforced_paneling",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> THIN_STRIPE = BLOCKS.register("thin_stripe",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)));
     public static final RegistryObject<Block> CAUTION_TAPE = BLOCKS.register("caution_tape",
             () -> new SoulSandBlock(BlockBehaviour.Properties.copy(Blocks.SOUL_SAND).sound(SoundType.SAND)));
     public static final RegistryObject<Block> DARK_STONE_BRICKS = BLOCKS.register("dark_stone_bricks",
@@ -375,6 +380,19 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> FLUORESCENT_PANEL = BLOCKS.register("fluorescent_panel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> MECHANICAL = BLOCKS.register("mechanical",
+            () -> new MushroomBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.GLASS)
+                    .lightLevel((value -> 1))
+                    .hasPostProcess(ModBlocks::always)
+                    .pushReaction(PushReaction.DESTROY),
+                    TreeFeatures.HUGE_BROWN_MUSHROOM));
+    public static final RegistryObject<Block> POTTED_MECHANICAL = BLOCKS.register("potted_mechanical",
+            () -> flowerPot(MECHANICAL.get()));
     public static final RegistryObject<Block> CURTAINS = BLOCKS.register("curtains",
             () -> new CurtainsBlock(BlockBehaviour.Properties.copy(Blocks.VINE).sound(SoundType.WOOL)));
     public static final RegistryObject<Block> COUNTERTOP = BLOCKS.register("countertop",
@@ -391,13 +409,13 @@ public class ModBlocks {
             () -> new LanternBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()
-                    .lightLevel((lightLevel) -> { return 14; })
+                    .lightLevel(value -> 14)
                     .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> WALL_LANTERN = BLOCKS.register("wall_lantern",
             () -> new WallLanternBlock(BlockBehaviour.Properties.of()
                     .noCollission()
                     .instabreak()
-                    .lightLevel((lightLevel) -> { return 14; })
+                    .lightLevel(value -> 14)
                     .sound(SoundType.GLASS)
                     .lootFrom(LANTERN)));
     public static final RegistryObject<Block> LED = BLOCKS.register("led",
@@ -534,6 +552,14 @@ public class ModBlocks {
 
     private static boolean never(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
         return false;
+    }
+
+    private static FlowerPotBlock flowerPot(Block block, FeatureFlag... featureFlags) {
+        BlockBehaviour.Properties blockbehaviour$properties = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+        if(featureFlags.length > 0) {
+            blockbehaviour$properties = blockbehaviour$properties.requiredFeatures(featureFlags);
+        }
+        return new FlowerPotBlock(block, blockbehaviour$properties);
     }
 
     private static PistonBaseBlock pistonBase(boolean isSticky) {

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "yogmod:sink"
+          "name": "yogmod:mechanical"
         }
       ],
       "rolls": 1.0

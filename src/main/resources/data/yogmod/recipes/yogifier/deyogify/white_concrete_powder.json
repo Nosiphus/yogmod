@@ -1,10 +1,10 @@
 {
   "type": "yogmod:yogifier",
   "base": {
-    "item": "yogmod:shale"
+    "item": "yogmod:thin_stripe"
   },
   "addition": {
-    "item": "yogmod:shale"
+    "item": "yogmod:thin_stripe"
   },
   "result": {
 	"count": 2,

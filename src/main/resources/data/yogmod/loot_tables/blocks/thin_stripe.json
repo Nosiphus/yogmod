@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "yogmod:sink"
+          "name": "yogmod:thin_stripe"
         }
       ],
       "rolls": 1.0

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "yogmod:powder_snow_sink"
+          "name": "yogmod:sink"
         }
       ],
       "rolls": 1.0

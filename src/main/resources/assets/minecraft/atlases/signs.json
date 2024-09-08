@@ -1,9 +1,0 @@
-{
-    "sources": [
-        {
-            "type": "directory",
-            "source": "yogmod:entity/signs",
-            "prefix": "yogmod:entity/signs/"
-        }
-    ]
-}

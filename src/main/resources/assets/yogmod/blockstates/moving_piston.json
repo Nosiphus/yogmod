@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "yogmod:block/moving_piston"
+    }
+  }
+}

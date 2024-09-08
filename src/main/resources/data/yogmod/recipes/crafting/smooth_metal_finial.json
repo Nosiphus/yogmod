@@ -2,16 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "yogmod:bricks"
+      "item": "yogmod:smooth_metal"
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
+    " # ",
     "###"
   ],
   "result": {
     "count": 4,
-    "item": "yogmod:brick_stairs"
+    "item": "yogmod:smooth_metal_finial"
   }
 }

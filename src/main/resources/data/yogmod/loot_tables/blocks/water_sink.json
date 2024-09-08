@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "yogmod:water_sink"
+          "name": "yogmod:sink"
         }
       ],
       "rolls": 1.0

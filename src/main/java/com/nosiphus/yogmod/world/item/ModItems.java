@@ -237,6 +237,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SMOOTH_METAL_WALL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> SMOOTH_METAL_FENCE = addToTab(ITEMS.register("smooth_metal_fence",
             () -> new BlockItem(ModBlocks.SMOOTH_METAL_FENCE.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> SMOOTH_METAL_FINIAL = addToTab(ITEMS.register("smooth_metal_finial",
+            () -> new BlockItem(ModBlocks.SMOOTH_METAL_FINIAL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> IRON_STACK = addToTab(ITEMS.register("iron_stack",
             () -> new BlockItem(ModBlocks.IRON_STACK.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> IRON_DOOR = addToTab(ITEMS.register("iron_door",
@@ -347,6 +349,8 @@ public class ModItems {
     //Natural Blocks
     public static final RegistryObject<BlockItem> REINFORCED_PANELING = addToTab(ITEMS.register("reinforced_paneling",
             () -> new BlockItem(ModBlocks.REINFORCED_PANELING.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> THIN_STRIPE = addToTab(ITEMS.register("thin_stripe",
+            () -> new BlockItem(ModBlocks.THIN_STRIPE.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> CAUTION_TAPE = addToTab(ITEMS.register("caution_tape",
             () -> new BlockItem(ModBlocks.CAUTION_TAPE.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> DARK_STONE_BRICKS = addToTab(ITEMS.register("dark_stone_bricks",
@@ -365,6 +369,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.RIVETED_STEEL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> FLUORESCENT_PANEL = addToTab(ITEMS.register("fluorescent_panel",
             () -> new BlockItem(ModBlocks.FLUORESCENT_PANEL.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> MECHANICAL = addToTab(ITEMS.register("mechanical",
+            () -> new BlockItem(ModBlocks.MECHANICAL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> CURTAINS = addToTab(ITEMS.register("curtains",
             () -> new BlockItem(ModBlocks.CURTAINS.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> COUNTERTOP = addToTab(ITEMS.register("countertop",

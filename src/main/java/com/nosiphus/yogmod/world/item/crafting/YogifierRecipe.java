@@ -77,6 +77,9 @@ public class YogifierRecipe implements Recipe<Container> {
         });
     }
 
+    @Override
+    public boolean isSpecial() { return true; }
+
     public static class Serializer implements RecipeSerializer<YogifierRecipe> {
 
         public static final Serializer INSTANCE = new Serializer();

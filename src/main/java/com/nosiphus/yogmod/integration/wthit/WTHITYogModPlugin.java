@@ -12,6 +12,7 @@ import mcp.mobius.waila.plugin.vanilla.fluid.WaterDescriptor;
 import net.minecraft.world.level.block.DiodeBlock;
 
 public class WTHITYogModPlugin implements IWailaPlugin {
+
     @Override
     public void register(IRegistrar registrar) {
         registrar.addComponent(RecordPlayerProvider.INSTANCE, TooltipPosition.BODY, RecordPlayerBlockEntity.class);
