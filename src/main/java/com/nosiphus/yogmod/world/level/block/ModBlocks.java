@@ -284,6 +284,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_WOOL)));
     public static final RegistryObject<Block> RED_PLASTIC = BLOCKS.register("red_plastic",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_WOOL)));
+    public static final RegistryObject<Block> RED_VELVET = BLOCKS.register("red_velvet",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_WOOL)));
     public static final RegistryObject<Block> ORANGE_PLASTIC = BLOCKS.register("orange_plastic",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.ORANGE_WOOL)));
     public static final RegistryObject<Block> BEIGE_PLASTIC = BLOCKS.register("beige_plastic",
@@ -294,11 +296,15 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIME_WOOL)));
     public static final RegistryObject<Block> GREEN_PLASTIC = BLOCKS.register("green_plastic",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GREEN_WOOL)));
+    public static final RegistryObject<Block> GREEN_VELVET = BLOCKS.register("green_velvet",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GREEN_WOOL)));
     public static final RegistryObject<Block> CYAN_PLASTIC = BLOCKS.register("cyan_plastic",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CYAN_WOOL)));
     public static final RegistryObject<Block> LIGHT_BLUE_PLASTIC = BLOCKS.register("light_blue_plastic",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
     public static final RegistryObject<Block> BLUE_PLASTIC = BLOCKS.register("blue_plastic",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_WOOL)));
+    public static final RegistryObject<Block> BLUE_VELVET = BLOCKS.register("blue_velvet",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_WOOL)));
     public static final RegistryObject<Block> VIOLET_VELVET = BLOCKS.register("violet_velvet",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPLE_WOOL)));
@@ -318,6 +324,8 @@ public class ModBlocks {
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_CARPET)));
     public static final RegistryObject<Block> RED_PLASTIC_CARPET = BLOCKS.register("red_plastic_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.RED_CARPET)));
+    public static final RegistryObject<Block> RED_VELVET_CARPET = BLOCKS.register("red_velvet_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.RED_CARPET)));
     public static final RegistryObject<Block> ORANGE_PLASTIC_CARPET = BLOCKS.register("orange_plastic_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.ORANGE_CARPET)));
     public static final RegistryObject<Block> BEIGE_PLASTIC_CARPET = BLOCKS.register("beige_plastic_carpet",
@@ -328,11 +336,15 @@ public class ModBlocks {
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.LIME_CARPET)));
     public static final RegistryObject<Block> GREEN_PLASTIC_CARPET = BLOCKS.register("green_plastic_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_CARPET)));
+    public static final RegistryObject<Block> GREEN_VELVET_CARPET = BLOCKS.register("green_velvet_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_CARPET)));
     public static final RegistryObject<Block> CYAN_PLASTIC_CARPET = BLOCKS.register("cyan_plastic_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.CYAN_CARPET)));
     public static final RegistryObject<Block> LIGHT_BLUE_PLASTIC_CARPET = BLOCKS.register("light_blue_plastic_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_CARPET)));
     public static final RegistryObject<Block> BLUE_PLASTIC_CARPET = BLOCKS.register("blue_plastic_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_CARPET)));
+    public static final RegistryObject<Block> BLUE_VELVET_CARPET = BLOCKS.register("blue_velvet_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_CARPET)));
     public static final RegistryObject<Block> VIOLET_VELVET_CARPET = BLOCKS.register("violet_velvet_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.PURPLE_CARPET)));

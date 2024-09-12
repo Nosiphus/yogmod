@@ -272,6 +272,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.BROWN_STUCCO.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> RED_PLASTIC = addToTab(ITEMS.register("red_plastic",
             () -> new BlockItem(ModBlocks.RED_PLASTIC.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> RED_VELVET = addToTab(ITEMS.register("red_velvet",
+            () -> new BlockItem(ModBlocks.RED_VELVET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> ORANGE_PLASTIC = addToTab(ITEMS.register("orange_plastic",
             () -> new BlockItem(ModBlocks.ORANGE_PLASTIC.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> BEIGE_PLASTIC = addToTab(ITEMS.register("beige_plastic",
@@ -282,12 +284,16 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.LIME_PLASTIC.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> GREEN_PLASTIC = addToTab(ITEMS.register("green_plastic",
             () -> new BlockItem(ModBlocks.GREEN_PLASTIC.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> GREEN_VELVET = addToTab(ITEMS.register("green_velvet",
+            () -> new BlockItem(ModBlocks.GREEN_VELVET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> CYAN_PLASTIC = addToTab(ITEMS.register("cyan_plastic",
             () -> new BlockItem(ModBlocks.CYAN_PLASTIC.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> LIGHT_BLUE_PLASTIC = addToTab(ITEMS.register("light_blue_plastic",
             () -> new BlockItem(ModBlocks.LIGHT_BLUE_PLASTIC.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> BLUE_PLASTIC = addToTab(ITEMS.register("blue_plastic",
             () -> new BlockItem(ModBlocks.BLUE_PLASTIC.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> BLUE_VELVET = addToTab(ITEMS.register("blue_velvet",
+            () -> new BlockItem(ModBlocks.BLUE_VELVET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> VIOLET_VELVET = addToTab(ITEMS.register("violet_velvet",
             () -> new BlockItem(ModBlocks.VIOLET_VELVET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> MAGENTA_PLASTIC = addToTab(ITEMS.register("magenta_plastic",
@@ -306,6 +312,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.BROWN_STUCCO_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> RED_PLASTIC_CARPET = addToTab(ITEMS.register("red_plastic_carpet",
             () -> new BlockItem(ModBlocks.RED_PLASTIC_CARPET.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> RED_VELVET_CARPET = addToTab(ITEMS.register("red_velvet_carpet",
+            () -> new BlockItem(ModBlocks.RED_VELVET_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> ORANGE_PLASTIC_CARPET = addToTab(ITEMS.register("orange_plastic_carpet",
             () -> new BlockItem(ModBlocks.ORANGE_PLASTIC_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> BEIGE_PLASTIC_CARPET = addToTab(ITEMS.register("beige_plastic_carpet",
@@ -316,12 +324,16 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.LIME_PLASTIC_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> GREEN_PLASTIC_CARPET = addToTab(ITEMS.register("green_plastic_carpet",
             () -> new BlockItem(ModBlocks.GREEN_PLASTIC_CARPET.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> GREEN_VELVET_CARPET = addToTab(ITEMS.register("green_velvet_carpet",
+            () -> new BlockItem(ModBlocks.GREEN_VELVET_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> CYAN_PLASTIC_CARPET = addToTab(ITEMS.register("cyan_plastic_carpet",
             () -> new BlockItem(ModBlocks.CYAN_PLASTIC_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> LIGHT_BLUE_PLASTIC_CARPET = addToTab(ITEMS.register("light_blue_plastic_carpet",
             () -> new BlockItem(ModBlocks.LIGHT_BLUE_PLASTIC_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> BLUE_PLASTIC_CARPET = addToTab(ITEMS.register("blue_plastic_carpet",
             () -> new BlockItem(ModBlocks.BLUE_PLASTIC_CARPET.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> BLUE_VELVET_CARPET = addToTab(ITEMS.register("blue_velvet_carpet",
+            () -> new BlockItem(ModBlocks.BLUE_VELVET_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> VIOLET_VELVET_CARPET = addToTab(ITEMS.register("violet_velvet_carpet",
             () -> new BlockItem(ModBlocks.VIOLET_VELVET_CARPET.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> MAGENTA_PLASTIC_CARPET = addToTab(ITEMS.register("magenta_plastic_carpet",
