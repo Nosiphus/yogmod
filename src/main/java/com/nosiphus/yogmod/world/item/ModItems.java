@@ -226,7 +226,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.BRICK_WALL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> SPOTLIGHT = addToTab(ITEMS.register("spotlight",
             () -> new BlockItem(ModBlocks.SPOTLIGHT.get(), new Item.Properties())));
-    //Netherrack Design will go here
+    public static final RegistryObject<BlockItem> GRAY_AZTEC = addToTab(ITEMS.register("gray_aztec",
+            () -> new BlockItem(ModBlocks.GRAY_AZTEC.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> SMOOTH_METAL = addToTab(ITEMS.register("smooth_metal",
             () -> new BlockItem(ModBlocks.SMOOTH_METAL.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> SMOOTH_METAL_STAIRS = addToTab(ITEMS.register("smooth_metal_stairs",

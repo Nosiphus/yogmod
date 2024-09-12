@@ -237,7 +237,8 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_WALL)));
     public static final RegistryObject<Block> SPOTLIGHT = BLOCKS.register("spotlight",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)));
-    //Netherrack Design will go here when implemented
+    public static final RegistryObject<Block> GRAY_AZTEC = BLOCKS.register("gray_aztec",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
     public static final RegistryObject<Block> SMOOTH_METAL = BLOCKS.register("smooth_metal",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS)));
     public static final RegistryObject<Block> SMOOTH_METAL_STAIRS = BLOCKS.register("smooth_metal_stairs",
