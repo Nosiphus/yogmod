@@ -419,6 +419,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.WIRE.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> DIODE = addToTab(ITEMS.register("diode",
             () -> new BlockItem(ModBlocks.DIODE.get(), new Item.Properties())));
+    public static final RegistryObject<BlockItem> CORRUGATED_REDSTONE = addToTab(ITEMS.register("corrugated_redstone",
+            () -> new BlockItem(ModBlocks.CORRUGATED_REDSTONE.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> CLASSIC_LEVER = addToTab(ITEMS.register("classic_lever",
             () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties())));
     public static final RegistryObject<BlockItem> LEVER = addToTab(ITEMS.register("lever",

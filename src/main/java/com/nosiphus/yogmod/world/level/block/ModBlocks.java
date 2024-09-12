@@ -7,6 +7,7 @@ import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.level.BlockGetter;
@@ -480,6 +481,13 @@ public class ModBlocks {
             () -> new WireDiodeBlock(BlockBehaviour.Properties.of()
                     .instabreak()
                     .sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CORRUGATED_REDSTONE = BLOCKS.register("corrugated_redstone",
+            () -> new PoweredBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.FIRE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F)
+                    .sound(SoundType.METAL)
+                    .isRedstoneConductor(ModBlocks::never)));
     public static final RegistryObject<Block> CLASSIC_LEVER = BLOCKS.register("classic_lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
     public static final RegistryObject<Block> LEVER = BLOCKS.register("lever",
