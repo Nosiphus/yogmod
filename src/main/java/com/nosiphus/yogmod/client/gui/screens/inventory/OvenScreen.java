@@ -12,7 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class OvenScreen extends AbstractFurnaceScreen<OvenMenu> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation("textures/gui/container/furnace.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("yogmod", "textures/gui/container/oven.png");
 
     public OvenScreen(OvenMenu menu, Inventory inventory, Component component) {
         super(menu, new SmeltingRecipeBookComponent(), inventory, component, TEXTURE);

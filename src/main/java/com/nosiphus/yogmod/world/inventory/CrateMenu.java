@@ -19,35 +19,35 @@ public class CrateMenu extends AbstractContainerMenu {
     }
 
     public static CrateMenu oneRow(int ID, Inventory inventory) {
-        return new CrateMenu(MenuType.GENERIC_9x1, ID, inventory, 1);
+        return new CrateMenu(ModMenuType.GENERIC_9x1.get(), ID, inventory, 1);
     }
 
     public static CrateMenu twoRows(int ID, Inventory inventory) {
-        return new CrateMenu(MenuType.GENERIC_9x2, ID, inventory, 2);
+        return new CrateMenu(ModMenuType.GENERIC_9x2.get(), ID, inventory, 2);
     }
 
     public static CrateMenu threeRows(int ID, Inventory inventory) {
-        return new CrateMenu(MenuType.GENERIC_9x3, ID, inventory, 3);
+        return new CrateMenu(ModMenuType.GENERIC_9x3.get(), ID, inventory, 3);
     }
 
     public static CrateMenu fourRows(int ID, Inventory inventory) {
-        return new CrateMenu(MenuType.GENERIC_9x4, ID, inventory, 4);
+        return new CrateMenu(ModMenuType.GENERIC_9x4.get(), ID, inventory, 4);
     }
 
     public static CrateMenu fiveRows(int ID, Inventory inventory) {
-        return new CrateMenu(MenuType.GENERIC_9x5, ID, inventory, 5);
+        return new CrateMenu(ModMenuType.GENERIC_9x5.get(), ID, inventory, 5);
     }
 
     public static CrateMenu sixRows(int ID, Inventory inventory) {
-        return new CrateMenu(MenuType.GENERIC_9x6, ID, inventory, 6);
+        return new CrateMenu(ModMenuType.GENERIC_9x6.get(), ID, inventory, 6);
     }
 
     public static CrateMenu threeRows(int ID, Inventory inventory, Container container) {
-        return new CrateMenu(MenuType.GENERIC_9x3, ID, inventory, container, 3);
+        return new CrateMenu(ModMenuType.GENERIC_9x3.get(), ID, inventory, container, 3);
     }
 
     public static CrateMenu sixRows(int ID, Inventory inventory, Container container) {
-        return new CrateMenu(MenuType.GENERIC_9x6, ID, inventory, container, 6);
+        return new CrateMenu(ModMenuType.GENERIC_9x6.get(), ID, inventory, container, 6);
     }
 
     public CrateMenu(MenuType<?> menuType, int ID, Inventory inventory, Container container, int rows) {
