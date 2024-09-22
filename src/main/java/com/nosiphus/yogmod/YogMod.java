@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod;
 
+import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
@@ -73,6 +74,7 @@ public class YogMod {
             registerEntityRenderers();
 
             MenuScreens.register(ModMenuType.OVEN.get(), OvenScreen::new);
+            MenuScreens.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
             MenuScreens.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
 
         }

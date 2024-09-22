@@ -1,10 +1,10 @@
 {
   "type": "yogmod:yogifier",
   "base": {
-    "item": "minecraft:brown_concrete"
+    "item": "minecraft:shulker_box"
   },
   "addition": {
-    "item": "minecraft:brown_concrete"
+    "item": "minecraft:shulker_box"
   },
   "result": {
 	"count": 2,

@@ -1,6 +1,7 @@
 package com.nosiphus.yogmod.world.level.block;
 
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import com.nosiphus.yogmod.world.level.block.entity.StorageCrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
@@ -12,6 +13,7 @@ import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -361,7 +363,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CORRUGATED_STEEL = BLOCKS.register("corrugated_steel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> STORAGE_CRATE = BLOCKS.register("storage_crate",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+            () -> storageCrate(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> CLAY_TILE = BLOCKS.register("clay_tile",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_WOOL)));
     public static final RegistryObject<Block> SHALE = BLOCKS.register("shale",
@@ -588,6 +590,17 @@ public class ModBlocks {
             return !blockState.getValue(PistonBaseBlock.EXTENDED);
         };
         return new PistonBaseBlock(isSticky, BlockBehaviour.Properties.of().strength(1.5F).isRedstoneConductor(ModBlocks::never).isSuffocating(blockbehaviour$statepredicate).isViewBlocking(blockbehaviour$statepredicate));
+    }
+
+    private static StorageCrateBlock storageCrate(BlockBehaviour.Properties properties) {
+        BlockBehaviour.StatePredicate blockbehaviour$statepredicate = (state, getter, pos) -> {
+            BlockEntity blockEntity = getter.getBlockEntity(pos);
+            if(blockEntity instanceof StorageCrateBlockEntity storageCrateBlockEntity) {
+                return true;
+            }
+            return true;
+        };
+        return new StorageCrateBlock(properties.forceSolidOn().strength(2.0F).isSuffocating(blockbehaviour$statepredicate).isViewBlocking(blockbehaviour$statepredicate).pushReaction(PushReaction.DESTROY).isRedstoneConductor(ModBlocks::always));
     }
 
     private static ButtonBlock woodenButton(BlockSetType blockSetType, FeatureFlag... featureFlags) {
