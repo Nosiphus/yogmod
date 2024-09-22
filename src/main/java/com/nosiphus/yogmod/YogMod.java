@@ -1,8 +1,6 @@
 package com.nosiphus.yogmod;
 
-import com.nosiphus.yogmod.client.gui.screens.inventory.CrateScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
+import com.nosiphus.yogmod.client.gui.screens.inventory.*;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.*;
@@ -16,7 +14,6 @@ import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
-import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
@@ -74,12 +71,13 @@ public class YogMod {
             registerBlockEntityRenderers();
             registerEntityRenderers();
 
-            MenuScreens.register(ModMenuType.GENERIC_9x1.get(), CrateScreen::new);
-            MenuScreens.register(ModMenuType.GENERIC_9x2.get(), CrateScreen::new);
-            MenuScreens.register(ModMenuType.GENERIC_9x3.get(), CrateScreen::new);
-            MenuScreens.register(ModMenuType.GENERIC_9x4.get(), CrateScreen::new);
-            MenuScreens.register(ModMenuType.GENERIC_9x5.get(), CrateScreen::new);
-            MenuScreens.register(ModMenuType.GENERIC_9x6.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.CRATE_9x1.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.CRATE_9x2.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.CRATE_9x3.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.CRATE_9x4.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.CRATE_9x5.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.CRATE_9x6.get(), CrateScreen::new);
+            MenuScreens.register(ModMenuType.DISPENSER.get(), DispenserScreen::new);
             MenuScreens.register(ModMenuType.OVEN.get(), OvenScreen::new);
             MenuScreens.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
             MenuScreens.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
