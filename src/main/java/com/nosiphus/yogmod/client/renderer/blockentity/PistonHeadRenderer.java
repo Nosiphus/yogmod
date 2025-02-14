@@ -2,10 +2,10 @@ package com.nosiphus.yogmod.client.renderer.blockentity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonMovingBlockEntity;
-import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

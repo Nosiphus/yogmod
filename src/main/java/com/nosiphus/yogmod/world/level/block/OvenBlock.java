@@ -1,7 +1,7 @@
 package com.nosiphus.yogmod.world.level.block;
 
-import com.nosiphus.yogmod.world.level.block.entity.OvenBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import com.nosiphus.yogmod.world.level.block.entity.OvenBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.MenuProvider;

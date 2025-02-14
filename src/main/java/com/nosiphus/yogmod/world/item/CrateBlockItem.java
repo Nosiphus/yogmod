@@ -2,7 +2,7 @@ package com.nosiphus.yogmod.world.item;
 
 import com.nosiphus.yogmod.client.model.inventory.ModItemStackRenderer;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
-import com.nosiphus.yogmod.world.level.block.entity.*;
+import com.nosiphus.yogmod.world.level.block.entity.CrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.state.properties.CrateType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;

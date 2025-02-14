@@ -1,14 +1,9 @@
 package com.nosiphus.yogmod.world.item;
 
-import com.nosiphus.yogmod.YogMod;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;

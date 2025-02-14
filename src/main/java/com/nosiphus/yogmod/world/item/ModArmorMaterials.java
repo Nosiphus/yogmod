@@ -10,7 +10,6 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;

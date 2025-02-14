@@ -1,14 +1,13 @@
 package com.nosiphus.yogmod.world.level.block;
 
+import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.entity.StorageCrateBlockEntity;
-import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
-import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
+import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.level.BlockGetter;

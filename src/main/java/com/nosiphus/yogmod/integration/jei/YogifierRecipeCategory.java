@@ -1,8 +1,5 @@
 package com.nosiphus.yogmod.integration.jei;
 
-import com.nosiphus.yogmod.integration.jei.IYogPlatformRecipeHelper;
-import com.nosiphus.yogmod.integration.jei.JEIYogModPlugin;
-import com.nosiphus.yogmod.integration.jei.YogServices;
 import com.nosiphus.yogmod.world.item.crafting.YogifierRecipe;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import mezz.jei.api.constants.VanillaTypes;

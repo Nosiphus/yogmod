@@ -1,7 +1,7 @@
 package com.nosiphus.yogmod.world.level.block.piston;
 
-import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;

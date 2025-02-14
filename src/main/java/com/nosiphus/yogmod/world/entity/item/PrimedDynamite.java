@@ -3,13 +3,10 @@ package com.nosiphus.yogmod.world.entity.item;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
