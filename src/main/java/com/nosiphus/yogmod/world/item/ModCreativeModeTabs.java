@@ -5,8 +5,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class ModCreativeModeTabs {
 
     public static final List<Supplier<? extends ItemLike>> MOD_TAB_ITEMS = new ArrayList<>();
 
-    public static final RegistryObject<CreativeModeTab> YOGMOD = CREATIVE_TABS.register("yogmod",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> YOGMOD = CREATIVE_TABS.register("yogmod",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.yogmod"))
                     .icon(ModItems.FLUORESCENT_PANEL.get()::getDefaultInstance)
@@ -28,7 +29,7 @@ public class ModCreativeModeTabs {
                     .build()
     );
 
-    public static <T extends Item> RegistryObject<T> addToTab(RegistryObject<T> itemLike) {
+    public static <T extends Item> DeferredItem<T> addToTab(DeferredItem<T> itemLike) {
         MOD_TAB_ITEMS.add(itemLike);
         return itemLike;
     }

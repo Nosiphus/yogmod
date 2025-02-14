@@ -2,6 +2,7 @@ package com.nosiphus.yogmod.world.item.crafting;
 
 import com.google.gson.JsonObject;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -32,7 +33,8 @@ public class YogifierRecipe implements Recipe<Container> {
         return this.base.test(container.getItem(0)) && this.addition.test(container.getItem(1));
     }
 
-    public ItemStack assemble(Container container, RegistryAccess registryAccess) {
+    @Override
+    public ItemStack assemble(Container container, HolderLookup.Provider provider) {
         ItemStack itemstack = this.result.copy();
         CompoundTag compoundtag = container.getItem(0).getTag();
         if (compoundtag != null) {
@@ -46,7 +48,8 @@ public class YogifierRecipe implements Recipe<Container> {
         return int1 * int2 >= 2;
     }
 
-    public ItemStack getResultItem(RegistryAccess registryAccess) {
+    @Override
+    public ItemStack getResultItem(HolderLookup.Provider provider) {
         return this.result;
     }
 

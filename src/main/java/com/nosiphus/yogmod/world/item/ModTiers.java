@@ -1,21 +1,26 @@
 package com.nosiphus.yogmod.world.item;
+
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
 
-    PENCIL(0, 59, 2.0F, 0.0F, 15, () -> {
+    PENCIL(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 0, 59, 2.0F, 0.0F, 15, () -> {
         return Ingredient.of(ItemTags.PLANKS);
     }),
-    LASER(3, 1561, 8.0F, 3.0F, 10, () -> {
+    LASER(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 3, 1561, 8.0F, 3.0F, 10, () -> {
         return Ingredient.of(Items.DIAMOND);
     });
 
+    private final TagKey<Block> incorrectBlocksForDrops;
     private final int level;
     private final int uses;
     private final float speed;
@@ -23,7 +28,8 @@ public enum ModTiers implements Tier {
     private final int enchantmentValue;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    private ModTiers(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
+    private ModTiers(TagKey<Block> incorrectBlockForDrops, int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
+        this.incorrectBlocksForDrops = incorrectBlockForDrops;
         this.level = level;
         this.uses = uses;
         this.speed = speed;
@@ -42,6 +48,11 @@ public enum ModTiers implements Tier {
 
     public float getAttackDamageBonus() {
         return this.damage;
+    }
+
+    @Override
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return this.incorrectBlocksForDrops;
     }
 
     public int getLevel() {

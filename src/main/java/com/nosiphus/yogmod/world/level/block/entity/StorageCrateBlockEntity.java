@@ -4,6 +4,7 @@ import com.nosiphus.yogmod.world.inventory.StorageCrateMenu;
 import com.nosiphus.yogmod.world.level.block.StorageCrateBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,8 +21,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.wrapper.SidedInvWrapper;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.wrapper.SidedInvWrapper;
 
 import javax.annotation.Nullable;
 import java.util.stream.IntStream;
@@ -32,7 +33,6 @@ public class StorageCrateBlockEntity extends RandomizableContainerBlockEntity im
     public static final int CONTAINER_SIZE = 27;
     public static final int EVENT_SET_OPEN_COUNT = 1;
     public static final int OPENING_TICK_LENGTH = 10;
-    public static final String ITEMS_TAG = "Items";
     private static final int[] SLOTS = IntStream.range(0, 27).toArray();
     private NonNullList<ItemStack> itemStacks;
     private int openCount;
@@ -97,22 +97,24 @@ public class StorageCrateBlockEntity extends RandomizableContainerBlockEntity im
         return Component.translatable("container.yogmod.storage_crate");
     }
 
-    public void load(CompoundTag tag) {
-        super.load(tag);
-        this.loadFromTag(tag);
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        this.loadFromTag(tag, registries);
     }
 
-    protected void saveAdditional(CompoundTag tag) {
-        super.saveAdditional(tag);
+    @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
         if (!this.trySaveLootTable(tag)) {
-            ContainerHelper.saveAllItems(tag, this.itemStacks, false);
+            ContainerHelper.saveAllItems(tag, this.itemStacks, false, registries);
         }
     }
 
-    public void loadFromTag(CompoundTag tag) {
+    public void loadFromTag(CompoundTag tag, HolderLookup.Provider levelRegistry) {
         this.itemStacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         if (!this.tryLoadLootTable(tag) && tag.contains("Items", 9)) {
-            ContainerHelper.loadAllItems(tag, this.itemStacks);
+            ContainerHelper.loadAllItems(tag, this.itemStacks, levelRegistry);
         }
     }
 

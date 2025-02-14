@@ -13,7 +13,7 @@ public final class ModBlockTags {
     }
 
     private static TagKey<Block> create(String name) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation("yogmod", name));
+        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("yogmod", name));
     }
 
     public static TagKey<Block> create(ResourceLocation name) {

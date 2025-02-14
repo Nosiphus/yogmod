@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class StorageCrateScreen extends AbstractContainerScreen<StorageCrateMenu> {
 
-    private static final ResourceLocation CONTAINER_TEXTURE = new ResourceLocation("yogmod","textures/gui/container/storage_crate.png");
+    private static final ResourceLocation CONTAINER_TEXTURE = ResourceLocation.fromNamespaceAndPath("yogmod","textures/gui/container/storage_crate.png");
 
     public StorageCrateScreen(StorageCrateMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
@@ -17,7 +17,6 @@ public class StorageCrateScreen extends AbstractContainerScreen<StorageCrateMenu
     }
 
     public void render(GuiGraphics graphics, int posX, int posY, float index) {
-        this.renderBackground(graphics);
         super.render(graphics, posX, posY, index);
         this.renderTooltip(graphics, posX, posY);
     }

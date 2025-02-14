@@ -13,7 +13,7 @@ public final class ModItemTags {
     }
 
     private static TagKey<Item> bind(String name) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("yogmod", name));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("yogmod", name));
     }
 
     public static TagKey<Item> create(final ResourceLocation name) {
