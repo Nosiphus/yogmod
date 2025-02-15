@@ -400,6 +400,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.TECH_ACCENT.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> YOGIFIER = addToTab(ITEMS.register("yogifier",
             () -> new BlockItem(ModBlocks.YOGIFIER.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> OVEN = addToTab(ITEMS.register("oven",
+            () -> new BlockItem(ModBlocks.OVEN.get(), new Item.Properties())));
 
     //Redstone Blocks
 

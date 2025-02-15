@@ -407,8 +407,6 @@ public class ModBlocks {
             () -> new MonitorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARVED_PUMPKIN).sound(SoundType.GLASS)));
     public static final DeferredBlock<Block> LIT_MONITOR = BLOCKS.register("lit_monitor",
             () -> new MonitorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JACK_O_LANTERN).sound(SoundType.GLASS)));
-    public static final DeferredBlock<Block> YOGIFIER = BLOCKS.register("yogifier",
-            () -> new YogifierBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
 
     //Functional Blocks
     public static final DeferredBlock<Block> LANTERN = BLOCKS.register("lantern",
@@ -440,6 +438,10 @@ public class ModBlocks {
             () -> new RedstoneLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_LAMP)));
     public static final DeferredBlock<Block> TECH_ACCENT = BLOCKS.register("tech_accent",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
+    public static final DeferredBlock<Block> YOGIFIER = BLOCKS.register("yogifier",
+            () -> new YogifierBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
+    public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven",
+            () -> new OvenBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)));
 
     //Redstone Blocks
 

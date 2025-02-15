@@ -1,6 +1,7 @@
 package com.nosiphus.yogmod;
 
 import com.mojang.logging.LogUtils;
+import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
@@ -51,6 +52,7 @@ public class YogModMain {
 
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuType.OVEN.get(), OvenScreen::new);
             event.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
             event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
         }
