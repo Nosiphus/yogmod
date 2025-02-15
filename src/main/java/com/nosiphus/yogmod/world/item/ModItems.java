@@ -405,6 +405,11 @@ public class ModItems {
 
     //Redstone Blocks
 
+    public static final DeferredItem<BlockItem> PISTON = addToTab(ITEMS.register("piston",
+            () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> STICKY_PISTON = addToTab(ITEMS.register("sticky_piston",
+            () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties())));
+
     //Tools & Utilities
     public static final DeferredItem<Item> PENCIL = addToTab(ITEMS.register("pencil",
             () -> new AxeItem(ModTiers.PENCIL, new Item.Properties().attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)))));

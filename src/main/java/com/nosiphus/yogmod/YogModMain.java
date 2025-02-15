@@ -4,6 +4,11 @@ import com.mojang.logging.LogUtils;
 import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
+import com.nosiphus.yogmod.client.model.ScrubberBotModel;
+import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
+import com.nosiphus.yogmod.client.renderer.entity.ScrubberBotRenderer;
+import com.nosiphus.yogmod.world.entity.ModEntityType;
+import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
@@ -11,6 +16,8 @@ import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,7 +26,9 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
 
 @Mod("yogmod")
@@ -31,6 +40,7 @@ public class YogModMain {
         ModBlockEntityType.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
         ModCreativeModeTabs.CREATIVE_TABS.register(eventBus);
+        ModEntityType.ENTITY_TYPES.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
         ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
@@ -46,12 +56,18 @@ public class YogModMain {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
-
+            registerBlockEntityRenderers();
+            registerEntityRenderers();
 
         }
 
         @SubscribeEvent
-        public static void registerScreens(RegisterMenuScreensEvent event) {
+        public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(ScrubberBotModel.SCRUBBER_BOT, ScrubberBotModel::createBodyLayer);
+        }
+
+        @SubscribeEvent
+        public static void registerMenuScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuType.OVEN.get(), OvenScreen::new);
             event.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
             event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
@@ -67,6 +83,19 @@ public class YogModMain {
 
         }
 
+        @SubscribeEvent
+        public static void entityAttributes(EntityAttributeCreationEvent event) {
+            event.put(ModEntityType.SCRUBBER_BOT.get(), ScrubberBot.createAttributes().build());
+        }
+
+    }
+
+    private static void registerBlockEntityRenderers() {
+        BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
+    }
+
+    private static void registerEntityRenderers() {
+        EntityRenderers.register(ModEntityType.SCRUBBER_BOT.get(), ScrubberBotRenderer::new);
     }
 
 

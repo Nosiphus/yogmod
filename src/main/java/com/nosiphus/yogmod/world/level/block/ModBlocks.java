@@ -1,6 +1,9 @@
 package com.nosiphus.yogmod.world.level.block;
 
 import com.nosiphus.yogmod.world.level.block.entity.StorageCrateBlockEntity;
+import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
+import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
+import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.level.BlockGetter;
@@ -445,6 +448,25 @@ public class ModBlocks {
 
     //Redstone Blocks
 
+    public static final DeferredBlock<Block> MOVING_PISTON = BLOCKS.register("moving_piston",
+            () -> new MovingPistonBlock(BlockBehaviour.Properties.of()
+                    .strength(-1.0F)
+                    .dynamicShape()
+                    .noLootTable()
+                    .noOcclusion()
+                    .isRedstoneConductor(ModBlocks::never)
+                    .isSuffocating(ModBlocks::never)
+                    .isViewBlocking(ModBlocks::never)
+            ));
+    public static final DeferredBlock<Block> PISTON = BLOCKS.register("piston", () -> pistonBase(false));
+    public static final DeferredBlock<Block> PISTON_HEAD = BLOCKS.register("piston_head",
+            () -> new PistonHeadBlock(BlockBehaviour.Properties.of()
+                    .strength(1.5F)
+                    .noLootTable()
+            ));
+    public static final DeferredBlock<Block> STICKY_PISTON = BLOCKS.register("sticky_piston",
+            () -> pistonBase(true));
+
     //Tools & Utilities
 
     //Combat
@@ -487,6 +509,20 @@ public class ModBlocks {
 
     private static Block flowerPot(Block potted) {
         return new FlowerPotBlock(potted, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY));
+    }
+
+    private static Block pistonBase(boolean isSticky) {
+        BlockBehaviour.StatePredicate blockbehaviour$statepredicate = (p_152641_, p_152642_, p_152643_) -> !p_152641_.getValue(net.minecraft.world.level.block.piston.PistonBaseBlock.EXTENDED);
+        return new PistonBaseBlock(
+                isSticky,
+                BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.STONE)
+                        .strength(1.5F)
+                        .isRedstoneConductor(ModBlocks::never)
+                        .isSuffocating(blockbehaviour$statepredicate)
+                        .isViewBlocking(blockbehaviour$statepredicate)
+                        .pushReaction(PushReaction.BLOCK)
+        );
     }
 
     private static StorageCrateBlock storageCrate(BlockBehaviour.Properties properties) {

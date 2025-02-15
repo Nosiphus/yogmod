@@ -1,8 +1,8 @@
 package com.nosiphus.yogmod.world.level.block;
 
 import com.mojang.serialization.MapCodec;
-//import com.nosiphus.yogmod.world.entity.ModEntityType;
-//import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
+import com.nosiphus.yogmod.world.entity.ModEntityType;
+import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,7 +13,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.PumpkinBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -29,7 +28,6 @@ import java.util.function.Predicate;
 public class MonitorBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<MonitorBlock> CODEC = simpleCodec(MonitorBlock::new);
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    /*
     @Nullable
     private BlockPattern scrubberBotBase;
     @Nullable
@@ -38,7 +36,7 @@ public class MonitorBlock extends HorizontalDirectionalBlock {
         return blockState != null && (blockState.is(ModBlocks.MONITOR.get()) || blockState.is(ModBlocks.LIT_MONITOR.get()));
     };
 
-     */
+
 
     public MonitorBlock(BlockBehaviour.Properties properties) {
         super(properties);
@@ -50,7 +48,6 @@ public class MonitorBlock extends HorizontalDirectionalBlock {
         return CODEC;
     }
 
-    /*
 
     public void onPlace(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState1, boolean canSpawn) {
         if(!blockState1.is(blockState.getBlock())) {
@@ -86,8 +83,6 @@ public class MonitorBlock extends HorizontalDirectionalBlock {
         }
     }
 
-     */
-
     public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
         return this.defaultBlockState().setValue(FACING, blockPlaceContext.getHorizontalDirection().getOpposite());
     }
@@ -95,8 +90,6 @@ public class MonitorBlock extends HorizontalDirectionalBlock {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> blockStateBuilder) {
         blockStateBuilder.add(FACING);
     }
-
-    /*
 
     private BlockPattern getOrCreateScrubberBotBase() {
         if (this.scrubberBotBase == null) {
@@ -118,7 +111,5 @@ public class MonitorBlock extends HorizontalDirectionalBlock {
         }
         return this.scrubberBotFull;
     }
-
-     */
 
 }
