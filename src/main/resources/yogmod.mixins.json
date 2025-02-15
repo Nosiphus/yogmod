@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.nosiphus.yogmod.mixin",
+  "refmap": "yogmod.refmap.json",
+  "mixins": [
+    "SinkMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

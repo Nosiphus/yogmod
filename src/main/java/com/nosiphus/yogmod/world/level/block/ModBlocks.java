@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.world.level.block;
 
+import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import com.nosiphus.yogmod.world.level.block.entity.StorageCrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
@@ -447,6 +448,19 @@ public class ModBlocks {
             () -> new OvenBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)));
     public static final DeferredBlock<Block> CONSOLE = BLOCKS.register("console",
             () -> new NoteBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NOTE_BLOCK)));
+    //Record Player will go here
+    public static final DeferredBlock<Block> TABLE = BLOCKS.register("table",
+            () -> new TableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> SINK = BLOCKS.register("sink",
+            () -> new SinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> WATER_SINK = BLOCKS.register("water_sink",
+            () -> new LayeredSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK), LayeredSinkBlock.RAIN, SinkInteraction.WATER.map()));
+    public static final DeferredBlock<Block> LAVA_SINK = BLOCKS.register("lava_sink",
+            () -> new LavaSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK).lightLevel((blockState) -> { return 15; })));
+    public static final DeferredBlock<Block> POWDER_SNOW_SINK = BLOCKS.register("powder_snow_sink",
+            () -> new PowderSnowSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK), LayeredSinkBlock.SNOW, SinkInteraction.POWDER_SNOW.map()));
+    public static final DeferredBlock<Block> LADDER = BLOCKS.register("ladder",
+            () -> new LadderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER)));
 
     //Redstone Blocks
 
