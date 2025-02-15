@@ -445,9 +445,23 @@ public class ModBlocks {
             () -> new YogifierBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
     public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven",
             () -> new OvenBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)));
+    public static final DeferredBlock<Block> CONSOLE = BLOCKS.register("console",
+            () -> new NoteBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NOTE_BLOCK)));
 
     //Redstone Blocks
 
+
+    public static final DeferredBlock<Block> CORRUGATED_REDSTONE = BLOCKS.register("corrugated_redstone",
+            () -> new PoweredBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.FIRE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F)
+                    .sound(SoundType.METAL)
+                    .isRedstoneConductor(ModBlocks::never)));
+    public static final DeferredBlock<Block> CLASSIC_LEVER = BLOCKS.register("classic_lever",
+            () -> new LeverBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LEVER)));
+    public static final DeferredBlock<Block> LEVER = BLOCKS.register("lever",
+            () -> new LeverBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LEVER)));
     public static final DeferredBlock<Block> MOVING_PISTON = BLOCKS.register("moving_piston",
             () -> new MovingPistonBlock(BlockBehaviour.Properties.of()
                     .strength(-1.0F)

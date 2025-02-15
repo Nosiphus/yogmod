@@ -402,9 +402,18 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.YOGIFIER.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> OVEN = addToTab(ITEMS.register("oven",
             () -> new BlockItem(ModBlocks.OVEN.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> CONSOLE = addToTab(ITEMS.register("console",
+            () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties())));
 
     //Redstone Blocks
 
+
+    public static final DeferredItem<BlockItem> CORRUGATED_REDSTONE = addToTab(ITEMS.register("corrugated_redstone",
+            () -> new BlockItem(ModBlocks.CORRUGATED_REDSTONE.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> CLASSIC_LEVER = addToTab(ITEMS.register("classic_lever",
+            () -> new BlockItem(ModBlocks.CLASSIC_LEVER.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> LEVER = addToTab(ITEMS.register("lever",
+            () -> new BlockItem(ModBlocks.LEVER.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> PISTON = addToTab(ITEMS.register("piston",
             () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> STICKY_PISTON = addToTab(ITEMS.register("sticky_piston",
