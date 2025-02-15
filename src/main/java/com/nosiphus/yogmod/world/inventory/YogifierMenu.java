@@ -2,6 +2,7 @@ package com.nosiphus.yogmod.world.inventory;
 
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.item.crafting.YogifierRecipe;
+import com.nosiphus.yogmod.world.item.crafting.YogifierRecipeInput;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -10,12 +11,14 @@ import net.minecraft.world.inventory.ItemCombinerMenu;
 import net.minecraft.world.inventory.ItemCombinerMenuSlotDefinition;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class YogifierMenu extends ItemCombinerMenu {
     public static final int BASE_SLOT = 0;
@@ -27,8 +30,8 @@ public class YogifierMenu extends ItemCombinerMenu {
     public static final int SLOT_Y_PLACEMENT = 47;
     private final Level level;
     @Nullable
-    private YogifierRecipe selectedRecipe;
-    private final List<YogifierRecipe> recipes;
+    private RecipeHolder<YogifierRecipe> selectedRecipe;
+    private final List<RecipeHolder<YogifierRecipe>> recipes;
 
     public YogifierMenu(int index, Inventory inventory) {
         this(index, inventory, ContainerLevelAccess.NULL);
@@ -40,83 +43,95 @@ public class YogifierMenu extends ItemCombinerMenu {
         this.recipes = this.level.getRecipeManager().getAllRecipesFor(ModRecipeType.YOGIFIER.get());
     }
 
+    @Override
     protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
-        return ItemCombinerMenuSlotDefinition.create().withSlot(0, 27, 47, (itemStack) -> {
-            return this.recipes.stream().anyMatch((yogifierRecipe) -> {
-                return yogifierRecipe.isBase(itemStack);
-            });
-        }).withSlot(1, 76, 47, (itemStack1) -> {
-            return this.recipes.stream().anyMatch((yogifierRecipe2) -> {
-                return yogifierRecipe2.isAddition(itemStack1);
-            });
-        }).withResultSlot(2, 134, 47).build();
+        return ItemCombinerMenuSlotDefinition.create()
+                .withSlot(0, 27, 47, baseStack -> this.recipes.stream().anyMatch(base -> base.value().isBaseIngredient(baseStack)))
+                .withSlot(1, 76, 47, additionStack -> this.recipes.stream().anyMatch(addition -> addition.value().isAdditionIngredient(additionStack)))
+                .withResultSlot(2, 134, 47)
+                .build();
     }
 
     protected boolean isValidBlock(BlockState blockState) {
         return blockState.is(ModBlocks.YOGIFIER.get());
     }
 
-    protected boolean mayPickup(Player player, boolean boolean1) {
-        return this.selectedRecipe != null && this.selectedRecipe.matches(this.inputSlots, this.level);
+    @Override
+    protected boolean mayPickup(Player player, boolean hasStack) {
+        return this.selectedRecipe != null && this.selectedRecipe.value().matches(this.createRecipeInput(), this.level);
     }
 
-    protected void onTake(Player player, ItemStack itemStack) {
-        itemStack.onCraftedBy(player.level(), player, itemStack.getCount());
+    @Override
+    protected void onTake(Player player, ItemStack stack) {
+        stack.onCraftedBy(player.level(), player, stack.getCount());
         this.resultSlots.awardUsedRecipes(player, this.getRelevantItems());
         this.shrinkStackInSlot(0);
         this.shrinkStackInSlot(1);
-        this.access.execute((level, blockPos) -> {
-            level.levelEvent(1044, blockPos, 0);
-        });
+        this.access.execute((p_40263_, p_40264_) -> p_40263_.levelEvent(1044, p_40264_, 0));
     }
 
     private List<ItemStack> getRelevantItems() {
         return List.of(this.inputSlots.getItem(0), this.inputSlots.getItem(1));
     }
 
-    private void shrinkStackInSlot(int index) {
-        ItemStack itemStack = this.inputSlots.getItem(index);
-        itemStack.shrink(1);
-        this.inputSlots.setItem(index, itemStack);
+    private YogifierRecipeInput createRecipeInput() {
+        return new YogifierRecipeInput(this.inputSlots.getItem(0), this.inputSlots.getItem(1));
     }
 
+    private void shrinkStackInSlot(int index) {
+        ItemStack itemstack = this.inputSlots.getItem(index);
+        if (!itemstack.isEmpty()) {
+            itemstack.shrink(1);
+            this.inputSlots.setItem(index, itemstack);
+        }
+    }
+
+    @Override
     public void createResult() {
-        List<YogifierRecipe> list = this.level.getRecipeManager().getRecipesFor(ModRecipeType.YOGIFIER.get(), this.inputSlots, this.level);
+        YogifierRecipeInput yogifierRecipeInput = this.createRecipeInput();
+        List<RecipeHolder<YogifierRecipe>> list = this.level.getRecipeManager().getRecipesFor(ModRecipeType.YOGIFIER.get(), yogifierRecipeInput, this.level);
         if (list.isEmpty()) {
             this.resultSlots.setItem(0, ItemStack.EMPTY);
         } else {
-            YogifierRecipe yogifierRecipe = list.get(0);
-            ItemStack itemStack = yogifierRecipe.assemble(this.inputSlots, this.level.registryAccess());
+            RecipeHolder<YogifierRecipe> recipeHolder = list.get(0);
+            ItemStack itemStack = recipeHolder.value().assemble(yogifierRecipeInput, this.level.registryAccess());
             if (itemStack.isItemEnabled(this.level.enabledFeatures())) {
-                this.selectedRecipe = yogifierRecipe;
-                this.resultSlots.setRecipeUsed(yogifierRecipe);
+                this.selectedRecipe = recipeHolder;
+                this.resultSlots.setRecipeUsed(recipeHolder);
                 this.resultSlots.setItem(0, itemStack);
             }
         }
     }
 
-    public int getSlotToQuickMoveTo(ItemStack itemStack) {
-        return this.recipes.stream().map((mapper) -> {
-            return findSlotMatchingIngredient(mapper, itemStack);
-        }).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
+    @Override
+    public int getSlotToQuickMoveTo(ItemStack stack) {
+        return this.findSlotToQuickMoveTo(stack).orElse(0);
     }
 
-    private static Optional<Integer> findSlotMatchingIngredient(YogifierRecipe yogifierRecipe, ItemStack itemStack) {
-        if (yogifierRecipe.isBase(itemStack)) {
-            return Optional.of(0);
+    private static OptionalInt findSlotMatchingIngredient(YogifierRecipe recipe, ItemStack stack) {
+        if (recipe.isBaseIngredient(stack)) {
+            return OptionalInt.of(0);
         } else {
-            return yogifierRecipe.isAddition(itemStack) ? Optional.of(1) : Optional.empty();
+            return recipe.isAdditionIngredient(stack) ? OptionalInt.of(1) : OptionalInt.empty();
         }
     }
 
-    public boolean canTakeItemForPickAll(ItemStack itemStack, Slot slot) {
-        return slot.container != this.resultSlots && super.canTakeItemForPickAll(itemStack, slot);
+    @Override
+    public boolean canTakeItemForPickAll(ItemStack stack, Slot slot) {
+        return slot.container != this.resultSlots && super.canTakeItemForPickAll(stack, slot);
     }
 
-    public boolean canMoveIntoInputSlots(ItemStack itemStack) {
-        return this.recipes.stream().map((mapper) -> {
-            return findSlotMatchingIngredient(mapper, itemStack);
-        }).anyMatch(Optional::isPresent);
+    @Override
+    public boolean canMoveIntoInputSlots(ItemStack stack) {
+        return this.findSlotToQuickMoveTo(stack).isPresent();
+    }
+
+    private OptionalInt findSlotToQuickMoveTo(ItemStack stack) {
+        return this.recipes
+                .stream()
+                .flatMapToInt(yogifierRecipeRecipeHolder -> findSlotMatchingIngredient(yogifierRecipeRecipeHolder.value(), stack).stream())
+                .filter(slot -> !this.getSlot(slot).hasItem())
+                .findFirst();
     }
 
 }
