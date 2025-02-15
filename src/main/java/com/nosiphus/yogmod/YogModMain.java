@@ -6,9 +6,10 @@ import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
+import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
+import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,16 +22,18 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 @Mod("yogmod")
-public class YogMod {
+public class YogModMain {
 
     private static final Logger LOGGER = LogUtils.getLogger();
-    public YogMod(IEventBus eventBus, ModContainer container) {
+    public YogModMain(IEventBus eventBus, ModContainer container) {
 
         ModBlockEntityType.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
         ModCreativeModeTabs.CREATIVE_TABS.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
+        ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
+        ModRecipeType.RECIPE_TYPES.register(eventBus);
 
         //NeoForge.EVENT_BUS.register(this);
 

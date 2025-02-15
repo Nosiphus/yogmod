@@ -35,7 +35,7 @@ public class YogifierBlock extends CraftingTableBlock {
             return InteractionResult.SUCCESS;
         } else {
             player.openMenu(blockState.getMenuProvider(level, blockPos));
-            player.awardStat(Stats.INTERACT_WITH_SMITHING_TABLE);
+            //player.awardStat(Stats.INTERACT_WITH_SMITHING_TABLE);
             return InteractionResult.CONSUME;
         }
     }
