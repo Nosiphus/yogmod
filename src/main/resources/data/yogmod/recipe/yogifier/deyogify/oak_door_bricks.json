@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "yogmod:oak_bricks"
+  },
+  "result": {
+    "id": "minecraft:oak_door"
+  }
+}

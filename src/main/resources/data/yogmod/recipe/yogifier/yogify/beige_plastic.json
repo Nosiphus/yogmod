@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "id": "yogmod:beige_wool"
+  },
+  "addition": {
+    "item": "yogmod:beige_wool"
+  },
+  "result": {
+	"count": 2,
+    "id": "yogmod:beige_plastic"
+  }
+}

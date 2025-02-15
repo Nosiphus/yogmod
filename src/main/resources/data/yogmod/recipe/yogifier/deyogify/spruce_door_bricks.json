@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:wooden_door"
+  },
+  "addition": {
+    "item": "yogmod:spruce_bricks"
+  },
+  "result": {
+    "id": "minecraft:spruce_door"
+  }
+}

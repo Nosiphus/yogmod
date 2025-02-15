@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "yogmod:oak_bricks"
+  },
+  "result": {
+    "id": "minecraft:oak_trapdoor"
+  }
+}

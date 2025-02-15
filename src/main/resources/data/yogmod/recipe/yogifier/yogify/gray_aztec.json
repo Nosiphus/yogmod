@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:netherrack"
+  },
+  "addition": {
+    "item": "minecraft:netherrack"
+  },
+  "result": {
+	"count": 2,
+    "id": "yogmod:gray_aztec"
+  }
+}

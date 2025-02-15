@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:yog_sign"
+  },
+  "addition": {
+    "item": "yogmod:mangrove_bricks"
+  },
+  "result": {
+    "id": "minecraft:mangrove_trapdoor"
+  }
+}

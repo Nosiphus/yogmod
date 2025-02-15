@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "yogmod:bamboo_bricks"
+  },
+  "result": {
+    "id": "minecraft:bamboo_trapdoor"
+  }
+}

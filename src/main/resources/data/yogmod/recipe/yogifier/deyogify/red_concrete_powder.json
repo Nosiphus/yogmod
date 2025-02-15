@@ -1,0 +1,13 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:red_velvet"
+  },
+  "addition": {
+    "item": "yogmod:red_velvet"
+  },
+  "result": {
+	"count": 2,
+    "id": "minecraft:red_concrete_powder"
+  }
+}

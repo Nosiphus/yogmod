@@ -1,0 +1,12 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:hatch"
+  },
+  "addition": {
+    "item": "minecraft:warped_planks"
+  },
+  "result": {
+    "id": "minecraft:warped_trapdoor"
+  }
+}
