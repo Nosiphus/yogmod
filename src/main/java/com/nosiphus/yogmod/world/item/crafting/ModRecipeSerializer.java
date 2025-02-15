@@ -10,7 +10,6 @@ public class ModRecipeSerializer {
 
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZER = DeferredRegister.create(Registries.RECIPE_SERIALIZER, "yogmod");
 
-    public static final Supplier<RecipeSerializer<YogifierRecipe>> YOGIFIER = RECIPE_SERIALIZER.register("yogifier",
-            () -> YogifierRecipe.Serializer.INSTANCE);
+    public static final Supplier<RecipeSerializer<YogifierRecipe>> YOGIFIER = RECIPE_SERIALIZER.register("yogifier", YogifierRecipe.Serializer::new);
 
 }

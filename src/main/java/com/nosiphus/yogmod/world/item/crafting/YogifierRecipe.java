@@ -1,51 +1,68 @@
 package com.nosiphus.yogmod.world.item.crafting;
 
 import com.google.gson.JsonObject;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.common.DataMapHooks;
 
 import java.util.stream.Stream;
 
-public class YogifierRecipe implements Recipe<Container> {
+public class YogifierRecipe implements Recipe<CraftingInput> {
 
-    public final Ingredient base;
-    public final Ingredient addition;
-    public final ItemStack result;
-    private final ResourceLocation id;
+    private final Ingredient base;
+    private final Ingredient addition;
+    private final ItemStack result;
 
-    public YogifierRecipe(ResourceLocation id, Ingredient base, Ingredient addition, ItemStack result) {
-        this.id = id;
+    public YogifierRecipe(Ingredient base, Ingredient addition, ItemStack result) {
         this.base = base;
         this.addition = addition;
         this.result = result;
     }
 
-    public boolean matches(Container container, Level level) {
-        return this.base.test(container.getItem(0)) && this.addition.test(container.getItem(1));
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> list = NonNullList.create();
+        list.add(this.base);
+        list.add(this.addition);
+        return list;
     }
 
     @Override
-    public ItemStack assemble(Container container, HolderLookup.Provider provider) {
-        ItemStack itemstack = this.result.copy();
-        CompoundTag compoundtag = container.getItem(0).getTag();
-        if (compoundtag != null) {
-            itemstack.setTag(compoundtag.copy());
-        }
-
-        return itemstack;
+    public boolean canCraftInDimensions(int width, int height) {
+        return width * height >= 2;
     }
 
-    public boolean canCraftInDimensions(int int1, int int2) {
-        return int1 * int2 >= 2;
+    @Override
+    public boolean matches(CraftingInput craftingInput, Level level) {
+        return this.base.test(craftingInput.getItem(0)) && this.addition.test(craftingInput.getItem(1));
+    }
+
+    public Ingredient getBase() {
+        return this.base;
+    }
+
+    public Ingredient getAddition() {
+        return this.addition;
+    }
+
+    public ItemStack getResult() {
+        return this.result;
     }
 
     @Override
@@ -53,60 +70,55 @@ public class YogifierRecipe implements Recipe<Container> {
         return this.result;
     }
 
-    public boolean isBaseIngredient(ItemStack itemStack) { return this.base.test(itemStack); }
-    public boolean isAdditionIngredient(ItemStack itemStack) {
-        return this.addition.test(itemStack);
+    @Override
+    public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
+        return this.result.copy();
     }
 
+    @Override
     public ItemStack getToastSymbol() {
         return new ItemStack(ModBlocks.YOGIFIER.get());
     }
 
-    public ResourceLocation getId() {
-        return this.id;
-    }
-
+    @Override
     public RecipeSerializer<?> getSerializer() {
         return ModRecipeSerializer.YOGIFIER.get();
     }
 
+    @Override
     public RecipeType<?> getType() {
         return ModRecipeType.YOGIFIER.get();
     }
 
-    public boolean isIncomplete() {
-        return Stream.of(this.base, this.addition).anyMatch((ingredient) -> {
-            return net.minecraftforge.common.ForgeHooks.hasNoElements(ingredient);
-        });
-    }
-
     @Override
-    public boolean isSpecial() { return true; }
+    public boolean isSpecial() {
+        return true;
+    }
 
     public static class Serializer implements RecipeSerializer<YogifierRecipe> {
 
-        public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation("yogmod", "yogifier");
+        public static final MapCodec<YogifierRecipe> CODEC = RecordCodecBuilder.mapCodec(yogifierRecipeInstance -> yogifierRecipeInstance.group(
+                Ingredient.CODEC.fieldOf("base").forGetter(YogifierRecipe::getBase),
+                Ingredient.CODEC.fieldOf("addition").forGetter(YogifierRecipe::getAddition),
+                ItemStack.CODEC.fieldOf("result").forGetter(YogifierRecipe::getResult)
+        ).apply(yogifierRecipeInstance, YogifierRecipe::new));
 
-        public YogifierRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
-            Ingredient ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(jsonObject, "base"));
-            Ingredient ingredient1 = Ingredient.fromJson(GsonHelper.getAsJsonObject(jsonObject, "addition"));
-            ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "result"));
-            return new YogifierRecipe(resourceLocation, ingredient, ingredient1, itemstack);
+        public static final StreamCodec<RegistryFriendlyByteBuf, YogifierRecipe> STREAM_CODEC = StreamCodec.composite(
+                Ingredient.CONTENTS_STREAM_CODEC, YogifierRecipe::getBase,
+                Ingredient.CONTENTS_STREAM_CODEC, YogifierRecipe::getAddition,
+                ItemStack.STREAM_CODEC, YogifierRecipe::getResult,
+                YogifierRecipe::new
+        );
+
+        @Override
+        public MapCodec<YogifierRecipe> codec() {
+            return CODEC;
         }
 
-        public YogifierRecipe fromNetwork(ResourceLocation resourceLocation, FriendlyByteBuf friendlyByteBuf) {
-            Ingredient ingredient = Ingredient.fromNetwork(friendlyByteBuf);
-            Ingredient ingredient1 = Ingredient.fromNetwork(friendlyByteBuf);
-            ItemStack itemstack = friendlyByteBuf.readItem();
-            return new YogifierRecipe(resourceLocation, ingredient, ingredient1, itemstack);
+        @Override
+        public StreamCodec<RegistryFriendlyByteBuf, YogifierRecipe> streamCodec() {
+            return STREAM_CODEC;
         }
 
-        public void toNetwork(FriendlyByteBuf friendlyByteBuf, YogifierRecipe yogifierRecipe) {
-            yogifierRecipe.base.toNetwork(friendlyByteBuf);
-            yogifierRecipe.addition.toNetwork(friendlyByteBuf);
-            friendlyByteBuf.writeItem(yogifierRecipe.result);
-        }
     }
-
 }

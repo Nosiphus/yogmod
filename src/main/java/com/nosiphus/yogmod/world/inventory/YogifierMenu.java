@@ -43,11 +43,11 @@ public class YogifierMenu extends ItemCombinerMenu {
     protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
         return ItemCombinerMenuSlotDefinition.create().withSlot(0, 27, 47, (itemStack) -> {
             return this.recipes.stream().anyMatch((yogifierRecipe) -> {
-                return yogifierRecipe.isBaseIngredient(itemStack);
+                return yogifierRecipe.isBase(itemStack);
             });
         }).withSlot(1, 76, 47, (itemStack1) -> {
             return this.recipes.stream().anyMatch((yogifierRecipe2) -> {
-                return yogifierRecipe2.isAdditionIngredient(itemStack1);
+                return yogifierRecipe2.isAddition(itemStack1);
             });
         }).withResultSlot(2, 134, 47).build();
     }
@@ -102,10 +102,10 @@ public class YogifierMenu extends ItemCombinerMenu {
     }
 
     private static Optional<Integer> findSlotMatchingIngredient(YogifierRecipe yogifierRecipe, ItemStack itemStack) {
-        if (yogifierRecipe.isBaseIngredient(itemStack)) {
+        if (yogifierRecipe.isBase(itemStack)) {
             return Optional.of(0);
         } else {
-            return yogifierRecipe.isAdditionIngredient(itemStack) ? Optional.of(1) : Optional.empty();
+            return yogifierRecipe.isAddition(itemStack) ? Optional.of(1) : Optional.empty();
         }
     }
 
