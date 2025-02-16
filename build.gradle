@@ -56,7 +56,7 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'nfm', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'yogmod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             mods {
                 yogmod {
                     source sourceSets.main
