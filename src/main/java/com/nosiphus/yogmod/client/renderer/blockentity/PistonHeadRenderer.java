@@ -2,10 +2,10 @@ package com.nosiphus.yogmod.client.renderer.blockentity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonMovingBlockEntity;
-import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -38,7 +38,7 @@ public class PistonHeadRenderer implements BlockEntityRenderer<PistonMovingBlock
             if (!blockstate.isAir()) {
                 ModelBlockRenderer.enableCaching();
                 poseStack.pushPose();
-                poseStack.translate((double)pistonMovingBlockEntity.getXOff(float1), (double)pistonMovingBlockEntity.getYOff(float1), (double)pistonMovingBlockEntity.getZOff(float1));
+                poseStack.translate(pistonMovingBlockEntity.getXOff(float1), pistonMovingBlockEntity.getYOff(float1), (double)pistonMovingBlockEntity.getZOff(float1));
                 if (blockstate.is(ModBlocks.PISTON_HEAD.get()) && pistonMovingBlockEntity.getProgress(float1) <= 4.0F) {
                     blockstate = blockstate.setValue(PistonHeadBlock.SHORT, Boolean.valueOf(pistonMovingBlockEntity.getProgress(float1) <= 0.5F));
                     this.renderBlock(blockpos, blockstate, poseStack, multiBufferSource, level, false, int2);

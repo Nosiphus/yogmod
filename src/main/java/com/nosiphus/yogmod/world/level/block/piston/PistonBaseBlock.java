@@ -12,9 +12,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -22,7 +20,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -66,7 +63,7 @@ public class PistonBaseBlock extends DirectionalBlock {
 
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         if (blockState.getValue(EXTENDED)) {
-            switch ((Direction)blockState.getValue(FACING)) {
+            switch (blockState.getValue(FACING)) {
                 case DOWN:
                     return DOWN_AABB;
                 case UP:
@@ -126,8 +123,7 @@ public class PistonBaseBlock extends DirectionalBlock {
             int i = 1;
             if (blockstate.is(ModBlocks.MOVING_PISTON.get()) && blockstate.getValue(FACING) == direction) {
                 BlockEntity blockEntity = level.getBlockEntity(blockpos);
-                if (blockEntity instanceof PistonMovingBlockEntity) {
-                    PistonMovingBlockEntity pistonMovingBlockEntity = (PistonMovingBlockEntity) blockEntity;
+                if (blockEntity instanceof PistonMovingBlockEntity pistonMovingBlockEntity) {
                     if (pistonMovingBlockEntity.isExtending() && (pistonMovingBlockEntity.getProgress(0.0F) < 0.5F || level.getGameTime() == pistonMovingBlockEntity.getLastTicked() || ((ServerLevel)level).isHandlingTick())) {
                         i = 2;
                     }
@@ -182,8 +178,8 @@ public class PistonBaseBlock extends DirectionalBlock {
             }
 
             level.setBlock(blockPos, blockState.setValue(EXTENDED, Boolean.valueOf(true)), 67);
-            level.playSound((Player)null, blockPos, SoundEvents.PISTON_EXTEND, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.25F + 0.6F);
-            level.gameEvent((Entity)null, GameEvent.BLOCK_ACTIVATE, blockPos);
+            level.playSound(null, blockPos, SoundEvents.PISTON_EXTEND, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.25F + 0.6F);
+            level.gameEvent(null, GameEvent.BLOCK_ACTIVATE, blockPos);
         } else if (int1 == 1 || int1 == 2) {
             if (EventHooks.onPistonMovePre(level, blockPos, direction, false)) return false;
             BlockEntity blockentity1 = level.getBlockEntity(blockPos.relative(direction));
@@ -202,8 +198,7 @@ public class PistonBaseBlock extends DirectionalBlock {
                 boolean flag1 = false;
                 if (blockstate1.is(ModBlocks.MOVING_PISTON.get())) {
                     BlockEntity blockentity = level.getBlockEntity(blockpos);
-                    if (blockentity instanceof PistonMovingBlockEntity) {
-                        PistonMovingBlockEntity pistonmovingblockentity = (PistonMovingBlockEntity)blockentity;
+                    if (blockentity instanceof PistonMovingBlockEntity pistonmovingblockentity) {
                         if (pistonmovingblockentity.getDirection() == direction && pistonmovingblockentity.isExtending()) {
                             pistonmovingblockentity.finalTick();
                             flag1 = true;
@@ -222,8 +217,8 @@ public class PistonBaseBlock extends DirectionalBlock {
                 level.removeBlock(blockPos.relative(direction), false);
             }
 
-            level.playSound((Player)null, blockPos, SoundEvents.PISTON_CONTRACT, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.6F);
-            level.gameEvent((Entity)null, GameEvent.BLOCK_DEACTIVATE, blockPos);
+            level.playSound(null, blockPos, SoundEvents.PISTON_CONTRACT, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.6F);
+            level.gameEvent(null, GameEvent.BLOCK_DEACTIVATE, blockPos);
         }
 
         EventHooks.onPistonMovePost(level, blockPos, direction, (int1 == 0));

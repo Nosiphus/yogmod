@@ -28,7 +28,7 @@ public enum ModTiers implements Tier {
     private final int enchantmentValue;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    private ModTiers(TagKey<Block> incorrectBlockForDrops, int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
+    ModTiers(TagKey<Block> incorrectBlockForDrops, int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
         this.incorrectBlocksForDrops = incorrectBlockForDrops;
         this.level = level;
         this.uses = uses;

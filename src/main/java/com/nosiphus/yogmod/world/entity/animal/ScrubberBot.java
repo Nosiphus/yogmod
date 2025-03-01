@@ -52,7 +52,7 @@ public class ScrubberBot extends AbstractGolem implements RangedAttackMob {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 4.0D).add(Attributes.MOVEMENT_SPEED, (double) 0.2F);
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 4.0D).add(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 
     @Override
@@ -149,7 +149,7 @@ public class ScrubberBot extends AbstractGolem implements RangedAttackMob {
     }
 
     public Vec3 getLeashOffset() {
-        return new Vec3(0.0D, (double) (0.75F * this.getEyeHeight()), (double) (this.getBbWidth() * 0.4F));
+        return new Vec3(0.0D, 0.75F * this.getEyeHeight(), this.getBbWidth() * 0.4F);
     }
 
 }

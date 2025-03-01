@@ -1,7 +1,7 @@
 package com.nosiphus.yogmod.world.level.block.piston;
 
-import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
@@ -106,11 +106,11 @@ public class PistonMovingBlockEntity extends BlockEntity {
 
     private static void moveCollidedEntities(Level p_155911_, BlockPos p_155912_, float p_155913_, PistonMovingBlockEntity p_155914_) {
         Direction direction = p_155914_.getMovementDirection();
-        double d0 = (double)(p_155913_ - p_155914_.progress);
+        double d0 = p_155913_ - p_155914_.progress;
         VoxelShape voxelshape = p_155914_.getCollisionRelatedBlockState().getCollisionShape(p_155911_, p_155912_);
         if (!voxelshape.isEmpty()) {
             AABB aabb = moveByPositionAndProgress(p_155912_, voxelshape.bounds(), p_155914_);
-            List<Entity> list = p_155911_.getEntities((Entity)null, PistonMath.getMovementArea(aabb, direction, d0).minmax(aabb));
+            List<Entity> list = p_155911_.getEntities(null, PistonMath.getMovementArea(aabb, direction, d0).minmax(aabb));
             if (!list.isEmpty()) {
                 List<AABB> list1 = voxelshape.toAabbs();
                 boolean flag = p_155914_.movedState.isSlimeBlock(); //TODO: is this patch really needed the logic of the original seems sound revisit later
@@ -136,13 +136,13 @@ public class PistonMovingBlockEntity extends BlockEntity {
                                 double d3 = vec3.z;
                                 switch (direction.getAxis()) {
                                     case X:
-                                        d1 = (double)direction.getStepX();
+                                        d1 = direction.getStepX();
                                         break;
                                     case Y:
-                                        d2 = (double)direction.getStepY();
+                                        d2 = direction.getStepY();
                                         break;
                                     case Z:
-                                        d3 = (double)direction.getStepZ();
+                                        d3 = direction.getStepZ();
                                 }
 
                                 entity.setDeltaMovement(d1, d2, d3);
@@ -179,7 +179,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
     private static void moveEntityByPiston(Direction p_60372_, Entity p_60373_, double p_60374_, Direction p_60375_) {
         NOCLIP.set(p_60372_);
         p_60373_.move(MoverType.PISTON, new Vec3(p_60374_ * (double)p_60375_.getStepX(), p_60374_ * (double)p_60375_.getStepY(), p_60374_ * (double)p_60375_.getStepZ()));
-        NOCLIP.set((Direction)null);
+        NOCLIP.set(null);
     }
 
     private static void moveStuckEntities(Level level, BlockPos blockPos, float float1, PistonMovingBlockEntity pistonMovingBlockEntity) {
@@ -188,7 +188,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
             if (direction.getAxis().isHorizontal()) {
                 double d0 = pistonMovingBlockEntity.movedState.getCollisionShape(level, blockPos).max(Direction.Axis.Y);
                 AABB aabb = moveByPositionAndProgress(blockPos, new AABB(0.0D, d0, 0.0D, 1.0D, 1.5000000999999998D, 1.0D), pistonMovingBlockEntity);
-                double d1 = (double)(float1 - pistonMovingBlockEntity.progress);
+                double d1 = float1 - pistonMovingBlockEntity.progress;
 
                 for(Entity entity : level.getEntities((Entity)null, aabb, (p_60384_) -> {
                     return matchesStickyCritera(aabb, p_60384_);
@@ -231,7 +231,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
     }
 
     private static AABB moveByPositionAndProgress(BlockPos blockPos, AABB aabb, PistonMovingBlockEntity pistonMovingBlockEntity) {
-        double d0 = (double)pistonMovingBlockEntity.getExtendedProgress(pistonMovingBlockEntity.progress);
+        double d0 = pistonMovingBlockEntity.getExtendedProgress(pistonMovingBlockEntity.progress);
         return aabb.move((double)blockPos.getX() + d0 * (double)pistonMovingBlockEntity.direction.getStepX(), (double)blockPos.getY() + d0 * (double)pistonMovingBlockEntity.direction.getStepY(), (double)blockPos.getZ() + d0 * (double)pistonMovingBlockEntity.direction.getStepZ());
     }
 
@@ -314,7 +314,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
 
     public void loadAdditional(CompoundTag compoundTag, HolderLookup.Provider registries) {
         super.loadAdditional(compoundTag, registries);
-        HolderGetter<Block> holderGetter = (HolderGetter<Block>) (this.level != null ? this.level.holderLookup(Registries.BLOCK) : BuiltInRegistries.BLOCK.asLookup());
+        HolderGetter<Block> holderGetter = this.level != null ? this.level.holderLookup(Registries.BLOCK) : BuiltInRegistries.BLOCK.asLookup();
         this.movedState = NbtUtils.readBlockState(holderGetter, compoundTag.getCompound("blockState"));
         this.direction = Direction.from3DDataValue(compoundTag.getInt("facing"));
         this.progress = compoundTag.getFloat("progress");
@@ -352,9 +352,9 @@ public class PistonMovingBlockEntity extends BlockEntity {
             }
 
             float f = this.getExtendedProgress(this.progress);
-            double d0 = (double)((float)this.direction.getStepX() * f);
-            double d1 = (double)((float)this.direction.getStepY() * f);
-            double d2 = (double)((float)this.direction.getStepZ() * f);
+            double d0 = (float)this.direction.getStepX() * f;
+            double d1 = (float)this.direction.getStepY() * f;
+            double d2 = (float)this.direction.getStepZ() * f;
             return Shapes.or(voxelshape, blockstate.getCollisionShape(blockGetter, blockPos).move(d0, d1, d2));
         }
     }

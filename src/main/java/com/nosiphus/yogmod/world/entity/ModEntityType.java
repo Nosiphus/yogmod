@@ -25,7 +25,7 @@ public class ModEntityType {
 
      */
     public static final Supplier<EntityType<ScrubberBot>> SCRUBBER_BOT = ENTITY_TYPES.register("scrubber_bot",
-            () -> EntityType.Builder.<ScrubberBot>of(ScrubberBot::new, MobCategory.MISC)
+            () -> EntityType.Builder.of(ScrubberBot::new, MobCategory.MISC)
                     .immuneTo(Blocks.POWDER_SNOW)
                     .sized(0.7F, 1.9F)
                     .clientTrackingRange(8)

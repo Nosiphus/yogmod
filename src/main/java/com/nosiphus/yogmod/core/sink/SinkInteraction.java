@@ -317,6 +317,6 @@ public interface SinkInteraction {
         return ItemInteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    public static record InteractionMap(String name, Map<Item, SinkInteraction> map) {
+    record InteractionMap(String name, Map<Item, SinkInteraction> map) {
     }
 }

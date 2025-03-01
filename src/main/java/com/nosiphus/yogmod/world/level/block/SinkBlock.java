@@ -2,7 +2,6 @@ package com.nosiphus.yogmod.world.level.block;
 
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -38,10 +37,10 @@ public class SinkBlock extends AbstractSinkBlock {
         if (shouldHandlePrecipitation(level, biomePrecipitation)) {
             if (biomePrecipitation == Biome.Precipitation.RAIN) {
                 level.setBlockAndUpdate(blockPos, ModBlocks.WATER_SINK.get().defaultBlockState());
-                level.gameEvent((Entity) null, GameEvent.BLOCK_CHANGE, blockPos);
+                level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
             } else if (biomePrecipitation == Biome.Precipitation.SNOW) {
                 level.setBlockAndUpdate(blockPos, ModBlocks.POWDER_SNOW_SINK.get().defaultBlockState());
-                level.gameEvent((Entity) null, GameEvent.BLOCK_CHANGE, blockPos);
+                level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
             }
         }
     }

@@ -98,6 +98,4 @@ public class YogMod {
         EntityRenderers.register(ModEntityType.SCRUBBER_BOT.get(), ScrubberBotRenderer::new);
     }
 
-
-
 }
