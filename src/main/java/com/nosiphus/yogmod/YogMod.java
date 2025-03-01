@@ -32,10 +32,10 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
 
 @Mod("yogmod")
-public class YogModMain {
+public class YogMod {
 
     private static final Logger LOGGER = LogUtils.getLogger();
-    public YogModMain(IEventBus eventBus, ModContainer container) {
+    public YogMod(IEventBus eventBus, ModContainer container) {
 
         ModBlockEntityType.BLOCK_ENTITIES.register(eventBus);
         ModBlocks.BLOCKS.register(eventBus);
