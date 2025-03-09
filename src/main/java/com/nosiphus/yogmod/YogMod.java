@@ -3,7 +3,6 @@ package com.nosiphus.yogmod;
 import com.mojang.logging.LogUtils;
 import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.ScrubberBotRenderer;
@@ -12,8 +11,6 @@ import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
-import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
-import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -43,8 +40,8 @@ public class YogMod {
         ModEntityType.ENTITY_TYPES.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModMenuType.MENU_TYPES.register(eventBus);
-        ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
-        ModRecipeType.RECIPE_TYPES.register(eventBus);
+        //ModRecipeSerializer.RECIPE_SERIALIZER.register(eventBus);
+        //ModRecipeType.RECIPE_TYPES.register(eventBus);
 
         //NeoForge.EVENT_BUS.register(this);
 
@@ -70,7 +67,7 @@ public class YogMod {
         public static void registerMenuScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuType.OVEN.get(), OvenScreen::new);
             event.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
-            event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
+            //event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
         }
 
     }

@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "wooden_stairs",
+  "group": "wooden_slab",
   "key": {
     "#": {
       "item": "yogmod:acacia_bricks"
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
     "###"
   ],
   "result": {
-    "count": 4,
-    "id": "yogmod:acacia_brick_stairs"
+    "count": 6,
+    "id": "yogmod:acacia_brick_slab"
   }
 }
