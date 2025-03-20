@@ -30,6 +30,7 @@ public record YogBlockSource(ServerLevel level, BlockPos pos, BlockState state, 
         return this.state;
     }
 
-    public YogDispenserBlockEntity blockEntity() { return this.blockEntity; }
-
+    public YogDispenserBlockEntity blockEntity() {
+        return this.blockEntity;
+    }
 }

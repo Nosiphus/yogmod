@@ -3,6 +3,9 @@ package com.nosiphus.yogmod.world.level.block;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.MapCodec;
 import com.nosiphus.yogmod.core.dispenser.YogBlockSource;
+import com.nosiphus.yogmod.core.dispenser.YogDefaultDispenseItemBehavior;
+import com.nosiphus.yogmod.core.dispenser.YogDispenseItemBehavior;
+import com.nosiphus.yogmod.core.dispenser.YogProjectileDispenseBehavior;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.entity.YogDispenserBlockEntity;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
@@ -10,10 +13,6 @@ import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
-import net.minecraft.core.dispenser.BlockSource;
-import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.core.dispenser.DispenseItemBehavior;
-import net.minecraft.core.dispenser.ProjectileDispenseBehavior;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
@@ -45,8 +44,8 @@ public class YogDispenserBlock extends BaseEntityBlock {
     public static final MapCodec<YogDispenserBlock> CODEC = simpleCodec(YogDispenserBlock::new);
     public static final DirectionProperty FACING = DirectionalBlock.FACING;
     public static final BooleanProperty TRIGGERED = BlockStateProperties.TRIGGERED;
-    private static final DefaultDispenseItemBehavior DEFAULT_BEHAVIOR = new DefaultDispenseItemBehavior();
-    public static final Map<Item, DispenseItemBehavior> DISPENSER_REGISTRY = Util.make(
+    private static final YogDefaultDispenseItemBehavior DEFAULT_BEHAVIOR = new YogDefaultDispenseItemBehavior();
+    public static final Map<Item, YogDispenseItemBehavior> DISPENSER_REGISTRY = Util.make(
             new Object2ObjectOpenHashMap<>(), p_340795_ -> p_340795_.defaultReturnValue(DEFAULT_BEHAVIOR)
     );
     private static final int TRIGGER_DURATION = 4;
@@ -56,12 +55,12 @@ public class YogDispenserBlock extends BaseEntityBlock {
         return CODEC;
     }
 
-    public static void registerBehavior(ItemLike item, DispenseItemBehavior behavior) {
+    public static void registerBehavior(ItemLike item, YogDispenseItemBehavior behavior) {
         DISPENSER_REGISTRY.put(item.asItem(), behavior);
     }
 
     public static void registerProjectileBehavior(ItemLike item) {
-        DISPENSER_REGISTRY.put(item.asItem(), new ProjectileDispenseBehavior(item.asItem()));
+        DISPENSER_REGISTRY.put(item.asItem(), new YogProjectileDispenseBehavior(item.asItem()));
     }
 
     public YogDispenserBlock(BlockBehaviour.Properties properties) {
@@ -85,27 +84,27 @@ public class YogDispenserBlock extends BaseEntityBlock {
     }
 
     protected void dispenseFrom(ServerLevel level, BlockState state, BlockPos pos) {
-        YogDispenserBlockEntity dispenserblockentity = level.getBlockEntity(pos, ModBlockEntityType.YOG_DISPENSER.get()).orElse(null);
-        if (dispenserblockentity == null) {
+        YogDispenserBlockEntity yogdispenserblockentity = level.getBlockEntity(pos, ModBlockEntityType.YOG_DISPENSER.get()).orElse(null);
+        if (yogdispenserblockentity == null) {
             LOGGER.warn("Ignoring dispensing attempt for Dispenser without matching block entity at {}", pos);
         } else {
-            YogBlockSource blocksource = new YogBlockSource(level, pos, state, dispenserblockentity);
-            int i = dispenserblockentity.getRandomSlot(level.random);
+            YogBlockSource blocksource = new YogBlockSource(level, pos, state, yogdispenserblockentity);
+            int i = yogdispenserblockentity.getRandomSlot(level.random);
             if (i < 0) {
                 level.levelEvent(1001, pos, 0);
-                level.gameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Context.of(dispenserblockentity.getBlockState()));
+                level.gameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Context.of(yogdispenserblockentity.getBlockState()));
             } else {
-                ItemStack itemstack = dispenserblockentity.getItem(i);
-                DispenseItemBehavior dispenseitembehavior = this.getDispenseMethod(level, itemstack);
-                if (dispenseitembehavior != DispenseItemBehavior.NOOP) {
-                    dispenserblockentity.setItem(i, dispenseitembehavior.dispense(blocksource, itemstack));
+                ItemStack itemstack = yogdispenserblockentity.getItem(i);
+                YogDispenseItemBehavior yogdispenseitembehavior = this.getDispenseMethod(level, itemstack);
+                if (yogdispenseitembehavior != YogDispenseItemBehavior.NOOP) {
+                    yogdispenserblockentity.setItem(i, yogdispenseitembehavior.dispense(blocksource, itemstack));
                 }
             }
         }
     }
 
-    protected DispenseItemBehavior getDispenseMethod(Level level, ItemStack item) {
-        return (DispenseItemBehavior)(!item.isItemEnabled(level.enabledFeatures()) ? DEFAULT_BEHAVIOR : DISPENSER_REGISTRY.get(item.getItem()));
+    protected YogDispenseItemBehavior getDispenseMethod(Level level, ItemStack item) {
+        return (YogDispenseItemBehavior)(!item.isItemEnabled(level.enabledFeatures()) ? DEFAULT_BEHAVIOR : DISPENSER_REGISTRY.get(item.getItem()));
     }
 
     @Override
@@ -141,13 +140,13 @@ public class YogDispenserBlock extends BaseEntityBlock {
         super.onRemove(state, level, pos, newState, isMoving);
     }
 
-    public static Position getDispensePosition(BlockSource blockSource) {
-        return getDispensePosition(blockSource, 0.7, Vec3.ZERO);
+    public static Position getDispensePosition(YogBlockSource yogBlockSource) {
+        return getDispensePosition(yogBlockSource, 0.7, Vec3.ZERO);
     }
 
-    public static Position getDispensePosition(BlockSource blockSource, double multiplier, Vec3 offset) {
-        Direction direction = blockSource.state().getValue(FACING);
-        return blockSource.center()
+    public static Position getDispensePosition(YogBlockSource yogBlockSource, double multiplier, Vec3 offset) {
+        Direction direction = yogBlockSource.state().getValue(FACING);
+        return yogBlockSource.center()
                 .add(
                         multiplier * (double)direction.getStepX() + offset.x(),
                         multiplier * (double)direction.getStepY() + offset.y(),
