@@ -506,7 +506,8 @@ public class ModBlocks {
             ));
     public static final DeferredBlock<Block> STICKY_PISTON = BLOCKS.register("sticky_piston",
             () -> pistonBase(true));
-
+    public static final DeferredBlock<Block> YOG_DISPENSER = BLOCKS.register("dispenser",
+            () -> new YogDispenserBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DISPENSER)));
     public static final DeferredBlock<Block> METROVOX_RAIL = BLOCKS.register("metrovox_rail",
             () -> new RailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RAIL)));
     public static final DeferredBlock<Block> POWERED_METROVOX_RAIL = BLOCKS.register("powered_metrovox_rail",

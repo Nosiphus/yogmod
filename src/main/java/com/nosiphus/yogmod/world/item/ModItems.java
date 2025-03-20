@@ -429,7 +429,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.PISTON.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> STICKY_PISTON = addToTab(ITEMS.register("sticky_piston",
             () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties())));
-
+    public static final DeferredItem<BlockItem> YOG_DISPENSER = addToTab(ITEMS.register("dispenser",
+            () -> new BlockItem(ModBlocks.YOG_DISPENSER.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> METROVOX_RAIL = addToTab(ITEMS.register("metrovox_rail",
             () -> new BlockItem(ModBlocks.METROVOX_RAIL.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> POWERED_METROVOX_RAIL = addToTab(ITEMS.register("powered_metrovox_rail",
