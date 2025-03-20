@@ -413,8 +413,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties())));
 
     //Redstone Blocks
-
-
+    public static final DeferredItem<BlockItem> WIRE = addToTab(ITEMS.register("wire",
+            () -> new BlockItem(ModBlocks.WIRE.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> DIODE = addToTab(ITEMS.register("diode",
+            () -> new BlockItem(ModBlocks.DIODE.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> CORRUGATED_REDSTONE = addToTab(ITEMS.register("corrugated_redstone",
             () -> new BlockItem(ModBlocks.CORRUGATED_REDSTONE.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> CLASSIC_LEVER = addToTab(ITEMS.register("classic_lever",

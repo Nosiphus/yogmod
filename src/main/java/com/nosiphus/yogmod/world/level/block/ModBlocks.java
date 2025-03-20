@@ -463,8 +463,14 @@ public class ModBlocks {
             () -> new LadderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER)));
 
     //Redstone Blocks
-
-
+    public static final DeferredBlock<Block> WIRE = BLOCKS.register("wire",
+            () -> new WireBlock(BlockBehaviour.Properties.of()
+                    .noCollission()
+                    .instabreak()));
+    public static final DeferredBlock<Block> DIODE = BLOCKS.register("diode",
+            () -> new WireDiodeBlock(BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> CORRUGATED_REDSTONE = BLOCKS.register("corrugated_redstone",
             () -> new PoweredBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.FIRE)

@@ -15,7 +15,9 @@ import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.WireBlock;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
@@ -27,6 +29,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
@@ -59,6 +62,16 @@ public class YogMod {
             registerBlockEntityRenderers();
             registerEntityRenderers();
 
+        }
+
+        @SubscribeEvent
+        public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+            event.register((blockState, blockAndTintGetter, blockPos, index) -> {
+                return WireBlock.colorMultiplier(blockState.getValue(WireBlock.POWER));
+            }, ModBlocks.WIRE.get());
+            event.register((blockState, blockAndTintGetter, blockPos, index) -> {
+                return blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageWaterColor(blockAndTintGetter, blockPos) : -1;
+            }, ModBlocks.WATER_SINK.get());
         }
 
         @SubscribeEvent
