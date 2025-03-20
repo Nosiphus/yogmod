@@ -411,6 +411,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SINK.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> LADDER = addToTab(ITEMS.register("ladder",
             () -> new BlockItem(ModBlocks.LADDER.get(), new Item.Properties())));
+    public static final DeferredItem<Item> YOG_SIGN = addToTab(ITEMS.register("yog_sign",
+            () -> new SignItem((new Item.Properties()).stacksTo(16), ModBlocks.YOG_SIGN.get(), ModBlocks.YOG_WALL_SIGN.get())));
 
     //Redstone Blocks
     public static final DeferredItem<BlockItem> WIRE = addToTab(ITEMS.register("wire",

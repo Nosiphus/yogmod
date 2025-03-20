@@ -19,9 +19,13 @@ import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
+import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -61,6 +65,8 @@ public class YogMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+            WoodType.register(ModWoodType.YOG);
+            Sheets.addWoodType(ModWoodType.YOG);
             registerBlockEntityRenderers();
             registerEntityRenderers();
 
@@ -107,6 +113,7 @@ public class YogMod {
 
     private static void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
     }
 
     private static void registerEntityRenderers() {

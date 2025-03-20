@@ -5,6 +5,7 @@ import com.nosiphus.yogmod.world.level.block.entity.StorageCrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonHeadBlock;
+import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.level.BlockGetter;
@@ -20,6 +21,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 public class ModBlocks {
@@ -461,6 +463,10 @@ public class ModBlocks {
             () -> new PowderSnowSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK), LayeredSinkBlock.SNOW, SinkInteraction.POWDER_SNOW.map()));
     public static final DeferredBlock<Block> LADDER = BLOCKS.register("ladder",
             () -> new LadderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER)));
+    public static final DeferredBlock<Block> YOG_SIGN = registerBlockWithoutBlockItem("yog_sign",
+            () -> new YogStandingSignBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN), ModWoodType.YOG));
+    public static final DeferredBlock<Block> YOG_WALL_SIGN = registerBlockWithoutBlockItem("yog_wall_sign",
+            () -> new YogWallSignBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN), ModWoodType.YOG));
 
     //Redstone Blocks
     public static final DeferredBlock<Block> WIRE = BLOCKS.register("wire",
@@ -542,6 +548,10 @@ public class ModBlocks {
         return (blockState) -> {
             return blockState.getValue(BlockStateProperties.LIT) ? lightValue : 0;
         };
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     private static boolean always(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
