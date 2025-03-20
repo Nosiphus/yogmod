@@ -3,6 +3,7 @@
   "package": "com.nosiphus.yogmod.mixin",
   "refmap": "yogmod.refmap.json",
   "mixins": [
+    "ArmorItemMixin",
     "SinkMixin"
   ],
   "client": [],

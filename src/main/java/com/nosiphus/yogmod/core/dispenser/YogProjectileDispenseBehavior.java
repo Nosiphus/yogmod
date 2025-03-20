@@ -26,7 +26,7 @@ public class YogProjectileDispenseBehavior extends YogDefaultDispenseItemBehavio
     public ItemStack execute(YogBlockSource yogBlockSource, ItemStack item) {
         Level level = yogBlockSource.level();
         Direction direction = yogBlockSource.state().getValue(YogDispenserBlock.FACING);
-        Position position = this.dispenseConfig.positionFunction().getYogDispensePosition(yogBlockSource, direction);
+        Position position = this.dispenseConfig.positionFunction().getDispensePosition(yogBlockSource, direction);
         Projectile projectile = this.projectileItem.asProjectile(level, position, item, direction);
         this.projectileItem
             .shoot(
