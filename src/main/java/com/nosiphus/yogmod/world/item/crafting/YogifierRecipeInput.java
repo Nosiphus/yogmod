@@ -9,19 +9,18 @@ public record YogifierRecipeInput(ItemStack base, ItemStack addition) implements
     public ItemStack getItem(int item) {
         return switch (item) {
             case 0 -> this.base;
-            case 1 -> this.addition;
             default -> throw new IllegalArgumentException("Recipe does not contain slot " + item);
         };
     }
 
     @Override
     public int size() {
-        return 2;
+        return 1;
     }
 
     @Override
     public boolean isEmpty() {
-        return this.base.isEmpty() && this.addition.isEmpty();
+        return this.base.isEmpty();
     }
 
 }

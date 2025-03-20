@@ -434,29 +434,29 @@ public class ModItems {
     public static final DeferredItem<Item> LASER = addToTab(ITEMS.register("laser",
             () -> new SwordItem(ModTiers.LASER, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.DIAMOND, 3, -2.4F)))));
     public static final DeferredItem<ArmorItem> SUNGLASSES = addToTab(ITEMS.register("sunglasses",
-            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.HELMET, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> SUIT_JACKET = addToTab(ITEMS.register("suit_jacket",
-            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.CHESTPLATE, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> SUIT_PANTS = addToTab(ITEMS.register("suit_pants",
-            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.LEGGINGS, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> SPATTERDASH_SHOES = addToTab(ITEMS.register("spatterdash_shoes",
-            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.BOOTS, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.SUIT, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> HARD_HAT = addToTab(ITEMS.register("hard_hat",
-            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.HELMET, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> SAFETY_VEST = addToTab(ITEMS.register("safety_vest",
-            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.CHESTPLATE, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> SEWER_WADERS = addToTab(ITEMS.register("sewer_waders",
-            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.LEGGINGS, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> STEELTOE_BOOTS = addToTab(ITEMS.register("steeltoe_boots",
-            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.BOOTS, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.CONSTRUCTION, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> RIOT_HELMET = addToTab(ITEMS.register("riot_helmet",
-            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.HELMET, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> RIOT_VEST = addToTab(ITEMS.register("riot_vest",
-            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.CHESTPLATE, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> RIOT_PANTS = addToTab(ITEMS.register("riot_pants",
-            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.LEGGINGS, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))));
     public static final DeferredItem<ArmorItem> RIOT_BOOTS = addToTab(ITEMS.register("riot_boots",
-            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.BOOTS, new Item.Properties())));
+            () -> new ArmorItem(ModArmorMaterials.RIOT, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1))));
 
     //Food & Drinks
     public static final DeferredItem<Item> COFFEE = addToTab(ITEMS.register("coffee",

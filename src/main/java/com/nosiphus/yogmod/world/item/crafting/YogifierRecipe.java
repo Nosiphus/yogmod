@@ -18,12 +18,10 @@ import java.util.stream.Stream;
 public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
 
     final Ingredient base;
-    final Ingredient addition;
     final ItemStack result;
 
-    public YogifierRecipe(Ingredient base, Ingredient addition, ItemStack result) {
+    public YogifierRecipe(Ingredient base, ItemStack result) {
         this.base = base;
-        this.addition = addition;
         this.result = result;
     }
 
@@ -33,7 +31,7 @@ public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
     }
 
     public boolean matches(YogifierRecipeInput input, Level level) {
-        return this.base.test(input.base()) && this.addition.test(input.addition());
+        return this.base.test(input.base());
     }
 
     public ItemStack assemble(YogifierRecipeInput input, HolderLookup.Provider registries) {
@@ -47,10 +45,6 @@ public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
 
     public boolean isBaseIngredient(ItemStack stack) {
         return this.base.test(stack);
-    }
-
-    public boolean isAdditionIngredient(ItemStack stack) {
-        return this.addition.test(stack);
     }
 
     @Override
@@ -69,7 +63,7 @@ public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
 
     @Override
     public boolean isIncomplete() {
-        return Stream.of(this.base, this.addition).anyMatch(Ingredient::hasNoItems);
+        return Stream.of(this.base).anyMatch(Ingredient::hasNoItems);
     }
 
     @Override
@@ -81,8 +75,7 @@ public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
 
         private static final MapCodec<YogifierRecipe> CODEC = RecordCodecBuilder.mapCodec(
                 yogifierRecipeInstance -> yogifierRecipeInstance.group(
-                        Ingredient.CODEC.fieldOf("base").forGetter(recipe -> recipe.base),
-                        Ingredient.CODEC.fieldOf("addition").forGetter(recipe1 -> recipe1.addition),
+                        Ingredient.CODEC.fieldOf("base").forGetter(recipe1 -> recipe1.base),
                         ItemStack.STRICT_CODEC.fieldOf("result").forGetter(recipe2 -> recipe2.result)
                 ).apply(yogifierRecipeInstance, YogifierRecipe::new)
         );
@@ -103,14 +96,12 @@ public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
 
         private static YogifierRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
             Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-            Ingredient ingredient1 = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
             ItemStack itemStack = ItemStack.STREAM_CODEC.decode(buffer);
-            return new YogifierRecipe(ingredient, ingredient1, itemStack);
+            return new YogifierRecipe(ingredient, itemStack);
         }
 
         private static void toNetwork(RegistryFriendlyByteBuf buffer, YogifierRecipe recipe) {
             Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.base);
-            Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.addition);
             ItemStack.STREAM_CODEC.encode(buffer, recipe.result);
         }
     }
