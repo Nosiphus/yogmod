@@ -6,9 +6,11 @@ import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
+import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.ScrubberBotRenderer;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
+import com.nosiphus.yogmod.world.entity.item.PrimedDynamite;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
@@ -108,6 +110,7 @@ public class YogMod {
     }
 
     private static void registerEntityRenderers() {
+        EntityRenderers.register(ModEntityType.DYNAMITE.get(), DynamiteRenderer::new);
         EntityRenderers.register(ModEntityType.SCRUBBER_BOT.get(), ScrubberBotRenderer::new);
     }
 

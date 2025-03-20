@@ -1,6 +1,7 @@
 package com.nosiphus.yogmod.world.entity;
 
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
+import com.nosiphus.yogmod.world.entity.item.PrimedDynamite;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -14,7 +15,6 @@ public class ModEntityType {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, "yogmod");
 
-    /*
     public static final Supplier<EntityType<PrimedDynamite>> DYNAMITE = ENTITY_TYPES.register("dynamite",
             () -> EntityType.Builder.<PrimedDynamite>of(PrimedDynamite::new, MobCategory.MISC)
                     .fireImmune()
@@ -22,8 +22,6 @@ public class ModEntityType {
                     .clientTrackingRange(10)
                     .updateInterval(10)
                     .build(ResourceLocation.fromNamespaceAndPath("yogmod", "dynamite").toString()));
-
-     */
     public static final Supplier<EntityType<ScrubberBot>> SCRUBBER_BOT = ENTITY_TYPES.register("scrubber_bot",
             () -> EntityType.Builder.of(ScrubberBot::new, MobCategory.MISC)
                     .immuneTo(Blocks.POWDER_SNOW)

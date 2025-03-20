@@ -428,6 +428,17 @@ public class ModItems {
     public static final DeferredItem<BlockItem> STICKY_PISTON = addToTab(ITEMS.register("sticky_piston",
             () -> new BlockItem(ModBlocks.STICKY_PISTON.get(), new Item.Properties())));
 
+    public static final DeferredItem<BlockItem> METROVOX_RAIL = addToTab(ITEMS.register("metrovox_rail",
+            () -> new BlockItem(ModBlocks.METROVOX_RAIL.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> POWERED_METROVOX_RAIL = addToTab(ITEMS.register("powered_metrovox_rail",
+            () -> new BlockItem(ModBlocks.POWERED_METROVOX_RAIL.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> METROVOX_DETECTOR_RAIL = addToTab(ITEMS.register("metrovox_detector_rail",
+            () -> new BlockItem(ModBlocks.METROVOX_DETECTOR_RAIL.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> METROVOX_ACTIVATOR_RAIL = addToTab(ITEMS.register("metrovox_activator_rail",
+            () -> new BlockItem(ModBlocks.METROVOX_ACTIVATOR_RAIL.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> DYNAMITE = addToTab(ITEMS.register("dynamite",
+            () -> new BlockItem(ModBlocks.DYNAMITE.get(), new Item.Properties())));
+
     //Tools & Utilities
     public static final DeferredItem<Item> PENCIL = addToTab(ITEMS.register("pencil",
             () -> new AxeItem(ModTiers.PENCIL, new Item.Properties().attributes(AxeItem.createAttributes(Tiers.WOOD, 6.0F, -3.2F)))));

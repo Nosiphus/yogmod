@@ -501,6 +501,17 @@ public class ModBlocks {
     public static final DeferredBlock<Block> STICKY_PISTON = BLOCKS.register("sticky_piston",
             () -> pistonBase(true));
 
+    public static final DeferredBlock<Block> METROVOX_RAIL = BLOCKS.register("metrovox_rail",
+            () -> new RailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RAIL)));
+    public static final DeferredBlock<Block> POWERED_METROVOX_RAIL = BLOCKS.register("powered_metrovox_rail",
+            () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true));
+    public static final DeferredBlock<Block> METROVOX_DETECTOR_RAIL = BLOCKS.register("metrovox_detector_rail",
+            () -> new DetectorRailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DETECTOR_RAIL)));
+    public static final DeferredBlock<Block> METROVOX_ACTIVATOR_RAIL = BLOCKS.register("metrovox_activator_rail",
+            () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ACTIVATOR_RAIL), false));
+    public static final DeferredBlock<Block> DYNAMITE = BLOCKS.register("dynamite",
+            () -> new DynamiteBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TNT)));
+
     //Tools & Utilities
 
     //Combat
