@@ -3,7 +3,6 @@ package com.nosiphus.yogmod;
 import com.mojang.logging.LogUtils;
 import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.YogDispenserScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
@@ -11,7 +10,6 @@ import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.ScrubberBotRenderer;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
-import com.nosiphus.yogmod.world.entity.item.PrimedDynamite;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
@@ -92,7 +90,6 @@ public class YogMod {
         public static void registerMenuScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuType.OVEN.get(), OvenScreen::new);
             event.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
-            event.register(ModMenuType.YOG_DISPENSER.get(), YogDispenserScreen::new);
             event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
         }
 
