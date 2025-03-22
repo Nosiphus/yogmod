@@ -1,5 +1,5 @@
 {
-  "type": "yogmod:stepcutting",
+  "type": "minecraft:stonecutting",
   "ingredient": {
     "item": "yogmod:step"
   },

@@ -1,7 +1,7 @@
 {
   "type": "yogmod:yogifier",
   "base": {
-    "id": "yogmod:beige_wool"
+    "item": "yogmod:beige_wool"
   },
   "result": {
     "id": "yogmod:beige_plastic"

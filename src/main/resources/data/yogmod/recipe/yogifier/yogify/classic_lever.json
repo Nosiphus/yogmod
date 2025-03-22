@@ -1,7 +1,7 @@
 {
   "type": "yogmod:yogifier",
   "base": {
-    "id": "yogmod:lever"
+    "item": "yogmod:lever"
   },
   "result": {
     "id": "yogmod:classic_lever"
