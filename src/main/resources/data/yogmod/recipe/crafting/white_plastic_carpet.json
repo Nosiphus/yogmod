@@ -1,9 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "carpet",
   "key": {
     "#": {
-      "item": "yogmod:pink_stucco"
+      "item": "yogmod:white_plastic"
     }
   },
   "pattern": [
@@ -11,6 +12,6 @@
   ],
   "result": {
     "count": 3,
-    "item": "yogmod:pink_stucco_carpet"
+    "id": "yogmod:white_plastic_carpet"
   }
 }
