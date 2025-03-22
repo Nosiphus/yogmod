@@ -1,15 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "yogmod:asphalt"
     }
   },
   "pattern": [
+    "#  ",
+    "## ",
     "###"
   ],
   "result": {
-    "count": 6,
-    "item": "yogmod:asphalt_slab"
+    "count": 4,
+    "id": "yogmod:asphalt_stairs"
   }
 }

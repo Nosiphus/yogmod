@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "key": {
     "P": {
       "item": "yogmod:piston"
@@ -13,6 +14,7 @@
     "P"
   ],
   "result": {
-    "item": "yogmod:sticky_piston"
+    "count": 1,
+    "id": "yogmod:sticky_piston"
   }
 }

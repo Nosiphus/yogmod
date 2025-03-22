@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "yogmod:raw_wood"
@@ -11,6 +12,6 @@
   ],
   "result": {
     "count": 6,
-    "item": "yogmod:raw_wood_wall"
+    "id": "yogmod:raw_wood_wall"
   }
 }

@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
-      "item": "yogmod:raw_wood"
+      "item": "yogmod:step"
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
     "###"
   ],
   "result": {
-    "count": 4,
-    "item": "yogmod:raw_wood_stairs"
+    "count": 6,
+    "id": "yogmod:step_slab"
   }
 }

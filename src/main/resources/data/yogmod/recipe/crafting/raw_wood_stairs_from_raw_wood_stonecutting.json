@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "yogmod:raw_wood"
   },
-  "result": "yogmod:raw_wood_wall"
+  "result": {
+    "count": 1,
+    "id": "yogmod:raw_wood_stairs"
+  }
 }

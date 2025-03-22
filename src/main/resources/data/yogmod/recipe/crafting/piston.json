@@ -1,14 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "key": {
     "#": {
       "item": "yogmod:asphalt"
     },
     "R": {
-      "item": "yogmod:wire"
+      "item": "minecraft:redstone"
     },
     "T": {
-      "tag": "minecraft:planks"
+      "tag": "yogmod:wooden_bricks"
     },
     "X": {
       "item": "minecraft:iron_ingot"
@@ -20,6 +21,7 @@
     "#R#"
   ],
   "result": {
-    "item": "yogmod:piston"
+    "count": 1,
+    "id": "yogmod:piston"
   }
 }
