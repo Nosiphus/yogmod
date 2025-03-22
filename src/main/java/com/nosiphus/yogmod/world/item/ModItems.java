@@ -416,6 +416,9 @@ public class ModItems {
             () -> new SignItem((new Item.Properties()).stacksTo(16), ModBlocks.YOG_SIGN.get(), ModBlocks.YOG_WALL_SIGN.get())));
     public static final DeferredItem<BlockItem> CRATE = addToTab(ITEMS.register("crate",
             () -> new CrateBlockItem(ModBlocks.CRATE.get(), new Item.Properties())));
+    //Fridge will go here when implemented
+    public static final DeferredItem<BlockItem> FANCY_TABLE = addToTab(ITEMS.register("fancy_table",
+            () -> new BlockItem(ModBlocks.FANCY_TABLE.get(), new Item.Properties())));
 
     //Redstone Blocks
     public static final DeferredItem<BlockItem> WIRE = addToTab(ITEMS.register("wire",

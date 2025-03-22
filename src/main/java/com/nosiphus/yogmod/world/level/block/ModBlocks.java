@@ -478,6 +478,9 @@ public class ModBlocks {
                     .sound(SoundType.WOOD), () -> {
                 return ModBlockEntityType.CRATE.get();
             }));
+    //Fridge will go here when implemented
+    public static final DeferredBlock<Block> FANCY_TABLE = BLOCKS.register("fancy_table",
+            () -> new FancyTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     //Redstone Blocks
     public static final DeferredBlock<Block> WIRE = BLOCKS.register("wire",
