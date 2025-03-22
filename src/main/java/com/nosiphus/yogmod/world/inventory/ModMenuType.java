@@ -17,9 +17,9 @@ public class ModMenuType {
     public static final Supplier<MenuType<CrateMenu>> CRATE_9x4 = MENU_TYPES.register("crate_9x4", () -> new MenuType<>(CrateMenu::fourRows, FeatureFlags.DEFAULT_FLAGS));
     public static final Supplier<MenuType<CrateMenu>> CRATE_9x5 = MENU_TYPES.register("crate_9x5", () -> new MenuType<>(CrateMenu::fiveRows, FeatureFlags.DEFAULT_FLAGS));
     public static final Supplier<MenuType<CrateMenu>> CRATE_9x6 = MENU_TYPES.register("crate_9x6", () -> new MenuType<>(CrateMenu::sixRows, FeatureFlags.DEFAULT_FLAGS));
+    public static final Supplier<MenuType<DispenserMenu>> DISPENSER = MENU_TYPES.register("dispenser", () -> new MenuType<>(DispenserMenu::new, FeatureFlags.DEFAULT_FLAGS));
     public static final Supplier<MenuType<OvenMenu>> OVEN = MENU_TYPES.register("oven", () -> new MenuType<>(OvenMenu::new, FeatureFlags.DEFAULT_FLAGS));
     public static final Supplier<MenuType<StorageCrateMenu>> STORAGE_CRATE = MENU_TYPES.register("storage_crate", () -> new MenuType<>(StorageCrateMenu::new, FeatureFlags.DEFAULT_FLAGS));
-    public static final Supplier<MenuType<YogDispenserMenu>> YOG_DISPENSER = MENU_TYPES.register("dispenser", () -> new MenuType<>(YogDispenserMenu::new, FeatureFlags.DEFAULT_FLAGS));
     public static final Supplier<MenuType<YogifierMenu>> YOGIFIER = MENU_TYPES.register("yogifier", () -> new MenuType<>(YogifierMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
 }

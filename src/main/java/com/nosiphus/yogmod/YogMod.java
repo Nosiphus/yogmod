@@ -1,10 +1,7 @@
 package com.nosiphus.yogmod;
 
 import com.mojang.logging.LogUtils;
-import com.nosiphus.yogmod.client.gui.screens.inventory.CrateScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
-import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
+import com.nosiphus.yogmod.client.gui.screens.inventory.*;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
@@ -106,6 +103,7 @@ public class YogMod {
             event.register(ModMenuType.CRATE_9x4.get(), CrateScreen::new);
             event.register(ModMenuType.CRATE_9x5.get(), CrateScreen::new);
             event.register(ModMenuType.CRATE_9x6.get(), CrateScreen::new);
+            event.register(ModMenuType.DISPENSER.get(), DispenserScreen::new);
             event.register(ModMenuType.OVEN.get(), OvenScreen::new);
             event.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
             event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
