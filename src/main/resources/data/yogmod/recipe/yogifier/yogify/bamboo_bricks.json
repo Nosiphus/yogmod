@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:bamboo_planks"
+  },
+  "result": {
+    "id": "yogmod:bamboo_bricks"
+  }
+}

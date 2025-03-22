@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:andesite"
+  },
+  "result": {
+    "id": "yogmod:air_vent"
+  }
+}

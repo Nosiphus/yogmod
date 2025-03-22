@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:dark_oak_bricks"
+  },
+  "result": {
+    "id": "minecraft:dark_oak_planks"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:bamboo_button"
+  },
+  "result": {
+    "id": "yogmod:bamboo_brick_button"
+  }
+}

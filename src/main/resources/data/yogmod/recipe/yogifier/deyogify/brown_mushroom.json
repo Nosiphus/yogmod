@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:mechanical"
+  },
+  "result": {
+    "id": "minecraft:brown_mushroom"
+  }
+}

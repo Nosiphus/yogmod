@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:jungle_brick_slab"
+  },
+  "result": {
+    "id": "minecraft:jungle_slab"
+  }
+}

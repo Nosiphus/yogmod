@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:oak_brick_slab"
+  },
+  "result": {
+    "id": "minecraft:oak_slab"
+  }
+}

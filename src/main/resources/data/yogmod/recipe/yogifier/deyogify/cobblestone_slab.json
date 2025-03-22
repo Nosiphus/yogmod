@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:asphalt_slab"
+  },
+  "result": {
+    "id": "minecraft:cobblestone_slab"
+  }
+}

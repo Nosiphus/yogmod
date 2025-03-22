@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:coal_ore"
+  },
+  "result": {
+    "id": "yogmod:dark_stone_bricks"
+  }
+}

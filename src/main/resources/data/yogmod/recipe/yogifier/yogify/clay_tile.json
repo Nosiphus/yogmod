@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:red_concrete"
+  },
+  "result": {
+    "id": "yogmod:clay_tile"
+  }
+}

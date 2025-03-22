@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:spruce_planks"
+  },
+  "result": {
+    "id": "yogmod:spruce_bricks"
+  }
+}

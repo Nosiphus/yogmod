@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:blue_plastic"
+  },
+  "result": {
+    "id": "minecraft:blue_wool"
+  }
+}

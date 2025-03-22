@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:brick_wall"
+  },
+  "result": {
+    "id": "yogmod:brick_wall"
+  }
+}

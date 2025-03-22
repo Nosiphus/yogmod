@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:lime_plastic_carpet"
+  },
+  "result": {
+    "id": "minecraft:lime_carpet"
+  }
+}

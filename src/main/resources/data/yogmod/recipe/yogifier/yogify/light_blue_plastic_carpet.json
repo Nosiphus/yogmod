@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:light_blue_carpet"
+  },
+  "result": {
+    "id": "yogmod:light_blue_plastic_carpet"
+  }
+}

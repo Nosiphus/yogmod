@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:stripe"
+  },
+  "result": {
+    "id": "minecraft:magenta_concrete"
+  }
+}

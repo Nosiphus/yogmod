@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:rusty_iron"
+  },
+  "result": {
+    "id": "minecraft:weathered_copper"
+  }
+}

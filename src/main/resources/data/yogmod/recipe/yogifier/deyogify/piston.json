@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:piston"
+  },
+  "result": {
+    "id": "minecraft:piston"
+  }
+}

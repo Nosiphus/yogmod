@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:oak_pressure_plate"
+  },
+  "result": {
+    "id": "yogmod:oak_brick_pressure_plate"
+  }
+}

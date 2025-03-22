@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:yellow_wool"
+  },
+  "result": {
+    "id": "yogmod:gold_filgaree"
+  }
+}

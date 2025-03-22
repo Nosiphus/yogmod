@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:iron_plate_slab"
+  },
+  "result": {
+    "id": "minecraft:mossy_cobblestone_slab"
+  }
+}

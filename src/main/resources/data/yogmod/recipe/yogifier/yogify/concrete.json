@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:white_concrete"
+  },
+  "result": {
+    "id": "yogmod:concrete"
+  }
+}

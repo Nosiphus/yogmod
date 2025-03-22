@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:acacia_button"
+  },
+  "result": {
+    "id": "yogmod:acacia_brick_button"
+  }
+}

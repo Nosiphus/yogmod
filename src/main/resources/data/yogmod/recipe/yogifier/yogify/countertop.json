@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:melon"
+  },
+  "result": {
+    "id": "yogmod:countertop"
+  }
+}

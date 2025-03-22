@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:light_gray_stucco"
+  },
+  "result": {
+    "id": "minecraft:light_gray_wool"
+  }
+}

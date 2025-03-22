@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:black_carpet"
+  },
+  "result": {
+    "id": "yogmod:black_marble_carpet"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:spruce_brick_pressure_plate"
+  },
+  "result": {
+    "id": "minecraft:spruce_pressure_plate"
+  }
+}

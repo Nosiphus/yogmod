@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:ladder"
+  },
+  "result": {
+    "id": "yogmod:ladder"
+  }
+}

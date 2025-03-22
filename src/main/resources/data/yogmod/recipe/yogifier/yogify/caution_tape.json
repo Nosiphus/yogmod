@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:soul_sand"
+  },
+  "result": {
+    "id": "yogmod:caution_tape"
+  }
+}

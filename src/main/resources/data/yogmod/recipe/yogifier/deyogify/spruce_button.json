@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:spruce_brick_button"
+  },
+  "result": {
+    "id": "minecraft:spruce_button"
+  }
+}

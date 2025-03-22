@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:polished_diorite"
+  },
+  "result": {
+    "id": "yogmod:mechanical_vent"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:acacia_slab"
+  },
+  "result": {
+    "id": "yogmod:acacia_brick_slab"
+  }
+}

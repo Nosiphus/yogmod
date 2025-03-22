@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:mangrove_brick_slab"
+  },
+  "result": {
+    "id": "minecraft:mangrove_slab"
+  }
+}

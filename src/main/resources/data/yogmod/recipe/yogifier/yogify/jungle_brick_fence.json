@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:jungle_fence"
+  },
+  "result": {
+    "id": "yogmod:jungle_brick_fence"
+  }
+}

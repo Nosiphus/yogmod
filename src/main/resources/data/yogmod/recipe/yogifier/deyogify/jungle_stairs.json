@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:jungle_brick_stairs"
+  },
+  "result": {
+    "id": "minecraft:jungle_stairs"
+  }
+}

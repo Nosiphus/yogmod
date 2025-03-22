@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:birch_brick_button"
+  },
+  "result": {
+    "id": "minecraft:birch_button"
+  }
+}

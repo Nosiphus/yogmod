@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:light_gray_concrete_powder"
+  },
+  "result": {
+    "id": "yogmod:shale"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:blue_velvet"
+  },
+  "result": {
+    "id": "minecraft:blue_concrete_powder"
+  }
+}

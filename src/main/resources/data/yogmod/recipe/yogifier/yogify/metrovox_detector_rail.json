@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:detector_rail"
+  },
+  "result": {
+    "id": "yogmod:metrovox_detector_rail"
+  }
+}

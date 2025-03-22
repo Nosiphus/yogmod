@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:classic_lever"
+  },
+  "result": {
+    "id": "minecraft:lever"
+  }
+}

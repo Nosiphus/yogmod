@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:cherry_bricks"
+  },
+  "result": {
+    "id": "minecraft:cherry_planks"
+  }
+}

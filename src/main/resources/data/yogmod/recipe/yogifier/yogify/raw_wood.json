@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:stone_bricks"
+  },
+  "result": {
+    "id": "yogmod:raw_wood"
+  }
+}

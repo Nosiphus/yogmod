@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:corrugated_copper"
+  },
+  "result": {
+    "id": "minecraft:diamond_ore"
+  }
+}

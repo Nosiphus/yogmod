@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:table"
+  },
+  "result": {
+    "id": "minecraft:enchanting_table"
+  }
+}

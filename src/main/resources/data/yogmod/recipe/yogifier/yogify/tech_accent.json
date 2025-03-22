@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:crafting_table"
+  },
+  "result": {
+    "id": "yogmod:tech_accent"
+  }
+}

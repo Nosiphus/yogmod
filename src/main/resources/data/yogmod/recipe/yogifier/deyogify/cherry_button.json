@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:cherry_brick_button"
+  },
+  "result": {
+    "id": "minecraft:cherry_button"
+  }
+}

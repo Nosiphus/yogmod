@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:raw_iron_block"
+  },
+  "result": {
+    "id": "yogmod:riveted_steel"
+  }
+}

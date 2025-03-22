@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:mechanical_chain"
+  },
+  "result": {
+    "id": "minecraft:diorite"
+  }
+}

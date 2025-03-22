@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:redstone_lamp"
+  },
+  "result": {
+    "id": "yogmod:lamp"
+  }
+}

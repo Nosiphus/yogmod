@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:spotlight"
+  },
+  "result": {
+    "id": "minecraft:sea_lantern"
+  }
+}

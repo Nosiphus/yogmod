@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:jungle_planks"
+  },
+  "result": {
+    "id": "yogmod:jungle_bricks"
+  }
+}

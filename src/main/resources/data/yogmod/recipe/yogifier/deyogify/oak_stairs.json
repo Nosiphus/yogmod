@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:oak_brick_stairs"
+  },
+  "result": {
+    "id": "minecraft:oak_stairs"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:iron_stack"
+  },
+  "result": {
+    "id": "minecraft:iron_block"
+  }
+}

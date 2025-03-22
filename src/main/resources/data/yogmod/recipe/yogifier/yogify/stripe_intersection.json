@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:chiseled_stone_bricks"
+  },
+  "result": {
+    "id": "yogmod:stripe_intersection"
+  }
+}

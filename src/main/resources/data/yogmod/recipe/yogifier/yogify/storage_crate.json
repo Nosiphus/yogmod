@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:shulker_box"
+  },
+  "result": {
+    "id": "yogmod:storage_crate"
+  }
+}

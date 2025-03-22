@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:glass"
+  },
+  "result": {
+    "id": "yogmod:glass"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:acacia_planks"
+  },
+  "result": {
+    "id": "yogmod:acacia_bricks"
+  }
+}

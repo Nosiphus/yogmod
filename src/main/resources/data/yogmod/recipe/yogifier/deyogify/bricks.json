@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:bricks"
+  },
+  "result": {
+    "id": "minecraft:bricks"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "id": "yogmod:lever"
+  },
+  "result": {
+    "id": "yogmod:classic_lever"
+  }
+}

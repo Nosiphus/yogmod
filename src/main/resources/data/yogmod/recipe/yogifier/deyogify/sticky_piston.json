@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "yogmod:sticky_piston"
+  },
+  "result": {
+    "id": "minecraft:sticky_piston"
+  }
+}

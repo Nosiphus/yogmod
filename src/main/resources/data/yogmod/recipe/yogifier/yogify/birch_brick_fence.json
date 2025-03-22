@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:birch_fence"
+  },
+  "result": {
+    "id": "yogmod:birch_brick_fence"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:oak_sign"
+  },
+  "result": {
+    "id": "yogmod:yog_sign"
+  }
+}

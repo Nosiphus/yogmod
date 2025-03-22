@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:obsidian"
+  },
+  "result": {
+    "id": "yogmod:fancy_table"
+  }
+}

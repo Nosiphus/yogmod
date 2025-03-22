@@ -1,0 +1,9 @@
+{
+  "type": "yogmod:yogifier",
+  "base": {
+    "item": "minecraft:oak_fence_gate"
+  },
+  "result": {
+    "id": "yogmod:oak_brick_fence_gate"
+  }
+}
