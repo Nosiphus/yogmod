@@ -20,7 +20,6 @@ import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
-import com.nosiphus.yogmod.world.level.block.entity.CrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.client.renderer.BiomeColors;

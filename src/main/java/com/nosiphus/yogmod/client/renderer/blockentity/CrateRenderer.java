@@ -3,7 +3,6 @@ package com.nosiphus.yogmod.client.renderer.blockentity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import com.nosiphus.yogmod.client.model.inventory.ModItemStackRenderer;
 import com.nosiphus.yogmod.client.model.inventory.ModelItem;
 import com.nosiphus.yogmod.world.level.block.AbstractCrateBlock;
 import com.nosiphus.yogmod.world.level.block.CrateBlock;
