@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "yogmod:spruce_bricks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "yogmod:spruce_brick_button"
+  }
+}
