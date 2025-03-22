@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
   "group": "wooden_button",
   "ingredients": [
     {
@@ -7,6 +8,7 @@
     }
   ],
   "result": {
-    "item": "yogmod:birch_brick_button"
+    "count": 1,
+    "id": "yogmod:birch_brick_button"
   }
 }

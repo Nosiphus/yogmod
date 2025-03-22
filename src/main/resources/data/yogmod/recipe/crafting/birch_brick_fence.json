@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "wooden_fence",
   "key": {
     "#": {
-      "tag": "forge:rods/wooden"
+      "item": "minecraft:stick"
     },
     "W": {
-      "item": "yogmod:bamboo_bricks"
+      "item": "yogmod:birch_bricks"
     }
   },
   "pattern": [
@@ -15,6 +16,6 @@
   ],
   "result": {
     "count": 3,
-    "item": "yogmod:bamboo_brick_fence"
+    "id": "yogmod:birch_brick_fence"
   }
 }

@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "wooden_fence_gate",
+  "category": "redstone",
+  "group": "wooden_pressure_plate",
   "key": {
     "#": {
-      "tag": "forge:rods/wooden"
-    },
-    "W": {
       "item": "yogmod:bamboo_bricks"
     }
   },
   "pattern": [
-    "#W#",
-    "#W#"
+    "##"
   ],
   "result": {
-    "item": "yogmod:bamboo_brick_fence_gate"
+    "count": 1,
+    "id": "yogmod:bamboo_brick_pressure_plate"
   }
 }

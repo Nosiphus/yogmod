@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "group": "wooden_pressure_plate",
   "key": {
     "#": {
-      "item": "yogmod:bamboo_bricks"
+      "item": "yogmod:birch_bricks"
     }
   },
   "pattern": [
     "##"
   ],
   "result": {
-    "item": "yogmod:bamboo_brick_pressure_plate"
+    "count": 1,
+    "id": "yogmod:birch_brick_pressure_plate"
   }
 }
