@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SinkMixin {
 
     @Inject(method = "bootStrap()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/cauldron/CauldronInteraction;bootStrap()V", shift = At.Shift.AFTER))
-    private static void onBootStrap(CallbackInfo ci) {
+    private static void bootStrap(CallbackInfo ci) {
         SinkInteraction.bootStrap();
     }
 

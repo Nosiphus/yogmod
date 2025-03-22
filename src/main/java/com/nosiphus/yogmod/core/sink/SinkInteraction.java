@@ -33,88 +33,78 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 public interface SinkInteraction {
-    Map<String, InteractionMap> INTERACTIONS = new Object2ObjectArrayMap<>();
+    Map<String, SinkInteraction.InteractionMap> INTERACTIONS = new Object2ObjectArrayMap<>();
     Codec<SinkInteraction.InteractionMap> CODEC = Codec.stringResolver(SinkInteraction.InteractionMap::name, INTERACTIONS::get);
     SinkInteraction.InteractionMap EMPTY = newInteractionMap("empty");
     SinkInteraction.InteractionMap WATER = newInteractionMap("water");
     SinkInteraction.InteractionMap LAVA = newInteractionMap("lava");
     SinkInteraction.InteractionMap POWDER_SNOW = newInteractionMap("powder_snow");
-    SinkInteraction FILL_WATER = (p_315877_, p_315878_, p_315879_, p_315880_, p_315881_, p_315882_) -> emptyBucket(
-            p_315878_,
-            p_315879_,
-            p_315880_,
-            p_315881_,
-            p_315882_,
+    SinkInteraction FILL_WATER = (state, level, pos, player, hand, stack) -> emptyBucket(
+            level,
+            pos,
+            player,
+            hand,
+            stack,
             ModBlocks.WATER_SINK.get().defaultBlockState().setValue(LayeredSinkBlock.LEVEL, Integer.valueOf(3)),
             SoundEvents.BUCKET_EMPTY
     );
-    SinkInteraction FILL_LAVA = (p_315853_, p_315854_, p_315855_, p_315856_, p_315857_, p_315858_) -> emptyBucket(
-            p_315854_, p_315855_, p_315856_, p_315857_, p_315858_, ModBlocks.LAVA_SINK.get().defaultBlockState(), SoundEvents.BUCKET_EMPTY_LAVA
+    SinkInteraction FILL_LAVA = (state, level, pos, player, hand, stack) -> emptyBucket(
+            level, pos, player, hand, stack, ModBlocks.LAVA_SINK.get().defaultBlockState(), SoundEvents.BUCKET_EMPTY_LAVA
     );
-    SinkInteraction FILL_POWDER_SNOW = (p_315871_, p_315872_, p_315873_, p_315874_, p_315875_, p_315876_) -> emptyBucket(
-            p_315872_,
-            p_315873_,
-            p_315874_,
-            p_315875_,
-            p_315876_,
-            ModBlocks.POWDER_SNOW_SINK.get().defaultBlockState().setValue(LayeredSinkBlock.LEVEL, Integer.valueOf(3)),
-            SoundEvents.BUCKET_EMPTY_POWDER_SNOW
+    SinkInteraction FILL_POWDER_SNOW = (state, level, pos, player, hand, stack) -> emptyBucket(
+            level, pos, player, hand, stack, ModBlocks.POWDER_SNOW_SINK.get().defaultBlockState().setValue(LayeredSinkBlock.LEVEL, Integer.valueOf(3)), SoundEvents.BUCKET_EMPTY_POWDER_SNOW
     );
-    SinkInteraction SHULKER_BOX = (p_346995_, p_346996_, p_346997_, p_346998_, p_346999_, p_347000_) -> {
-        Block block = Block.byItem(p_347000_.getItem());
+    SinkInteraction SHULKER_BOX = (state, level, pos, player, hand, stack) -> {
+        Block block = Block.byItem(stack.getItem());
         if (!(block instanceof ShulkerBoxBlock)) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         } else {
-            if (!p_346996_.isClientSide) {
-                ItemStack itemstack = p_347000_.transmuteCopy(Blocks.SHULKER_BOX, 1);
-                p_346998_.setItemInHand(p_346999_, ItemUtils.createFilledResult(p_347000_, p_346998_, itemstack, false));
-                p_346998_.awardStat(Stats.CLEAN_SHULKER_BOX);
-                LayeredSinkBlock.lowerFillLevel(p_346995_, p_346996_, p_346997_);
+            if (!level.isClientSide) {
+                ItemStack itemStack = stack.transmuteCopy(Blocks.SHULKER_BOX, 1);
+                player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, itemStack, false));
+                player.awardStat(Stats.CLEAN_SHULKER_BOX);
+                LayeredSinkBlock.lowerFillLevel(state, level, pos);
             }
-
-            return ItemInteractionResult.sidedSuccess(p_346996_.isClientSide);
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
     };
-    SinkInteraction BANNER = (p_347001_, p_347002_, p_347003_, p_347004_, p_347005_, p_347006_) -> {
-        BannerPatternLayers bannerpatternlayers = p_347006_.getOrDefault(DataComponents.BANNER_PATTERNS, BannerPatternLayers.EMPTY);
-        if (bannerpatternlayers.layers().isEmpty()) {
+    SinkInteraction BANNER = (state, level, pos, player, hand, stack) -> {
+        BannerPatternLayers bannerPatternLayers = stack.getOrDefault(DataComponents.BANNER_PATTERNS, BannerPatternLayers.EMPTY);
+        if (bannerPatternLayers.layers().isEmpty()) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         } else {
-            if (!p_347002_.isClientSide) {
-                ItemStack itemstack = p_347006_.copyWithCount(1);
-                itemstack.set(DataComponents.BANNER_PATTERNS, bannerpatternlayers.removeLast());
-                p_347004_.setItemInHand(p_347005_, ItemUtils.createFilledResult(p_347006_, p_347004_, itemstack, false));
-                p_347004_.awardStat(Stats.CLEAN_BANNER);
-                LayeredSinkBlock.lowerFillLevel(p_347001_, p_347002_, p_347003_);
+            if (!level.isClientSide) {
+                ItemStack itemStack = stack.copyWithCount(1);
+                itemStack.set(DataComponents.BANNER_PATTERNS, bannerPatternLayers.removeLast());
+                player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, itemStack, false));
+                player.awardStat(Stats.CLEAN_BANNER);
+                LayeredSinkBlock.lowerFillLevel(state, level, pos);
             }
-
-            return ItemInteractionResult.sidedSuccess(p_347002_.isClientSide);
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
     };
-    SinkInteraction DYED_ITEM = (p_329837_, p_329838_, p_329839_, p_329840_, p_329841_, p_329842_) -> {
-        if (!p_329842_.is(ItemTags.DYEABLE)) {
+    SinkInteraction DYED_ITEM = (state, level, pos, player, hand, stack) -> {
+        if (!stack.is(ItemTags.DYEABLE)) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-        } else if (!p_329842_.has(DataComponents.DYED_COLOR)) {
+        } else if (!stack.has(DataComponents.DYED_COLOR)) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         } else {
-            if (!p_329838_.isClientSide) {
-                p_329842_.remove(DataComponents.DYED_COLOR);
-                p_329840_.awardStat(Stats.CLEAN_ARMOR);
-                LayeredSinkBlock.lowerFillLevel(p_329837_, p_329838_, p_329839_);
+            if (!level.isClientSide) {
+                stack.remove(DataComponents.DYED_COLOR);
+                player.awardStat(Stats.CLEAN_ARMOR);
+                LayeredSinkBlock.lowerFillLevel(state, level, pos);
             }
-
-            return ItemInteractionResult.sidedSuccess(p_329838_.isClientSide);
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
     };
 
     static SinkInteraction.InteractionMap newInteractionMap(String name) {
-        Object2ObjectOpenHashMap<Item, SinkInteraction> object2objectopenhashmap = new Object2ObjectOpenHashMap<>();
-        object2objectopenhashmap.defaultReturnValue(
-                (p_315883_, p_315884_, p_315885_, p_315886_, p_315887_, p_315888_) -> ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
+        Object2ObjectOpenHashMap<Item, SinkInteraction> object2ObjectOpenHashMap = new Object2ObjectOpenHashMap<>();
+        object2ObjectOpenHashMap.defaultReturnValue(
+                (state, level, pos, player, hand, stack) -> ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
         );
-        SinkInteraction.InteractionMap cauldroninteraction$interactionmap = new SinkInteraction.InteractionMap(name, object2objectopenhashmap);
-        INTERACTIONS.put(name, cauldroninteraction$interactionmap);
-        return cauldroninteraction$interactionmap;
+        SinkInteraction.InteractionMap sinkinteraction$interactionmap = new SinkInteraction.InteractionMap(name, object2ObjectOpenHashMap);
+        return sinkinteraction$interactionmap;
     }
 
     ItemInteractionResult interact(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack);
@@ -122,20 +112,19 @@ public interface SinkInteraction {
     static void bootStrap() {
         Map<Item, SinkInteraction> map = EMPTY.map();
         addDefaultInteractions(map);
-        map.put(Items.POTION, (p_329825_, p_329826_, p_329827_, p_329828_, p_329829_, p_329830_) -> {
-            PotionContents potioncontents = p_329830_.get(DataComponents.POTION_CONTENTS);
-            if (potioncontents != null && potioncontents.is(Potions.WATER)) {
-                if (!p_329826_.isClientSide) {
-                    Item item = p_329830_.getItem();
-                    p_329828_.setItemInHand(p_329829_, ItemUtils.createFilledResult(p_329830_, p_329828_, new ItemStack(Items.GLASS_BOTTLE)));
-                    p_329828_.awardStat(Stats.USE_CAULDRON);
-                    p_329828_.awardStat(Stats.ITEM_USED.get(item));
-                    p_329826_.setBlockAndUpdate(p_329827_, ModBlocks.WATER_SINK.get().defaultBlockState());
-                    p_329826_.playSound(null, p_329827_, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    p_329826_.gameEvent(null, GameEvent.FLUID_PLACE, p_329827_);
+        map.put(Items.POTION, (state, level, pos, player, hand, stack) -> {
+            PotionContents potionContents = stack.get(DataComponents.POTION_CONTENTS);
+            if (potionContents != null && potionContents.is(Potions.WATER)) {
+                if(!level.isClientSide) {
+                    Item item = stack.getItem();
+                    player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
+                    player.awardStat(Stats.USE_CAULDRON);
+                    player.awardStat(Stats.ITEM_USED.get(item));
+                    level.setBlockAndUpdate(pos, ModBlocks.WATER_SINK.get().defaultBlockState());
+                    level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.gameEvent(null, GameEvent.FLUID_PLACE, pos);
                 }
-
-                return ItemInteractionResult.sidedSuccess(p_329826_.isClientSide);
+                return ItemInteractionResult.sidedSuccess(level.isClientSide);
             } else {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
@@ -144,52 +133,50 @@ public interface SinkInteraction {
         addDefaultInteractions(map1);
         map1.put(
                 Items.BUCKET,
-                (p_315865_, p_315866_, p_315867_, p_315868_, p_315869_, p_315870_) -> fillBucket(
-                        p_315865_,
-                        p_315866_,
-                        p_315867_,
-                        p_315868_,
-                        p_315869_,
-                        p_315870_,
+                (state, level, pos, player, hand, stack) -> fillBucket(
+                        state,
+                        level,
+                        pos,
+                        player,
+                        hand,
+                        stack,
                         new ItemStack(Items.WATER_BUCKET),
-                        p_175660_ -> p_175660_.getValue(LayeredSinkBlock.LEVEL) == 3,
+                        newState -> newState.getValue(LayeredSinkBlock.LEVEL) == 3,
                         SoundEvents.BUCKET_FILL
                 )
         );
         map1.put(
                 Items.GLASS_BOTTLE,
-                (p_329819_, p_329820_, p_329821_, p_329822_, p_329823_, p_329824_) -> {
-                    if (!p_329820_.isClientSide) {
-                        Item item = p_329824_.getItem();
-                        p_329822_.setItemInHand(
-                                p_329823_, ItemUtils.createFilledResult(p_329824_, p_329822_, PotionContents.createItemStack(Items.POTION, Potions.WATER))
+                (state, level, pos, player, hand, stack) -> {
+                    if (!level.isClientSide) {
+                        Item item = stack.getItem();
+                        player.setItemInHand(
+                                hand, ItemUtils.createFilledResult(stack, player, PotionContents.createItemStack(Items.POTION, Potions.WATER))
                         );
-                        p_329822_.awardStat(Stats.USE_CAULDRON);
-                        p_329822_.awardStat(Stats.ITEM_USED.get(item));
-                        LayeredSinkBlock.lowerFillLevel(p_329819_, p_329820_, p_329821_);
-                        p_329820_.playSound(null, p_329821_, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
-                        p_329820_.gameEvent(null, GameEvent.FLUID_PICKUP, p_329821_);
+                        player.awardStat(Stats.USE_CAULDRON);
+                        player.awardStat(Stats.ITEM_USED.get(item));
+                        LayeredSinkBlock.lowerFillLevel(state, level, pos);
+                        level.playSound(null, pos, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        level.gameEvent(null, GameEvent.FLUID_PICKUP, pos);
                     }
-
-                    return ItemInteractionResult.sidedSuccess(p_329820_.isClientSide);
+                    return ItemInteractionResult.sidedSuccess(level.isClientSide);
                 }
         );
-        map1.put(Items.POTION, (p_175704_, p_175705_, p_175706_, p_175707_, p_175708_, p_175709_) -> {
-            if (p_175704_.getValue(LayeredSinkBlock.LEVEL) == 3) {
+        map1.put(Items.POTION, (state, level, pos, player, hand, stack) -> {
+            if (state.getValue(LayeredSinkBlock.LEVEL) == 3) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             } else {
-                PotionContents potioncontents = p_175709_.get(DataComponents.POTION_CONTENTS);
+                PotionContents potioncontents = stack.get(DataComponents.POTION_CONTENTS);
                 if (potioncontents != null && potioncontents.is(Potions.WATER)) {
-                    if (!p_175705_.isClientSide) {
-                        p_175707_.setItemInHand(p_175708_, ItemUtils.createFilledResult(p_175709_, p_175707_, new ItemStack(Items.GLASS_BOTTLE)));
-                        p_175707_.awardStat(Stats.USE_CAULDRON);
-                        p_175707_.awardStat(Stats.ITEM_USED.get(p_175709_.getItem()));
-                        p_175705_.setBlockAndUpdate(p_175706_, p_175704_.cycle(LayeredSinkBlock.LEVEL));
-                        p_175705_.playSound(null, p_175706_, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
-                        p_175705_.gameEvent(null, GameEvent.FLUID_PLACE, p_175706_);
+                    if (!level.isClientSide) {
+                        player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
+                        player.awardStat(Stats.USE_CAULDRON);
+                        player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
+                        level.setBlockAndUpdate(pos, state.cycle(LayeredSinkBlock.LEVEL));
+                        level.playSound(null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        level.gameEvent(null, GameEvent.FLUID_PLACE, pos);
                     }
-
-                    return ItemInteractionResult.sidedSuccess(p_175705_.isClientSide);
+                    return ItemInteractionResult.sidedSuccess(level.isClientSide);
                 } else {
                     return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
                 }
@@ -236,15 +223,15 @@ public interface SinkInteraction {
         Map<Item, SinkInteraction> map2 = LAVA.map();
         map2.put(
                 Items.BUCKET,
-                (p_315889_, p_315890_, p_315891_, p_315892_, p_315893_, p_315894_) -> fillBucket(
-                        p_315889_,
-                        p_315890_,
-                        p_315891_,
-                        p_315892_,
-                        p_315893_,
-                        p_315894_,
+                (state, level, pos, player, hand, stack) -> fillBucket(
+                        state,
+                        level,
+                        pos,
+                        player,
+                        hand,
+                        stack,
                         new ItemStack(Items.LAVA_BUCKET),
-                        p_175651_ -> true,
+                        newState -> true,
                         SoundEvents.BUCKET_FILL_LAVA
                 )
         );
@@ -252,15 +239,15 @@ public interface SinkInteraction {
         Map<Item, SinkInteraction> map3 = POWDER_SNOW.map();
         map3.put(
                 Items.BUCKET,
-                (p_315859_, p_315860_, p_315861_, p_315862_, p_315863_, p_315864_) -> fillBucket(
-                        p_315859_,
-                        p_315860_,
-                        p_315861_,
-                        p_315862_,
-                        p_315863_,
-                        p_315864_,
+                (state, level, pos, player, hand, stack) -> fillBucket(
+                        state,
+                        level,
+                        pos,
+                        player,
+                        hand,
+                        stack,
                         new ItemStack(Items.POWDER_SNOW_BUCKET),
-                        p_175627_ -> p_175627_.getValue(LayeredSinkBlock.LEVEL) == 3,
+                        newState -> newState.getValue(LayeredSinkBlock.LEVEL) == 3,
                         SoundEvents.BUCKET_FILL_POWDER_SNOW
                 )
         );
@@ -296,7 +283,6 @@ public interface SinkInteraction {
                 level.playSound(null, pos, fillSound, SoundSource.BLOCKS, 1.0F, 1.0F);
                 level.gameEvent(null, GameEvent.FLUID_PICKUP, pos);
             }
-
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
     }
@@ -317,6 +303,7 @@ public interface SinkInteraction {
         return ItemInteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    record InteractionMap(String name, Map<Item, SinkInteraction> map) {
+    public static record InteractionMap(String name, Map<Item, SinkInteraction> map) {
     }
+
 }

@@ -1,9 +1,10 @@
 package com.nosiphus.yogmod.world.level.block;
 
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -16,82 +17,97 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 
-import java.util.Map;
-import java.util.function.Predicate;
-
 public class LayeredSinkBlock extends AbstractSinkBlock {
+    public static final MapCodec<LayeredSinkBlock> CODEC = RecordCodecBuilder.mapCodec(
+            instance -> instance.group(
+                    Biome.Precipitation.CODEC.fieldOf("precipitation").forGetter(layeredSink -> layeredSink.precipitationType),
+                    SinkInteraction.CODEC.fieldOf("interactions").forGetter(layeredSink1 -> layeredSink1.interactions),
+                    propertiesCodec()
+                    )
+                    .apply(instance, LayeredSinkBlock::new)
+    );
     public static final int MIN_FILL_LEVEL = 1;
     public static final int MAX_FILL_LEVEL = 3;
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL_CAULDRON;
     private static final int BASE_CONTENT_HEIGHT = 6;
-    private static final double HEIGHT_PER_LEVEL = 3.0D;
-    public static final Predicate<Biome.Precipitation> RAIN = (biomePrecipitation) -> {
-        return biomePrecipitation == Biome.Precipitation.RAIN;
-    };
-    public static final Predicate<Biome.Precipitation> SNOW = (biomePrecipitation) -> {
-        return biomePrecipitation == Biome.Precipitation.SNOW;
-    };
-    private final Predicate<Biome.Precipitation> fillPredicate;
+    private static final double HEIGHT_PER_LEVEL = 3.0;
+    private final Biome.Precipitation precipitationType;
 
-    public LayeredSinkBlock(BlockBehaviour.Properties properties, Predicate<Biome.Precipitation> biomePrecipitation, Map<Item, SinkInteraction> sinkInteractionMap) {
-        super(properties, sinkInteractionMap);
-        this.fillPredicate = biomePrecipitation;
+    @Override
+    public MapCodec<LayeredSinkBlock> codec() { return CODEC; }
+
+    public LayeredSinkBlock(Biome.Precipitation precipitationType, SinkInteraction.InteractionMap interactions, BlockBehaviour.Properties properties) {
+        super(properties, interactions);
+        this.precipitationType = precipitationType;
         this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, Integer.valueOf(1)));
     }
 
-    public boolean isFull(BlockState blockState) {
-        return blockState.getValue(LEVEL) == 3;
+    @Override
+    public boolean isFull(BlockState state) {
+        return state.getValue(LEVEL) == 3;
     }
 
+    @Override
     protected boolean canReceiveStalactiteDrip(Fluid fluid) {
-        return fluid == Fluids.WATER && this.fillPredicate == RAIN;
+        return fluid == Fluids.WATER && this.precipitationType == Biome.Precipitation.RAIN;
     }
 
-    protected double getContentHeight(BlockState blockState) {
-        return (6.0D + (double) blockState.getValue(LEVEL).intValue() * 3.0D) / 16.0D;
+    @Override
+    protected double getContentHeight(BlockState state) {
+        return (6.0 + (double)state.getValue(LEVEL).intValue() * 3.0) / 16.0;
     }
 
-    public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
-        if (!level.isClientSide && entity.isOnFire() && this.isEntityInsideContent(blockState, blockPos, entity)) {
+    @Override
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (!level.isClientSide && entity.isOnFire() && this.isEntityInsideContent(state, pos, entity)) {
             entity.clearFire();
-            if (entity.mayInteract(level, blockPos)) {
-                this.handleEntityOnFireInside(blockState, level, blockPos);
+            if (entity.mayInteract(level, pos)) {
+                this.handleEntityOnFireInside(state, level, pos);
             }
         }
     }
 
-    protected void handleEntityOnFireInside(BlockState blockState, Level level, BlockPos blockPos) {
-        lowerFillLevel(blockState, level, blockPos);
-    }
-
-    public static void lowerFillLevel(BlockState blockState, Level level, BlockPos blockPos) {
-        int i = blockState.getValue(LEVEL) - 1;
-        BlockState blockState1 = i == 0 ? ModBlocks.SINK.get().defaultBlockState() : blockState.setValue(LEVEL, Integer.valueOf(i));
-        level.setBlockAndUpdate(blockPos, blockState1);
-        level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockState1));
-    }
-
-    public void handlePrecipitation(BlockState blockState, Level level, BlockPos blockPos, Biome.Precipitation biomePrecipitation) {
-        if (SinkBlock.shouldHandlePrecipitation(level, biomePrecipitation) && blockState.getValue(LEVEL) != 3 && this.fillPredicate.test(biomePrecipitation)) {
-            BlockState blockState1 = blockState.cycle(LEVEL);
-            level.setBlockAndUpdate(blockPos, blockState1);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockState1));
+    private void handleEntityOnFireInside(BlockState state, Level level, BlockPos pos) {
+        if (this.precipitationType == Biome.Precipitation.SNOW) {
+            lowerFillLevel(ModBlocks.WATER_SINK.get().defaultBlockState().setValue(LEVEL, state.getValue(LEVEL)), level, pos);
+        } else {
+            lowerFillLevel(state, level, pos);
         }
     }
 
-    public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos) {
-        return blockState.getValue(LEVEL);
+    public static void lowerFillLevel(BlockState state, Level level, BlockPos pos) {
+        int i = state.getValue(LEVEL) - 1;
+        BlockState blockstate = i == 0 ? ModBlocks.SINK.get().defaultBlockState() : state.setValue(LEVEL, Integer.valueOf(i));
+        level.setBlockAndUpdate(pos, blockstate);
+        level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> blockStateBuilder) {
-        blockStateBuilder.add(LEVEL);
+    @Override
+    public void handlePrecipitation(BlockState state, Level level, BlockPos pos, Biome.Precipitation precipitation) {
+        if (SinkBlock.shouldHandlePrecipitation(level, precipitation) && state.getValue(LEVEL) != 3 && precipitation == this.precipitationType) {
+            BlockState blockstate = state.cycle(LEVEL);
+            level.setBlockAndUpdate(pos, blockstate);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
+        }
     }
 
-    protected void receiveStalactiteDrip(BlockState blockState, Level level, BlockPos blockPos, Fluid fluid) {
-        if (!this.isFull(blockState)) {
-            BlockState blockState1 = blockState.setValue(LEVEL, Integer.valueOf(blockState.getValue(LEVEL) + 1));
-            level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockState1));
-            level.levelEvent(1047, blockPos, 0);
+    @Override
+    protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+        return state.getValue(LEVEL);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(LEVEL);
+    }
+
+    @Override
+    protected void receiveStalactiteDrip(BlockState state, Level level, BlockPos pos, Fluid fluid) {
+        if (!this.isFull(state)) {
+            BlockState blockstate = state.setValue(LEVEL, Integer.valueOf(state.getValue(LEVEL) + 1));
+            level.setBlockAndUpdate(pos, blockstate);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
+            level.levelEvent(1047, pos, 0);
         }
     }
 

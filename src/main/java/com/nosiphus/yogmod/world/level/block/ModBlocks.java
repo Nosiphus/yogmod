@@ -10,6 +10,7 @@ import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -459,11 +460,11 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SINK = BLOCKS.register("sink",
             () -> new SinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
     public static final DeferredBlock<Block> WATER_SINK = BLOCKS.register("water_sink",
-            () -> new LayeredSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK), LayeredSinkBlock.RAIN, SinkInteraction.WATER.map()));
+            () -> new LayeredSinkBlock(Biome.Precipitation.RAIN, SinkInteraction.WATER, BlockBehaviour.Properties.ofLegacyCopy(Blocks.CAULDRON)));
     public static final DeferredBlock<Block> LAVA_SINK = BLOCKS.register("lava_sink",
-            () -> new LavaSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK).lightLevel((blockState) -> { return 15; })));
+            () -> new LavaSinkBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.CAULDRON).lightLevel((blockState) -> { return 15; })));
     public static final DeferredBlock<Block> POWDER_SNOW_SINK = BLOCKS.register("powder_snow_sink",
-            () -> new PowderSnowSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lootFrom(ModBlocks.SINK), LayeredSinkBlock.SNOW, SinkInteraction.POWDER_SNOW.map()));
+            () -> new LayeredSinkBlock(Biome.Precipitation.SNOW, SinkInteraction.POWDER_SNOW, BlockBehaviour.Properties.ofLegacyCopy(Blocks.CAULDRON)));
     public static final DeferredBlock<Block> LADDER = BLOCKS.register("ladder",
             () -> new LadderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER)));
     public static final DeferredBlock<Block> YOG_SIGN = registerBlockWithoutBlockItem("yog_sign",

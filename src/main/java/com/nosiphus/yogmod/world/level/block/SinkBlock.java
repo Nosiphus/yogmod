@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.world.level.block;
 
+import com.mojang.serialization.MapCodec;
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -11,55 +12,61 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 
 public class SinkBlock extends AbstractSinkBlock {
-
+    public static final MapCodec<SinkBlock> CODEC = simpleCodec(SinkBlock::new);
     private static final float RAIN_FILL_CHANCE = 0.05F;
     private static final float POWDER_SNOW_FILL_CHANCE = 0.1F;
 
+    @Override
+    public MapCodec<SinkBlock> codec() { return CODEC; }
+
     public SinkBlock(BlockBehaviour.Properties properties) {
-        super(properties, SinkInteraction.EMPTY.map());
+        super(properties, SinkInteraction.EMPTY);
     }
 
-    public boolean isFull(BlockState blockState) {
+    @Override
+    public boolean isFull(BlockState state) {
         return false;
     }
 
-    protected static boolean shouldHandlePrecipitation(Level level, Biome.Precipitation biomePrecipitation) {
-        if (biomePrecipitation == Biome.Precipitation.RAIN) {
+    protected static boolean shouldHandlePrecipitation(Level level, Biome.Precipitation precipitation) {
+        if (precipitation == Biome.Precipitation.RAIN) {
             return level.getRandom().nextFloat() < 0.05F;
-        } else if (biomePrecipitation == Biome.Precipitation.SNOW) {
-            return level.getRandom().nextFloat() < 0.1F;
         } else {
-            return false;
+            return precipitation == Biome.Precipitation.SNOW ? level.getRandom().nextFloat() < 0.1F : false;
         }
     }
 
-    public void handlePrecipitation(BlockState blockState, Level level, BlockPos blockPos, Biome.Precipitation biomePrecipitation) {
-        if (shouldHandlePrecipitation(level, biomePrecipitation)) {
-            if (biomePrecipitation == Biome.Precipitation.RAIN) {
-                level.setBlockAndUpdate(blockPos, ModBlocks.WATER_SINK.get().defaultBlockState());
-                level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
-            } else if (biomePrecipitation == Biome.Precipitation.SNOW) {
-                level.setBlockAndUpdate(blockPos, ModBlocks.POWDER_SNOW_SINK.get().defaultBlockState());
-                level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
+    @Override
+    public void handlePrecipitation(BlockState state, Level level, BlockPos pos, Biome.Precipitation precipitation) {
+        if (shouldHandlePrecipitation(level, precipitation)) {
+            if (precipitation == Biome.Precipitation.RAIN) {
+                level.setBlockAndUpdate(pos, ModBlocks.WATER_SINK.get().defaultBlockState());
+                level.gameEvent(null, GameEvent.BLOCK_CHANGE, pos);
+            } else if (precipitation == Biome.Precipitation.SNOW) {
+                level.setBlockAndUpdate(pos, ModBlocks.POWDER_SNOW_SINK.get().defaultBlockState());
+                level.gameEvent(null, GameEvent.BLOCK_CHANGE, pos);
             }
         }
     }
 
-    protected boolean  canReceiveStalactiteDrip(Fluid fluid) {
+    @Override
+    protected boolean canReceiveStalactiteDrip(Fluid fluid) {
         return true;
     }
 
-    protected void receiveStalactiteDrip(BlockState blockState, Level level, BlockPos blockPos, Fluid fluid) {
+    @Override
+    protected void receiveStalactiteDrip(BlockState state, Level level, BlockPos pos, Fluid fluid) {
+        if (fluid.getFluidType().handleCauldronDrip(fluid, level, pos)) return;
         if (fluid == Fluids.WATER) {
-            BlockState blockState1 = ModBlocks.WATER_SINK.get().defaultBlockState();
-            level.setBlockAndUpdate(blockPos, blockState1);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockState1));
-            level.levelEvent(1047, blockPos, 0);
+            BlockState blockstate = ModBlocks.WATER_SINK.get().defaultBlockState();
+            level.setBlockAndUpdate(pos, blockstate);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
+            level.levelEvent(1047, pos, 0);
         } else if (fluid == Fluids.LAVA) {
-            BlockState blockState1 = ModBlocks.LAVA_SINK.get().defaultBlockState();
-            level.setBlockAndUpdate(blockPos, blockState1);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockState1));
-            level.levelEvent(1046, blockPos, 0);
+            BlockState blockstate1 = ModBlocks.LAVA_SINK.get().defaultBlockState();
+            level.setBlockAndUpdate(pos, blockstate1);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate1));
+            level.levelEvent(1046, pos, 0);
         }
     }
 

@@ -1,14 +1,14 @@
 package com.nosiphus.yogmod.world.level.block;
 
+import com.mojang.serialization.MapCodec;
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -25,61 +25,74 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Map;
-
 public abstract class AbstractSinkBlock extends Block {
     private static final int SIDE_THICKNESS = 2;
     private static final int LEG_WIDTH = 4;
     private static final int LEG_HEIGHT = 3;
     private static final int LEG_DEPTH = 2;
     protected static final int FLOOR_LEVEL = 4;
-    private static final VoxelShape INSIDE = box(2.0D, 4.0D, 2.0D, 14.0D, 16.0D, 14.0D);
-    protected static final VoxelShape SHAPE = Shapes.join(Shapes.block(), Shapes.or(box(0.0D, 0.0D, 4.0D, 16.0D, 3.0D, 12.0D), box(4.0D, 0.0D, 0.0D, 12.0D, 3.0D, 16.0D), box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D), INSIDE), BooleanOp.ONLY_FIRST);
-    private final Map<Item, SinkInteraction> interactions;
+    private static final VoxelShape INSIDE = box(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
+    protected static final VoxelShape SHAPE = Shapes.join(
+        Shapes.block(),
+        Shapes.or(box(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), box(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), box(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), INSIDE),
+        BooleanOp.ONLY_FIRST
+    );
+    protected final SinkInteraction.InteractionMap interactions;
 
-    public AbstractSinkBlock(BlockBehaviour.Properties properties, Map<Item, SinkInteraction> sinkInteractionMap) {
+    @Override
+    protected abstract MapCodec<? extends AbstractSinkBlock> codec();
+
+    public AbstractSinkBlock(BlockBehaviour.Properties properties, SinkInteraction.InteractionMap interactions) {
         super(properties);
-        this.interactions = sinkInteractionMap;
+        this.interactions = interactions;
     }
 
-    protected double getContentHeight(BlockState blockState) {
-        return 0.0D;
+    protected double getContentHeight(BlockState state) {
+        return 0.0;
     }
 
-    protected boolean isEntityInsideContent(BlockState blockState, BlockPos blockPos, Entity entity) {
-        return entity.getY() < (double) blockPos.getY() + this.getContentHeight(blockState) && entity.getBoundingBox().maxY > (double) blockPos.getY() + 0.25D;
+    protected boolean isEntityInsideContent(BlockState state, BlockPos pos, Entity entity) {
+        return entity.getY() < (double)pos.getY() + this.getContentHeight(state)
+            && entity.getBoundingBox().maxY > (double)pos.getY() + 0.25;
     }
 
-    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        ItemStack itemStack = player.getItemInHand(interactionHand);
-        SinkInteraction sinkInteraction = this.interactions.get(itemStack.getItem());
-        return sinkInteraction.interact(blockState, level, blockPos, player, interactionHand, itemStack).result();
+    @Override
+    protected ItemInteractionResult useItemOn(
+            ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult
+    ) {
+        SinkInteraction sinkinteraction = this.interactions.map().get(stack.getItem());
+        return sinkinteraction.interact(state, level, pos, player, hand, stack);
     }
 
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
-    public VoxelShape getInteractionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+    @Override
+    protected VoxelShape getInteractionShape(BlockState state, BlockGetter level, BlockPos pos) {
         return INSIDE;
     }
 
-    public boolean hasAnalogOutputSignal(BlockState blockState) {
+    @Override
+    protected boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 
-    public boolean isPathfindable(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, PathComputationType pathComputationType) {
+    @Override
+    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
         return false;
     }
 
-    public abstract boolean isFull(BlockState blockState);
+    public abstract boolean isFull(BlockState state);
 
-    public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        BlockPos blockPos1 = PointedDripstoneBlock.findStalactiteTipAboveCauldron(serverLevel, blockPos);
-        if (blockPos1 != null) {
-            Fluid fluid = PointedDripstoneBlock.getCauldronFillFluidType(serverLevel, blockPos1);
+    @Override
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        BlockPos blockpos = PointedDripstoneBlock.findStalactiteTipAboveCauldron(level, pos);
+        if (blockpos != null) {
+            Fluid fluid = PointedDripstoneBlock.getCauldronFillFluidType(level, blockpos);
             if (fluid != Fluids.EMPTY && this.canReceiveStalactiteDrip(fluid)) {
-                this.receiveStalactiteDrip(blockState, serverLevel, blockPos, fluid);
+                this.receiveStalactiteDrip(state, level, pos, fluid);
             }
         }
     }
@@ -88,11 +101,22 @@ public abstract class AbstractSinkBlock extends Block {
         return false;
     }
 
-    protected void receiveStalactiteDrip(BlockState blockState, Level level, BlockPos blockPos, Fluid fluid) {  }
-
-    public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
-        return new ItemStack(ModBlocks.SINK.get());
+    protected void receiveStalactiteDrip(BlockState state, Level level, BlockPos pos, Fluid fluid) {
     }
 
+    @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState newState, boolean status) {
+        super.onPlace(state, level, pos, newState, status);
+        if (net.neoforged.neoforge.fluids.CauldronFluidContent.getForBlock(newState.getBlock()) == null) {
+            level.invalidateCapabilities(pos);
+        }
+    }
 
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean status) {
+        super.onRemove(state, level, pos, newState, status);
+        if (net.neoforged.neoforge.fluids.CauldronFluidContent.getForBlock(newState.getBlock()) == null) {
+            level.invalidateCapabilities(pos);
+        }
+    }
 }
