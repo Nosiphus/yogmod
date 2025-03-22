@@ -404,7 +404,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.OVEN.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> CONSOLE = addToTab(ITEMS.register("console",
             () -> new BlockItem(ModBlocks.CONSOLE.get(), new Item.Properties())));
-    //Record Player will go here
+    public static final DeferredItem<BlockItem> RECORD_PLAYER = addToTab(ITEMS.register("record_player",
+            () -> new BlockItem(ModBlocks.RECORD_PLAYER.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> TABLE = addToTab(ITEMS.register("table",
             () -> new BlockItem(ModBlocks.TABLE.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> SINK = addToTab(ITEMS.register("sink",

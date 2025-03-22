@@ -450,7 +450,8 @@ public class ModBlocks {
             () -> new OvenBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)));
     public static final DeferredBlock<Block> CONSOLE = BLOCKS.register("console",
             () -> new NoteBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NOTE_BLOCK)));
-    //Record Player will go here
+    public static final DeferredBlock<Block> RECORD_PLAYER = BLOCKS.register("record_player",
+            () -> new RecordPlayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUKEBOX)));
     public static final DeferredBlock<Block> TABLE = BLOCKS.register("table",
             () -> new TableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
     public static final DeferredBlock<Block> SINK = BLOCKS.register("sink",
