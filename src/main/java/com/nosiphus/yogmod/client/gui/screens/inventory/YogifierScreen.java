@@ -22,7 +22,7 @@ public class YogifierScreen extends ItemCombinerScreen<YogifierMenu> {
 
     public YogifierScreen(YogifierMenu yogifierMenu, Inventory inventory, Component component) {
         super(yogifierMenu, inventory, component, YOGIFIER_LOCATION);
-        this.titleLabelX = 60;
+        this.titleLabelX = 70;
         this.titleLabelY = 18;
     }
 
@@ -32,7 +32,7 @@ public class YogifierScreen extends ItemCombinerScreen<YogifierMenu> {
 
     protected void renderErrorIcon(GuiGraphics guiGraphics, int posX, int posY) {
         if (this.hasRecipeError()) {
-            guiGraphics.blit(YOGIFIER_LOCATION, posX + 99, posY + 45, this.imageWidth, 0, 28, 21);
+            guiGraphics.blit(YOGIFIER_LOCATION, posX + 74, posY + 45, this.imageWidth, 0, 28, 21);
         }
     }
 

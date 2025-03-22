@@ -45,8 +45,8 @@ public class YogifierMenu extends ItemCombinerMenu {
     @Override
     protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
         return ItemCombinerMenuSlotDefinition.create()
-                .withSlot(0, 27, 47, baseStack -> this.recipes.stream().anyMatch(base -> base.value().isBaseIngredient(baseStack)))
-                .withResultSlot(2, 134, 47)
+                .withSlot(0, 45, 47, baseStack -> this.recipes.stream().anyMatch(base -> base.value().isBaseIngredient(baseStack)))
+                .withResultSlot(1, 115, 47)
                 .build();
     }
 
