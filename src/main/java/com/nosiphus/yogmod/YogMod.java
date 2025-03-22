@@ -1,22 +1,26 @@
 package com.nosiphus.yogmod;
 
 import com.mojang.logging.LogUtils;
+import com.nosiphus.yogmod.client.gui.screens.inventory.CrateScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.OvenScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.StorageCrateScreen;
 import com.nosiphus.yogmod.client.gui.screens.inventory.YogifierScreen;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
+import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.ScrubberBotRenderer;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
+import com.nosiphus.yogmod.world.item.CrateBlockItem;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabs;
 import com.nosiphus.yogmod.world.item.ModItems;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeSerializer;
 import com.nosiphus.yogmod.world.item.crafting.ModRecipeType;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
+import com.nosiphus.yogmod.world.level.block.entity.CrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.client.renderer.BiomeColors;
@@ -36,6 +40,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
 
@@ -82,12 +87,26 @@ public class YogMod {
         }
 
         @SubscribeEvent
+        public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+            event.registerItem(CrateBlockItem.CrateRender.INSTANCE, ModBlocks.CRATE.asItem());
+        }
+
+        @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(CrateRenderer.CRATE, CrateRenderer::createSingleBodyLayer);
+            event.registerLayerDefinition(CrateRenderer.DOUBLE_CRATE_LEFT, CrateRenderer::createDoubleBodyLeftLayer);
+            event.registerLayerDefinition(CrateRenderer.DOUBLE_CRATE_RIGHT, CrateRenderer::createDoubleBodyRightLayer);
             event.registerLayerDefinition(ScrubberBotModel.SCRUBBER_BOT, ScrubberBotModel::createBodyLayer);
         }
 
         @SubscribeEvent
         public static void registerMenuScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuType.CRATE_9x1.get(), CrateScreen::new);
+            event.register(ModMenuType.CRATE_9x2.get(), CrateScreen::new);
+            event.register(ModMenuType.CRATE_9x3.get(), CrateScreen::new);
+            event.register(ModMenuType.CRATE_9x4.get(), CrateScreen::new);
+            event.register(ModMenuType.CRATE_9x5.get(), CrateScreen::new);
+            event.register(ModMenuType.CRATE_9x6.get(), CrateScreen::new);
             event.register(ModMenuType.OVEN.get(), OvenScreen::new);
             event.register(ModMenuType.STORAGE_CRATE.get(), StorageCrateScreen::new);
             event.register(ModMenuType.YOGIFIER.get(), YogifierScreen::new);
@@ -111,6 +130,7 @@ public class YogMod {
     }
 
     private static void registerBlockEntityRenderers() {
+        BlockEntityRenderers.register(ModBlockEntityType.CRATE.get(), CrateRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
     }

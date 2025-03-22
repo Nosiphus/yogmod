@@ -1,6 +1,7 @@
 package com.nosiphus.yogmod.world.level.block;
 
 import com.nosiphus.yogmod.core.sink.SinkInteraction;
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.entity.StorageCrateBlockEntity;
 import com.nosiphus.yogmod.world.level.block.piston.MovingPistonBlock;
 import com.nosiphus.yogmod.world.level.block.piston.PistonBaseBlock;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -468,6 +470,14 @@ public class ModBlocks {
             () -> new YogStandingSignBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN), ModWoodType.YOG));
     public static final DeferredBlock<Block> YOG_WALL_SIGN = registerBlockWithoutBlockItem("yog_wall_sign",
             () -> new YogWallSignBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN), ModWoodType.YOG));
+    public static final DeferredBlock<Block> CRATE = BLOCKS.register("crate",
+            () -> new CrateBlock(BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.WOOD)
+                    .strength(2.5F)
+                    .sound(SoundType.WOOD), () -> {
+                return ModBlockEntityType.CRATE.get();
+            }));
 
     //Redstone Blocks
     public static final DeferredBlock<Block> WIRE = BLOCKS.register("wire",
