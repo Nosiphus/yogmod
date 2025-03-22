@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "A": {
+      "tag": "minecraft:wooden_axe"
+    }
+  },
+  "pattern": [
+    "",
+    "S ",
+    " A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "yogmod:pencil"
+  }
+}

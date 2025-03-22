@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "yogmod:iron_plate"
+  },
+  "result": {
+    "count": 1,
+    "id": "yogmod:iron_plate_wall"
+  }
+}

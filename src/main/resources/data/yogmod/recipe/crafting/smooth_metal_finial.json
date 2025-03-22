@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "yogmod:smooth_metal"
+    }
+  },
+  "pattern": [
+    " # ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "yogmod:smooth_metal_finial"
+  }
+}

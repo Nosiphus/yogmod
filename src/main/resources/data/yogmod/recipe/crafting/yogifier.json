@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+	"Q": {
+	  "item": "minecraft:quartz_block"
+	}
+  },
+  "pattern": [
+    "QQ",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "yogmod:yogifier"
+  },
+  "show_notification": false
+}
