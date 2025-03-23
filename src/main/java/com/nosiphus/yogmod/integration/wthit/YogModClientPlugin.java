@@ -8,7 +8,6 @@ import mcp.mobius.waila.api.IWailaClientPlugin;
 import mcp.mobius.waila.api.data.FluidData;
 import mcp.mobius.waila.plugin.vanilla.fluid.LavaDescriptor;
 import mcp.mobius.waila.plugin.vanilla.fluid.WaterDescriptor;
-import mcp.mobius.waila.plugin.vanilla.provider.NoteBlockProvider;
 import net.minecraft.world.level.block.DiodeBlock;
 
 public class YogModClientPlugin implements IWailaClientPlugin {

@@ -1,8 +1,8 @@
 package com.nosiphus.yogmod.world.level.block;
 
 import com.mojang.logging.LogUtils;
-import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.entity.DispenserBlockEntity;
+import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.dispenser.BlockSource;

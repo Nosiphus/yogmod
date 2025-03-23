@@ -1,7 +1,9 @@
 package com.nosiphus.yogmod.integration.wthit;
 
-import com.nosiphus.yogmod.world.level.block.entity.RecordPlayerBlockEntity;
-import mcp.mobius.waila.api.*;
+import mcp.mobius.waila.api.IBlockAccessor;
+import mcp.mobius.waila.api.IBlockComponentProvider;
+import mcp.mobius.waila.api.IPluginConfig;
+import mcp.mobius.waila.api.ITooltip;
 import mcp.mobius.waila.plugin.vanilla.config.Options;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
