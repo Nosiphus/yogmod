@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 public class YogifierRecipe implements Recipe<YogifierRecipeInput> {
 
-    final Ingredient base;
+    public final Ingredient base;
     final ItemStack result;
 
     public YogifierRecipe(Ingredient base, ItemStack result) {
