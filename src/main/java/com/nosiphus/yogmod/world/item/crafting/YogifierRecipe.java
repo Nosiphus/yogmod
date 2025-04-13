@@ -3,7 +3,6 @@ package com.nosiphus.yogmod.world.item.crafting;
 import com.google.gson.JsonObject;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
