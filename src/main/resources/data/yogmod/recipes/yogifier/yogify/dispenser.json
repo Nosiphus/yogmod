@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:dispenser"
   },
-  "addition": {
-    "item": "minecraft:dispenser"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:dispenser"
   }
 }

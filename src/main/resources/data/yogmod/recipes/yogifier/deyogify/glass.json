@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:glass"
   },
-  "addition": {
-    "item": "yogmod:glass"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:glass"
   }
 }

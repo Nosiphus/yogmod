@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:oak_planks"
   },
-  "addition": {
-    "item": "minecraft:oak_planks"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:oak_bricks"
   }
 }

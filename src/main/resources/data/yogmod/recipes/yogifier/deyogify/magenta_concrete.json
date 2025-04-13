@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:stripe"
   },
-  "addition": {
-    "item": "yogmod:stripe"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:magenta_concrete"
   }
 }

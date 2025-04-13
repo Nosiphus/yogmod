@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:bamboo_stairs"
   },
-  "addition": {
-    "item": "minecraft:bamboo_stairs"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:bamboo_brick_stairs"
   }
 }

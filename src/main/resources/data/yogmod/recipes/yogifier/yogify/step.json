@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:smooth_stone"
   },
-  "addition": {
-    "item": "minecraft:smooth_stone"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:step"
   }
 }

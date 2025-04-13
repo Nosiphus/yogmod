@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:suit_pants"
   },
-  "addition": {
-    "item": "yogmod:suit_pants"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:leather_leggings"
   }
 }

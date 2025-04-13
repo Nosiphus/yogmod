@@ -8,9 +8,7 @@ public class YogPlatformHelper implements IYogPlatformHelper {
 
     private final Supplier<YogRecipeHelper> yogRecipeHelper = new LazySupplier(YogRecipeHelper::new);
 
-    public YogPlatformHelper() {
-
-    }
+    public YogPlatformHelper() {}
 
     public YogRecipeHelper getYogRecipeHelper() {
         return (YogRecipeHelper) this.yogRecipeHelper.get();

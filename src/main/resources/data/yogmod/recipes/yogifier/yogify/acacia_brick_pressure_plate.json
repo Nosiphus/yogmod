@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:acacia_pressure_plate"
   },
-  "addition": {
-    "item": "minecraft:acacia_pressure_plate"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:acacia_brick_pressure_plate"
   }
 }

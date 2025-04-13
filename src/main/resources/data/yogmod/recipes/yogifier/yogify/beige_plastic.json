@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:beige_wool"
   },
-  "addition": {
-    "item": "yogmod:beige_wool"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:beige_plastic"
   }
 }

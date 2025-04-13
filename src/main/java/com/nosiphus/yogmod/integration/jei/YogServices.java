@@ -10,8 +10,7 @@ public class YogServices {
     private static final Logger LOGGER = LogManager.getLogger();
     public static final IYogPlatformHelper PLATFORM = (IYogPlatformHelper) load(IYogPlatformHelper.class);
 
-    public YogServices() {
-    }
+    public YogServices() {}
 
     public static <T> T load(Class<T> serviceClass) {
         T loadedService = ServiceLoader.load(serviceClass).findFirst().orElseThrow(() -> {

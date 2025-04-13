@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:netherrack"
   },
-  "addition": {
-    "item": "minecraft:netherrack"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:gray_aztec"
   }
 }

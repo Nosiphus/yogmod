@@ -7,6 +7,4 @@ public interface IYogPlatformRecipeHelper {
 
     Ingredient getYogBase(YogifierRecipe var1);
 
-    Ingredient getYogAddition(YogifierRecipe var1);
-
 }

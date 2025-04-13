@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:deepslate"
   },
-  "addition": {
-    "item": "minecraft:deepslate"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:white_marble"
   }
 }

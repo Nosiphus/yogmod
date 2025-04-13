@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:golden_helmet"
   },
-  "addition": {
-    "item": "minecraft:golden_helmet"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:hard_hat"
   }
 }

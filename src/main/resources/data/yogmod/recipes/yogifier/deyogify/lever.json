@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:classic_lever"
   },
-  "addition": {
-    "item": "yogmod:classic_lever"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:lever"
   }
 }

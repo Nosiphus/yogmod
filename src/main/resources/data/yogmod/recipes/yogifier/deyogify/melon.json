@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:countertop"
   },
-  "addition": {
-    "item": "yogmod:countertop"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:melon"
   }
 }

@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:lantern"
   },
-  "addition": {
-    "item": "yogmod:lantern"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:torch"
   }
 }

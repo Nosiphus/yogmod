@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:oak_fence_gate"
   },
-  "addition": {
-    "item": "minecraft:oak_fence_gate"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:oak_brick_fence_gate"
   }
 }

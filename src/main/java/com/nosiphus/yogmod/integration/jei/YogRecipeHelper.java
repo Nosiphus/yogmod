@@ -5,15 +5,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class YogRecipeHelper implements IYogPlatformRecipeHelper {
 
-    public YogRecipeHelper() {
-    }
+    public YogRecipeHelper() {}
 
     public Ingredient getYogBase(YogifierRecipe recipe) {
         return recipe.base;
-    }
-
-    public Ingredient getYogAddition(YogifierRecipe recipe) {
-        return recipe.addition;
     }
 
 }

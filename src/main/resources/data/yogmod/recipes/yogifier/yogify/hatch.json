@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:oak_trapdoor"
   },
-  "addition": {
-    "item": "minecraft:oak_trapdoor"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:hatch"
   }
 }

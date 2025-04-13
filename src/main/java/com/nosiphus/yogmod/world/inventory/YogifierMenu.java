@@ -41,15 +41,11 @@ public class YogifierMenu extends ItemCombinerMenu {
     }
 
     protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
-        return ItemCombinerMenuSlotDefinition.create().withSlot(0, 27, 47, (itemStack) -> {
+        return ItemCombinerMenuSlotDefinition.create().withSlot(0, 45, 47, (itemStack) -> {
             return this.recipes.stream().anyMatch((yogifierRecipe) -> {
                 return yogifierRecipe.isBaseIngredient(itemStack);
             });
-        }).withSlot(1, 76, 47, (itemStack1) -> {
-            return this.recipes.stream().anyMatch((yogifierRecipe2) -> {
-                return yogifierRecipe2.isAdditionIngredient(itemStack1);
-            });
-        }).withResultSlot(2, 134, 47).build();
+        }).withResultSlot(1, 115, 47).build();
     }
 
     protected boolean isValidBlock(BlockState blockState) {
@@ -64,14 +60,13 @@ public class YogifierMenu extends ItemCombinerMenu {
         itemStack.onCraftedBy(player.level(), player, itemStack.getCount());
         this.resultSlots.awardUsedRecipes(player, this.getRelevantItems());
         this.shrinkStackInSlot(0);
-        this.shrinkStackInSlot(1);
         this.access.execute((level, blockPos) -> {
             level.levelEvent(1044, blockPos, 0);
         });
     }
 
     private List<ItemStack> getRelevantItems() {
-        return List.of(this.inputSlots.getItem(0), this.inputSlots.getItem(1));
+        return List.of(this.inputSlots.getItem(0));
     }
 
     private void shrinkStackInSlot(int index) {
@@ -102,11 +97,7 @@ public class YogifierMenu extends ItemCombinerMenu {
     }
 
     private static Optional<Integer> findSlotMatchingIngredient(YogifierRecipe yogifierRecipe, ItemStack itemStack) {
-        if (yogifierRecipe.isBaseIngredient(itemStack)) {
-            return Optional.of(0);
-        } else {
-            return yogifierRecipe.isAdditionIngredient(itemStack) ? Optional.of(1) : Optional.empty();
-        }
+        return Optional.of(0);
     }
 
     public boolean canTakeItemForPickAll(ItemStack itemStack, Slot slot) {

@@ -3,10 +3,7 @@
   "base": {
     "item": "yogmod:yog_sign"
   },
-  "addition": {
-    "item": "yogmod:spruce_bricks"
-  },
   "result": {
-    "item": "minecraft:spruce_trapdoor"
+    "item": "minecraft:oak_sign"
   }
 }

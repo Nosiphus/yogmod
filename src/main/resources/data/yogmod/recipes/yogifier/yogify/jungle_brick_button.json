@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:jungle_button"
   },
-  "addition": {
-    "item": "minecraft:jungle_button"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:jungle_brick_button"
   }
 }

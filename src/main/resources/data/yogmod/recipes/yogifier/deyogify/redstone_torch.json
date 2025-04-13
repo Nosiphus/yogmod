@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:led"
   },
-  "addition": {
-    "item": "yogmod:led"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:redstone_torch"
   }
 }

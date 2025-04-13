@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:acacia_button"
   },
-  "addition": {
-    "item": "minecraft:acacia_button"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:acacia_brick_button"
   }
 }

@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:diamond_helmet"
   },
-  "addition": {
-    "item": "minecraft:diamond_helmet"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:riot_helmet"
   }
 }

@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:cherry_button"
   },
-  "addition": {
-    "item": "minecraft:cherry_button"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:cherry_brick_button"
   }
 }

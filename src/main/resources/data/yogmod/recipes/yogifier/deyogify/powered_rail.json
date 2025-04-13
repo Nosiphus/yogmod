@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:powered_metrovox_rail"
   },
-  "addition": {
-    "item": "yogmod:powered_metrovox_rail"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:powered_rail"
   }
 }

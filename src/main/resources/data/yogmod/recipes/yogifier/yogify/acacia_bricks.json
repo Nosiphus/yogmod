@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:acacia_planks"
   },
-  "addition": {
-    "item": "minecraft:acacia_planks"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:acacia_bricks"
   }
 }

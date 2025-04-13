@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:bamboo_pressure_plate"
   },
-  "addition": {
-    "item": "minecraft:bamboo_pressure_plate"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:bamboo_brick_pressure_plate"
   }
 }

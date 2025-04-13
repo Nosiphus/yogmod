@@ -3,10 +3,7 @@
   "base": {
     "item": "yogmod:wooden_door"
   },
-  "addition": {
-    "item": "yogmod:birch_bricks"
-  },
   "result": {
-    "item": "minecraft:birch_door"
+    "item": "minecraft:oak_door"
   }
 }

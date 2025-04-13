@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:mechanical"
   },
-  "addition": {
-    "item": "yogmod:mechanical"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:brown_mushroom"
   }
 }

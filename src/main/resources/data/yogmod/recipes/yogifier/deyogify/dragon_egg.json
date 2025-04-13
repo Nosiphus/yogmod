@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:smooth_metal_finial"
   },
-  "addition": {
-    "item": "yogmod:smooth_metal_finial"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:dragon_egg"
   }
 }

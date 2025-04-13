@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:oak_door"
   },
-  "addition": {
-    "item": "minecraft:oak_door"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:wooden_door"
   }
 }

@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:golden_leggings"
   },
-  "addition": {
-    "item": "minecraft:golden_leggings"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:sewer_waders"
   }
 }

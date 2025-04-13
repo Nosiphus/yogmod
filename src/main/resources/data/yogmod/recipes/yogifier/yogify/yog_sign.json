@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:oak_sign"
   },
-  "addition": {
-    "item": "minecraft:oak_sign"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:yog_sign"
   }
 }

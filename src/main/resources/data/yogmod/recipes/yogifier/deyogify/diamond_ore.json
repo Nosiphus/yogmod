@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:corrugated_copper"
   },
-  "addition": {
-    "item": "yogmod:corrugated_copper"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:diamond_ore"
   }
 }

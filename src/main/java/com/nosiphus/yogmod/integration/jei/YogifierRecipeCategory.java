@@ -24,7 +24,7 @@ public class YogifierRecipeCategory implements IRecipeCategory<YogifierRecipe> {
     private final IDrawable icon;
 
     public YogifierRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 26, 46, 125, 18);
+        this.background = helper.createDrawable(TEXTURE, 39, 41, 98, 28);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.YOGIFIER.get()));
     }
 
@@ -54,9 +54,8 @@ public class YogifierRecipeCategory implements IRecipeCategory<YogifierRecipe> {
 
         IYogPlatformRecipeHelper recipeHelper = YogServices.PLATFORM.getYogRecipeHelper();
 
-        builder.addSlot(RecipeIngredientRole.INPUT, 1, 1).addIngredients(recipeHelper.getYogBase(recipe));
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 1).addIngredients(recipeHelper.getYogAddition(recipe));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 1).addItemStack(RecipeUtil.getResultItem(recipe));
+        builder.addSlot(RecipeIngredientRole.INPUT, 6, 6).addIngredients(recipeHelper.getYogBase(recipe));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 76, 6).addItemStack(RecipeUtil.getResultItem(recipe));
 
     }
 

@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:diorite"
   },
-  "addition": {
-    "item": "minecraft:diorite"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:mechanical_chain"
   }
 }

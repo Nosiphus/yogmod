@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:leather_chestplate"
   },
-  "addition": {
-    "item": "minecraft:leather_chestplate"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:suit_jacket"
   }
 }

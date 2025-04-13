@@ -3,11 +3,7 @@
   "base": {
     "item": "yogmod:iron_stack"
   },
-  "addition": {
-    "item": "yogmod:iron_stack"
-  },
   "result": {
-	"count": 2,
     "item": "minecraft:iron_block"
   }
 }

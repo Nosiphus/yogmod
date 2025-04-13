@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:tnt"
   },
-  "addition": {
-    "item": "minecraft:tnt"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:dynamite"
   }
 }

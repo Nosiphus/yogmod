@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:acacia_fence"
   },
-  "addition": {
-    "item": "minecraft:acacia_fence"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:acacia_brick_fence"
   }
 }

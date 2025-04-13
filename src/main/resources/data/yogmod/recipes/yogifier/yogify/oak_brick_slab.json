@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:oak_slab"
   },
-  "addition": {
-    "item": "minecraft:oak_slab"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:oak_brick_slab"
   }
 }

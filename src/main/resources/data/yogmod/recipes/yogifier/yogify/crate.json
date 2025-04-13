@@ -3,11 +3,7 @@
   "base": {
     "item": "minecraft:chest"
   },
-  "addition": {
-    "item": "minecraft:chest"
-  },
   "result": {
-	"count": 2,
     "item": "yogmod:crate"
   }
 }
