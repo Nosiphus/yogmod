@@ -11,6 +11,7 @@ public class ModPaintingVariants {
 
     public static final RegistryObject<PaintingVariant> BIG_SCREEN = PAINTINGS.register("big_screen", () -> new PaintingVariant(64, 64));
     public static final RegistryObject<PaintingVariant> BLUE_CONTROL_PANEL = PAINTINGS.register("blue_control_panel", () -> new PaintingVariant(16, 16));
+    public static final RegistryObject<PaintingVariant> CIRCUITS = PAINTINGS.register("circuits", () -> new PaintingVariant(64, 32));
     public static final RegistryObject<PaintingVariant> CLOCK = PAINTINGS.register("clock", () -> new PaintingVariant(16, 16));
     public static final RegistryObject<PaintingVariant> CONTROL_METER = PAINTINGS.register("control_meter", () -> new PaintingVariant(16, 32));
     public static final RegistryObject<PaintingVariant> CRATE = PAINTINGS.register("crate", () -> new PaintingVariant(32, 32));
