@@ -236,6 +236,7 @@
 	"container.yogmod.storage_crate": "Storage Crate",
 	"container.yogmod.yogifier": "Yogifier",
 
+	"entity.yogmod.dynamite": "Primed Dynamite",
 	"entity.yogmod.scrubber_bot": "Scrubber-Bot",
 
 	"itemGroup.yogmod": "YogMod",
