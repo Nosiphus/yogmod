@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "yogmod:cage",
-	"yogmod:crate"
+    "yogmod:yog_wall_sign"
   ]
 }
