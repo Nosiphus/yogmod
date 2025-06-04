@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "yogmod:sink",
+	"yogmod:water_sink",
+	"yogmod:lava_sink",
+	"yogmod:powder_snow_sink"
+  ]
+}

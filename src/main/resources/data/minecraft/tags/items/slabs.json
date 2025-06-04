@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "yogmod:smooth_metal_slab"
+	"yogmod:asphalt_slab",
+	"yogmod:brick_slab",
+	"yogmod:iron_plate_slab",
+	"yogmod:raw_wood_slab",
+    "yogmod:smooth_metal_slab",
+	"yogmod:step_slab"
   ]
 }

@@ -2,6 +2,7 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.client.gui.screens.inventory.*;
 import com.nosiphus.yogmod.client.model.ScrubberBotModel;
+import com.nosiphus.yogmod.client.renderer.blockentity.CageRenderer;
 import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
@@ -121,6 +122,7 @@ public class YogMod {
     }
 
     private static void registerBlockEntityRenderers() {
+        BlockEntityRenderers.register(ModBlockEntityType.CAGE.get(), CageRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.CRATE.get(), CrateRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);

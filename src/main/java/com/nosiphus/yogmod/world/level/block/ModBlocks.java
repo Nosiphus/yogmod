@@ -536,6 +536,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> DYNAMITE = BLOCKS.register("dynamite",
             () -> new DynamiteBlock(BlockBehaviour.Properties.copy(Blocks.TNT)));
 
+    //Spawn Eggs
+    public static final RegistryObject<Block> CAGE = BLOCKS.register("cage",
+            () -> new CageBlock(BlockBehaviour.Properties.copy(Blocks.SPAWNER)));
+
     //Not in YogTab
     public static final RegistryObject<Block> BEIGE_WOOL = BLOCKS.register("beige_wool",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));

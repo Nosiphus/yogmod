@@ -2,6 +2,7 @@ package com.nosiphus.yogmod.integration.wthit;
 
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
+import com.nosiphus.yogmod.world.level.block.entity.CageBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.RecordPlayerBlockEntity;
 import mcp.mobius.waila.api.IRegistrar;
 import mcp.mobius.waila.api.IWailaPlugin;
@@ -15,6 +16,7 @@ public class WTHITYogModPlugin implements IWailaPlugin {
 
     @Override
     public void register(IRegistrar registrar) {
+        registrar.addComponent(CageProvider.INSTANCE, TooltipPosition.HEAD, CageBlockEntity.class, 950);
         registrar.addComponent(RecordPlayerProvider.INSTANCE, TooltipPosition.BODY, RecordPlayerBlockEntity.class);
         registrar.addBlockData(RecordPlayerProvider.INSTANCE, RecordPlayerBlockEntity.class);
         registrar.addComponent(YogRedstoneProvider.INSTANCE, TooltipPosition.BODY, DiodeBlock.class);
