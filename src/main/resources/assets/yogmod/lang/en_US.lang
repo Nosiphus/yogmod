@@ -1,12 +1,22 @@
-tile.acacia_bricks.name=Acacia Bricks
+itemGroup.YogMod=YogMod
+
+tile.air_vent.name=Air Vent
+tile.asphalt.name=Asphalt
+tile.bricks.acacia.name=Acacia Bricks
+tile.bricks.big_oak.name=Dark Oak Bricks
+tile.bricks.birch.name=Birch Bricks
+tile.bricks.jungle.name=Jungle Bricks
+tile.bricks.oak.name=Oak Bricks
+tile.bricks.spruce.name=Spruce Bricks
+
 tile.acacia_brick_button.name=Acacia Brick Button
 tile.acacia_brick_fence.name=Acacia Brick Fence
 tile.acacia_brick_fence_gate.name=Acacia Brick Fence Gate
 tile.acacia_brick_pressure_plate.name=Acacia Brick Pressure Plate
 tile.acacia_brick_slab.name=Acacia Brick Slab
 tile.acacia_brick_stairs.name=Acacia Brick Stairs
-tile.air_vent.name=Air Vent
-tile.asphalt.name=Asphalt
+
+
 tile.asphalt_slab.name=Asphalt Slab
 tile.asphalt_stairs.name=Asphalt Stairs
 tile.asphalt_wall.name=Asphalt Wall
@@ -237,8 +247,6 @@ container.yogifier.name=Yogifier
 
 entity.dynamite.name=Primed Dynamite
 entity.scrubber_bot.name=Scrubber-Bot
-
-itemGroup.yogmod.name=YogMod
 
 item.beige_dye.name=Beige Dye
 item.coffee.name=Coffee

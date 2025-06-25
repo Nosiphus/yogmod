@@ -1,6 +1,7 @@
 package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.block.ModBlock;
+import com.nosiphus.yogmod.item.ModItem;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -15,6 +16,7 @@ public class YogMod
     public void preInit(FMLPreInitializationEvent event) {
 
         ModBlock.registerBlocks();
+        ModItem.registerItems();
 
     }
 
