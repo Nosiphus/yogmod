@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "yogmod:block/oven_front_on",
-    "side": "yogmod:block/oven_side",
-    "top": "yogmod:block/oven_top"
-  }
-}

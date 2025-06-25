@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:mangrove_brick_button"
-  },
-  "result": {
-    "item": "minecraft:mangrove_button"
-  }
-}

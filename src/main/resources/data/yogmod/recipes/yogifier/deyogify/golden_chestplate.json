@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:safety_vest"
-  },
-  "result": {
-    "item": "minecraft:golden_chestplate"
-  }
-}

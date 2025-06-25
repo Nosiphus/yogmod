@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:lapis_ore"
-  },
-  "result": {
-    "item": "yogmod:limestone_brick"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:orange_wool"
-  },
-  "result": {
-    "item": "yogmod:orange_plastic"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:lit_monitor"
-  },
-  "result": {
-    "item": "minecraft:jack_o_lantern"
-  }
-}

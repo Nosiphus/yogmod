@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "yogmod:block/bricks",
-    "top": "yogmod:block/bricks",
-    "side": "yogmod:block/bricks"
-  }
-}

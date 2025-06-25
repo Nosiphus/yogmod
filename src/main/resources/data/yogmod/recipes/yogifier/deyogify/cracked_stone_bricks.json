@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:concrete_bricks"
-  },
-  "result": {
-    "item": "minecraft:cracked_stone_bricks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:warped_pressure_plate"
-  },
-  "result": {
-    "item": "yogmod:warped_brick_pressure_plate"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:green_carpet"
-  },
-  "result": {
-    "item": "yogmod:green_plastic_carpet"
-  }
-}

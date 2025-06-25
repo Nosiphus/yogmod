@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:led"
-  },
-  "result": {
-    "item": "minecraft:redstone_torch"
-  }
-}

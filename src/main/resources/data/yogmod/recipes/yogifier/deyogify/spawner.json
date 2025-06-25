@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:cage"
-  },
-  "result": {
-    "item": "minecraft:spawner"
-  }
-}

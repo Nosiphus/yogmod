@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:cherry_brick_slab"
-  },
-  "result": {
-    "item": "minecraft:cherry_slab"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:birch_slab"
-  },
-  "result": {
-    "item": "yogmod:birch_brick_slab"
-  }
-}

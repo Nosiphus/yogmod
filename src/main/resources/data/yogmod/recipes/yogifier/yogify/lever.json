@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:lever"
-  },
-  "result": {
-    "item": "yogmod:lever"
-  }
-}

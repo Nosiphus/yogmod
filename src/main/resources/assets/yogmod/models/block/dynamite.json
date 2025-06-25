@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "yogmod:block/dynamite_bottom",
-    "side": "yogmod:block/dynamite_side",
-    "top": "yogmod:block/dynamite_top"
-  }
-}

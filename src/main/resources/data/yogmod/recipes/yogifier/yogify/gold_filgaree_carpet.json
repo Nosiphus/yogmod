@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:yellow_carpet"
-  },
-  "result": {
-    "item": "yogmod:gold_filgaree_carpet"
-  }
-}

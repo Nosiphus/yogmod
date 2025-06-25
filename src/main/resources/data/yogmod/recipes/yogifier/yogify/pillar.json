@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:gold_ore"
-  },
-  "result": {
-    "item": "yogmod:pillar"
-  }
-}

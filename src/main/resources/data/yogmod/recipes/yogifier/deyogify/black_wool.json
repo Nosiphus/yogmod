@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:black_marble"
-  },
-  "result": {
-    "item": "minecraft:black_wool"
-  }
-}

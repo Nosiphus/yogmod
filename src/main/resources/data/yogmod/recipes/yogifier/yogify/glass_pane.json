@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:glass_pane"
-  },
-  "result": {
-    "item": "yogmod:glass_pane"
-  }
-}

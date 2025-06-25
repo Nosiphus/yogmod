@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:carved_pumpkin"
-  },
-  "result": {
-    "item": "yogmod:monitor"
-  }
-}

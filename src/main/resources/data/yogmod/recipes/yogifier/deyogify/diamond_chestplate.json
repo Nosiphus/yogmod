@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:riot_vest"
-  },
-  "result": {
-    "item": "minecraft:diamond_chestplate"
-  }
-}

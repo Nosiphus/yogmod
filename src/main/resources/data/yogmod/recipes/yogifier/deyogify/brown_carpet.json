@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:brown_stucco_carpet"
-  },
-  "result": {
-    "item": "minecraft:brown_carpet"
-  }
-}

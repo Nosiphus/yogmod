@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:pipe_intersection"
-  },
-  "result": {
-    "item": "minecraft:cut_copper"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "yogmod:block/mangrove_bricks",
-    "top": "yogmod:block/mangrove_bricks",
-    "side": "yogmod:block/mangrove_bricks"
-  }
-}

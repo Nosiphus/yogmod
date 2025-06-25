@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:bamboo_brick_slab"
-  },
-  "result": {
-    "item": "minecraft:bamboo_slab"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:smooth_metal_finial"
-  },
-  "result": {
-    "item": "minecraft:dragon_egg"
-  }
-}

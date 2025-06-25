@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:beige_plastic_carpet"
-  },
-  "result": {
-    "item": "yogmod:beige_carpet"
-  }
-}

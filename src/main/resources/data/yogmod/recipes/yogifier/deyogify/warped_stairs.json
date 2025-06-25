@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:warped_brick_stairs"
-  },
-  "result": {
-    "item": "minecraft:warped_stairs"
-  }
-}

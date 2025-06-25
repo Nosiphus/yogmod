@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:mossy_cobblestone_wall"
-  },
-  "result": {
-    "item": "yogmod:iron_plate_wall"
-  }
-}

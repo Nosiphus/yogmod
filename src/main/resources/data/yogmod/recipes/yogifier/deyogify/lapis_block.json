@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:tile_mosaic"
-  },
-  "result": {
-    "item": "minecraft:lapis_block"
-  }
-}

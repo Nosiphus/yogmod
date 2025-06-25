@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:step"
-  },
-  "result": {
-    "item": "minecraft:smooth_stone"
-  }
-}

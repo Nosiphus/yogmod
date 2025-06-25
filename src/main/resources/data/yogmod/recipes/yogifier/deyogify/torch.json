@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:lantern"
-  },
-  "result": {
-    "item": "minecraft:torch"
-  }
-}

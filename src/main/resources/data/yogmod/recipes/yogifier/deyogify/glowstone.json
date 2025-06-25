@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:fluorescent_panel"
-  },
-  "result": {
-    "item": "minecraft:glowstone"
-  }
-}

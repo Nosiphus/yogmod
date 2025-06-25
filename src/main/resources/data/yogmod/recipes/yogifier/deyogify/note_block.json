@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:console"
-  },
-  "result": {
-    "item": "minecraft:note_block"
-  }
-}

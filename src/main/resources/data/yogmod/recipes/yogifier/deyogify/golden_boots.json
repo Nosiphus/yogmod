@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:steeltoe_boots"
-  },
-  "result": {
-    "item": "minecraft:golden_boots"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:record_player"
-  },
-  "result": {
-    "item": "minecraft:jukebox"
-  }
-}

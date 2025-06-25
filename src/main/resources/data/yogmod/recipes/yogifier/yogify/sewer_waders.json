@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:golden_leggings"
-  },
-  "result": {
-    "item": "yogmod:sewer_waders"
-  }
-}

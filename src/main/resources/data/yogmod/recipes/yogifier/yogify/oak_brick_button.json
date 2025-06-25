@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:oak_button"
-  },
-  "result": {
-    "item": "yogmod:oak_brick_button"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:crimson_button"
-  },
-  "result": {
-    "item": "yogmod:crimson_brick_button"
-  }
-}

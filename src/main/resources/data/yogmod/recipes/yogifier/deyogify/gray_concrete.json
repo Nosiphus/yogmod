@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:corrugated_steel"
-  },
-  "result": {
-    "item": "minecraft:gray_concrete"
-  }
-}

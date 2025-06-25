@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:hatch"
-  },
-  "result": {
-    "item": "minecraft:oak_trapdoor"
-  }
-}

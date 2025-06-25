@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:powered_metrovox_rail"
-  },
-  "result": {
-    "item": "minecraft:powered_rail"
-  }
-}

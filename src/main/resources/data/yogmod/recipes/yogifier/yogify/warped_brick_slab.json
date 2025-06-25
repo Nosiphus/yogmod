@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:warped_slab"
-  },
-  "result": {
-    "item": "yogmod:warped_brick_slab"
-  }
-}

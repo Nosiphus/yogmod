@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:pink_carpet"
-  },
-  "result": {
-    "item": "yogmod:pink_stucco_carpet"
-  }
-}

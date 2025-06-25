@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "yogmod:block/spruce_bricks",
-    "top": "yogmod:block/spruce_bricks",
-    "side": "yogmod:block/spruce_bricks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:sunglasses"
-  },
-  "result": {
-    "item": "minecraft:leather_helmet"
-  }
-}

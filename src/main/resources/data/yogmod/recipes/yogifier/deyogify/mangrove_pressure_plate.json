@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:mangrove_brick_pressure_plate"
-  },
-  "result": {
-    "item": "minecraft:mangrove_pressure_plate"
-  }
-}

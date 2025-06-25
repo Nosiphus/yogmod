@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:asphalt"
-  },
-  "result": {
-    "item": "minecraft:cobblestone"
-  }
-}

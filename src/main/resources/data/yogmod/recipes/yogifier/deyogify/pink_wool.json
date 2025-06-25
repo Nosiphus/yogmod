@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:pink_stucco"
-  },
-  "result": {
-    "item": "minecraft:pink_wool"
-  }
-}

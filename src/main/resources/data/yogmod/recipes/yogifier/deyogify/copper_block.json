@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:pipe"
-  },
-  "result": {
-    "item": "minecraft:copper_block"
-  }
-}

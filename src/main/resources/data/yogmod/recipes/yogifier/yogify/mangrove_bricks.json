@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:mangrove_planks"
-  },
-  "result": {
-    "item": "yogmod:mangrove_bricks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:suit_pants"
-  },
-  "result": {
-    "item": "minecraft:leather_leggings"
-  }
-}

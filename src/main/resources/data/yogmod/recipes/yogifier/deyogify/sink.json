@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:sink"
-  },
-  "result": {
-    "item": "minecraft:cauldron"
-  }
-}

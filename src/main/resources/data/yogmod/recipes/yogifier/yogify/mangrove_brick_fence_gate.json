@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:mangrove_fence_gate"
-  },
-  "result": {
-    "item": "yogmod:mangrove_brick_fence_gate"
-  }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/piston_extended",
-    "textures": {
-        "bottom": "yogmod:block/piston_bottom",
-        "side": "yogmod:block/piston_side",
-        "inside": "yogmod:block/piston_inner"
-    }
-}

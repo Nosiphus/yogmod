@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:riot_boots"
-  },
-  "result": {
-    "item": "minecraft:diamond_boots"
-  }
-}

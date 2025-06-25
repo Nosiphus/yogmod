@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:dispenser"
-  },
-  "result": {
-    "item": "minecraft:dispenser"
-  }
-}

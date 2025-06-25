@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:warped_brick_fence_gate"
-  },
-  "result": {
-    "item": "minecraft:warped_fence_gate"
-  }
-}

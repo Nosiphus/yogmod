@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:riot_helmet"
-  },
-  "result": {
-    "item": "minecraft:diamond_helmet"
-  }
-}

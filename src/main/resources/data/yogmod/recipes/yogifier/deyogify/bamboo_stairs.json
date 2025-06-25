@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:bamboo_brick_stairs"
-  },
-  "result": {
-    "item": "minecraft:bamboo_stairs"
-  }
-}

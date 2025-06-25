@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:oven"
-  },
-  "result": {
-    "item": "minecraft:furnace"
-  }
-}

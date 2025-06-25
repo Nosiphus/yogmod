@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "yogmod:bricks"
-  },
-  "result": "yogmod:brick_stairs"
-}

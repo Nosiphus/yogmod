@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:curtains"
-  },
-  "result": {
-    "item": "minecraft:vine"
-  }
-}

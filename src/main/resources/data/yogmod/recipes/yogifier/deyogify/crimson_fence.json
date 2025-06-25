@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:crimson_brick_fence"
-  },
-  "result": {
-    "item": "minecraft:crimson_fence"
-  }
-}

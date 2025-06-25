@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:dynamite"
-  },
-  "result": {
-    "item": "minecraft:tnt"
-  }
-}

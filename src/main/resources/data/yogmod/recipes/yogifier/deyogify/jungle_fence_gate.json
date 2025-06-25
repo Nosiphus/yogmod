@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:jungle_brick_fence_gate"
-  },
-  "result": {
-    "item": "minecraft:jungle_fence_gate"
-  }
-}

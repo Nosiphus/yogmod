@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:crimson_brick_slab"
-  },
-  "result": {
-    "item": "minecraft:crimson_slab"
-  }
-}

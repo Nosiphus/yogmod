@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:diode"
-  },
-  "result": {
-    "item": "minecraft:repeater"
-  }
-}

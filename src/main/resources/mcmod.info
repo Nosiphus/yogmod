@@ -1,0 +1,16 @@
+[
+{
+  "modid": "yogmod",
+  "name": "YogMod",
+  "description": "A mod that adds the VoxelBox Scientific as separate blocks.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Nosiphus"],
+  "credits": "TheVoxelBox, Teutron, cineminecraft",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

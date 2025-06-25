@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:cyan_plastic_carpet"
-  },
-  "result": {
-    "item": "minecraft:cyan_carpet"
-  }
-}

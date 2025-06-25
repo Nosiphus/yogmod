@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "yogmod:block/piston_bottom",
-    "side": "yogmod:block/piston_side",
-    "top": "yogmod:block/piston_top_sticky"
-  }
-}

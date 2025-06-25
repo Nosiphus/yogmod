@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:smooth_metal_wall"
-  },
-  "result": {
-    "item": "minecraft:nether_brick_wall"
-  }
-}

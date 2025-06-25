@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "top": "yogmod:block/monitor_end",
-    "front": "yogmod:block/lit_monitor",
-    "side": "yogmod:block/monitor_side"
-  }
-}

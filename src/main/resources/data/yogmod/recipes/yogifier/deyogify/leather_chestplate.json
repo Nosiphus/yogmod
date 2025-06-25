@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:suit_jacket"
-  },
-  "result": {
-    "item": "minecraft:leather_chestplate"
-  }
-}

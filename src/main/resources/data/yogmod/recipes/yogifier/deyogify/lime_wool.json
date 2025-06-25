@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:lime_plastic"
-  },
-  "result": {
-    "item": "minecraft:lime_wool"
-  }
-}

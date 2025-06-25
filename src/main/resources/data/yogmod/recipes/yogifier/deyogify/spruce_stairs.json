@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:spruce_brick_stairs"
-  },
-  "result": {
-    "item": "minecraft:spruce_stairs"
-  }
-}

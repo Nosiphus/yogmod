@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:blue_paneling"
-  },
-  "result": {
-    "item": "minecraft:diamond_block"
-  }
-}

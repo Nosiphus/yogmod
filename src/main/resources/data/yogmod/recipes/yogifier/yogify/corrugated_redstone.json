@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:redstone_block"
-  },
-  "result": {
-    "item": "yogmod:corrugated_redstone"
-  }
-}

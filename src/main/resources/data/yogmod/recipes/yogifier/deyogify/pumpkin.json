@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:white_lighting"
-  },
-  "result": {
-    "item": "minecraft:pumpkin"
-  }
-}

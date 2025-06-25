@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:crimson_bricks"
-  },
-  "result": {
-    "item": "minecraft:crimson_planks"
-  }
-}

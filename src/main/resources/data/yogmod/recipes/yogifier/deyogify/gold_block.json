@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:linoleum_tile"
-  },
-  "result": {
-    "item": "minecraft:gold_block"
-  }
-}

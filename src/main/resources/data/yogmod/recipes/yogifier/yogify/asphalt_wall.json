@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:cobblestone_wall"
-  },
-  "result": {
-    "item": "yogmod:asphalt_wall"
-  }
-}

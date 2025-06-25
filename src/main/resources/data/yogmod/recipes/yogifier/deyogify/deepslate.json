@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:white_marble"
-  },
-  "result": {
-    "item": "minecraft:deepslate"
-  }
-}

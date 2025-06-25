@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:violet_velvet"
-  },
-  "result": {
-    "item": "minecraft:purple_wool"
-  }
-}

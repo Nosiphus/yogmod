@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:spruce_fence"
-  },
-  "result": {
-    "item": "yogmod:spruce_brick_fence"
-  }
-}

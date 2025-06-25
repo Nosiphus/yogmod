@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:oak_bricks"
-  },
-  "result": {
-    "item": "minecraft:oak_planks"
-  }
-}

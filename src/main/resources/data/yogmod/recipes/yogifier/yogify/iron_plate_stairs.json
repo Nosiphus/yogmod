@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:mossy_cobblestone_stairs"
-  },
-  "result": {
-    "item": "yogmod:iron_plate_stairs"
-  }
-}

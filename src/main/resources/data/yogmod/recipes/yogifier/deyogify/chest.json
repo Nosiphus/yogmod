@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:crate"
-  },
-  "result": {
-    "item": "minecraft:chest"
-  }
-}

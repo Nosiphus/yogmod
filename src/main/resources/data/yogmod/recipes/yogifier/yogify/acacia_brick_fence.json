@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:acacia_fence"
-  },
-  "result": {
-    "item": "yogmod:acacia_brick_fence"
-  }
-}

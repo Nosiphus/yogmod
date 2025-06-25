@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:iron_door"
-  },
-  "result": {
-    "item": "minecraft:iron_door"
-  }
-}

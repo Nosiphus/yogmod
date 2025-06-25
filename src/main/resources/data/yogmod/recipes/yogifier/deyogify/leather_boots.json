@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:spatterdash_shoes"
-  },
-  "result": {
-    "item": "minecraft:leather_boots"
-  }
-}

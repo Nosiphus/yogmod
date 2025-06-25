@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:circuitry"
-  },
-  "result": {
-    "item": "minecraft:redstone_ore"
-  }
-}

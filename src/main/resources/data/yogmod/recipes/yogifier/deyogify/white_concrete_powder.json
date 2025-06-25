@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:thin_stripe"
-  },
-  "result": {
-    "item": "minecraft:white_concrete_powder"
-  }
-}

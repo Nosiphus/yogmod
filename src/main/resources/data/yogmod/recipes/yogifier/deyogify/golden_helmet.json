@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "yogmod:hard_hat"
-  },
-  "result": {
-    "item": "minecraft:golden_helmet"
-  }
-}

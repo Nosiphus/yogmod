@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:cobblestone_stairs"
-  },
-  "result": {
-    "item": "yogmod:asphalt_stairs"
-  }
-}

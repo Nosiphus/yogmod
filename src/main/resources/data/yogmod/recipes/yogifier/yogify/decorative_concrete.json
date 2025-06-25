@@ -1,9 +1,0 @@
-{
-  "type": "yogmod:yogifier",
-  "base": {
-    "item": "minecraft:iron_ore"
-  },
-  "result": {
-    "item": "yogmod:decorative_concrete"
-  }
-}
