@@ -10,4 +10,6 @@ public class YogBlockWood extends BlockWood {
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }
 
+
+
 }

@@ -8,6 +8,7 @@ tile.bricks.birch.name=Birch Bricks
 tile.bricks.jungle.name=Jungle Bricks
 tile.bricks.oak.name=Oak Bricks
 tile.bricks.spruce.name=Spruce Bricks
+tile.white_marble.name=White Marble
 
 tile.acacia_brick_button.name=Acacia Brick Button
 tile.acacia_brick_fence.name=Acacia Brick Fence
@@ -228,7 +229,6 @@ tile.warped_brick_slab.name=Warped Brick Slab
 tile.warped_brick_stairs.name=Warped Brick Stairs
 tile.water_sink.name=Water Sink
 tile.white_lighting.name=White Lighting
-tile.white_marble.name=White Marble
 tile.white_plastic.name=White Plastic
 tile.white_plastic_carpet.name=White Plastic Carpet
 tile.wire.name=Wire
