@@ -89,21 +89,7 @@ public class ModBlock {
     public static BlockWall RAW_WOOD_WALL;
     public static BlockWall SMOOTH_METAL_WALL;
     public static Block BEIGE_PLASTIC_CARPET;
-    public static Block WHITE_PLASTIC_CARPET;
-    public static Block ORANGE_PLASTIC_CARPET;
-    public static Block MAGENTA_PLASTIC_CARPET;
-    public static Block LIGHT_BLUE_PLASTIC_CARPET;
-    public static Block GOLD_FILGAREE_CARPET;
-    public static Block LIME_PLASTIC_CARPET;
-    public static Block PINK_STUCCO_CARPET;
-    public static Block LIGHT_GRAY_STUCCO_CARPET;
-    public static Block CYAN_PLASTIC_CARPET;
-    public static Block VIOLET_VELVET_CARPET;
-    public static Block BLUE_PLASTIC_CARPET;
-    public static Block BROWN_STUCCO_CARPET;
-    public static Block GREEN_PLASTIC_CARPET;
-    public static Block RED_PLASTIC_CARPET;
-    public static Block BLACK_MARBLE_CARPET;
+    public static Block PLASTIC_CARPET;
     //Painting will go here when implemented
     public static Block YOG_SIGN;
 
@@ -154,7 +140,7 @@ public class ModBlock {
         //Building Blocks
         ASPHALT = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("asphalt").setBlockTextureName("yogmod:asphalt");
         GameRegistry.registerBlock(ASPHALT, ASPHALT.getUnlocalizedName().substring(5));
-        WOODEN_BRICKS = new YogWoodBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_bricks").setBlockTextureName("yogmod:wooden_bricks");
+        WOODEN_BRICKS = new YogWoodBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_bricks");
         GameRegistry.registerBlock(WOODEN_BRICKS, ItemYogWoodBlock.class, WOODEN_BRICKS.getUnlocalizedName().substring(5));
         WHITE_MARBLE = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("white_marble").setBlockTextureName("yogmod:white_marble");
         GameRegistry.registerBlock(WHITE_MARBLE, WHITE_MARBLE.getUnlocalizedName().substring(5));
@@ -186,6 +172,8 @@ public class ModBlock {
         GameRegistry.registerBlock(BEIGE_PLASTIC, BEIGE_PLASTIC.getUnlocalizedName().substring(5));
         PLASTIC = new YogColoredBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("plastic");
         GameRegistry.registerBlock(PLASTIC, ItemYogColoredBlock.class, PLASTIC.getUnlocalizedName().substring(5));
+        SHALE = new YogBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("shale").setBlockTextureName("yogmod:shale");
+        GameRegistry.registerBlock(SHALE, SHALE.getUnlocalizedName().substring(5));
 
         //Decorative Blocks
 
