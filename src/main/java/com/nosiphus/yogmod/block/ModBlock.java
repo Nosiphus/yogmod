@@ -1,10 +1,12 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
 import com.nosiphus.yogmod.item.ItemYogColoredBlock;
 import com.nosiphus.yogmod.item.ItemYogWoodBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 
 public class ModBlock {
 
@@ -105,9 +107,10 @@ public class ModBlock {
     public static Block STICKY_PISTON;
     public static Block DISPENSER;
     public static Block CLASSIC_LEVER;
-    public static Block LEVER;
+    public static BlockLever LEVER;
     public static Block DYNAMITE;
     public static Block LAMP;
+    public static Block LIT_LAMP;
     public static BlockNote CONSOLE;
     public static BlockButton WOODEN_BRICK_BUTTON;
     public static BlockPressurePlate WOODEN_BRICK_PRESSURE_PLATE;
@@ -227,8 +230,12 @@ public class ModBlock {
         //LED;
         AIR_VENT = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("air_vent").setBlockTextureName("yogmod:air_vent");
         GameRegistry.registerBlock(AIR_VENT, AIR_VENT.getUnlocalizedName().substring(5));
-        //LEVER;
-        //LAMP;
+        LEVER = (BlockLever) new LeverBlock(Material.wood).setHardness(0.5F).setStepSound(Block.soundTypeWood).setBlockName("lever").setBlockTextureName("yogmod:lever");
+        GameRegistry.registerBlock(LEVER, LEVER.getUnlocalizedName().substring(5));
+        LAMP = new LampBlock(false).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("lamp").setBlockTextureName("yogmod:lamp").setCreativeTab(ModCreativeTabs.YogTab);
+        GameRegistry.registerBlock(LAMP, LAMP.getUnlocalizedName().substring(5));
+        LIT_LAMP = new LampBlock(true).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("lamp_on").setBlockTextureName("yogmod:lamp_on");
+        GameRegistry.registerBlock(LIT_LAMP, LIT_LAMP.getUnlocalizedName().substring(5));
         CONSOLE = (BlockNote) new ConsoleBlock(Material.wood).setHardness(0.8F).setBlockName("console").setBlockTextureName("yogmod:console");
         GameRegistry.registerBlock(CONSOLE, CONSOLE.getUnlocalizedName().substring(5));
         HATCH = (BlockTrapDoor) new HatchBlock(Material.wood).setHardness(3.0F).setStepSound(Block.soundTypeWood).setBlockName("hatch").setBlockTextureName("yogmod:hatch");

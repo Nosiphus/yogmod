@@ -99,6 +99,7 @@ tile.jungle_brick_stairs.name=Jungle Brick Stairs
 tile.jungle_bricks.name=Jungle Bricks
 tile.ladder.name=Ladder (YogMod)
 tile.lamp.name=Lamp
+tile.lamp_on.name=Lamp
 tile.lantern.name=Lantern
 tile.lava_sink.name=Lava Sink
 tile.led.name=LED
