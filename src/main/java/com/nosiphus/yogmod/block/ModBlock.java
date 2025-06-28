@@ -108,7 +108,7 @@ public class ModBlock {
     public static Block LEVER;
     public static Block DYNAMITE;
     public static Block LAMP;
-    public static Block CONSOLE;
+    public static BlockNote CONSOLE;
     public static BlockButton WOODEN_BRICK_BUTTON;
     public static BlockPressurePlate WOODEN_BRICK_PRESSURE_PLATE;
     public static BlockDoor IRON_DOOR;
@@ -229,8 +229,10 @@ public class ModBlock {
         GameRegistry.registerBlock(AIR_VENT, AIR_VENT.getUnlocalizedName().substring(5));
         //LEVER;
         //LAMP;
-        //CONSOLE;
-        //HATCH;
+        CONSOLE = (BlockNote) new ConsoleBlock(Material.wood).setHardness(0.8F).setBlockName("console").setBlockTextureName("yogmod:console");
+        GameRegistry.registerBlock(CONSOLE, CONSOLE.getUnlocalizedName().substring(5));
+        HATCH = (BlockTrapDoor) new HatchBlock(Material.wood).setHardness(3.0F).setStepSound(Block.soundTypeWood).setBlockName("hatch").setBlockTextureName("yogmod:hatch");
+        GameRegistry.registerBlock(HATCH, HATCH.getUnlocalizedName().substring(5));
 
         //Not in YogTab
         BEIGE_CARPET = new YogCarpetBlock(Material.carpet).setHardness(0.1F).setStepSound(Block.soundTypeCloth).setBlockName("beige_carpet").setBlockTextureName("yogmod:beige_wool").setLightOpacity(0);
