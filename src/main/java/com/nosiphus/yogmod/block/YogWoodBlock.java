@@ -39,11 +39,6 @@ public class YogWoodBlock extends YogBlock {
         return world.getBlockMetadata(posX, posY, posZ);
     }
 
-    @Override
-    public int onBlockPlaced(World world, int posX, int posY, int posZ, int side, float hitX, float hitY, float hitZ, int metadata) {
-        return metadata;
-    }
-
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List list) {
         for (int i = 0; i < woodTypes.length; ++i) {

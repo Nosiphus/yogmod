@@ -2,6 +2,7 @@ package com.nosiphus.yogmod.block;
 
 import com.nosiphus.yogmod.item.ItemYogColoredBlock;
 import com.nosiphus.yogmod.item.ItemYogWoodBlock;
+import com.nosiphus.yogmod.item.ItemYogWoodSlabBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -35,6 +36,7 @@ public class ModBlock {
     public static Block STORAGE_CRATE;
     public static Block PIPE;
     public static BlockSlab WOODEN_BRICK_SLAB;
+    public static BlockSlab DOUBLE_WOODEN_BRICK_SLAB;
     public static BlockSlab STEP_SLAB;
     public static BlockSlab ASPHALT_SLAB;
     public static BlockSlab BRICK_SLAB;
@@ -174,6 +176,22 @@ public class ModBlock {
         GameRegistry.registerBlock(PLASTIC, ItemYogColoredBlock.class, PLASTIC.getUnlocalizedName().substring(5));
         SHALE = new YogBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("shale").setBlockTextureName("yogmod:shale");
         GameRegistry.registerBlock(SHALE, SHALE.getUnlocalizedName().substring(5));
+        REINFORCED_PANELING = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("reinforced_paneling").setBlockTextureName("yogmod:reinforced_paneling");
+        GameRegistry.registerBlock(REINFORCED_PANELING, REINFORCED_PANELING.getUnlocalizedName().substring(5));
+        STRIPE = new StripeBlock(Material.rock).setHardness(0.8F).setStepSound(Block.soundTypePiston).setBlockName("stripe");
+        GameRegistry.registerBlock(STRIPE, STRIPE.getUnlocalizedName().substring(5));
+        LINOLEUM_TILE = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("linoleum_tile").setBlockTextureName("yogmod:linoleum_tile");
+        GameRegistry.registerBlock(LINOLEUM_TILE, LINOLEUM_TILE.getUnlocalizedName().substring(5));
+        CORRUGATED_STEEL = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("corrugated_steel").setBlockTextureName("yogmod:corrugated_steel");
+        GameRegistry.registerBlock(CORRUGATED_STEEL, CORRUGATED_STEEL.getUnlocalizedName().substring(5));
+        CLAY_TILE = new YogBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("clay_tile").setBlockTextureName("yogmod:clay_tile");
+        GameRegistry.registerBlock(CLAY_TILE, CLAY_TILE.getUnlocalizedName().substring(5));
+        //Storage Crate
+        PIPE = new PipeBlock(Material.rock).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("pipe");
+        GameRegistry.registerBlock(PIPE, PIPE.getUnlocalizedName().substring(5));
+        //Wooden Slabs
+        
+
 
         //Decorative Blocks
 

@@ -1,10 +1,6 @@
 {
     "pack": {
-        "description": "by Nosiphus - version 1.20.1\n\u00A7c\u00A7nJune 3, 2025",
-        "pack_format": 15,
-		"supported_formats": {
-			"min_inclusive": 15,
-			"max_inclusive": 18
-		}
+        "description": "by Nosiphus - version 1.7.10\n\u00A7c\u00A7nJune 28, 2025",
+        "pack_format": 1,
     }
 }
