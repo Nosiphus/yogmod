@@ -79,7 +79,7 @@ public class ModBlock {
     public static Block MECHANICAL_CHAIN;
     public static Block MECHANICAL_VENT;
     public static BlockPane GLASS_PANE;
-    public static Block CURTAINS;
+    public static BlockVine CURTAINS;
     public static BlockFence SMOOTH_METAL_FENCE;
     public static Block TABLE;
     public static Block FANCY_TABLE;
@@ -220,7 +220,8 @@ public class ModBlock {
         GameRegistry.registerBlock(TECH_ACCENT, TECH_ACCENT.getUnlocalizedName().substring(5));
         LADDER = (BlockLadder) new LadderBlock(Material.wood).setHardness(0.4F).setStepSound(Block.soundTypeLadder).setBlockName("ladder").setBlockTextureName("yogmod:ladder");
         GameRegistry.registerBlock(LADDER, LADDER.getUnlocalizedName().substring(5));
-        //CURTAINS;
+        CURTAINS = (BlockVine) new CurtainsBlock(Material.cloth).setHardness(0.2F).setStepSound(YogBlock.soundTypeCloth).setBlockName("curtains").setBlockTextureName("yogmod:curtains");
+        GameRegistry.registerBlock(CURTAINS, CURTAINS.getUnlocalizedName().substring(5));
 
         //Redstone
         //LED;
