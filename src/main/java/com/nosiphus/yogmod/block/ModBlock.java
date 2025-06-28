@@ -204,7 +204,7 @@ public class ModBlock {
         GameRegistry.registerBlock(STRIPE_INTERSECTION, STRIPE_INTERSECTION.getUnlocalizedName().substring(5));
         PIPE_INTERSECTION = new YogBlock(Material.rock).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("pipe_intersection").setBlockTextureName("yogmod:pipe_end");
         GameRegistry.registerBlock(PIPE_INTERSECTION, PIPE_INTERSECTION.getUnlocalizedName().substring(5));
-        COUNTERTOP = new CountertopBlock(Material.rock).setHardness(1.0F).setStepSound(Block.soundTypeWood).setBlockName("countertop");
+        COUNTERTOP = new CountertopBlock(Material.wood).setHardness(1.0F).setStepSound(Block.soundTypeWood).setBlockName("countertop");
         GameRegistry.registerBlock(COUNTERTOP, COUNTERTOP.getUnlocalizedName().substring(5));
         CONCRETE = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("concrete").setBlockTextureName("yogmod:concrete");
         GameRegistry.registerBlock(CONCRETE, CONCRETE.getUnlocalizedName().substring(5));
@@ -214,10 +214,12 @@ public class ModBlock {
 
 
         //Decorative Blocks
-       LANTERN = new LanternBlock(Material.circuits).setHardness(0.0F).setLightLevel(0.9375F).setStepSound(Block.soundTypeGlass).setBlockName("lantern").setBlockTextureName("yogmod:lantern");
-       GameRegistry.registerBlock(LANTERN, LANTERN.getUnlocalizedName().substring(5));
-        //TECH_ACCENT;
-        //LADDER;
+        LANTERN = new LanternBlock(Material.circuits).setHardness(0.0F).setLightLevel(0.9375F).setStepSound(Block.soundTypeGlass).setBlockName("lantern").setBlockTextureName("yogmod:lantern");
+        GameRegistry.registerBlock(LANTERN, LANTERN.getUnlocalizedName().substring(5));
+        TECH_ACCENT = new YogBlock(Material.wood).setHardness(2.5F).setStepSound(Block.soundTypeWood).setBlockName("tech_accent").setBlockTextureName("yogmod:tech_accent");
+        GameRegistry.registerBlock(TECH_ACCENT, TECH_ACCENT.getUnlocalizedName().substring(5));
+        LADDER = (BlockLadder) new LadderBlock(Material.wood).setHardness(0.4F).setStepSound(Block.soundTypeLadder).setBlockName("ladder").setBlockTextureName("yogmod:ladder");
+        GameRegistry.registerBlock(LADDER, LADDER.getUnlocalizedName().substring(5));
         //CURTAINS;
 
         //Redstone
