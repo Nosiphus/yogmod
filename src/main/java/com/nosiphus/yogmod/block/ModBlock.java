@@ -2,7 +2,6 @@ package com.nosiphus.yogmod.block;
 
 import com.nosiphus.yogmod.item.ItemYogColoredBlock;
 import com.nosiphus.yogmod.item.ItemYogWoodBlock;
-import com.nosiphus.yogmod.item.ItemYogWoodSlabBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -50,7 +49,7 @@ public class ModBlock {
     public static Block MONITOR;
     public static Block LIT_MONITOR;
     public static Block GRAY_AZTEC;
-    public static BlockSoulSand CAUTION_TAPE;
+    public static Block CAUTION_TAPE;
     public static Block FLUORESCENT_PANEL;
     public static Block RAW_WOOD;
     public static Block CONCRETE_BRICKS;
@@ -108,6 +107,7 @@ public class ModBlock {
     public static Block CLASSIC_LEVER;
     public static Block LEVER;
     public static Block DYNAMITE;
+    public static Block LAMP;
     public static Block CONSOLE;
     public static BlockButton WOODEN_BRICK_BUTTON;
     public static BlockPressurePlate WOODEN_BRICK_PRESSURE_PLATE;
@@ -190,14 +190,38 @@ public class ModBlock {
         PIPE = new PipeBlock(Material.rock).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("pipe");
         GameRegistry.registerBlock(PIPE, PIPE.getUnlocalizedName().substring(5));
         //Wooden Slabs
-        
+
+        IRON_PLATE = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_plate").setBlockTextureName("yogmod:iron_plate");
+        GameRegistry.registerBlock(IRON_PLATE, IRON_PLATE.getUnlocalizedName().substring(5));
+
+        CAUTION_TAPE = new CautionTapeBlock(Material.sand).setHardness(0.5F).setStepSound(Block.soundTypeSand).setBlockName("caution_tape").setBlockTextureName("yogmod:caution_tape");
+        GameRegistry.registerBlock(CAUTION_TAPE, CAUTION_TAPE.getUnlocalizedName().substring(5));
+        FLUORESCENT_PANEL = new YogBlock(Material.glass).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setBlockName("fluorescent_panel").setBlockTextureName("yogmod:fluorescent_panel");
+        GameRegistry.registerBlock(FLUORESCENT_PANEL, FLUORESCENT_PANEL.getUnlocalizedName().substring(5));
+
+
+        //STRIPE_INTERSECTION;
+        //PIPE_INTERSECTION;
+        //COUNTERTOP;
+        //CONCRETE;
+        //SMOOTH_METAL;
+
 
 
         //Decorative Blocks
+        //LANTERN;
+        //TECH_ACCENT;
+        //LADDER;
+        //CURTAINS;
 
         //Redstone
+        //LED;
         AIR_VENT = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("air_vent").setBlockTextureName("yogmod:air_vent");
         GameRegistry.registerBlock(AIR_VENT, AIR_VENT.getUnlocalizedName().substring(5));
+        //LEVER;
+        //LAMP;
+        //CONSOLE;
+        //HATCH;
 
         //Not in YogTab
         BEIGE_CARPET = new YogCarpetBlock(Material.carpet).setHardness(0.1F).setStepSound(Block.soundTypeCloth).setBlockName("beige_carpet").setBlockTextureName("yogmod:beige_wool").setLightOpacity(0);

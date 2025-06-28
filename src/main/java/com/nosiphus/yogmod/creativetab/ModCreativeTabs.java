@@ -10,7 +10,7 @@ public class ModCreativeTabs {
     public static CreativeTabs YogTab = new CreativeTabs("YogMod") {
         @Override
         public Item getTabIconItem() {
-            return new ItemStack(ModBlock.AIR_VENT).getItem();
+            return new ItemStack(ModBlock.FLUORESCENT_PANEL).getItem();
         }
     };
 
