@@ -200,11 +200,16 @@ public class ModBlock {
         GameRegistry.registerBlock(FLUORESCENT_PANEL, FLUORESCENT_PANEL.getUnlocalizedName().substring(5));
 
 
-        //STRIPE_INTERSECTION;
-        //PIPE_INTERSECTION;
-        //COUNTERTOP;
-        //CONCRETE;
-        //SMOOTH_METAL;
+        STRIPE_INTERSECTION = new YogBlock(Material.rock).setHardness(0.8F).setStepSound(Block.soundTypePiston).setBlockName("stripe_intersection").setBlockTextureName("yogmod:stripe_end");
+        GameRegistry.registerBlock(STRIPE_INTERSECTION, STRIPE_INTERSECTION.getUnlocalizedName().substring(5));
+        PIPE_INTERSECTION = new YogBlock(Material.rock).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("pipe_intersection").setBlockTextureName("yogmod:pipe_end");
+        GameRegistry.registerBlock(PIPE_INTERSECTION, PIPE_INTERSECTION.getUnlocalizedName().substring(5));
+        COUNTERTOP = new CountertopBlock(Material.rock).setHardness(1.0F).setStepSound(Block.soundTypeWood).setBlockName("countertop");
+        GameRegistry.registerBlock(COUNTERTOP, COUNTERTOP.getUnlocalizedName().substring(5));
+        CONCRETE = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("concrete").setBlockTextureName("yogmod:concrete");
+        GameRegistry.registerBlock(CONCRETE, CONCRETE.getUnlocalizedName().substring(5));
+        SMOOTH_METAL = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("smooth_metal").setBlockTextureName("yogmod:smooth_metal");
+        GameRegistry.registerBlock(SMOOTH_METAL, SMOOTH_METAL.getUnlocalizedName().substring(5));
 
 
 
