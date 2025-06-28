@@ -23,6 +23,6 @@ public class ItemYogWoodBlock extends ItemBlock {
         if (i < 0 || i >= YogWoodBlock.woodTypes.length) {
             i = 0;
         }
-        return super.getUnlocalizedName() + "." + YogWoodBlock.woodTypes[i];
+        return "tile." + YogWoodBlock.woodTypes[i] + "_bricks";
     }
 }

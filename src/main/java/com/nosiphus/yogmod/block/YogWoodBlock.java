@@ -14,7 +14,7 @@ import java.util.List;
 
 public class YogWoodBlock extends YogBlock {
 
-    public static final String[] woodTypes = new String[]{"oak", "spruce", "birch", "jungle", "acacia", "big_oak"};
+    public static final String[] woodTypes = new String[]{"oak", "spruce", "birch", "jungle", "acacia", "dark_oak"};
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
@@ -56,7 +56,7 @@ public class YogWoodBlock extends YogBlock {
         this.icons = new IIcon[woodTypes.length];
 
         for (int i = 0; i < this.icons.length; ++i) {
-            this.icons[i] = register.registerIcon(this.getTextureName() + "_" + woodTypes[i]);
+            this.icons[i] = register.registerIcon("yogmod:" + woodTypes[i] + "_bricks");
         }
 
 
