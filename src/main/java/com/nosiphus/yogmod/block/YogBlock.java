@@ -4,10 +4,10 @@ import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class YogBlockStone extends Block {
+public class YogBlock extends Block {
 
-    public YogBlockStone() {
-        super(Material.rock);
+    public YogBlock(Material material) {
+        super(material);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }
 
