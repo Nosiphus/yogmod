@@ -214,7 +214,8 @@ public class ModBlock {
 
 
         //Decorative Blocks
-        //LANTERN;
+       LANTERN = new LanternBlock(Material.circuits).setHardness(0.0F).setLightLevel(0.9375F).setStepSound(Block.soundTypeGlass).setBlockName("lantern").setBlockTextureName("yogmod:lantern");
+       GameRegistry.registerBlock(LANTERN, LANTERN.getUnlocalizedName().substring(5));
         //TECH_ACCENT;
         //LADDER;
         //CURTAINS;
