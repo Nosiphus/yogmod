@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.item.ItemYogWoodBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -8,12 +9,7 @@ public class ModBlock {
 
     //Building Blocks
     public static Block ASPHALT;
-    public static Block OAK_BRICKS;
-    public static Block SPRUCE_BRICKS;
-    public static Block BIRCH_BRICKS;
-    public static Block JUNGLE_BRICKS;
-    public static Block ACACIA_BRICKS;
-    public static Block DARK_OAK_BRICKS;
+    public static Block WOODEN_BRICKS;
     public static Block WHITE_MARBLE;
     public static Block DARK_STONE_BRICKS;
     public static Block DECORATIVE_CONCRETE;
@@ -51,12 +47,7 @@ public class ModBlock {
     public static Block CLAY_TILE;
     public static Block STORAGE_CRATE;
     public static Block PIPE;
-    public static BlockSlab OAK_BRICK_SLAB;
-    public static BlockSlab SPRUCE_BRICK_SLAB;
-    public static BlockSlab BIRCH_BRICK_SLAB;
-    public static BlockSlab JUNGLE_BRICK_SLAB;
-    public static BlockSlab ACACIA_BRICK_SLAB;
-    public static BlockSlab DARK_OAK_BRICK_SLAB;
+    public static BlockSlab WOODEN_BRICK_SLAB;
     public static BlockSlab STEP_SLAB;
     public static BlockSlab ASPHALT_SLAB;
     public static BlockSlab BRICK_SLAB;
@@ -83,12 +74,7 @@ public class ModBlock {
     public static Block SMOOTH_METAL;
     public static BlockStairs SMOOTH_METAL_STAIRS;
     public static Block GREEN_TILES;
-    public static BlockStairs OAK_BRICK_STAIRS;
-    public static BlockStairs SPRUCE_BRICK_STAIRS;
-    public static BlockStairs BIRCH_BRICK_STAIRS;
-    public static BlockStairs JUNGLE_BRICK_STAIRS;
-    public static BlockStairs ACACIA_BRICK_STAIRS;
-    public static BlockStairs DARK_OAK_BRICK_STAIRS;
+    public static BlockStairs WOODEN_BRICK_STAIRS;
     public static BlockStairs IRON_PLATE_STAIRS;
     public static BlockSlab IRON_PLATE_SLAB;
 
@@ -100,12 +86,7 @@ public class ModBlock {
     public static Block OVEN;
     public static BlockLadder LADDER;
     public static Block RECORD_PLAYER;
-    public static BlockFence OAK_BRICK_FENCE;
-    public static BlockFence SPRUCE_BRICK_FENCE;
-    public static BlockFence BIRCH_BRICK_FENCE;
-    public static BlockFence JUNGLE_BRICK_FENCE;
-    public static BlockFence ACACIA_BRICK_FENCE;
-    public static BlockFence DARK_OAK_BRICK_FENCE;
+    public static BlockFence WOODEN_BRICK_FENCE;
     public static Block SPOTLIGHT;
     public static Block MECHANICAL_CHAIN;
     public static Block MECHANICAL_VENT;
@@ -153,27 +134,12 @@ public class ModBlock {
     public static Block LEVER;
     public static Block DYNAMITE;
     public static Block CONSOLE;
-    public static BlockButton OAK_BRICK_BUTTON;
-    public static BlockButton SPRUCE_BRICK_BUTTON;
-    public static BlockButton BIRCH_BRICK_BUTTON;
-    public static BlockButton JUNGLE_BRICK_BUTTON;
-    public static BlockButton ACACIA_BRICK_BUTTON;
-    public static BlockButton DARK_OAK_BRICK_BUTTON;
-    public static BlockPressurePlate OAK_BRICK_PRESSURE_PLATE;
-    public static BlockPressurePlate SPRUCE_BRICK_PRESSURE_PLATE;
-    public static BlockPressurePlate BIRCH_BRICK_PRESSURE_PLATE;
-    public static BlockPressurePlate JUNGLE_BRICK_PRESSURE_PLATE;
-    public static BlockPressurePlate ACACIA_BRICK_PRESSURE_PLATE;
-    public static BlockPressurePlate DARK_OAK_BRICK_PRESSURE_PLATE;
+    public static BlockButton WOODEN_BRICK_BUTTON;
+    public static BlockPressurePlate WOODEN_BRICK_PRESSURE_PLATE;
     public static BlockDoor IRON_DOOR;
     public static BlockDoor WOODEN_DOOR;
     public static BlockTrapDoor HATCH;
-    public static BlockFenceGate OAK_BRICK_FENCE_GATE;
-    public static BlockFenceGate SPRUCE_BRICK_FENCE_GATE;
-    public static BlockFenceGate BIRCH_BRICK_FENCE_GATE;
-    public static BlockFenceGate JUNGLE_BRICK_FENCE_GATE;
-    public static BlockFenceGate ACACIA_BRICK_FENCE_GATE;
-    public static BlockFenceGate DARK_OAK_BRICK_FENCE_GATE;
+    public static BlockFenceGate WOODEN_BRICK_FENCE_GATE;
 
     //Transportation
     public static BlockRailPowered POWERED_METROVOX_RAIL;
@@ -201,18 +167,8 @@ public class ModBlock {
         //Building Blocks
         ASPHALT = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("asphalt").setBlockTextureName("yogmod:asphalt");
         GameRegistry.registerBlock(ASPHALT, ASPHALT.getUnlocalizedName().substring(5));
-        OAK_BRICKS = new YogBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("oak_bricks").setBlockTextureName("yogmod:oak_bricks");
-        GameRegistry.registerBlock(OAK_BRICKS, OAK_BRICKS.getUnlocalizedName().substring(5));
-        SPRUCE_BRICKS = new YogBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("spruce_bricks").setBlockTextureName("yogmod:spruce_bricks");
-        GameRegistry.registerBlock(SPRUCE_BRICKS, SPRUCE_BRICKS.getUnlocalizedName().substring(5));
-        BIRCH_BRICKS = new YogBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("birch_bricks").setBlockTextureName("yogmod:birch_bricks");
-        GameRegistry.registerBlock(BIRCH_BRICKS, BIRCH_BRICKS.getUnlocalizedName().substring(5));
-        JUNGLE_BRICKS = new YogBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("jungle_bricks").setBlockTextureName("yogmod:jungle_bricks");
-        GameRegistry.registerBlock(JUNGLE_BRICKS, JUNGLE_BRICKS.getUnlocalizedName().substring(5));
-        ACACIA_BRICKS = new YogBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("acacia_bricks").setBlockTextureName("yogmod:acacia_bricks");
-        GameRegistry.registerBlock(ACACIA_BRICKS, ACACIA_BRICKS.getUnlocalizedName().substring(5));
-        DARK_OAK_BRICKS = new YogBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("dark_oak_bricks").setBlockTextureName("yogmod:dark_oak_bricks");
-        GameRegistry.registerBlock(DARK_OAK_BRICKS, DARK_OAK_BRICKS.getUnlocalizedName().substring(5));
+        WOODEN_BRICKS = new YogWoodBlock(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_bricks").setBlockTextureName("yogmod:wooden_bricks");
+        GameRegistry.registerBlock(WOODEN_BRICKS, ItemYogWoodBlock.class, WOODEN_BRICKS.getUnlocalizedName().substring(5));
         WHITE_MARBLE = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("white_marble").setBlockTextureName("yogmod:white_marble");
         GameRegistry.registerBlock(WHITE_MARBLE, WHITE_MARBLE.getUnlocalizedName().substring(5));
         DARK_STONE_BRICKS = new YogBlock(Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypePiston).setBlockName("dark_stone_bricks").setBlockTextureName("yogmod:dark_stone_bricks");
