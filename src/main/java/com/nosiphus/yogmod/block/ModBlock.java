@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.item.ItemYogColoredBlock;
 import com.nosiphus.yogmod.item.ItemYogWoodBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.*;
@@ -24,21 +25,7 @@ public class ModBlock {
     public static BlockGlass GLASS;
     public static Block TILE_MOSAIC;
     public static Block BEIGE_PLASTIC;
-    public static Block WHITE_PLASTIC;
-    public static Block ORANGE_PLASTIC;
-    public static Block MAGENTA_PLASTIC;
-    public static Block LIGHT_BLUE_PLASTIC;
-    public static Block GOLD_FILGAREE;
-    public static Block LIME_PLASTIC;
-    public static Block PINK_STUCCO;
-    public static Block LIGHT_GRAY_STUCCO;
-    public static Block CYAN_PLASTIC;
-    public static Block VIOLET_VELVET;
-    public static Block BLUE_PLASTIC;
-    public static Block BROWN_STUCCO;
-    public static Block GREEN_PLASTIC;
-    public static Block RED_PLASTIC;
-    public static Block BLACK_MARBLE;
+    public static Block PLASTIC;
     public static Block SHALE;
     public static Block REINFORCED_PANELING;
     public static Block STRIPE;
@@ -179,6 +166,26 @@ public class ModBlock {
         GameRegistry.registerBlock(PILLAR, PILLAR.getUnlocalizedName().substring(5));
         CIRCUITRY = new YogBlock(Material.rock).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("circuitry").setBlockTextureName("yogmod:circuitry");
         GameRegistry.registerBlock(CIRCUITRY, CIRCUITRY.getUnlocalizedName().substring(5));
+        LIMESTONE_BRICK = new YogBlock(Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypePiston).setBlockName("limestone_brick").setBlockTextureName("yogmod:limestone_brick");
+        GameRegistry.registerBlock(LIMESTONE_BRICK, LIMESTONE_BRICK.getUnlocalizedName().substring(5));
+        CORRUGATED_COPPER = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("corrugated_copper").setBlockTextureName("yogmod:corrugated_copper");
+        GameRegistry.registerBlock(CORRUGATED_COPPER, CORRUGATED_COPPER.getUnlocalizedName().substring(5));
+        IRON_STACK = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_stack").setBlockTextureName("yogmod:iron_stack");
+        GameRegistry.registerBlock(IRON_STACK, IRON_STACK.getUnlocalizedName().substring(5));
+        RIVETED_STEEL = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("riveted_steel").setBlockTextureName("yogmod:riveted_steel");
+        GameRegistry.registerBlock(RIVETED_STEEL, RIVETED_STEEL.getUnlocalizedName().substring(5));
+        RUSTY_IRON = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("rusty_iron").setBlockTextureName("yogmod:rusty_iron");
+        GameRegistry.registerBlock(RUSTY_IRON, RUSTY_IRON.getUnlocalizedName().substring(5));
+        BLUE_PANELING = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("blue_paneling").setBlockTextureName("yogmod:blue_paneling");
+        GameRegistry.registerBlock(BLUE_PANELING, BLUE_PANELING.getUnlocalizedName().substring(5));
+        GLASS = (BlockGlass) new YogGlassBlock(Material.glass).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("glass").setBlockTextureName("yogmod:glass");
+        GameRegistry.registerBlock(GLASS, GLASS.getUnlocalizedName().substring(5));
+        TILE_MOSAIC = new YogBlock(Material.rock).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundTypePiston).setBlockName("tile_mosaic").setBlockTextureName("yogmod:tile_mosaic");
+        GameRegistry.registerBlock(TILE_MOSAIC, TILE_MOSAIC.getUnlocalizedName().substring(5));
+        BEIGE_PLASTIC = new YogBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("beige_plastic").setBlockTextureName("yogmod:beige_plastic");
+        GameRegistry.registerBlock(BEIGE_PLASTIC, BEIGE_PLASTIC.getUnlocalizedName().substring(5));
+        PLASTIC = new YogColoredBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("plastic");
+        GameRegistry.registerBlock(PLASTIC, ItemYogColoredBlock.class, PLASTIC.getUnlocalizedName().substring(5));
 
         //Decorative Blocks
 
