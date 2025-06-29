@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.item;
 
+import com.nosiphus.yogmod.block.YogWoodSlabBlock;
 import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
