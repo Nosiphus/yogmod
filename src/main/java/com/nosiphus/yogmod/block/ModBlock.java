@@ -50,6 +50,7 @@ public class ModBlock {
     public static Block IRON_PLATE;
     public static BlockStairs ASPHALT_STAIRS;
     public static Block WHITE_LIGHTING;
+    public static Block THIN_STRIPE;
     public static Block MONITOR;
     public static Block LIT_MONITOR;
     public static Block GRAY_AZTEC;
@@ -200,11 +201,14 @@ public class ModBlock {
         IRON_PLATE = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_plate").setBlockTextureName("yogmod:iron_plate");
         GameRegistry.registerBlock(IRON_PLATE, IRON_PLATE.getUnlocalizedName().substring(5));
 
+        THIN_STRIPE = new YogBlock(Material.cloth).setHardness(0.2F).setStepSound(Block.soundTypeSnow).setBlockName("thin_stripe").setBlockTextureName("yogmod:thin_stripe");
+        GameRegistry.registerBlock(THIN_STRIPE, THIN_STRIPE.getUnlocalizedName().substring(5));
         CAUTION_TAPE = new CautionTapeBlock(Material.sand).setHardness(0.5F).setStepSound(Block.soundTypeSand).setBlockName("caution_tape").setBlockTextureName("yogmod:caution_tape");
         GameRegistry.registerBlock(CAUTION_TAPE, CAUTION_TAPE.getUnlocalizedName().substring(5));
         FLUORESCENT_PANEL = new YogBlock(Material.glass).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setBlockName("fluorescent_panel").setBlockTextureName("yogmod:fluorescent_panel");
         GameRegistry.registerBlock(FLUORESCENT_PANEL, FLUORESCENT_PANEL.getUnlocalizedName().substring(5));
-
+        CONCRETE_BRICKS = new YogBlock(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("concrete_bricks").setBlockTextureName("yogmod:concrete_bricks");
+        GameRegistry.registerBlock(CONCRETE_BRICKS, CONCRETE_BRICKS.getUnlocalizedName().substring(5));
 
         STRIPE_INTERSECTION = new YogBlock(Material.rock).setHardness(0.8F).setStepSound(Block.soundTypePiston).setBlockName("stripe_intersection").setBlockTextureName("yogmod:stripe_end");
         GameRegistry.registerBlock(STRIPE_INTERSECTION, STRIPE_INTERSECTION.getUnlocalizedName().substring(5));

@@ -1,11 +1,14 @@
 package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.block.ModBlock;
+import com.nosiphus.yogmod.converter.NCBConverter;
 import com.nosiphus.yogmod.item.ModItem;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = YogMod.MODID, version = YogMod.VERSION)
 public class YogMod
@@ -23,6 +26,7 @@ public class YogMod
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new NCBConverter());
         if (event.getSide().isClient()) {
             ModBlock.registerRenderers();
         }
