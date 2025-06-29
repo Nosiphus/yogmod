@@ -1,8 +1,0 @@
-{
-    "parent": "block/template_glass_pane_side",
-	"render_type": "translucent",
-    "textures": {
-        "edge": "yogmod:block/beige_stained_glass",
-        "pane": "yogmod:block/beige_stained_glass"
-    }
-}
