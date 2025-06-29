@@ -1,6 +1,5 @@
 package com.nosiphus.yogmod.client.renderer;
 
-import com.nosiphus.yogmod.block.LeverBlock;
 import com.nosiphus.yogmod.block.ModBlock;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -10,7 +9,6 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
-import org.lwjgl.opengl.GL11;
 
 public class LeverRenderer implements ISimpleBlockRenderingHandler {
 
@@ -27,7 +25,7 @@ public class LeverRenderer implements ISimpleBlockRenderingHandler {
 
     @Override
     public boolean renderWorldBlock(IBlockAccess world, int posX, int posY, int posZ, Block block, int modelId, RenderBlocks renderer) {
-        if (modelId == renderId && block == ModBlock.LEVER) {
+        if (modelId == renderId && block == ModBlock.LEVER || block == ModBlock.CLASSIC_LEVER) {
             int l = world.getBlockMetadata(posX, posY, posZ);
             int i1 = l & 7;
             boolean flag = (l & 8) > 0;

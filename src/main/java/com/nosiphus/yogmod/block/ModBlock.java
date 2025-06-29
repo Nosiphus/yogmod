@@ -108,7 +108,7 @@ public class ModBlock {
     public static Block PISTON_HEAD;
     public static Block STICKY_PISTON;
     public static Block DISPENSER;
-    public static Block CLASSIC_LEVER;
+    public static BlockLever CLASSIC_LEVER;
     public static BlockLever LEVER;
     public static Block DYNAMITE;
     public static Block LAMP;
@@ -232,6 +232,8 @@ public class ModBlock {
         //LED;
         AIR_VENT = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("air_vent").setBlockTextureName("yogmod:air_vent");
         GameRegistry.registerBlock(AIR_VENT, AIR_VENT.getUnlocalizedName().substring(5));
+        CLASSIC_LEVER = (BlockLever) new LeverBlock(Material.wood).setHardness(0.5F).setStepSound(Block.soundTypeWood).setBlockName("classic_lever").setBlockTextureName("yogmod:classic_lever");
+        GameRegistry.registerBlock(CLASSIC_LEVER, CLASSIC_LEVER.getUnlocalizedName().substring(5));
         LEVER = (BlockLever) new LeverBlock(Material.wood).setHardness(0.5F).setStepSound(Block.soundTypeWood).setBlockName("lever").setBlockTextureName("yogmod:lever");
         GameRegistry.registerBlock(LEVER, LEVER.getUnlocalizedName().substring(5));
         LAMP = new LampBlock(false).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("lamp").setBlockTextureName("yogmod:lamp").setCreativeTab(ModCreativeTabs.YogTab);
