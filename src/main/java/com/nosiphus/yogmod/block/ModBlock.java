@@ -101,6 +101,7 @@ public class ModBlock {
     //Redstone
     public static Block WIRE;
     public static Block LED;
+    public static Block LED_ON;
     public static Block DIODE;
     public static Block AIR_VENT;
     public static Block MOVING_PISTON;
@@ -219,7 +220,7 @@ public class ModBlock {
 
 
         //Decorative Blocks
-        LANTERN = new LanternBlock(Material.circuits).setHardness(0.0F).setLightLevel(0.9375F).setStepSound(Block.soundTypeGlass).setBlockName("lantern").setBlockTextureName("yogmod:lantern");
+        LANTERN = new LanternBlock().setHardness(0.0F).setLightLevel(0.9375F).setStepSound(Block.soundTypeGlass).setBlockName("lantern").setBlockTextureName("yogmod:lantern");
         GameRegistry.registerBlock(LANTERN, LANTERN.getUnlocalizedName().substring(5));
         TECH_ACCENT = new YogBlock(Material.wood).setHardness(2.5F).setStepSound(Block.soundTypeWood).setBlockName("tech_accent").setBlockTextureName("yogmod:tech_accent");
         GameRegistry.registerBlock(TECH_ACCENT, TECH_ACCENT.getUnlocalizedName().substring(5));
@@ -229,7 +230,10 @@ public class ModBlock {
         GameRegistry.registerBlock(CURTAINS, CURTAINS.getUnlocalizedName().substring(5));
 
         //Redstone
-        //LED;
+        LED = new LEDBlock(false).setHardness(0.0F).setHardness(0.0F).setStepSound(Block.soundTypeGlass).setBlockName("led").setBlockTextureName("yogmod:led");
+        GameRegistry.registerBlock(LED, LED.getUnlocalizedName().substring(5));
+        LED_ON = new LEDBlock(true).setHardness(0.0F).setHardness(0.0F).setLightLevel(0.5F).setStepSound(Block.soundTypeGlass).setBlockName("led_on").setBlockTextureName("yogmod:led_on").setCreativeTab(ModCreativeTabs.YogTab);
+        GameRegistry.registerBlock(LED_ON, LED_ON.getUnlocalizedName().substring(5));
         AIR_VENT = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("air_vent").setBlockTextureName("yogmod:air_vent");
         GameRegistry.registerBlock(AIR_VENT, AIR_VENT.getUnlocalizedName().substring(5));
         CLASSIC_LEVER = (BlockLever) new LeverBlock(Material.wood).setHardness(0.5F).setStepSound(Block.soundTypeWood).setBlockName("classic_lever").setBlockTextureName("yogmod:classic_lever");

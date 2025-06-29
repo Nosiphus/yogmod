@@ -15,8 +15,8 @@ import static net.minecraftforge.common.util.ForgeDirection.NORTH;
 
 public class LanternBlock extends Block {
 
-    public LanternBlock(Material material) {
-        super(material);
+    public LanternBlock() {
+        super(Material.circuits);
         this.setTickRandomly(true);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }
@@ -127,17 +127,17 @@ public class LanternBlock extends Block {
             }
         }
 
-        this.shouldRemove(world, posX, posY, posZ);
+        this.checkForDrop(world, posX, posY, posZ);
     }
 
     public void onNeighborBlockChange(World world, int posX, int posY, int posZ, Block block)
     {
-        this.canRemoveBlock(world, posX, posY, posZ, block);
+        this.isValidSupport(world, posX, posY, posZ, block);
     }
 
-    protected boolean canRemoveBlock(World world, int posX, int posY, int posZ, Block block)
+    protected boolean isValidSupport(World world, int posX, int posY, int posZ, Block block)
     {
-        if (this.shouldRemove(world, posX, posY, posZ))
+        if (this.checkForDrop(world, posX, posY, posZ))
         {
             int l = world.getBlockMetadata(posX, posY, posZ);
             boolean flag = false;
@@ -184,7 +184,7 @@ public class LanternBlock extends Block {
         }
     }
 
-    protected boolean shouldRemove(World world, int posX, int posY, int posZ)
+    protected boolean checkForDrop(World world, int posX, int posY, int posZ)
     {
         if (!this.canPlaceBlockAt(world, posX, posY, posZ))
         {
