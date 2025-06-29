@@ -1,7 +1,6 @@
 package com.nosiphus.yogmod.item;
 
 import com.nosiphus.yogmod.block.YogColoredBlock;
-import com.nosiphus.yogmod.block.YogWoodBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

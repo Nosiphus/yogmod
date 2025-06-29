@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 import static net.minecraftforge.common.util.ForgeDirection.*;
-import static net.minecraftforge.common.util.ForgeDirection.NORTH;
 
 public class LanternBlock extends Block {
 
