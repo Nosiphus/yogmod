@@ -133,6 +133,27 @@ public class NCBConverter {
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsVioletVelvet", 0), new BlockConversionValue(ModBlock.PLASTIC, 10));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsWhiteMarble", 0), new BlockConversionValue(ModBlock.WHITE_MARBLE, 0));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsWhitePlastic", 0), new BlockConversionValue(ModBlock.PLASTIC, 0));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:glass", 0), new BlockConversionValue(ModBlock.GLASS, 0));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:ladder", 2), new BlockConversionValue(ModBlock.LADDER, 2));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:ladder", 3), new BlockConversionValue(ModBlock.LADDER, 3));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:ladder", 4), new BlockConversionValue(ModBlock.LADDER, 4));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:ladder", 5), new BlockConversionValue(ModBlock.LADDER, 5));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 0), new BlockConversionValue(ModBlock.LEVER, 0));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 1), new BlockConversionValue(ModBlock.LEVER, 1));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 2), new BlockConversionValue(ModBlock.LEVER, 2));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 3), new BlockConversionValue(ModBlock.LEVER, 3));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 4), new BlockConversionValue(ModBlock.LEVER, 4));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 5), new BlockConversionValue(ModBlock.LEVER, 5));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 6), new BlockConversionValue(ModBlock.LEVER, 6));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 7), new BlockConversionValue(ModBlock.LEVER, 7));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 8), new BlockConversionValue(ModBlock.LEVER, 8));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 9), new BlockConversionValue(ModBlock.LEVER, 9));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 10), new BlockConversionValue(ModBlock.LEVER, 10));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 11), new BlockConversionValue(ModBlock.LEVER, 11));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 12), new BlockConversionValue(ModBlock.LEVER, 12));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 13), new BlockConversionValue(ModBlock.LEVER, 13));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 14), new BlockConversionValue(ModBlock.LEVER, 14));
+       CONVERSION_MAP.put(new BlockConversionKey("yogmod:lever", 15), new BlockConversionValue(ModBlock.LEVER, 15));
    }
 
    @SubscribeEvent
