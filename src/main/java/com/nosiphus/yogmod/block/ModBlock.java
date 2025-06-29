@@ -1,8 +1,10 @@
 package com.nosiphus.yogmod.block;
 
+import com.nosiphus.yogmod.client.renderer.LeverRenderer;
 import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
 import com.nosiphus.yogmod.item.ItemYogColoredBlock;
 import com.nosiphus.yogmod.item.ItemYogWoodBlock;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -246,6 +248,10 @@ public class ModBlock {
         GameRegistry.registerBlock(BEIGE_CARPET, BEIGE_CARPET.getUnlocalizedName().substring(5));
         BEIGE_WOOL = new YogBlock(Material.cloth).setHardness(0.8F).setStepSound(Block.soundTypeCloth).setBlockName("beige_wool").setBlockTextureName("yogmod:beige_wool");
         GameRegistry.registerBlock(BEIGE_WOOL, BEIGE_WOOL.getUnlocalizedName().substring(5));
+    }
+
+    public static void registerRenderers() {
+        RenderingRegistry.registerBlockHandler(new LeverRenderer());
     }
 
 

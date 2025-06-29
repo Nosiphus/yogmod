@@ -2,6 +2,7 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.block.ModBlock;
 import com.nosiphus.yogmod.item.ModItem;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -18,6 +19,13 @@ public class YogMod
         ModBlock.registerBlocks();
         ModItem.registerItems();
 
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+        if (event.getSide().isClient()) {
+            ModBlock.registerRenderers();
+        }
     }
 
 }
