@@ -43,8 +43,8 @@ public class ModBlock {
     public static Block CLAY_TILE;
     public static Block STORAGE_CRATE;
     public static Block PIPE;
-    public static BlockSlab DOUBLE_WOODEN_BRICK_SLAB;
-    public static BlockSlab WOODEN_BRICK_SLAB;
+    public static YogWoodSlabBlock DOUBLE_WOODEN_BRICK_SLAB;
+    public static YogWoodSlabBlock WOODEN_BRICK_SLAB;
     public static BlockSlab STEP_SLAB;
     public static BlockSlab ASPHALT_SLAB;
     public static BlockSlab BRICK_SLAB;
@@ -209,11 +209,12 @@ public class ModBlock {
         //Storage Crate
         PIPE = new PipeBlock(Material.rock).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("pipe");
         GameRegistry.registerBlock(PIPE, PIPE.getUnlocalizedName().substring(5));
-        //Wooden Slabs
-        DOUBLE_WOODEN_BRICK_SLAB = (BlockSlab) new YogWoodSlabBlock(true).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("double_wooden_brick_slab");
-        GameRegistry.registerBlock(DOUBLE_WOODEN_BRICK_SLAB, ItemYogWoodSlabBlock.class, DOUBLE_WOODEN_BRICK_SLAB.getUnlocalizedName().substring(5));
-        WOODEN_BRICK_SLAB = (BlockSlab) new YogWoodSlabBlock(false).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_brick_slab");
+        WOODEN_BRICK_SLAB = (YogWoodSlabBlock) new YogWoodSlabBlock(false).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_brick_slab");
+        DOUBLE_WOODEN_BRICK_SLAB = (YogWoodSlabBlock) new YogWoodSlabBlock(true).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("double_wooden_brick_slab");
+        ItemYogWoodSlabBlock.singleSlabRef = WOODEN_BRICK_SLAB;
+        ItemYogWoodSlabBlock.doubleSlabRef = DOUBLE_WOODEN_BRICK_SLAB;
         GameRegistry.registerBlock(WOODEN_BRICK_SLAB, ItemYogWoodSlabBlock.class, WOODEN_BRICK_SLAB.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(DOUBLE_WOODEN_BRICK_SLAB, DOUBLE_WOODEN_BRICK_SLAB.getUnlocalizedName().substring(5));
 
         IRON_PLATE = new YogBlock(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_plate").setBlockTextureName("yogmod:iron_plate");
         GameRegistry.registerBlock(IRON_PLATE, IRON_PLATE.getUnlocalizedName().substring(5));
