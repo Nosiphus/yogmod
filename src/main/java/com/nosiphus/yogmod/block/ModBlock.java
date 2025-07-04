@@ -3,6 +3,7 @@ package com.nosiphus.yogmod.block;
 import com.nosiphus.yogmod.client.renderer.LeverRenderer;
 import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
 import com.nosiphus.yogmod.item.ItemYogColored;
+import com.nosiphus.yogmod.item.ItemYogStoneSlab;
 import com.nosiphus.yogmod.item.ItemYogWood;
 import com.nosiphus.yogmod.item.ItemYogWoodSlab;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -45,11 +46,8 @@ public class ModBlock {
     public static Block PIPE;
     public static BlockYogWoodSlab DOUBLE_WOODEN_BRICK_SLAB;
     public static BlockYogWoodSlab WOODEN_BRICK_SLAB;
-    public static BlockSlab STEP_SLAB;
-    public static BlockSlab ASPHALT_SLAB;
-    public static BlockSlab BRICK_SLAB;
-    public static BlockSlab RAW_WOOD_SLAB;
-    public static BlockSlab SMOOTH_METAL_SLAB;
+    public static BlockYogStoneSlab DOUBLE_STEP_SLAB;
+    public static BlockYogStoneSlab STEP_SLAB;
     public static Block STEP;
     public static Block BRICKS;
     public static Block IRON_PLATE;
@@ -162,7 +160,7 @@ public class ModBlock {
         //Building Blocks
         ASPHALT = new BlockYogBase(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("asphalt").setBlockTextureName("yogmod:asphalt");
         GameRegistry.registerBlock(ASPHALT, ASPHALT.getUnlocalizedName().substring(5));
-        WOODEN_BRICKS = new BlockWoodYogBase(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_bricks");
+        WOODEN_BRICKS = new BlockYogWood(Material.wood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_bricks");
         GameRegistry.registerBlock(WOODEN_BRICKS, ItemYogWood.class, WOODEN_BRICKS.getUnlocalizedName().substring(5));
         WHITE_MARBLE = new BlockYogBase(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("white_marble").setBlockTextureName("yogmod:white_marble");
         GameRegistry.registerBlock(WHITE_MARBLE, WHITE_MARBLE.getUnlocalizedName().substring(5));
@@ -215,7 +213,16 @@ public class ModBlock {
         ItemYogWoodSlab.doubleSlabRef = DOUBLE_WOODEN_BRICK_SLAB;
         GameRegistry.registerBlock(WOODEN_BRICK_SLAB, ItemYogWoodSlab.class, WOODEN_BRICK_SLAB.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(DOUBLE_WOODEN_BRICK_SLAB, DOUBLE_WOODEN_BRICK_SLAB.getUnlocalizedName().substring(5));
-
+        STEP_SLAB = (BlockYogStoneSlab) new BlockYogStoneSlab(false).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("step_slab");
+        DOUBLE_STEP_SLAB = (BlockYogStoneSlab) new BlockYogStoneSlab(true).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("double_step_slab");
+        ItemYogStoneSlab.singleSlabRef = STEP_SLAB;
+        ItemYogStoneSlab.doubleSlabRef = DOUBLE_STEP_SLAB;
+        GameRegistry.registerBlock(STEP_SLAB, ItemYogStoneSlab.class, STEP_SLAB.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(DOUBLE_STEP_SLAB, DOUBLE_STEP_SLAB.getUnlocalizedName().substring(5));
+        STEP = new BlockYogBase(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("step").setBlockTextureName("yogmod:step");
+        GameRegistry.registerBlock(STEP, STEP.getUnlocalizedName().substring(5));
+        BRICKS = new BlockYogBase(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("bricks").setBlockTextureName("yogmod:bricks");
+        GameRegistry.registerBlock(BRICKS, BRICKS.getUnlocalizedName().substring(5));
         IRON_PLATE = new BlockYogBase(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_plate").setBlockTextureName("yogmod:iron_plate");
         GameRegistry.registerBlock(IRON_PLATE, IRON_PLATE.getUnlocalizedName().substring(5));
 
@@ -225,9 +232,10 @@ public class ModBlock {
         GameRegistry.registerBlock(CAUTION_TAPE, CAUTION_TAPE.getUnlocalizedName().substring(5));
         FLUORESCENT_PANEL = new BlockYogBase(Material.glass).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setBlockName("fluorescent_panel").setBlockTextureName("yogmod:fluorescent_panel");
         GameRegistry.registerBlock(FLUORESCENT_PANEL, FLUORESCENT_PANEL.getUnlocalizedName().substring(5));
+        RAW_WOOD = new BlockYogBase(Material.wood).setHardness(1.5F).setStepSound(Block.soundTypeWood).setBlockName("raw_wood").setBlockTextureName("yogmod:raw_wood");
+        GameRegistry.registerBlock(RAW_WOOD, RAW_WOOD.getUnlocalizedName().substring(5));
         CONCRETE_BRICKS = new BlockYogBase(Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundTypePiston).setBlockName("concrete_bricks").setBlockTextureName("yogmod:concrete_bricks");
         GameRegistry.registerBlock(CONCRETE_BRICKS, CONCRETE_BRICKS.getUnlocalizedName().substring(5));
-
         STRIPE_INTERSECTION = new BlockYogBase(Material.rock).setHardness(0.8F).setStepSound(Block.soundTypePiston).setBlockName("stripe_intersection").setBlockTextureName("yogmod:stripe_end");
         GameRegistry.registerBlock(STRIPE_INTERSECTION, STRIPE_INTERSECTION.getUnlocalizedName().substring(5));
         PIPE_INTERSECTION = new BlockYogBase(Material.rock).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("pipe_intersection").setBlockTextureName("yogmod:pipe_end");

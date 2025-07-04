@@ -12,13 +12,13 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BlockWoodYogBase extends BlockYogBase {
+public class BlockYogWood extends BlockYogBase {
 
     public static final String[] woodTypes = new String[]{"oak", "spruce", "birch", "jungle", "acacia", "dark_oak"};
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public BlockWoodYogBase(Material material) {
+    public BlockYogWood(Material material) {
         super(material);
     }
 

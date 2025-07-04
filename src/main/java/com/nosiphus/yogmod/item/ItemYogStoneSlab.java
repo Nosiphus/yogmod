@@ -1,5 +1,6 @@
 package com.nosiphus.yogmod.item;
 
+import com.nosiphus.yogmod.block.BlockYogStone;
 import com.nosiphus.yogmod.block.BlockYogWood;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
@@ -8,7 +9,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemYogWoodSlab extends ItemBlock {
+public class ItemYogStoneSlab extends ItemBlock {
 
     private final BlockSlab singleSlab;
     private final BlockSlab doubleSlab;
@@ -17,7 +18,7 @@ public class ItemYogWoodSlab extends ItemBlock {
     public static BlockSlab doubleSlabRef;
 
 
-    public ItemYogWoodSlab(Block block) {
+    public ItemYogStoneSlab(Block block) {
         super(block);
         this.singleSlab = singleSlabRef;
         this.doubleSlab = doubleSlabRef;
@@ -32,10 +33,10 @@ public class ItemYogWoodSlab extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         int i = stack.getItemDamage();
-        if (i < 0 || i >= BlockYogWood.woodTypes.length) {
+        if (i < 0 || i >= BlockYogStone.stoneTypes.length) {
             i = 0;
         }
-        return "tile." + BlockYogWood.woodTypes[i] + "_brick_slab";
+        return "tile." + BlockYogStone.stoneTypes[i] + "_slab";
     }
 
     @Override
