@@ -10,6 +10,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Random;
@@ -44,6 +46,16 @@ public class BlockYogWoodSlab extends BlockSlab {
         return "yogmod:" + woodTypes[metadata] + "_brick_slab";
     }
 
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, int posX, int posY, int posZ) {
+        int meta = getDamageValue(world, posX, posY, posZ);
+        return new ItemStack(ModBlock.WOODEN_BRICK_SLAB, 1, meta);
+    }
+
+    public int getDamageValue(World world, int posX, int posY, int posZ) {
+        return super.getDamageValue(world, posX, posY, posZ);
+    }
+
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List list) {
         if (item != Item.getItemFromBlock(ModBlock.DOUBLE_WOODEN_BRICK_SLAB)) {
@@ -54,10 +66,6 @@ public class BlockYogWoodSlab extends BlockSlab {
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister register) {
-
-    }
-
-
+    public void registerBlockIcons(IIconRegister register) {}
 
 }
