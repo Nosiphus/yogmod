@@ -1,7 +1,6 @@
 package com.nosiphus.yogmod.item;
 
 import com.nosiphus.yogmod.block.BlockYogStone;
-import com.nosiphus.yogmod.block.BlockYogWood;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.entity.player.EntityPlayer;
