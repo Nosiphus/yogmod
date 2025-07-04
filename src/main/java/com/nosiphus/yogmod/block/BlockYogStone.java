@@ -14,7 +14,7 @@ import java.util.List;
 
 public class BlockYogStone extends BlockYogBase {
 
-    public static final String[] stoneTypes = new String[]{"step", "asphalt", "brick", "raw_wood", "smooth_metal"};
+    public static final String[] stoneTypes = new String[]{"step", "asphalt", "brick", "raw_wood", "smooth_metal", "iron_plate"};
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 

@@ -7,7 +7,6 @@ import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -19,7 +18,7 @@ import java.util.Random;
 
 public class BlockYogStoneSlab extends BlockSlab {
 
-    public static final String[] stoneTypes = new String[]{"step", "asphalt", "brick", "raw_wood", "smooth_metal"};
+    public static final String[] stoneTypes = new String[]{"step", "asphalt", "brick", "raw_wood", "smooth_metal", "iron_plate"};
     @SideOnly(Side.CLIENT)
     private IIcon sideIcon;
 
@@ -38,7 +37,7 @@ public class BlockYogStoneSlab extends BlockSlab {
             side = 1;
         }
 
-        return k == 0 ? (side != 1 && side != 0 ? this.sideIcon : this.blockIcon) : (k == 1 ? ModBlock.ASPHALT.getBlockTextureFromSide(side) : (k == 2 ? ModBlock.BRICKS.getBlockTextureFromSide(side) : (k == 3 ? ModBlock.RAW_WOOD.getIcon(side, 0) : (k == 4 ? ModBlock.SMOOTH_METAL.getBlockTextureFromSide(1) : this.blockIcon))));
+        return k == 0 ? (side != 1 && side != 0 ? this.sideIcon : this.blockIcon) : (k == 1 ? ModBlock.ASPHALT.getBlockTextureFromSide(side) : (k == 2 ? ModBlock.BRICKS.getBlockTextureFromSide(side) : (k == 3 ? ModBlock.RAW_WOOD.getIcon(side, 0) : (k == 4 ? ModBlock.SMOOTH_METAL.getBlockTextureFromSide(1) : (k == 5 ? ModBlock.IRON_PLATE.getBlockTextureFromSide(side) : this.blockIcon)))));
     }
 
     public Item getItemDropped(int side, Random random, int metadata) {

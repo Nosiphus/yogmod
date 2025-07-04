@@ -72,7 +72,6 @@ public class ModBlock {
     public static Block GREEN_TILES;
     public static BlockStairs WOODEN_BRICK_STAIRS;
     public static BlockStairs IRON_PLATE_STAIRS;
-    public static BlockSlab IRON_PLATE_SLAB;
 
     //Decoration Blocks
     public static Block LANTERN;
