@@ -14,11 +14,11 @@ import net.minecraft.util.IIcon;
 import java.util.List;
 import java.util.Random;
 
-public class YogWoodSlabBlock extends BlockSlab {
+public class BlockYogWoodSlab extends BlockSlab {
 
     public static final String[] woodTypes = new String[]{"oak", "spruce", "birch", "jungle", "acacia", "dark_oak"};
 
-    public YogWoodSlabBlock(boolean isDouble) {
+    public BlockYogWoodSlab(boolean isDouble) {
         super(isDouble, Material.wood);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }

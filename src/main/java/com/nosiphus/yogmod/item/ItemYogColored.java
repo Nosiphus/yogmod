@@ -1,13 +1,13 @@
 package com.nosiphus.yogmod.item;
 
-import com.nosiphus.yogmod.block.YogWoodBlock;
+import com.nosiphus.yogmod.block.BlockColoredYogBase;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemYogWoodBlock extends ItemBlock {
+public class ItemYogColored extends ItemBlock {
 
-    public ItemYogWoodBlock(Block block) {
+    public ItemYogColored(Block block) {
         super(block);
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
@@ -20,9 +20,9 @@ public class ItemYogWoodBlock extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         int i = stack.getItemDamage();
-        if (i < 0 || i >= YogWoodBlock.woodTypes.length) {
+        if (i < 0 || i >= 16) {
             i = 0;
         }
-        return "tile." + YogWoodBlock.woodTypes[i] + "_bricks";
+        return "tile." + BlockColoredYogBase.colorNames[i];
     }
 }

@@ -5,9 +5,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class YogCarpetBlock extends YogBlock {
+public class BlockCarpetYogBase extends BlockYogBase {
 
-    public YogCarpetBlock(Material material) {
+    public BlockCarpetYogBase(Material material) {
         super(material);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
         this.setTickRandomly(true);

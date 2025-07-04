@@ -1,12 +1,12 @@
 package com.nosiphus.yogmod.block;
 
 import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
-import net.minecraft.block.BlockTrapDoor;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class HatchBlock extends BlockTrapDoor {
+public class BlockYogBase extends Block {
 
-    protected HatchBlock(Material material) {
+    public BlockYogBase(Material material) {
         super(material);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }

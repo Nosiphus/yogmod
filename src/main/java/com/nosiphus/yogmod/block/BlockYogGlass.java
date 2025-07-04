@@ -7,9 +7,9 @@ import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
-public class YogGlassBlock extends BlockGlass {
+public class BlockYogGlass extends BlockGlass {
 
-    public YogGlassBlock(Material material) {
+    public BlockYogGlass(Material material) {
         super(material, false);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }

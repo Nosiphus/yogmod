@@ -8,14 +8,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 
-public class StripeBlock extends BlockRotatedPillar {
+public class BlockStripe extends BlockRotatedPillar {
 
     @SideOnly(Side.CLIENT)
     private IIcon iconSide;
     @SideOnly(Side.CLIENT)
     private IIcon iconTop;
 
-    public StripeBlock(Material material) {
+    public BlockStripe(Material material) {
         super(material);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }

@@ -10,11 +10,11 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class LampBlock extends Block {
+public class BlockLamp extends Block {
 
     private final boolean isIlluminated;
 
-    public LampBlock(boolean isIlluminated) {
+    public BlockLamp(boolean isIlluminated) {
         super(Material.redstoneLight);
         this.isIlluminated = isIlluminated;
 

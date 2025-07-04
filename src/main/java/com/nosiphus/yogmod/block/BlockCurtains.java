@@ -7,9 +7,9 @@ import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 
-public class CurtainsBlock extends BlockVine {
+public class BlockCurtains extends BlockVine {
 
-    public CurtainsBlock(Material material) {
+    public BlockCurtains(Material material) {
         super();
         this.setTickRandomly(false);
         this.setCreativeTab(ModCreativeTabs.YogTab);

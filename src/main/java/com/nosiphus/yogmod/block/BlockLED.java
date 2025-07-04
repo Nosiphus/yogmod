@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.*;
 
-public class LEDBlock extends LanternBlock {
+public class BlockLED extends BlockLantern {
 
     private boolean isIlluminated;
     private static Map toggles = new HashMap<>();
@@ -23,13 +23,13 @@ public class LEDBlock extends LanternBlock {
         List list = (List)toggles.get(world);
 
         if (checkTime) {
-            list.add(new LEDBlock.Toggle(posX, posY, posZ, world.getTotalWorldTime()));
+            list.add(new BlockLED.Toggle(posX, posY, posZ, world.getTotalWorldTime()));
         }
 
         int l = 0;
 
         for (int i1 = 0; i1 < list.size(); ++i1) {
-            LEDBlock.Toggle toggle = (LEDBlock.Toggle)list.get(i1);
+            BlockLED.Toggle toggle = (BlockLED.Toggle)list.get(i1);
 
             if (toggle.positionX == posX && toggle.positionY == posY && toggle.positionZ == posZ) {
                 ++l;
@@ -43,7 +43,7 @@ public class LEDBlock extends LanternBlock {
         return false;
     }
 
-    public LEDBlock(boolean isIlluminated) {
+    public BlockLED(boolean isIlluminated) {
         this.isIlluminated = isIlluminated;
         this.setTickRandomly(true);
         this.setCreativeTab((CreativeTabs) null);
@@ -98,7 +98,7 @@ public class LEDBlock extends LanternBlock {
         boolean flag = this.isBeingPowered(world, posX, posY, posZ);
         List list = (List)toggles.get(world);
 
-        while (list != null && !list.isEmpty() && world.getTotalWorldTime() - ((LEDBlock.Toggle)list.get(0)).toggleTime > 60L) {
+        while (list != null && !list.isEmpty() && world.getTotalWorldTime() - ((BlockLED.Toggle)list.get(0)).toggleTime > 60L) {
             list.remove(0);
         }
 

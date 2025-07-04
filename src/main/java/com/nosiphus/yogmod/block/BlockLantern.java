@@ -12,9 +12,9 @@ import java.util.Random;
 
 import static net.minecraftforge.common.util.ForgeDirection.*;
 
-public class LanternBlock extends Block {
+public class BlockLantern extends Block {
 
-    public LanternBlock() {
+    public BlockLantern() {
         super(Material.circuits);
         this.setTickRandomly(true);
         this.setCreativeTab(ModCreativeTabs.YogTab);

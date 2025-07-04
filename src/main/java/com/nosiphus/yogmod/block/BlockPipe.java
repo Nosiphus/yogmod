@@ -8,14 +8,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 
-public class CountertopBlock extends BlockRotatedPillar {
+public class BlockPipe extends BlockRotatedPillar {
 
     @SideOnly(Side.CLIENT)
     private IIcon iconSide;
     @SideOnly(Side.CLIENT)
     private IIcon iconTop;
 
-    public CountertopBlock(Material material) {
+    public BlockPipe(Material material) {
         super(material);
         this.setCreativeTab(ModCreativeTabs.YogTab);
     }
@@ -23,8 +23,8 @@ public class CountertopBlock extends BlockRotatedPillar {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister register) {
-        this.iconSide = register.registerIcon("yogmod:countertop");
-        this.iconTop = register.registerIcon("yogmod:countertop_end");
+        this.iconSide = register.registerIcon("yogmod:pipe");
+        this.iconTop = register.registerIcon("yogmod:pipe_end");
     }
 
     @Override

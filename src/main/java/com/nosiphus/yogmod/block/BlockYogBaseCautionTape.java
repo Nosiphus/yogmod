@@ -5,9 +5,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class CautionTapeBlock extends YogBlock {
+public class BlockYogBaseCautionTape extends BlockYogBase {
 
-    public CautionTapeBlock(Material material) {
+    public BlockYogBaseCautionTape(Material material) {
         super(material);
     }
 

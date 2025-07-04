@@ -1,6 +1,5 @@
 package com.nosiphus.yogmod.block;
 
-import com.nosiphus.yogmod.creativetab.ModCreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
@@ -13,15 +12,14 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class YogColoredBlock extends YogBlock {
+public class BlockWoodYogBase extends BlockYogBase {
 
-    public static final String[] colorNames = new String[]{"white_plastic", "orange_plastic", "magenta_plastic", "light_blue_plastic", "gold_filgaree", "lime_plastic", "pink_stucco", "gray_stucco", "light_gray_stucco", "cyan_plastic", "violet_velvet", "blue_plastic", "brown_stucco", "green_plastic", "red_plastic", "black_marble"};
+    public static final String[] woodTypes = new String[]{"oak", "spruce", "birch", "jungle", "acacia", "dark_oak"};
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public YogColoredBlock(Material material) {
+    public BlockWoodYogBase(Material material) {
         super(material);
-        this.setCreativeTab(ModCreativeTabs.YogTab);
     }
 
     @SideOnly(Side.CLIENT)
@@ -41,26 +39,21 @@ public class YogColoredBlock extends YogBlock {
         return world.getBlockMetadata(posX, posY, posZ);
     }
 
-    @Override
-    public int onBlockPlaced(World world, int posX, int posY, int posZ, int side, float hitX, float hitY, float hitZ, int metadata) {
-        return metadata;
-    }
-
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list) {
-        for (int i = 0; i < colorNames.length; ++i) {
+    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+        for (int i = 0; i < woodTypes.length; ++i) {
             list.add(new ItemStack(item, 1, i));
         }
     }
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister register) {
-        this.icons = new IIcon[colorNames.length];
+        this.icons = new IIcon[woodTypes.length];
 
         for (int i = 0; i < this.icons.length; ++i) {
-            this.icons[i] = register.registerIcon("yogmod:" + colorNames[i]);
+            this.icons[i] = register.registerIcon("yogmod:" + woodTypes[i] + "_bricks");
         }
 
-    }
 
+    }
 }
