@@ -224,9 +224,17 @@ public class ModBlock {
         GameRegistry.registerBlock(BRICKS, BRICKS.getUnlocalizedName().substring(5));
         IRON_PLATE = new BlockYogBase(Material.iron).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_plate").setBlockTextureName("yogmod:iron_plate");
         GameRegistry.registerBlock(IRON_PLATE, IRON_PLATE.getUnlocalizedName().substring(5));
-
+        //Step Stairs
+        WHITE_LIGHTING = new BlockWhiteLighting(Material.glass).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setBlockName("white_lighting");
+        GameRegistry.registerBlock(WHITE_LIGHTING, WHITE_LIGHTING.getUnlocalizedName().substring(5));
         THIN_STRIPE = new BlockYogBase(Material.cloth).setHardness(0.2F).setStepSound(Block.soundTypeSnow).setBlockName("thin_stripe").setBlockTextureName("yogmod:thin_stripe");
         GameRegistry.registerBlock(THIN_STRIPE, THIN_STRIPE.getUnlocalizedName().substring(5));
+
+        MONITOR = new BlockMonitor(false).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("monitor");
+        GameRegistry.registerBlock(MONITOR, MONITOR.getUnlocalizedName().substring(5));
+        LIT_MONITOR = new BlockMonitor(true).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setBlockName("lit_monitor");
+        GameRegistry.registerBlock(LIT_MONITOR, LIT_MONITOR.getUnlocalizedName().substring(5));
+
         CAUTION_TAPE = new BlockYogBaseCautionTape(Material.sand).setHardness(0.5F).setStepSound(Block.soundTypeSand).setBlockName("caution_tape").setBlockTextureName("yogmod:caution_tape");
         GameRegistry.registerBlock(CAUTION_TAPE, CAUTION_TAPE.getUnlocalizedName().substring(5));
         FLUORESCENT_PANEL = new BlockYogBase(Material.glass).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setBlockName("fluorescent_panel").setBlockTextureName("yogmod:fluorescent_panel");
