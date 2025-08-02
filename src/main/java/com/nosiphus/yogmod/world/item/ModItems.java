@@ -505,6 +505,10 @@ public class ModItems {
                             .alwaysEdible()
                             .build()))));
 
+    //Spawn Eggs
+    public static final DeferredItem<Item> CAGE = addToTab(ITEMS.register("cage",
+            () -> new BlockItem(ModBlocks.CAGE.get(), new Item.Properties())));
+
     //Not in YogTab
     public static final DeferredItem<BlockItem> BEIGE_WOOL = addToTab(ITEMS.register("beige_wool",
             () -> new BlockItem(ModBlocks.BEIGE_WOOL.get(), new Item.Properties())));

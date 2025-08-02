@@ -4,7 +4,8 @@
   "refmap": "yogmod.refmap.json",
   "mixins": [
     "RecordPlayerPlayable",
-    "SinkMixin"
+    "SinkMixin",
+    "SpawnEggItemMixin"
   ],
   "client": [],
   "injectors": {

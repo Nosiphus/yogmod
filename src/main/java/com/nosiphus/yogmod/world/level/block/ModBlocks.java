@@ -538,6 +538,10 @@ public class ModBlocks {
 
     //Combat
 
+    //Spawn Eggs
+    public static final DeferredBlock<Block> CAGE = BLOCKS.register("cage",
+            () -> new CageBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER)));
+
     //Not in YogTab
     public static final DeferredBlock<Block> BEIGE_WOOL = BLOCKS.register("beige_wool",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL)));

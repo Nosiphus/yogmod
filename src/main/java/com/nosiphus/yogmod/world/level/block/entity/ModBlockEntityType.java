@@ -14,6 +14,7 @@ public class ModBlockEntityType {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, "yogmod");
 
+    public static final Supplier<BlockEntityType<CageBlockEntity>> CAGE = register("cage", CageBlockEntity::new, () -> new Block[]{ModBlocks.CAGE.get()});
     public static final Supplier<BlockEntityType<CrateBlockEntity>> CRATE = register("crate", CrateBlockEntity::new, () -> new Block[]{ModBlocks.CRATE.get()});
     public static final Supplier<BlockEntityType<DispenserBlockEntity>> DISPENSER = register("dispenser", DispenserBlockEntity::new, () -> new Block[]{ModBlocks.DISPENSER.get()});
     public static final Supplier<BlockEntityType<OvenBlockEntity>> OVEN = register("oven", OvenBlockEntity::new, () -> new Block[]{ModBlocks.OVEN.get()});
