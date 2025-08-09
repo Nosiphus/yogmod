@@ -5,6 +5,7 @@ import com.nosiphus.yogmod.client.model.ScrubberBotModel;
 import com.nosiphus.yogmod.client.renderer.blockentity.CageRenderer;
 import com.nosiphus.yogmod.client.renderer.blockentity.CrateRenderer;
 import com.nosiphus.yogmod.client.renderer.blockentity.PistonHeadRenderer;
+import com.nosiphus.yogmod.client.renderer.blockentity.YogSignRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.DynamiteRenderer;
 import com.nosiphus.yogmod.client.renderer.entity.ScrubberBotRenderer;
 import com.nosiphus.yogmod.world.entity.ModEntityType;
@@ -20,10 +21,10 @@ import com.nosiphus.yogmod.world.level.block.WireBlock;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import com.nosiphus.yogmod.world.level.block.state.properties.ModWoodType;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -125,7 +126,7 @@ public class YogMod {
         BlockEntityRenderers.register(ModBlockEntityType.CAGE.get(), CageRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.CRATE.get(), CrateRenderer::new);
         BlockEntityRenderers.register(ModBlockEntityType.PISTON.get(), PistonHeadRenderer::new);
-        BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), SignRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntityType.YOG_SIGN.get(), YogSignRenderer::new);
     }
 
     private static void registerEntityRenderers() {
