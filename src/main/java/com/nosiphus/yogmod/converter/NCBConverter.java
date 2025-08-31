@@ -61,10 +61,10 @@ public class NCBConverter {
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCorrugatedCopper", 0), new BlockConversionValue(ModBlock.CORRUGATED_COPPER, 0));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCorrugatedSteel", 0), new BlockConversionValue(ModBlock.CORRUGATED_STEEL, 0));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCountertop", 0), new BlockConversionValue(ModBlock.COUNTERTOP, 0));
-       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 2), new BlockConversionValue(ModBlock.CURTAINS, 2));
-       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 3), new BlockConversionValue(ModBlock.CURTAINS, 3));
-       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 4), new BlockConversionValue(ModBlock.CURTAINS, 4));
-       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 5), new BlockConversionValue(ModBlock.CURTAINS, 5));
+       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 2), new BlockConversionValue(ModBlock.CURTAINS, 1));
+       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 3), new BlockConversionValue(ModBlock.CURTAINS, 4));
+       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 4), new BlockConversionValue(ModBlock.CURTAINS, 8));
+       CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsCurtains", 5), new BlockConversionValue(ModBlock.CURTAINS, 2));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsDarkStoneBricks", 0), new BlockConversionValue(ModBlock.DARK_STONE_BRICKS, 0));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsDecorativeConcrete", 0), new BlockConversionValue(ModBlock.DECORATIVE_CONCRETE, 0));
        CONVERSION_MAP.put(new BlockConversionKey("NosLabs:NosLabsFluorescentPanel", 0), new BlockConversionValue(ModBlock.FLUORESCENT_PANEL, 0));
