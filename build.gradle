@@ -75,6 +75,6 @@ processResources
 
 jar {
     manifest {
-        attributes 'FMLAT': 'MODID_at.cfg'
+        attributes 'FMLAT': 'yogmod_at.cfg'
     }
 }
