@@ -299,5 +299,4 @@ public class ModBlock {
         RenderingRegistry.registerBlockHandler(new LeverRenderer());
     }
 
-
 }
