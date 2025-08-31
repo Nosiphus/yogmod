@@ -208,6 +208,7 @@ item.beige_dye.name=Beige Dye
 item.coffee.name=Coffee
 item.hamburger.name=Hamburger
 item.hard_hat.name=Hard Hat
+item.iron_door_item.name=Iron Door (YogMod)
 item.jaffa.name=Jaffa
 item.laser.name=Laser
 item.pencil.name=Pencil
@@ -222,6 +223,7 @@ item.steeltoe_boots.name=Steel-toe Boots
 item.suit_jacket.name=Suit Jacket
 item.suit_pants.name=Suit Pants
 item.sunglasses.name=Sunglasses
+item.wooden_door_item.name=Wooden Door (YogMod)
 item.yog_sign.name=Sign (YogMod)
 
 painting.big_screen.author.name=TheVoxelBox

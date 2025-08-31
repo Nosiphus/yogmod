@@ -281,6 +281,10 @@ public class ModBlock {
         GameRegistry.registerBlock(LIT_LAMP, LIT_LAMP.getUnlocalizedName().substring(5));
         CONSOLE = (BlockNote) new BlockConsole(Material.wood).setHardness(0.8F).setBlockName("console").setBlockTextureName("yogmod:console");
         GameRegistry.registerBlock(CONSOLE, CONSOLE.getUnlocalizedName().substring(5));
+        IRON_DOOR = (BlockDoor) new BlockYogDoor(Material.iron).setHardness(5.0F).setStepSound(Block.soundTypeMetal).setBlockName("iron_door").disableStats().setBlockTextureName("yogmod:iron_door");
+        GameRegistry.registerBlock(IRON_DOOR, IRON_DOOR.getUnlocalizedName().substring(5));
+        WOODEN_DOOR = (BlockDoor) new BlockYogDoor(Material.wood).setHardness(3.0F).setStepSound(Block.soundTypeWood).setBlockName("wooden_door").disableStats().setBlockTextureName("yogmod:wooden_door");
+        GameRegistry.registerBlock(WOODEN_DOOR, WOODEN_DOOR.getUnlocalizedName().substring(5));
         HATCH = (BlockTrapDoor) new BlockHatch(Material.wood).setHardness(3.0F).setStepSound(Block.soundTypeWood).setBlockName("hatch").setBlockTextureName("yogmod:hatch");
         GameRegistry.registerBlock(HATCH, HATCH.getUnlocalizedName().substring(5));
 
