@@ -1,7 +1,6 @@
 package com.nosiphus.yogmod.world.level.block;
 
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
-import com.nosiphus.yogmod.world.level.block.entity.PoweredStripeBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.PoweredStripeIntersectionBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
