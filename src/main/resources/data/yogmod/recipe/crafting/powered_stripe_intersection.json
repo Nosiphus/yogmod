@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "S": {
+      "item": "yogmod:stripe_intersection"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "RSR",
+	"RRR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "yogmod:powered_stripe_intersection"
+  }
+}

@@ -134,8 +134,12 @@ dependencies {
     // The group id is ignored when searching -- in this case, it is "blank"
     // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
     implementation "curse.maven:badpackets-615134:6067146"
-    implementation "curse.maven:jei-238222:5846880"
-    implementation "curse.maven:wthit-forge-455982:6112977"
+    implementation "curse.maven:jei-238222:7420587"
+	implementation "curse.maven:mekanism-268560:7621971"
+	implementation "curse.maven:mekanism-additions-345425:7621973"
+	implementation "curse.maven:mekanism-generators-268566:7621974"
+	implementation "curse.maven:mekanism-tools-268567:7621975"
+    implementation "curse.maven:wthit-forge-455982:7804383"
 
 
     // Example mod dependency using a file as dependency

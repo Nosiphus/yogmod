@@ -340,6 +340,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.STRIPE.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> STRIPE_INTERSECTION = addToTab(ITEMS.register("stripe_intersection",
             () -> new BlockItem(ModBlocks.STRIPE_INTERSECTION.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> POWERED_STRIPE = addToTab(ITEMS.register("powered_stripe",
+            () -> new BlockItem(ModBlocks.POWERED_STRIPE.get(), new Item.Properties())));
+    public static final DeferredItem<BlockItem> POWERED_STRIPE_INTERSECTION = addToTab(ITEMS.register("powered_stripe_intersection",
+            () -> new BlockItem(ModBlocks.POWERED_STRIPE_INTERSECTION.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> CORRUGATED_STEEL = addToTab(ITEMS.register("corrugated_steel",
             () -> new BlockItem(ModBlocks.CORRUGATED_STEEL.get(), new Item.Properties())));
     public static final DeferredItem<BlockItem> STORAGE_CRATE = addToTab(ITEMS.register("storage_crate",
