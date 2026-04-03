@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "yogmod:powered_intersection"
+          "name": "yogmod:powered_stripe_intersection"
         }
       ],
       "rolls": 1.0

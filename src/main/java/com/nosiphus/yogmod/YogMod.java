@@ -136,7 +136,7 @@ public class YogMod {
                     Capabilities.EnergyStorage.BLOCK, ModBlockEntityType.POWERED_STRIPE_INTERSECTION.get(), (poweredStripeIntersection, side) -> poweredStripeIntersection.getEnergy()
             );
         }
-
+        
     }
 
     private static void registerBlockEntityRenderers() {
