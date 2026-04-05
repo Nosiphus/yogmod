@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "yogmod:glass",
 	"yogmod:beige_stained_glass"
   ]
 }
