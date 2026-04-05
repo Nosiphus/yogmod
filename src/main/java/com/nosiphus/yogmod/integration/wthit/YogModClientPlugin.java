@@ -3,8 +3,6 @@ package com.nosiphus.yogmod.integration.wthit;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
 import com.nosiphus.yogmod.world.level.block.entity.CageBlockEntity;
-import com.nosiphus.yogmod.world.level.block.entity.PoweredStripeBlockEntity;
-import com.nosiphus.yogmod.world.level.block.entity.PoweredStripeIntersectionBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.RecordPlayerBlockEntity;
 import mcp.mobius.waila.api.IClientRegistrar;
 import mcp.mobius.waila.api.IWailaClientPlugin;
@@ -23,8 +21,6 @@ public class YogModClientPlugin implements IWailaClientPlugin {
         registrar.head(CageProvider.INSTANCE, CageBlockEntity.class);
         registrar.body(RedstoneProvider.INSTANCE, DiodeBlock.class);
         registrar.body(RedstoneProvider.INSTANCE, WireBlock.class);
-        registrar.body(EnergyProvider.INSTANCE, PoweredStripeBlockEntity.class);
-        registrar.body(EnergyProvider.INSTANCE, PoweredStripeIntersectionBlockEntity.class);
         FluidData.describeCauldron(ModBlocks.WATER_SINK.get(), WaterDescriptor.INSTANCE);
         FluidData.describeCauldron(ModBlocks.LAVA_SINK.get(), LavaDescriptor.INSTANCE);
     }

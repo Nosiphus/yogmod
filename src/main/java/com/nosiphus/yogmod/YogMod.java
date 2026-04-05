@@ -34,8 +34,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -125,16 +123,6 @@ public class YogMod {
         @SubscribeEvent
         public static void entityAttributes(EntityAttributeCreationEvent event) {
             event.put(ModEntityType.SCRUBBER_BOT.get(), ScrubberBot.createAttributes().build());
-        }
-
-        @SubscribeEvent
-        public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-            event.registerBlockEntity(
-                    Capabilities.EnergyStorage.BLOCK, ModBlockEntityType.POWERED_STRIPE.get(), (poweredStripe, side) -> poweredStripe.getEnergy()
-            );
-            event.registerBlockEntity(
-                    Capabilities.EnergyStorage.BLOCK, ModBlockEntityType.POWERED_STRIPE_INTERSECTION.get(), (poweredStripeIntersection, side) -> poweredStripeIntersection.getEnergy()
-            );
         }
         
     }

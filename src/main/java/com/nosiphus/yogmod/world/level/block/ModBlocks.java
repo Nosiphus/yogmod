@@ -358,10 +358,6 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR)));
     public static final DeferredBlock<Block> STRIPE_INTERSECTION = BLOCKS.register("stripe_intersection",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)));
-    public static final DeferredBlock<Block> POWERED_STRIPE = BLOCKS.register("powered_stripe",
-            () -> new PoweredStripeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR)));
-    public static final DeferredBlock<Block> POWERED_STRIPE_INTERSECTION = BLOCKS.register("powered_stripe_intersection",
-            () -> new PoweredStripeIntersectionBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)));
     public static final DeferredBlock<Block> CORRUGATED_STEEL = BLOCKS.register("corrugated_steel",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
     public static final DeferredBlock<Block> STORAGE_CRATE = BLOCKS.register("storage_crate",
