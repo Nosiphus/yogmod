@@ -20,9 +20,7 @@ public class OvenBlock extends AbstractFurnaceBlock {
     public static final MapCodec<OvenBlock> CODEC = simpleCodec(OvenBlock::new);
 
     public OvenBlock(Properties properties) {
-
         super(properties);
-
     }
 
     @Override

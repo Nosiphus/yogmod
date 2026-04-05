@@ -36,8 +36,6 @@ public class MonitorBlock extends HorizontalDirectionalBlock {
         return blockState != null && (blockState.is(ModBlocks.MONITOR.get()) || blockState.is(ModBlocks.LIT_MONITOR.get()));
     };
 
-
-
     public MonitorBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
