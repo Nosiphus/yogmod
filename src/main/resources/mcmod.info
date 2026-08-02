@@ -7,7 +7,7 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Nosiphus"],
+  "authors": ["Nosiphus"],
   "credits": "TheVoxelBox, Teutron, cineminecraft",
   "logoFile": "",
   "screenshots": [],
