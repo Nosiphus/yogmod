@@ -10,6 +10,7 @@ import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
 import com.nosiphus.yogmod.world.inventory.ModMenuType;
 import com.nosiphus.yogmod.world.item.ModCreativeModeTabsNeoForge;
 import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.PoweredMetroVoxRailBlock;
 import com.nosiphus.yogmod.world.level.block.WireBlock;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import net.minecraft.client.renderer.BiomeColors;

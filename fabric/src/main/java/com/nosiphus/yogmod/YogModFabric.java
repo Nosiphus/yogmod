@@ -2,6 +2,8 @@ package com.nosiphus.yogmod;
 
 import com.nosiphus.yogmod.world.entity.ModEntityType;
 import com.nosiphus.yogmod.world.entity.animal.ScrubberBot;
+import com.nosiphus.yogmod.world.level.block.ModBlocks;
+import com.nosiphus.yogmod.world.level.block.PoweredMetroVoxRailBlock;
 import com.nosiphus.yogmod.world.level.block.entity.ModBlockEntityType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;

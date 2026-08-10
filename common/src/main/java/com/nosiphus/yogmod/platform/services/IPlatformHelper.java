@@ -1,5 +1,8 @@
 package com.nosiphus.yogmod.platform.services;
 
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+
 public interface IPlatformHelper {
 
     /**
@@ -33,4 +36,6 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+
+    Block createPoweredRail(BlockBehaviour.Properties properties, boolean isPowered);
 }

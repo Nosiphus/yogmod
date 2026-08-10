@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
+import java.util.function.BiFunction;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
@@ -538,11 +539,11 @@ public class ModBlocks {
     public static final Supplier<Block> METROVOX_RAIL = register("metrovox_rail",
             () -> new RailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RAIL)));
     public static final Supplier<Block> POWERED_METROVOX_RAIL = register("powered_metrovox_rail",
-            () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL)));
+            () -> Services.PLATFORM.createPoweredRail(BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true));
     public static final Supplier<Block> METROVOX_DETECTOR_RAIL = register("metrovox_detector_rail",
             () -> new DetectorRailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DETECTOR_RAIL)));
     public static final Supplier<Block> METROVOX_ACTIVATOR_RAIL = register("metrovox_activator_rail",
-            () -> new PoweredMetroVoxRailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ACTIVATOR_RAIL)));
+            () -> Services.PLATFORM.createPoweredRail(BlockBehaviour.Properties.ofFullCopy(Blocks.ACTIVATOR_RAIL), false));
     public static final Supplier<Block> DYNAMITE = register("dynamite",
             () -> new DynamiteBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TNT)));
 
