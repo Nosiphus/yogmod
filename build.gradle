@@ -1,124 +1,34 @@
-buildscript {
+plugins {
+    id 'fabric-loom' version '1.9-SNAPSHOT' apply(false)
+    id 'net.neoforged.moddev.legacyforge' version '2.0.77' apply(false)
+}
+
+subprojects {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
-    }
-    dependencies {
-		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
-    }
-}
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-
-version = project.property('mod.version') + "-" + project.property('minecraft.version')
-group = 'com.nosiphus'
-archivesBaseName = project.property('mod.id')
-
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
-minecraft {
-    mappings channel: project.property('mappings.channel'), version: project.property('mappings.version')
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                yogmod {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                yogmod {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory project.file('run')
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', 'yogmod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-            mods {
-                yogmod {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
-}
-
-repositories {
-    maven {
-        url 'https://www.cursemaven.com'
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-}
-
-dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.4.6'
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-	implementation fg.deobf("curse.maven:amendments-896746:6864192")
-    implementation fg.deobf("curse.maven:ash-api-838498:4653714")
-	implementation fg.deobf("curse.maven:badpackets-615134:4784395")
-	implementation fg.deobf("curse.maven:jei-238222:6600311")
-	implementation fg.deobf("curse.maven:selene-499980:6846127")
-	implementation fg.deobf("curse.maven:transparent-377582:4652776")
-	implementation fg.deobf("curse.maven:worldedit-225608:4586218")
-	implementation fg.deobf("curse.maven:wthit-forge-455982:6613369")
-}
-
-jar {
-    manifest {
-        attributes([
-            "Specification-Title"     : project.property('mod.name'),
-            "Specification-Vendor"    : project.property('mod.author'),
-            "Specification-Version"   : "1",
-            "Implementation-Title"    : project.name,
-            "Implementation-Version"  : "${getArchiveVersion()}",
-            "Implementation-Vendor"   : project.property('mod.author'),
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-        ])
-    }
-}
-
-jar.finalizedBy('reobfJar')
-
-mixin {
-    add sourceSets.main, "yogmod.refmap.json"
-
-    config "yogmod.mixins.json"
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
-    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://maven.parchmentmc.org' }
         maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
+            url = "https://www.cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+		maven {
+            name = "Jared's Maven"
+            url = "https://maven.blamejared.com"
+            content {
+                includeGroup "mezz.jei"
+            }
+        }
+		maven {
+            name = "Bai's Maven"
+            url = "https://maven2.bai.lol"
+            content {
+                includeGroup "mcp.mobius.waila"
+                includeGroup "lol.bai"
+            }
         }
     }
 }

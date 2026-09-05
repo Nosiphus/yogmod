@@ -1,0 +1,10 @@
+{
+  "yogmod:plugin": {
+    "entrypoints": {
+      "common": "com.nosiphus.yogmod.integration.wthit.YogModCommonPlugin",
+      "client": "com.nosiphus.yogmod.integration.wthit.YogModClientPlugin"
+    },
+    "side"       : "*",
+    "required"   : ["minecraft"]
+  }
+}

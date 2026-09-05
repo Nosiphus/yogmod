@@ -1,8 +1,0 @@
-{
-	"__comment": "Designed by HanFox with BDcraft Cubik PRO 0.96 Beta - http://bdcraft.net",
-	"parent": "item/_bdc/glass_pane",
-	"render_type": "translucent",
-	"textures": {
-		"texture": "yogmod:block/beige_stained_glass"
-	}
-}

@@ -1,0 +1,44 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "accessWidener": "yogmod.accesswidener",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/yogmod",
+        "sources": "https://github.com/Nosiphus/yogmod",
+        "issues": "https://github.com/Nosiphus/yogmod/issues"
+    },
+    "license": "${license}",
+    "icon": "${mod_id}.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.nosiphus.yogmod.YogModFabric"
+        ],
+        "client": [
+            "com.nosiphus.yogmod.YogModFabricClient"
+        ],
+        "jei_mod_plugin": [
+            "com.nosiphus.yogmod.integration.jei.JEIYogModPlugin"
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json",
+        "${mod_id}.fabric.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": "*",
+        "minecraft": "${minecraft_version}",
+        "java": ">=${java_version}"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
+}
+  
