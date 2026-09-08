@@ -61,7 +61,16 @@ publishMods {
         displayName = "Fabric - ${project.version} - ${project.minecraft_version}"
 
         optional {
-            slug = "yogmod"
+            slug = "ash-api"
+        }
+		optional {
+            slug = "jei"
+        }
+		optional {
+            slug = "transparent"
+        }
+		optional {
+            slug = "wthit"
         }
     }
 }
