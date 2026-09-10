@@ -30,6 +30,7 @@ neoForge {
         }
         client {
             client()
+            gameDirectory = project.file('runs/client')
         }
         data {
             data()
@@ -41,6 +42,7 @@ neoForge {
         }
         server {
             server()
+            gameDirectory = project.file('runs/server')
         }
     }
     mods {
