@@ -22,7 +22,7 @@ minecraft {
 
     runs {
         client {
-            workingDirectory project.file('run')
+            workingDirectory project.file('runs/client')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
@@ -39,7 +39,7 @@ minecraft {
         }
 
         server {
-            workingDirectory project.file('run/server')
+            workingDirectory project.file('runs/server')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'mixin.env.remapRefMap', 'true'
@@ -54,7 +54,7 @@ minecraft {
         }
 
         data {
-            workingDirectory project.file('run')
+            workingDirectory project.file('runs/data')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
