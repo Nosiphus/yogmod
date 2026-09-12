@@ -6,13 +6,11 @@ import com.nosiphus.yogmod.world.level.block.entity.CageBlockEntity;
 import com.nosiphus.yogmod.world.level.block.entity.RecordPlayerBlockEntity;
 import mcp.mobius.waila.api.IClientRegistrar;
 import mcp.mobius.waila.api.IWailaClientPlugin;
-import mcp.mobius.waila.api.WailaPlugin;
 import mcp.mobius.waila.api.data.FluidData;
 import mcp.mobius.waila.plugin.vanilla.fluid.LavaDescriptor;
 import mcp.mobius.waila.plugin.vanilla.fluid.WaterDescriptor;
 import net.minecraft.world.level.block.DiodeBlock;
 
-@WailaPlugin(id = "yogmod:client_plugin")
 public class YogModClientPlugin implements IWailaClientPlugin {
 
     @Override

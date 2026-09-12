@@ -52,6 +52,7 @@ public class YogModForge {
         ForgeRegistryHelper.ENTITY_TYPES.register(eventBus);
         ForgeRegistryHelper.ITEMS.register(eventBus);
         ForgeRegistryHelper.MENU_TYPES.register(eventBus);
+        ForgeRegistryHelper.PAINTING_VARIANT.register(eventBus);
         ForgeRegistryHelper.RECIPE_SERIALIZERS.register(eventBus);
         ForgeRegistryHelper.RECIPE_TYPES.register(eventBus);
 
