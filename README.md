@@ -1,6 +1,6 @@
 # YogMod
 
-A mod focused around Yogscast-themed content.
+Perfect for building your own science lab. Not perfect if you want a working coffee machine. Don't worry about it!
 
 ## Brief Content Overview
 Hello fellow Yognau(gh)ts, and welcome, to YogMod! What is YogMod, you may ask? Well, YogMod is a reimplementation of the VoxelBox Scientific texture pack used in YogLabs as separate blocks, meaning you can now build your own YogLabs without having to change resource packs to avoid texture conflicts (notably ores) making survival a difficult task. At present, the blocks largely follow the original texture pack's decisions, so pumpkins correspond to monitors, coal ore is dark stone brick, and so on. We have made some changes, mostly for making full-color wool variants available, as well as ensuring that the blocks that originally corresponded to unobtainables (such as the floors being made of bedrock) now correspond to obtainable blocks.
